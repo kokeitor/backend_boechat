@@ -115,7 +115,8 @@ def execute_raptor():
     # Store new embedings
     db.store_docs(docs=raptor_dataset.documents)
     # Try database query
-    query = "rendimiento neto del ovino y caprino de carne"
+    query = """ La Oficina Consular honoraria en El Calafate, con categoría de Viceconsulado 
+                Honorario, dependerá del Consulado General de España en Bahía Blanca."""
     filter_key = "label_str"
     filter_value = "Planes de Estudio y Normativas Educativas"
     context = db.get_context(
