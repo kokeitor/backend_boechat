@@ -94,6 +94,12 @@ class RaptorVectorDB:
                         namespace=str(
                             os.getenv('PINECONE_INDEX_NAMESPACE'))
                     )
+                    cont = 10
+                    i = 0
+                    while i < cont:
+                        i += 1
+                        print(self.pc.describe_index(self.index_name))
+                        # time.sleep(1)
                 except Exception as e:
                     logger.exception(
                         "Failed to store documents in vector store", exc_info=e)
@@ -145,9 +151,8 @@ class RaptorVectorDB:
                 os.getenv('PINECONE_INDEX_NAMESPACE')))
             logger.info(
                 f"All content in index '{self.index_name}' has been deleted.")
-            print(self.pc.describe_index(self.index_name))
             while not self.pc.describe_index(self.index_name).status["ready"]:
-                print(self.pc.describe_index(self.index_name))
+                logger.info(self.pc.describe_index(self.index_name))
                 time.sleep(1)
         except Exception as e:
             logger.error(
