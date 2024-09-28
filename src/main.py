@@ -110,16 +110,22 @@ def execute_raptor():
         index_name=str(os.getenv('PINECONE_INDEX_NAME')),
         embd_model=str(os.getenv('EMBEDDING_MODEL'))
     )
+
     # Delete index content
     db.delete_index_content()
+
     # Store new embedings
     db.store_docs(docs=raptor_dataset.documents)
+
     # Try database query
-    query = """Se modifica la circunscripción consular de la Oficina Consular honoraria en Puerto San Julián"""
+    """ 
+    query = "Se modifica la circunscripción consular de la Oficina Consular honoraria en Puerto San Julián"
     filter_key = "label_str"
+    filter_value = "Todos los Tipos de Decretos (Legislativos y no Legislativos)"
     filter_value = "Todos los Tipos de Decretos (Legislativos y no Legislativos)"
     context = db.get_context(
         query=query, filter_key=filter_key, filter_value=filter_value)
+    context = db.get_context(query=query)
     try:
         logger.info(f"{query=} - {filter_key=} - {filter_value=}:\n{context=}")
         logger.info(
@@ -130,7 +136,7 @@ def execute_raptor():
             f"k=3 : {filter_key=} - {filter_value=}:\n{filter_key=} - {context[2].metadata[filter_key]}")
     except Exception as e:
         logger.error(f"{e}")
-
+    """
     return db
 
 

@@ -2,6 +2,7 @@ from langchain.schema import Document
 from langchain_pinecone import PineconeVectorStore
 import logging
 import os
+from typing import Optional
 from langchain_core.vectorstores import VectorStoreRetriever
 from langchain_core.embeddings import Embeddings
 from langchain_core.vectorstores import VectorStore
@@ -47,7 +48,7 @@ class RaptorVectorDB:
                     spec=ServerlessSpec(cloud="aws", region="us-east-1"),
                 )
                 while not self.pc.describe_index(self.index_name).status["ready"]:
-                    print(self.pc.describe_index(self.index_name))
+                    logger.info(self.pc.describe_index(self.index_name))
                     time.sleep(1)
 
             self.index = self.pc.Index(self.index_name)
@@ -97,6 +98,7 @@ class RaptorVectorDB:
                     while self.index.describe_index_stats()["total_vector_count"] == 0:
                         print(self.index.describe_index_stats())
                         time.sleep(1)
+                    logger.info("VectorDataBase Ready")
                 except Exception as e:
                     logger.exception(
                         "Failed to store documents in vector store", exc_info=e)
@@ -118,7 +120,7 @@ class RaptorVectorDB:
             docs_clean.append(doc)
         return docs_clean
 
-    def get_context(self, query: str, filter_key: str, filter_value: str) -> list[Document]:
+    def get_context(self, query: str, filter_key: Optional[str] = None, filter_value: Optional[str] = None) -> list[Document]:
         if self.retriever and self.vectorstore:
             retrieved_docs = self.vectorstore.similarity_search(
                 query=query,
@@ -126,21 +128,7 @@ class RaptorVectorDB:
                 # filter={filter_key: filter_value},
                 namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
             )
-            print(retrieved_docs)
-            if len(retrieved_docs) == 0:
-                query_embedding = self.embedding_model.embed_query(text=query)
-                logger.info(len(query_embedding))
-                retrieved_data = self.index.query(
-                    namespace=os.getenv('PINECONE_INDEX_NAMESPACE'),
-                    vector=self.embedding_model.embed_query(text=query),
-                    # filter={filter_key: {"$eq": filter_value}},
-                    top_k=3,
-                    include_metadata=True  # Include metadata in the response.
-                )
-                logger.info(retrieved_data)
-                return retrieved_data
-            else:
-                return retrieved_docs
+            return retrieved_docs
 
     def delete_index_content(self) -> None:
         try:
