@@ -1,0 +1,37 @@
+{
+    "agents":{
+            "query_classificator":{
+                                "name":"GROQ",
+                                "temperature":0
+                                },
+              "docs_grader": {
+                            "name":"GROQ",
+                            "temperature":0
+                            },
+              "query_processor": {
+                            "name":"GROQ",
+                            "temperature":0
+                            },
+              "generator": {
+                              "name":"GROQ",
+                              "temperature":0
+                              },
+                "hallucination_grader": {
+                            "name":"GROQ",
+                            "temperature":0
+                            },
+                "answer_grader": {
+                                "name":"GROQ",
+                                "temperature":0
+                                }
+        },
+    "vector_db": {
+                        "client":"pinecone",
+                        "hg_embedding_model":"sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2", 
+                        "k" : 3
+    },
+      "iteraciones": 100,
+      "thread_id": "4",
+      "verbose": 0
+  }
+    

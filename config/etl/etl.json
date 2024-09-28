@@ -1,0 +1,81 @@
+{
+  "parser": {
+    "directory_path": "./data/boe/dias/2024/04/prueba",
+    "file_type": ".pdf",
+    "recursive_parser": true,
+    "result_type": "markdown",
+    "verbose": true
+  },
+  "splitter": {
+              "chunk_size": 200,
+              "storage_path":"./data/figures/splitter",
+              "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "tokenizer_model": "meta-llama/Meta-Llama-3-8B",
+              "threshold": 60,
+              "max_tokens": 500,
+              "verbose": 1,
+              "buffer_size": 3,
+              "max_big_chunks": 10,
+              "splitter_mode": "CUSTOM",
+              "min_initial_chunk_len":100
+  },
+  "TextPreprocess": {
+                      "spc_caracters": [
+                                          "!", "@", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+",
+                                          "{", "}", "[", "]", "|", "\\", ":", ";", "\"", "'", "<", ">", ",", ".",
+                                          "?", "/", "~", "`", "\n", "\r", "\t", "\b", "\f", "__"
+                                      ],
+                      "spc_words": [
+                                        ""
+                                      ],
+                      "task_name": "classification",
+                      "methods": {
+                        "del_stopwords": {
+                                          "apply":false,
+                                            "lang": "Spanish"
+                                        },
+                        "del_urls": {"apply":false},
+                        "del_html": {"apply":false},
+                        "del_emojis": {"apply":false},
+                        "del_special": {"apply":false},
+                        "del_special_words": {"apply":true},
+                        "del_digits": {"apply":false},
+                        "del_chinese_japanese": {"apply":false},
+                        "del_extra_spaces": {"apply":false},
+                        "get_lower": {"apply":false},
+                        "get_alfanumeric": {"apply":false},
+                        "stem": {"apply":false},
+                        "lemmatize": {"apply":false},
+                        "custom_del": {
+                            "apply":true,
+                            "delete": false,
+                            "plot": true,
+                            "storage_path":"./data/figures/text"
+                                      },
+                        "bow": { 
+                            "apply":true,
+                            "storage_path":"./data/figures/text/bow"
+                                },
+                        "bow_tf_idf": {
+                              "apply":true,
+                              "storage_path":"./data/figures/text/bow_tf_idf"
+                                      }
+                      }
+  },
+  "label_generator": {
+    "tokenizer_model": "GPT35",
+    "labels": null,
+    "model": "GPT",
+    "max_samples": 9999
+  },
+  "storer": {
+    "store_path": "./data/boedataset",
+    "file_name":"boe_id_BOE-A-2024-7296",
+    "file_format": "csv"
+  },
+  "google_sheet_database": {
+    "api_call_max_tries": 10
+  }
+}
+
+

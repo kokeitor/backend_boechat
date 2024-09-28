@@ -1,0 +1,6 @@
+{
+"local_dir" : "./data",
+"fecha_desde" : "2024-04-15",
+"fecha_hasta": "2024-04-21",
+"batch":999
+}

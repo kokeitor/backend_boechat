@@ -1,0 +1,38 @@
+# Ignore virtual environment directory
+/env
+
+# Ignore documentos directory
+/documentos
+
+# Ignore data directory
+/data/boe
+/data/boedataset
+/data/figures
+/data/notes
+/data/diagramas
+
+# Ignore environment variable files
+.env
+
+# Ignore all __pycache__ directories
+__pycache__
+**/__pycache__/
+
+# Ignore logs directory
+/logs
+
+# Ignore notebooks directory
+/src/notebooks
+
+# Ignore finetune notebook
+/src/finetune/fine_tune_notebook.ipynb
+/src/finetune/training.ipynb
+
+# Ignore tests directory
+/src/tests
+
+# Ignore secrets directory
+/.secrets
+
+# Ignore specific __pycache__ directory
+/src/package/__pycache__

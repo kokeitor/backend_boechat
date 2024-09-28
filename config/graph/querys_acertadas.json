@@ -1,0 +1,65 @@
+[
+    {
+        "user_question": "¿Cuál es la duración total de las enseñanzas del ciclo de grado medio para Técnico Deportivo en Atletismo?",
+        "ground_truth": "La duración total es de 1.005 horas, organizadas en dos ciclos.",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7296"
+    },
+    {
+        "user_question": "¿Qué pruebas son necesarias para acceder al ciclo inicial de grado medio en atletismo?",
+        "ground_truth": "Es necesario superar la prueba de carácter específico RAE-ATAT101 descrita en el anexo VI del Real Decreto 427/2023.",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7296"
+    },
+    {
+        "user_question": "¿Qué se menciona sobre la accesibilidad universal en relación con los espacios y equipamientos necesarios para la enseñanza del grado medio en atletismo?",
+        "ground_truth": "Los espacios y equipamientos deben cumplir con la normativa sobre igualdad de oportunidades, diseño para todos y accesibilidad universal, prevención de riesgos laborales, así como con la normativa sobre seguridad y salud en el puesto de trabajo.",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7296"
+    },
+    {
+        "user_question": "¿Qué competencias desarrolla el módulo de 'Tecnificación y perfeccionamiento técnico en carreras y marcha' en el ciclo final de grado medio en atletismo?",
+        "ground_truth": "Este módulo desarrolla competencias relacionadas con la valoración de la ejecución técnica, la elaboración de secuencias de aprendizaje, y la dirección de sesiones de entrenamiento técnico, táctico y de acondicionamiento físico.",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7296"
+    },
+    {
+        "user_question": "¿Qué aspectos se analizan en la técnica de la zancada en las carreras de velocidad?",
+        "ground_truth": "Se analizan los parámetros de la carrera, como la amplitud y la frecuencia de zancadas, la posición del tronco y la acción de los brazos, y se utilizan ciclogramas y kinogramas para la corrección de errores técnicos.",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7296"
+    },
+    {
+        "user_question": "¿Qué técnicas de transmisión del testigo se emplean en el relevo corto?",
+        "ground_truth": "Se emplean técnicas como el cambio 'por abajo', 'por arriba' y 'de empuje', cada una con su propio movimiento de entrega y recepción del testigo.",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7296"
+    },
+    {
+        "user_question": "¿Cuál es la duración total del ciclo inicial de grado medio en atletismo según la distribución horaria del currículo?",
+        "ground_truth": "La duración total del ciclo inicial de grado medio en atletismo es de 430 horas.",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7296"
+    },
+    {
+        "user_question": "¿Qué requisitos deben cumplir los integrantes del tribunal evaluador de las pruebas de carácter específico en atletismo?",
+        "ground_truth": "Las personas integrantes del tribunal evaluador de las pruebas de carácter específico deberán acreditar la titulación de Técnico Deportivo Superior en Atletismo o estar en posesión de la homologación al título de Técnico Deportivo Superior en Atletismo. Además, como mínimo una de las personas integrantes del tribunal será propuesto por la Real Federación Española de Atletismo.",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7296"
+    },
+    {
+        "user_question": "¿Cuáles son los factores determinantes del rendimiento en el triple salto según el modelo conceptual?",
+        "ground_truth": "Los factores determinantes del rendimiento en el triple salto incluyen la relación entre la velocidad de carrera y la distancia saltada, la distribución del esfuerzo en cada salto, la relación entre la altura del salto y el frenado horizontal, la evolución de la técnica en la formación atlética a largo plazo, y las variaciones asociadas a la maduración y competencia técnica.",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7296"
+    },
+    {
+        "user_question": "¿Cuanto deben o pueden pesar los balones medicinales?",
+        "ground_truth": "Los balones medicinales deben pesar 3 kg, 4 kg o 5 kg",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7296"
+    }
+
+    
+    ]
+    
