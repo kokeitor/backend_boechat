@@ -116,7 +116,7 @@ class RaptorVectorDB:
 
     def get_context(self, query: str, filter_key: str, filter_value: str) -> list[Document]:
         if self.retriever and self.vectorstore:
-            return self.retriever.invoke(input=query, filter={filter_key: filter_value})
+            return self.retriever.invoke(input=query, filter={filter_key: filter_value}, namespace=os.getenv('PINECONE_INDEX_NAMESPACE'))
 
     def delete_index_content(self):
         try:

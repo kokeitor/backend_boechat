@@ -110,7 +110,9 @@ def execute_raptor():
         index_name=str(os.getenv('PINECONE_INDEX_NAME')),
         embd_model=str(os.getenv('EMBEDDING_MODEL'))
     )
+    # Restart index namesapce content
     db.delete_index_content()
+    # Store new embedings
     db.store_docs(docs=raptor_dataset.documents)
     # Try database query
     query = "rendimiento neto del ovino y caprino de carne"
@@ -141,6 +143,7 @@ def main():
     logger.info(f"ETL Docs len : {len(etl_result)}")
     ##
     vectorDB = execute_raptor()
+    logger.info(f"vectorDB  : {len(vectorDB)}")
     ##
     run_app()
 
