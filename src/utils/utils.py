@@ -10,6 +10,7 @@ def setup_logging(file_name: str) -> None:
     """
     CONFIG_LOGGER_FILE = os.path.join(
         os.path.abspath("./config/loggers"), file_name)
+    print(f"CONFIG_LOGGER_FILE : {CONFIG_LOGGER_FILE}")
 
     with open(CONFIG_LOGGER_FILE, encoding='utf-8') as f:
         content = json.load(f)

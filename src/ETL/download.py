@@ -9,10 +9,10 @@ from pydantic import BaseModel, Field
 import logging
 import logging.config
 import logging.handlers
-from ETL.utils import get_current_spanish_date_iso, setup_logging
 
 # Logging configuration
-logger = logging.getLogger("Download_web_files_module")  # Child logger [for this module]
+# Child logger [for this module]
+logger = logging.getLogger("Download_web_files_module")
 # LOG_FILE = os.path.join(os.path.abspath("../../../logs/download"), "download.log")  # If not using json config
 
 
@@ -26,7 +26,7 @@ class WebDownloadData(BaseModel):
     dw_files_paths: list[str] = Field(default_factory=list)
 
 
-### BOE PDF DOWNLOAD TOOL
+# BOE PDF DOWNLOAD TOOL
 @dataclass
 class Downloader:
     information: WebDownloadData
@@ -38,15 +38,18 @@ class Downloader:
         boe_api_sumario = f'{self.information.web_url}/diario_boe/xml.php?id=BOE-S-'
 
         # Fechas de inicio y fin para la descarga de documentos
-        fecha_ini = datetime.strptime(self.information.fecha_desde, '%Y-%m-%d')  # format necesario : '2024-04-15'
+        # format necesario : '2024-04-15'
+        fecha_ini = datetime.strptime(self.information.fecha_desde, '%Y-%m-%d')
         fecha_fin = datetime.strptime(self.information.fecha_hasta, '%Y-%m-%d')
         logger.info(f"Fecha inicio descarga : {fecha_ini}")
         logger.info(f"Fecha fin descarga: {fecha_fin}")
 
         while fecha_ini <= fecha_fin:
-            fecha_ymd = fecha_ini.strftime('%Y%m%d')  # formato cambiado a '20240415'
+            # formato cambiado a '20240415'
+            fecha_ymd = fecha_ini.strftime('%Y%m%d')
             carpeta_fecha = os.path.join(
-                destino_local, fecha_ini.strftime('%Y'), fecha_ini.strftime('%m'), fecha_ini.strftime('%d')
+                destino_local, fecha_ini.strftime('%Y'), fecha_ini.strftime(
+                    '%m'), fecha_ini.strftime('%d')
             )
 
             fichero_sumario_xml = os.path.join(carpeta_fecha, 'index.xml')
@@ -56,12 +59,14 @@ class Downloader:
             if os.path.exists(fichero_sumario_xml):
                 os.remove(fichero_sumario_xml)
 
-            logger.info(f'Solicitando {boe_api_sumario}{fecha_ymd} --> {fichero_sumario_xml}')
+            logger.info(
+                f'Solicitando {boe_api_sumario}{fecha_ymd} --> {fichero_sumario_xml}')
 
             xml_content = self.get_xml_file(url=boe_api_sumario + fecha_ymd)
             self.save(content=xml_content, path=fichero_sumario_xml)
 
-            self.information.dw_files_paths = self.get_pdf_url_from_xml(archivo_xml=fichero_sumario_xml)
+            self.information.dw_files_paths = self.get_pdf_url_from_xml(
+                archivo_xml=fichero_sumario_xml)
             logger.info(
                 f'Numero de URLs de PDFs obtenidos para la fecha {fecha_ini} : {len(self.information.dw_files_paths)}'
             )
@@ -74,7 +79,8 @@ class Downloader:
                         file_url=file_path,
                         local_file_path=carpeta_fecha
                     )
-                    self.save(content=response.content, path=os.path.join(carpeta_fecha, file_name))
+                    self.save(content=response.content,
+                              path=os.path.join(carpeta_fecha, file_name))
 
             fecha_ini += timedelta(days=1)
 
@@ -91,7 +97,8 @@ class Downloader:
         if response.status_code == 200:
             return response.content
         else:
-            logger.error(f'Error al descargar el documento: {response.status_code} URL: {url}')
+            logger.error(
+                f'Error al descargar el documento: {response.status_code} URL: {url}')
         return None
 
     def get_pdf_url_from_xml(self, archivo_xml):
@@ -123,13 +130,16 @@ class Downloader:
         respuesta = requests.get(url_completa)
 
         if respuesta.status_code == 200:
-            nombre_pdf = file_url.split('/')[-1]  # Extraemos el nombre del archivo desde la URL
-            logger.info(f'Archivo descargado con exito: {os.path.join(local_file_path, nombre_pdf)}')
+            # Extraemos el nombre del archivo desde la URL
+            nombre_pdf = file_url.split('/')[-1]
+            logger.info(
+                f'Archivo descargado con exito: {os.path.join(local_file_path, nombre_pdf)}')
 
             return nombre_pdf, respuesta
 
         else:
-            logger.error(f'Error al descargar {url_completa}: {respuesta.status_code}')
+            logger.error(
+                f'Error al descargar {url_completa}: {respuesta.status_code}')
             return "", respuesta
 
     def save(self, content, path):

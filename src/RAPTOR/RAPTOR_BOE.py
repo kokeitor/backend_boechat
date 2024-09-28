@@ -155,17 +155,17 @@ class RaptorDataset(BaseModel):
                 f"The specified directory '{self.data_dir_path}' does not exist.")
         dataframes = []
         for filename in os.listdir(self.data_dir_path):
-            logger.info(f"filename : {filename}")
+            logger.warning(f"filename : {filename}")
             if self.file_name:
                 if filename.split("_")[1] == self.file_name:
                     file_path = os.path.join(self.data_dir_path, filename)
                     if filename.endswith('.csv'):
                         df = pd.read_csv(file_path)
-                        logger.info(f"Reading CSV file : {file_path}")
+                        logger.warning(f"Reading CSV file : {file_path}")
                         dataframes.append(df)
                     elif filename.endswith('.parquet'):
                         df = pd.read_parquet(file_path)
-                        logger.info(f"Reading parquet file : {file_path}")
+                        logger.warning(f"Reading parquet file : {file_path}")
                         dataframes.append(df)
             else:
                 if "_" in filename and filename[0].isdigit():

@@ -2,9 +2,15 @@ from fastapi import HTTPException, APIRouter
 from fastapi.responses import FileResponse
 from API.routes.utils import list_files_in_directory
 import os
+import logging
+
+# Logging configuration
+# Child logger [for this module]
+logger = logging.getLogger("routes_get_data_logger")
+
 
 DATA_DIR = os.path.join(os.getcwd(), 'src', 'assets', 'data')
-print(f"UPLOAD_DIR : {DATA_DIR}")
+logger.info(f"UPLOAD_DIR : {DATA_DIR}")
 
 getData = APIRouter()
 

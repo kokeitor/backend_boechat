@@ -9,8 +9,8 @@ from langchain_community.vectorstores.kinetica import DistanceStrategy
 from langchain_huggingface import HuggingFaceEmbeddings
 from exceptions.exceptions import VectorDatabaseError
 from dotenv import load_dotenv
-import pinecone
-from pinecone.core.openapi.shared.exceptions import NotFoundException
+import time
+from pinecone import Pinecone, ServerlessSpec
 
 
 logger = logging.getLogger(__name__)
@@ -33,12 +33,26 @@ class RaptorVectorDB:
         try:
             logger.info(
                 f"Connecting to an existing index of PineCone DB cient -> {self.index_name}")
+            pc = Pinecone(api_key=self.api_key)
+            existing_indexes = [index_info["name"]
+                                for index_info in pc.list_indexes()]
+
+            if self.index_name not in existing_indexes:
+                pc.create_index(
+                    name=self.index_name,
+                    dimension=1536,
+                    metric="cosine",
+                    spec=ServerlessSpec(cloud="aws", region="us-east-1"),
+                )
+                while not pc.describe_index(self.index_name).status["ready"]:
+                    time.sleep(1)
+
+            self.index = pc.Index(self.index_name)
             pinecone_vectorstore = PineconeVectorStore(
+                index=self.index,
                 embedding=self.embedding_model,
                 text_key='page_content',
-                distance_strategy=DistanceStrategy.COSINE,
-                pinecone_api_key=self.api_key,
-                index_name=self.index_name
+                distance_strategy=DistanceStrategy.COSINE
             )
         except Exception as e:
             logger.error(
@@ -101,14 +115,9 @@ class RaptorVectorDB:
 
     def delete_index_content(self):
         try:
-            pinecone_index = pinecone.Index(
-                self.index_name)  # Use Pinecone's Index
-            pinecone_index.delete(delete_all=True)
+            self.index.delete(delete_all=True)
             logger.info(
                 f"All content in index '{self.index_name}' has been deleted.")
-        except NotFoundException:
-            logger.warning(
-                f"Index '{self.index_name}' does not exist or is already empty.")
         except Exception as e:
             logger.error(
                 f"Error while deleting content from index '{self.index_name}': {e}")
