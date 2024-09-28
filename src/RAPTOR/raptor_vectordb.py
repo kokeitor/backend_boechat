@@ -88,8 +88,11 @@ class RaptorVectorDB:
             if isinstance(docs, list) and docs and isinstance(docs[0], Document):
                 docs_clean = self.clean_metadata(docs=docs)
                 try:
-                    self.vectorstore.add_documents(documents=docs_clean, kwargs={
-                                                   "namespace": str(os.getenv('PINECONE_INDEX_NAMESPACE'))})
+                    self.vectorstore.add_documents(
+                        documents=docs_clean,
+                        namespace=str(
+                            os.getenv('PINECONE_INDEX_NAMESPACE'))
+                    )
                 except Exception as e:
                     logger.exception(
                         "Failed to store documents in vector store", exc_info=e)

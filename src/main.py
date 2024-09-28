@@ -111,7 +111,7 @@ def execute_raptor():
         embd_model=str(os.getenv('EMBEDDING_MODEL'))
     )
     db.delete_index_content()
-    db.store_docs(docs=raptor_dataset.documents)
+    # db.store_docs(docs=raptor_dataset.documents)
     # Try database query
     query = "rendimiento neto del ovino y caprino de carne"
     filter_key = "label_str"
