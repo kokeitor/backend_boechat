@@ -9,7 +9,6 @@ import subprocess
 import os
 from dotenv import load_dotenv
 import logging
-# from ETL.utils import setup_logging as setup_logging_etl
 from utils.utils import setup_logging
 from ETL.pipeline import Pipeline
 
@@ -72,6 +71,7 @@ os.environ['LOCAL_LLM'] = os.getenv('LOCAL_LLM')
 os.environ['HG_REPO_DATASET_ID'] = os.getenv('HG_REPO_DATASET_ID')
 os.environ['HG_REPO_RAGAS_TESTSET_ID'] = os.getenv('HG_REPO_RAGAS_TESTSET_ID')
 os.environ['GROQ_API_KEY'] = os.getenv('GROQ_API_KEY')
+os.environ['NVIDIA_API_KEY'] = os.getenv('NVIDIA_API_KEY')
 
 
 def run_app():
@@ -92,7 +92,7 @@ def main():
     logger.info(f"{__name__} script execution path -> {os.getcwd()}")
     ##
     etl_result = execute_etl()
-    logger.info(f"ETL rsult : {etl_result}")
+    logger.info(f"ETL Docs len : {len(etl_result)}")
     ##
     run_app()
 

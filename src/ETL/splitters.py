@@ -32,7 +32,7 @@ class CustomSemanticSplitter:
             embedding_model=HuggingFaceEmbeddings(
                 model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"),
             tokenizer=AutoTokenizer.from_pretrained(
-                "meta-llama/Meta-Llama-3-8B", clean_up_tokenization_spaces=False),
+                "meta-llama/Meta-Llama-3-8B"),
             buffer_size: int = 2,
             threshold: int = 75,
             verbose: int = 0,
@@ -285,8 +285,10 @@ class Splitter:
     def __init__(self,
                  chunk_size: int = 200,
                  storage_path: str = "C:\\Users\\Jorge\\Desktop\\MASTER_IA\\TFM\\proyecto\\data\\figures",
-                 embedding_model=EMBEDDING_MODEL,
-                 tokenizer_model=TOKENIZER_LLAMA3,
+                 embedding_model=HuggingFaceEmbeddings(
+                     model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"),
+                 tokenizer_model=AutoTokenizer.from_pretrained(
+                     "meta-llama/Meta-Llama-3-8B"),
                  threshold: int = 75,
                  max_tokens: int = 500,
                  verbose: int = 0,
