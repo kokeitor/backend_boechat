@@ -7,6 +7,8 @@
 # Ignore data directory
 /data/boe
 /data/boedataset
+/data/boedataset_processed
+/data/
 /data/figures
 /data/notes
 /data/diagramas

@@ -273,21 +273,23 @@ class RaptorDataset(BaseModel):
 
             file_name = os.path.basename(file_path)
             dir_path = os.path.dirname(file_path)
+            dir_dest_path = f"./data/{processed_dir}"
             logger.info(f"file_name : {file_name}")
             logger.info(f"dir_path : {dir_path}")
+            logger.info(f"dest_path : {dir_dest_path}")
 
             # Ensure the directory exists, create it if not
-            if not os.path.exists(dir_path):
-                os.makedirs(dir_path)
+            if not os.path.exists(dir_dest_path):
+                os.makedirs(dir_dest_path)
 
             # Create the target path where the file will be moved
-            destination_path = os.path.join(dir_path, file_name)
+            destination__file_path = os.path.join(dir_dest_path, file_name)
 
             # Move the file to the directory
-            shutil.move(file_path, destination_path)
+            shutil.move(file_path, destination__file_path)
 
             logger.info(
-                f"File '{file_name}' successfully moved to '{dir_path}'.")
+                f"File '{file_name}' successfully moved to '{destination__file_path}'.")
 
         except FileNotFoundError as fnf_error:
             logger.exception(fnf_error)

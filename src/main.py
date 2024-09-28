@@ -118,9 +118,10 @@ def execute_raptor():
     query = """ La Oficina Consular honoraria en El Calafate, con categoría de Viceconsulado 
                 Honorario, dependerá del Consulado General de España en Bahía Blanca."""
     filter_key = "label_str"
-    filter_value = "Planes de Estudio y Normativas Educativas"
+    filter_value = "Todos los Tipos de Decretos (Legislativos y no Legislativos)"
     context = db.get_context(
         query=query, filter_key=filter_key, filter_value=filter_value)
+    print(context)
     try:
         logger.info(f"{query=} - {filter_key=} - {filter_value=}:\n{context=}")
         logger.info(
