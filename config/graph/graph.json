@@ -25,11 +25,6 @@
                                 "temperature":0
                                 }
         },
-    "vector_db": {
-                        "client":"pinecone",
-                        "hg_embedding_model":"sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2", 
-                        "k" : 3
-    },
       "iteraciones": 100,
       "thread_id": "4",
       "verbose": 0

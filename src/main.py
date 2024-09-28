@@ -1,3 +1,7 @@
+import os
+import logging
+import warnings
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from decouple import config
 from API.routes.ia_response import iaResponse
@@ -5,14 +9,17 @@ from API.routes.get_data import getData
 from API.Apis.openai_api import OpenAiModel
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
-import os
-from dotenv import load_dotenv
-import logging
 from utils.utils import setup_logging
 from ETL.pipeline import Pipeline
 from RAPTOR.RAPTOR_BOE import RaptorDataset
 from RAPTOR.raptor_vectordb import RaptorVectorDB
-import warnings
+from GRAPH_RAG.graph import create_graph, compile_graph, save_graph
+from GRAPH_RAG.config import ConfigGraph
+from langgraph.graph.graph import CompiledGraph
+from RAG_EVAL.base_models import RagasDataset
+from langgraph.errors import InvalidUpdateError
+from langchain_core.runnables.config import RunnableConfig
+
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
@@ -92,8 +99,39 @@ def execute_etl():
     return pipeline.run()
 
 
+def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
+    setup_logging(file_name="graph.json")
+
+    # Config graph file
+    CONFIG_PATH = os.path.join(os.path.dirname(
+        __file__), '..', 'config/graph', 'graph.json')
+
+    logger.info(f"Getting Graph configuration from {CONFIG_PATH=}")
+    config_graph = ConfigGraph(config_path=CONFIG_PATH)
+
+    logger.info("Creating graph and compiling workflow...")
+
+    # create state graph
+    config_graph.graph = create_graph(
+        config=config_graph)
+
+    # compile the state graph
+    config_graph.compile_graph = compile_graph(config_graph.graph)
+
+    # save graph diagram
+    save_graph(compile_graph=config_graph.compile_graph)
+
+    logger.info("Graph and workflow created")
+
+    return RunnableConfig(
+        recursion_limit=config_graph.iteraciones,
+        configurable={"thread_id": config_graph.thread_id}
+    ), config_graph
+
+
 def execute_raptor():
     setup_logging(file_name="raptor_boe.json")
+
     # Create Raptor data (make cluster summary, process and store in vector database)
     raptor_dataset = RaptorDataset(
         data_dir_path="./data/boedataset",
@@ -118,13 +156,11 @@ def execute_raptor():
     db.store_docs(docs=raptor_dataset.documents)
 
     # Try database query
-    """ 
+
     query = "Se modifica la circunscripción consular de la Oficina Consular honoraria en Puerto San Julián"
     filter_key = "label_str"
     filter_value = "Todos los Tipos de Decretos (Legislativos y no Legislativos)"
     filter_value = "Todos los Tipos de Decretos (Legislativos y no Legislativos)"
-    context = db.get_context(
-        query=query, filter_key=filter_key, filter_value=filter_value)
     context = db.get_context(query=query)
     try:
         logger.info(f"{query=} - {filter_key=} - {filter_value=}:\n{context=}")
@@ -136,7 +172,7 @@ def execute_raptor():
             f"k=3 : {filter_key=} - {filter_value=}:\n{filter_key=} - {context[2].metadata[filter_key]}")
     except Exception as e:
         logger.error(f"{e}")
-    """
+
     return db
 
 

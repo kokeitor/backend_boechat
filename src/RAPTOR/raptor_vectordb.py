@@ -68,7 +68,7 @@ class RaptorVectorDB:
             logger.error(
                 f"Error while connecting to PineCone DB from existing index : {self.index_name} -> {e}")
             raise VectorDatabaseError(
-                message="Error while connecting to Chroma DB", exception=e)
+                message="Error while connecting to PineCone DB from existing index", exception=e)
 
     @staticmethod
     def get_embd_model(embd_model: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"):
@@ -96,9 +96,10 @@ class RaptorVectorDB:
                             os.getenv('PINECONE_INDEX_NAMESPACE'))
                     )
                     while self.index.describe_index_stats()["total_vector_count"] == 0:
-                        print(self.index.describe_index_stats())
+                        logger.info(
+                            f"VectorDB Index -> {self.index_name} Stats : {self.index.describe_index_stats()}")
                         time.sleep(1)
-                    logger.info("VectorDataBase Ready")
+                    logger.info("VectorDB Index Ready")
                 except Exception as e:
                     logger.exception(
                         "Failed to store documents in vector store", exc_info=e)
@@ -125,9 +126,15 @@ class RaptorVectorDB:
             retrieved_docs = self.vectorstore.similarity_search(
                 query=query,
                 k=3,
-                # filter={filter_key: filter_value},
                 namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
             )
+            if filter_key and filter_value:
+                retrieved_docs = self.vectorstore.similarity_search(
+                    query=query,
+                    k=3,
+                    filter={filter_key: filter_value},
+                    namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
+                )
             return retrieved_docs
 
     def delete_index_content(self) -> None:
