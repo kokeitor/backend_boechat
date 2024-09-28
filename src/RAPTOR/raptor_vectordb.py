@@ -116,25 +116,31 @@ class RaptorVectorDB:
 
     def get_context(self, query: str, filter_key: str, filter_value: str) -> list[Document]:
         if self.retriever and self.vectorstore:
-            retrieved_docs = self.retriever.invoke(
+            """ 
+                retrieved_docs = self.retriever.invoke(
                 input=query,
-                filter={filter_key: filter_value},
+                # filter={filter_key: filter_value},
+                # namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
+            )
+            """
+            retrieved_docs = self.vectorstore.similarity_search(
+                query=query,
+                k=3,
+                # filter={filter_key: filter_value},
                 namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
             )
             if len(retrieved_docs) == 0:
                 query_embedding = self.embedding_model.embed_query(text=query)
-                logger.info(query_embedding)
+                logger.info(len(query_embedding))
                 retrieved_data = self.index.query(
                     namespace=os.getenv('PINECONE_INDEX_NAMESPACE'),
-                    vector=query_embedding,
-                    filter={
-                        filter_key: {"$eq": filter_value}
-                    },
+                    vector=self.embedding_model.embed_query(text=query),
+                    # filter={filter_key: {"$eq": filter_value}},
                     top_k=3,
                     include_metadata=True  # Include metadata in the response.
                 )
                 logger.info(retrieved_data)
-                return retrieved_data.matches.values
+                return retrieved_data
             else:
                 return retrieved_docs
 

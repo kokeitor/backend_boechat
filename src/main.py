@@ -115,8 +115,7 @@ def execute_raptor():
     # Store new embedings
     db.store_docs(docs=raptor_dataset.documents)
     # Try database query
-    query = """ La Oficina Consular honoraria en El Calafate, con categoría de Viceconsulado 
-                Honorario, dependerá del Consulado General de España en Bahía Blanca."""
+    query = """Se modifica la circunscripción consular de la Oficina Consular honoraria en Puerto San Julián"""
     filter_key = "label_str"
     filter_value = "Todos los Tipos de Decretos (Legislativos y no Legislativos)"
     context = db.get_context(
@@ -138,6 +137,8 @@ def execute_raptor():
 
 def main():
     ##
+    run_app()
+    ##
     setup_logging(file_name="main.json")
     logger.info(f"{__name__} script execution path -> {os.getcwd()}")
     ##
@@ -146,8 +147,6 @@ def main():
     ##
     vectorDB = execute_raptor()
     logger.info(f"vectorDB  : {vectorDB}")
-    ##
-    run_app()
 
 
 if __name__ == "__main__":
