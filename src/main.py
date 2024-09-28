@@ -143,7 +143,7 @@ def main():
     logger.info(f"ETL Docs len : {len(etl_result)}")
     ##
     vectorDB = execute_raptor()
-    logger.info(f"vectorDB  : {len(vectorDB)}")
+    logger.info(f"vectorDB  : {vectorDB}")
     ##
     run_app()
 

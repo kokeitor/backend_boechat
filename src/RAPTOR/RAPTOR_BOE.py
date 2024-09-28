@@ -20,6 +20,7 @@ from langchain_nvidia_ai_endpoints import ChatNVIDIA
 from langchain_community.document_loaders import DataFrameLoader
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
+import shutil
 
 
 # Logging configuration
@@ -166,10 +167,12 @@ class RaptorDataset(BaseModel):
                         df = pd.read_csv(file_path)
                         logger.warning(f"Reading CSV file : {file_path}")
                         dataframes.append(df)
+                        RaptorDataset.process_file(file_path=file_path)
                     elif filename.endswith('.parquet'):
                         df = pd.read_parquet(file_path)
                         logger.warning(f"Reading parquet file : {file_path}")
                         dataframes.append(df)
+                        RaptorDataset.process_file(file_path=file_path)
             else:
                 if "_" in filename and filename[0].isdigit():
                     try:
@@ -191,10 +194,12 @@ class RaptorDataset(BaseModel):
                             df = pd.read_csv(file_path)
                             logger.info(f"Reading CSV file : {file_path}")
                             dataframes.append(df)
+                            RaptorDataset.process_file(file_path=file_path)
                         elif filename.endswith('.parquet'):
                             df = pd.read_parquet(file_path)
                             logger.info(f"Reading parquet file : {file_path}")
                             dataframes.append(df)
+                            RaptorDataset.process_file(file_path=file_path)
         if dataframes:
             combined_df = pd.concat(dataframes, ignore_index=True)
         else:
@@ -251,6 +256,43 @@ class RaptorDataset(BaseModel):
             return date_obj
         except ValueError as e:
             raise ValueError(f"Error parsing the date: {e}")
+
+    @staticmethod
+    def process_file(file_path: str, processed_dir: str = "boedataset_processed") -> None:
+        """
+        Moves the specified file to a directory called 'processed files'.
+
+        :param file_path: The path of the file to move.
+        :param processed_dir: The directory where the file should be moved. Default is 'processed files'.
+        :raises FileNotFoundError: If the source file doesn't exist.
+        :raises Exception: For other issues like permission errors or if the directory can't be created.
+        """
+        try:
+            if not os.path.exists(file_path):
+                raise FileNotFoundError(f"File '{file_path}' not found.")
+
+            file_name = os.path.basename(file_path)
+            dir_path = os.path.dirname(file_path)
+            logger.info(f"file_name : {file_name}")
+            logger.info(f"dir_path : {dir_path}")
+
+            # Ensure the directory exists, create it if not
+            if not os.path.exists(processed_dir):
+                os.makedirs(processed_dir)
+
+            # Create the target path where the file will be moved
+            destination_path = os.path.join(processed_dir, file_name)
+
+            # Move the file to the directory
+            shutil.move(file_path, destination_path)
+
+            logger.info(
+                f"File '{file_name}' successfully moved to '{processed_dir}'.")
+
+        except FileNotFoundError as fnf_error:
+            logger.exception(fnf_error)
+        except Exception as e:
+            logger.exception(f"An error occurred: {e}")
 
     def _put_metadata(self) -> None:
         """
