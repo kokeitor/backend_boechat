@@ -1,6 +1,11 @@
 from openai import OpenAI
 from decouple import config
 import openai
+import logging
+
+# Logging configuration
+# Child logger [for this module]
+logger = logging.getLogger("open_ai_logger")
 
 
 def getOpenAiClient(OPENAI_API_KEY):
@@ -68,8 +73,8 @@ class OpenAiModel:
 
         # Create the iterator
         for event in streamMessage:
-            print("event.choices[0].delta.content : ",
-                  event.choices[0].delta.content)
+            logger.info("event.choices[0].delta.content : ",
+                        event.choices[0].delta.content)
             if event.choices[0].delta.content != None:
                 current_response = event.choices[0].delta.content
                 completeMessage += current_response
@@ -82,4 +87,4 @@ class OpenAiModel:
                 "content": completeMessage
             }
         )
-        print("complete message : ", completeMessage)
+        logger.info("complete message : ", completeMessage)

@@ -4,9 +4,14 @@ from API.models.models import ChatResponse
 from typing import Optional, Annotated
 from fastapi import UploadFile, File, Form
 import os
+import logging
+
+# Logging configuration
+# Child logger [for this module]
+logger = logging.getLogger("routes_ia_response_logger")
 
 UPLOAD_DIR = os.path.join(os.getcwd(), 'src', 'assets', 'uploads')
-print(f"UPLOAD_DIR : {UPLOAD_DIR}")
+logger.info(f"UPLOAD_DIR : {UPLOAD_DIR}")
 
 iaResponse = APIRouter()
 
@@ -40,9 +45,9 @@ async def getIaResponse(
     openAi = request.app.state.AI_MODEL
     # get ia response
     iaResponse = openAi.getResponse(newUserMessage=userMessage)
-    print(f"userMessage : {userMessage}")
-    print(f"iaResponse : {iaResponse}")
-    print(f"Memory : {openAi.messages}")
+    logger.info(f"userMessage : {userMessage}")
+    logger.info(f"iaResponse : {iaResponse}")
+    logger.info(f"Memory : {openAi.messages}")
 
     if fileNames:
         openAi.files.extend(fileNames)
@@ -66,8 +71,8 @@ async def stream(
     userMessage: Annotated[str, Form()],
     uploadFiles: Optional[list[UploadFile]] = None
 ):
-    print(f"userMessage : {userMessage}")
-    print(f"uploadFiles : {uploadFiles}")
+    logger.info(f"userMessage : {userMessage}")
+    logger.info(f"uploadFiles : {uploadFiles}")
     fileNames = None
     if uploadFiles:
         fileNames = []
@@ -78,6 +83,6 @@ async def stream(
             with open(os.path.join(UPLOAD_DIR, fileName), "wb") as f:
                 f.write(fileContent)
 
-    print(f"userMessage : {userMessage}")
+    logger.info(f"userMessage : {userMessage}")
     openAi = request.app.state.AI_MODEL
     return StreamingResponse(openAi.getStreamResponse(newUserMessage=userMessage), media_type='text/event-stream')

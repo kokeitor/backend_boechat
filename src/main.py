@@ -74,6 +74,10 @@ os.environ['HG_REPO_RAGAS_TESTSET_ID'] = os.getenv('HG_REPO_RAGAS_TESTSET_ID')
 os.environ['GROQ_API_KEY'] = os.getenv('GROQ_API_KEY')
 
 
+def run_app():
+    setup_logging(file_name="api.json")
+
+
 def execute_etl():
     setup_logging(file_name="etl.json")
     ETL_CONFIG_PATH = os.path.join(os.path.abspath("./config/etl"), "etl.json")
@@ -85,10 +89,12 @@ def execute_etl():
 def main():
     ##
     setup_logging(file_name="main.json")
-    print(f"{__name__} script execution path -> {os.getcwd()}")
+    logger.info(f"{__name__} script execution path -> {os.getcwd()}")
     ##
     etl_result = execute_etl()
     logger.info(f"ETL rsult : {etl_result}")
+    ##
+    run_app()
 
 
 if __name__ == "__main__":
