@@ -178,6 +178,10 @@ def execute_raptor():
 
 def main():
     ##
+    config, graph = get_graph()
+    logger.info(f"config graph  : {config}")
+    logger.info(f"graph  : {graph}")
+    ##
     run_app()
     ##
     setup_logging(file_name="main.json")
