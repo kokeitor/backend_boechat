@@ -129,6 +129,7 @@ class RaptorVectorDB:
                 # filter={filter_key: filter_value},
                 namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
             )
+            print(retrieved_docs)
             if len(retrieved_docs) == 0:
                 query_embedding = self.embedding_model.embed_query(text=query)
                 logger.info(len(query_embedding))

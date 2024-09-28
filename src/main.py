@@ -111,7 +111,7 @@ def execute_raptor():
         embd_model=str(os.getenv('EMBEDDING_MODEL'))
     )
     # Restart index namesapce content
-    db.delete_index_content()
+    # db.delete_index_content()
     # Store new embedings
     db.store_docs(docs=raptor_dataset.documents)
     # Try database query
