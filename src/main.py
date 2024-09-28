@@ -110,6 +110,7 @@ def execute_raptor():
         index_name=str(os.getenv('PINECONE_INDEX_NAME')),
         embd_model=str(os.getenv('EMBEDDING_MODEL'))
     )
+    print(db.index.describe_index_stats)
     # Store new embedings
     db.store_docs(docs=raptor_dataset.documents)
     # Try database query

@@ -33,50 +33,41 @@ class RaptorVectorDB:
         try:
             logger.info(
                 f"Connecting to an existing index of PineCone DB cient -> {self.index_name}")
-            pc = Pinecone(api_key=self.api_key)
+            self.pc = Pinecone(api_key=self.api_key)
             existing_indexes = [index_info["name"]
-                                for index_info in pc.list_indexes()]
+                                for index_info in self.pc.list_indexes()]
             logger.info(f"existing_indexes : {existing_indexes}")
 
             if self.index_name not in existing_indexes:
                 logger.warning(f"Creting Index : {self.index_name}")
-                pc.create_index(
+                self.pc.create_index(
                     name=self.index_name,
                     dimension=384,
                     metric="cosine",
                     spec=ServerlessSpec(cloud="aws", region="us-east-1"),
                 )
-                while not pc.describe_index(self.index_name).status["ready"]:
+                while not self.pc.describe_index(self.index_name).status["ready"]:
+                    print(self.pc.describe_index(self.index_name))
                     time.sleep(1)
-                    self.index = pc.Index(self.index_name)
-                self.index = pc.Index(self.index_name)
-                pinecone_vectorstore = PineconeVectorStore(
-                    index=self.index,
-                    embedding=self.embedding_model,
-                    text_key='page_content',
-                    distance_strategy=DistanceStrategy.COSINE
-                )
-            else:
-                self.index = pc.Index(self.index_name)
-                self.delete_index_content()
-                self.index = pc.Index(self.index_name)
-                pinecone_vectorstore = PineconeVectorStore(
-                    index=self.index,
-                    embedding=self.embedding_model,
-                    text_key='page_content',
-                    distance_strategy=DistanceStrategy.COSINE
-                )
+
+            self.index = self.pc.Index(self.index_name)
+            pinecone_vectorstore = PineconeVectorStore(
+                index=self.index,
+                embedding=self.embedding_model,
+                text_key='page_content',
+                distance_strategy=DistanceStrategy.COSINE
+            )
+            retriever = pinecone_vectorstore.as_retriever(
+                search_kwargs={"k": 3}
+            )
+            # search_type="mmr",
+            # search_kwargs={"k": 1, "fetch_k": 2, "lambda_mult": 0.5}
+            return retriever, pinecone_vectorstore
         except Exception as e:
             logger.error(
                 f"Error while connecting to PineCone DB from existing index : {self.index_name} -> {e}")
             raise VectorDatabaseError(
                 message="Error while connecting to Chroma DB", exception=e)
-
-        retriever = pinecone_vectorstore.as_retriever(search_kwargs={"k": 3})
-        # search_type="mmr",
-        # search_kwargs={"k": 1, "fetch_k": 2, "lambda_mult": 0.5}
-
-        return retriever, pinecone_vectorstore
 
     @staticmethod
     def get_embd_model(embd_model: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"):
@@ -154,6 +145,10 @@ class RaptorVectorDB:
                 os.getenv('PINECONE_INDEX_NAMESPACE')))
             logger.info(
                 f"All content in index '{self.index_name}' has been deleted.")
+            print(self.pc.describe_index(self.index_name))
+            while not self.pc.describe_index(self.index_name).status["ready"]:
+                print(self.pc.describe_index(self.index_name))
+                time.sleep(1)
         except Exception as e:
             logger.error(
                 f"Error while deleting content from index '{self.index_name}': {e}")
