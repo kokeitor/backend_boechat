@@ -1,13 +1,21 @@
 from fastapi import FastAPI, HTTPException
 from decouple import config
-from src.API.routes.ia_response import iaResponse
-from src.API.routes.get_data import getData
-from src.API.Apis.openai_api import OpenAiModel
+from API.routes.ia_response import iaResponse
+from API.routes.get_data import getData
+from API.Apis.openai_api import OpenAiModel
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import subprocess
 import os
 from dotenv import load_dotenv
+import logging
+# from ETL.utils import setup_logging as setup_logging_etl
+from utils.utils import setup_logging
+from ETL.pipeline import Pipeline
+
+
+# Logging configuration
+logger = logging.getLogger(__name__)
 
 
 """ 
@@ -43,8 +51,6 @@ app.add_middleware(
 )
 
 """
-
-# Load environment variables from .env file
 load_dotenv()
 
 # Set environment variables
@@ -68,9 +74,21 @@ os.environ['HG_REPO_RAGAS_TESTSET_ID'] = os.getenv('HG_REPO_RAGAS_TESTSET_ID')
 os.environ['GROQ_API_KEY'] = os.getenv('GROQ_API_KEY')
 
 
+def execute_etl():
+    setup_logging(file_name="etl.json")
+    ETL_CONFIG_PATH = os.path.join(os.path.abspath("./config/etl"), "etl.json")
+    logger.info(F"ETL_CONFIG_PATH : {ETL_CONFIG_PATH}")
+    pipeline = Pipeline(config_path=ETL_CONFIG_PATH)
+    return pipeline.run()
+
+
 def main():
-    print(os.getcwd())
-    subprocess.run(["python", "src/main_etl.py"], check=True)
+    ##
+    setup_logging(file_name="main.json")
+    print(f"{__name__} script execution path -> {os.getcwd()}")
+    ##
+    etl_result = execute_etl()
+    logger.info(f"ETL rsult : {etl_result}")
 
 
 if __name__ == "__main__":

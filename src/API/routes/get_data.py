@@ -1,6 +1,6 @@
 from fastapi import HTTPException, APIRouter
 from fastapi.responses import FileResponse
-from src.API.routes.utils import list_files_in_directory
+from API.routes.utils import list_files_in_directory
 import os
 
 DATA_DIR = os.path.join(os.getcwd(), 'src', 'assets', 'data')

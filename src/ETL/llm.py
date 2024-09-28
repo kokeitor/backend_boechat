@@ -3,39 +3,33 @@ import logging
 import logging.config
 import logging.handlers
 from transformers import AutoTokenizer, DebertaModel, GPT2Tokenizer
-from dotenv import load_dotenv
 from langchain.schema import Document
 from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_community.chat_models import ChatOllama
 from langchain_openai import ChatOpenAI
 from typing import Union, Optional
-import ETL.parsers
-import ETL.nlp
-import warnings
 import matplotlib.pyplot as plt
 from langchain_nvidia_ai_endpoints import ChatNVIDIA
 
 
 # Set the default font to DejaVu Sans
-plt.rcParams['font.family'] = 'DejaVu Sans'  # or another font that includes the glyphs
-
-# Suppress the specific FutureWarning
-warnings.filterwarnings("ignore", category=FutureWarning, module="huggingface_hub.file_download")
+# or another font that includes the glyphs
+plt.rcParams['font.family'] = 'DejaVu Sans'
 
 # Logging configuration
-logger = logging.getLogger("ETL_module_logger")  # Child logger [for this module]
-# LOG_FILE = os.path.join(os.path.abspath("../../../logs/download"), "download.log")  # If not using json config
+# Child logger [for this module]
+logger = logging.getLogger("ETL_module_logger")
 
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Tokenizers
 TOKENIZER_GPT3 = tiktoken.encoding_for_model("gpt-3.5")
-tokenizer_gpt2 = GPT2Tokenizer.from_pretrained('gpt2')
-TOKENIZER_LLAMA3 = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B")
-tokenizer_deberta = AutoTokenizer.from_pretrained("microsoft/deberta-base")
+tokenizer_gpt2 = GPT2Tokenizer.from_pretrained(
+    'gpt2', clean_up_tokenization_spaces=False)
+TOKENIZER_LLAMA3 = AutoTokenizer.from_pretrained(
+    "meta-llama/Meta-Llama-3-8B", clean_up_tokenization_spaces=False)
+tokenizer_deberta = AutoTokenizer.from_pretrained(
+    "microsoft/deberta-base", clean_up_tokenization_spaces=False)
 
 
 class LabelGenerator:
@@ -58,12 +52,13 @@ class LabelGenerator:
         self.model_label = model
         self.max_samples = max_samples
         self.tokenizer = tokenizer
-        _labels = labels if labels is not None else LabelGenerator.LABELS.replace("\n", "").split(',')
+        _labels = labels if labels is not None else LabelGenerator.LABELS.replace(
+            "\n", "").split(',')
         self.labels = [l.strip() for l in _labels]
-        self.label2id = {label.strip() : label_index for label_index,label in enumerate(_labels)}
-        
+        self.label2id = {label.strip(): label_index for label_index,
+                         label in enumerate(_labels)}
+
         logger.info(f"label2id : {self.label2id}")
-    
 
         self.prompt = PromptTemplate(
             template="""You are an assistant specialized in categorizing documents from the Spanish Boletín Oficial del Estado (BOE).
@@ -72,7 +67,7 @@ class LabelGenerator:
             Provide the output as a JSON with three keys: 'Label1', 'Label2', 'Label3' and for each label another two keys: "Label" and "Score".
             Text: {text}""",
             input_variables=["text", "labels"],
-            input_types={"labels":list[str],"text":str}
+            input_types={"labels": list[str], "text": str}
         )
         self.new_prompt = PromptTemplate(
             template="""You are an assistant specialized in categorizing documents from the Spanish Boletín Oficial del Estado (BOE).
@@ -81,7 +76,7 @@ class LabelGenerator:
             Provide the output as a JSON with three keys: 'Label1', 'Label2', 'Label3'.\n
             Text: {text}""",
             input_variables=["text", "labels"],
-            input_types={"labels":list[str],"text":str}
+            input_types={"labels": list[str], "text": str}
         )
         self.alternative_prompt = PromptTemplate(
             template="""You are an assistant specialized in categorizing documents from the Spanish Boletín Oficial del Estado (BOE).
@@ -90,7 +85,7 @@ class LabelGenerator:
             The scores for the rest of the labels must be 0. Provide the output as a JSON with the label names as keys and their similarity scores as values.
             Text: {text}""",
             input_variables=["text", "labels"],
-            input_types={"labels":list[str],"text":str}
+            input_types={"labels": list[str], "text": str}
         )
         self.llama_prompt = PromptTemplate(
             template="""You are an assistant specialized in categorizing documents from the Spanish Boletín Oficial del Estado (BOE).
@@ -100,7 +95,7 @@ class LabelGenerator:
             user
             Text: {text}assistant""",
             input_variables=["text", "labels"],
-            input_types={"labels":list[str],"text":str}
+            input_types={"labels": list[str], "text": str}
         )
         self.llama_new_prompt = PromptTemplate(
             template="""You are an assistant specialized in categorizing documents from the Spanish Boletín Oficial del Estado (BOE).
@@ -109,7 +104,7 @@ class LabelGenerator:
             Provide the output as a JSON with three keys: 'Label1', 'Label2', 'Label3'.\n
             Text: {text}""",
             input_variables=["text", "labels"],
-            input_types={"labels":list[str],"text":str}
+            input_types={"labels": list[str], "text": str}
         )
         self.alternative_llama_prompt = PromptTemplate(
             template="""systemYou are an assistant specialized in categorizing documents from the Spanish Boletín Oficial del Estado (BOE).
@@ -119,7 +114,7 @@ class LabelGenerator:
             user
             Text: {text}assistant""",
             input_variables=["text", "labels"],
-            input_types={"labels":list[str],"text":str}
+            input_types={"labels": list[str], "text": str}
         )
 
         models = {
@@ -152,10 +147,11 @@ class LabelGenerator:
 
     def invoke(self, docs: list[Document]) -> list[Document]:
         docs_copy = docs.copy()
-        
+
         for i, doc in enumerate(docs_copy):
             if i >= self.max_samples:
-                logger.warning(f"Reached max samples: {self.max_samples} while generating labels")
+                logger.warning(
+                    f"Reached max samples: {self.max_samples} while generating labels")
                 break
 
             chunk_text = doc.page_content
@@ -166,26 +162,28 @@ class LabelGenerator:
             doc.metadata['num_tokens'] = chunk_tokens
             doc.metadata['num_caracteres'] = chunk_len
 
-            generation = {"label1":"","label3":"","label2":""}
+            generation = {"label1": "", "label3": "", "label2": ""}
             MIN_CHUNK_LEN = 3
             try:
                 if len(chunk_text) > MIN_CHUNK_LEN:
-                    generation = self.chain.invoke({"text": chunk_text, "labels": self.labels})
-                logger.info(f"LLM output for chunk of len {len(chunk_text)}:\n{generation=}")
+                    generation = self.chain.invoke(
+                        {"text": chunk_text, "labels": self.labels})
+                logger.info(
+                    f"LLM output for chunk of len {len(chunk_text)}:\n{generation=}")
             except Exception as e:
-                logger.exception(f"LLM Error generation error message for chunk of len = {len(chunk_text)}\nCHUNK :{chunk_text}:\nERROR: {e}")
-            
+                logger.exception(
+                    f"LLM Error generation error message for chunk of len = {len(chunk_text)}\nCHUNK :{chunk_text}:\nERROR: {e}")
+
             if len(chunk_text) <= MIN_CHUNK_LEN:
-                generation = {"label1":"NoChunkText","label3":"NoChunkText","label2":"NoChunkText"}
+                generation = {"label1": "NoChunkText",
+                              "label3": "NoChunkText", "label2": "NoChunkText"}
             try:
                 id2label = []
-                for _,label in generation.items():
-                    id2label.append(str(self.label2id.get(label,"999")))
+                for _, label in generation.items():
+                    id2label.append(str(self.label2id.get(label, "999")))
                 doc.metadata['label'] = id2label
                 logger.info(f"for doc {i} id2label : {id2label}")
             except Exception as e:
                 logger.exception(f"LLM Error message:  : {e}")
 
         return docs
-
-

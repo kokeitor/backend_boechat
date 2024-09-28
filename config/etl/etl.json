@@ -1,6 +1,6 @@
 {
   "parser": {
-    "directory_path": "./data/boe/dias/2024/04/prueba",
+    "directory_path": "./data/boe/uploads",
     "file_type": ".pdf",
     "recursive_parser": true,
     "result_type": "markdown",

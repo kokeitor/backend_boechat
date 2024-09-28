@@ -1,6 +1,6 @@
 from fastapi import HTTPException, APIRouter, Request
 from fastapi.responses import StreamingResponse
-from src.API.models.models import ChatResponse
+from API.models.models import ChatResponse
 from typing import Optional, Annotated
 from fastapi import UploadFile, File, Form
 import os

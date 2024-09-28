@@ -10,7 +10,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from typing import Union, Optional, ClassVar
 from langchain.schema import Document
-from langchain_huggingface import HuggingFaceEmbeddings
+# from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 from langchain_community.embeddings import GPT4AllEmbeddings
 from datetime import datetime, timezone
 from dataclasses import dataclass, field
@@ -20,16 +21,19 @@ from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 import logging
 from copy import deepcopy
-import matplotlib
 
 # Set the default font to DejaVu Sans
-plt.rcParams['font.family'] = 'DejaVu Sans'  # or another font that includes the glyphs
+# or another font that includes the glyphs
+plt.rcParams['font.family'] = 'DejaVu Sans'
 
 # Logging configuration
-logger = logging.getLogger("nlp_module_logger")  # Child logger [for this module]
+# Child logger [for this module]
+logger = logging.getLogger("nlp_module_logger")
 # LOG_FILE = os.path.join(os.path.abspath("../../../logs/download"), "download.log")  # If not using json config
 
 # NLP download resources
+
+
 def ensure_nltk_data(resource):
     try:
         find(resource)
@@ -38,15 +42,19 @@ def ensure_nltk_data(resource):
         nltk.download(resource)
         logger.info(f"'{resource}' has been downloaded.")
 
+
 ensure_nltk_data('corpora/stopwords.zip')
 ensure_nltk_data('corpora/omw-1.4.zip')
 ensure_nltk_data('corpora/wordnet.zip')
 
 # util functions
+
+
 def get_current_spanish_date_iso():
     # Get the current date and time in the Europe/Madrid time zone
     spanish_tz = pytz.timezone('Europe/Madrid')
     return datetime.now(spanish_tz).strftime("%Y%m%d%H%M%S")
+
 
 @dataclass
 class TextPreprocess:
@@ -85,17 +93,18 @@ class TextPreprocess:
     spc_caracters: Optional[list[str]] = field(default_factory=list)
     spc_words: Optional[list[str]] = None
     data: Optional[pd.DataFrame] = None
-    
+
     def __post_init__(self):
         self.corpus = [d.page_content for d in self.docs]
         self.metadata = [d.metadata for d in self.docs]
         if self.spc_caracters is None:
             self.spc_caracters = TextPreprocess.SPC_CARACTERS
-    
+
     def del_stopwords(self, lang: str) -> 'TextPreprocess':
         empty_words = set(stopwords.words(lang))
         for i, t in enumerate(self.corpus):
-            self.corpus[i] = ' '.join([word for word in t.split() if word.lower() not in empty_words])
+            self.corpus[i] = ' '.join(
+                [word for word in t.split() if word.lower() not in empty_words])
         return self
 
     def del_urls(self) -> 'TextPreprocess':
@@ -117,12 +126,12 @@ class TextPreprocess:
             processed_text = re.sub(TextPreprocess.PATRON_EMOJI, '', t)
             self.corpus[i] = re.sub(r'\s+', ' ', processed_text.strip())
         return self
-    
+
     def del_special(self) -> 'TextPreprocess':
         for i, t in enumerate(self.corpus):
             self.corpus[i] = ''.join([c for c in t if c != self.spc_caracters])
         return self
-    
+
     def del_special_words(self) -> 'TextPreprocess':
         if self.spc_words is not None:
             for idx, t in enumerate(self.corpus):
@@ -136,19 +145,18 @@ class TextPreprocess:
             logger.warning("No special words defined to delete")
         return self
 
-
     def del_digits(self) -> 'TextPreprocess':
         for i, t in enumerate(self.corpus):
             processed_text = re.sub(r'[0-9]+', '', t)
             self.corpus[i] = re.sub(r'\s+', ' ', processed_text.strip())
         return self
-    
+
     def del_chinese_japanese(self) -> 'TextPreprocess':
         for i, t in enumerate(self.corpus):
             processed_text = re.sub(TextPreprocess.PATRON_CH_JAP, '', t)
             self.corpus[i] = re.sub(r'\s+', ' ', processed_text.strip())
         return self
-    
+
     def del_extra_spaces(self) -> 'TextPreprocess':
         for i, t in enumerate(self.corpus):
             self.corpus[i] = re.sub(r'\s+', ' ', t.strip())
@@ -177,10 +185,11 @@ class TextPreprocess:
         lemmatizer = WordNetLemmatizer()
         for i, t in enumerate(self.corpus):
             word_tokens = t.split()
-            lemmas = [lemmatizer.lemmatize(word, pos='v') for word in word_tokens]
+            lemmas = [lemmatizer.lemmatize(word, pos='v')
+                      for word in word_tokens]
             self.corpus[i] = ' '.join(lemmas)
         return self
-    
+
     def custom_del(
         self,
         text_field_name: str,
@@ -190,14 +199,15 @@ class TextPreprocess:
         plot: bool = False
     ) -> tuple[dict, Union[pd.DataFrame, str]]:
         """Method for custom preprocess/delete characters from list[texts] or text (string)"""
-        
+
         if data is None:
             data = self.data
-            
+
         special_c = self.spc_caracters
 
         if data is None:
-            raise ValueError("Data must be provided either as a class attribute or as a method parameter.")
+            raise ValueError(
+                "Data must be provided either as a class attribute or as a method parameter.")
 
         if isinstance(data, pd.DataFrame):
             data_is_string = False
@@ -230,12 +240,14 @@ class TextPreprocess:
                     if char in text or match_obj is not None:
                         count += 1
                         if delete:
-                            df.loc[i, text_field_name] = ''.join([c for c in text if c != char])
+                            df.loc[i, text_field_name] = ''.join(
+                                [c for c in text if c != char])
                     special_c_count[char] = count
 
         if plot:
             plt.figure(figsize=(10, 6))
-            plt.bar(special_c_count.keys(), special_c_count.values(), color='skyblue')
+            plt.bar(special_c_count.keys(),
+                    special_c_count.values(), color='skyblue')
             plt.xlabel('Special Characters')
             plt.ylabel('Frequency')
             plt.title('Special Characters in Texts')
@@ -273,7 +285,8 @@ class TextPreprocess:
         try:
             X = vectorizador.fit_transform(self.corpus)
         except UnicodeDecodeError as e:
-            logger.exception(f"Error: characters not of the given encoding -> {e}")
+            logger.exception(
+                f"Error: characters not of the given encoding -> {e}")
             return pd.DataFrame()
 
         nombres_caracteristicas = vectorizador.get_feature_names_out()
@@ -307,11 +320,13 @@ class TextPreprocess:
         try:
             X = tfidf_vectorizador.fit_transform(self.corpus)
         except UnicodeDecodeError as e:
-            logger.exception(f"Error: characters not of the given encoding -> {e}")
+            logger.exception(
+                f"Error: characters not of the given encoding -> {e}")
             return pd.DataFrame()
 
         terms = tfidf_vectorizador.get_feature_names_out()
         return pd.DataFrame(data=X.toarray(), columns=terms, index=self.corpus)
+
 
 @dataclass
 class BoeProcessor(TextPreprocess):
@@ -319,30 +334,37 @@ class BoeProcessor(TextPreprocess):
 
     def invoke(self, docs: Optional[list[Document]] = None) -> list[Document]:
         new_docs = []
-        
+
         if docs is None:
-            logger.info("Transformando en 'Document' los textos BOE preprocesados")
-            self.processed_docs = self.reconstruct_docs(corpus=self.corpus, metadata_list=self.metadata)
+            logger.info(
+                "Transformando en 'Document' los textos BOE preprocesados")
+            self.processed_docs = self.reconstruct_docs(
+                corpus=self.corpus, metadata_list=self.metadata)
         else:
-            logger.warning(f"Los documentos BOE en {self} han sido cambiados en el metodo invoke")
+            logger.warning(
+                f"Los documentos BOE en {self} han sido cambiados en el metodo invoke")
             self.processed_docs = deepcopy(docs)
-            
+
         logger.info(f"NUMERO DE DOCS A ANALIZAR : {len(self.processed_docs)}")
         for i, doc in enumerate(self.processed_docs):
             new_metadata = {}
-            new_metadata["fecha_publicacion_boe"], doc = self._get_date_creation_doc(doc=doc)
+            new_metadata["fecha_publicacion_boe"], doc = self._get_date_creation_doc(
+                doc=doc)
             doc = self.get_del_patrones(doc=doc)
             # titles, doc = self._clean_doc(doc=doc)
             # new_metadata.update(titles)
             new_metadata['pdf_id'] = self._get_id()
-            new_docs.append(self._put_metadata(doc=doc, new_metadata=new_metadata))
+            new_docs.append(self._put_metadata(
+                doc=doc, new_metadata=new_metadata))
             logger.info(f"Update metadata of doc {i} :  {doc.metadata}")
             logger.info(f"Char len of doc {i} : {len(doc.page_content)}")
-            
-        logger.info(f"Number of docs after invoke BoeProcessor : {len(new_docs)}")
-        
+
+        logger.info(
+            f"Number of docs after invoke BoeProcessor : {len(new_docs)}")
+
         # check to avoid empty docs returned
-        flag = True if (isinstance(new_docs,list) or isinstance(new_docs,Document)) and len(new_docs) > 0 else False
+        flag = True if (isinstance(new_docs, list) or isinstance(
+            new_docs, Document)) and len(new_docs) > 0 else False
         if flag:
             return new_docs
         else:
@@ -352,9 +374,12 @@ class BoeProcessor(TextPreprocess):
     def reconstruct_docs(self, corpus: list[str], metadata_list: list[str]) -> list[Document]:
         docs = []
         for i, (text, metadata) in enumerate(zip(corpus, metadata_list)):
-            logger.info(f"Page content len before preprocess for doc {i+1} : {len(text)}")
-            logger.debug(f"Page content [100 first characters] before preprocess for doc {i+1} : {text[0:100]}")
-            logger.info(f"Metadata before preprocess for doc {i+1}: {metadata}")
+            logger.info(
+                f"Page content len before preprocess for doc {i+1} : {len(text)}")
+            logger.debug(
+                f"Page content [100 first characters] before preprocess for doc {i+1} : {text[0:100]}")
+            logger.info(
+                f"Metadata before preprocess for doc {i+1}: {metadata}")
             docs.append(Document(page_content=text, metadata=metadata))
         return docs
 
@@ -365,7 +390,7 @@ class BoeProcessor(TextPreprocess):
     def _clean_doc(self, doc: Document) -> tuple[dict[str, str], Document]:
         """
         Clean the document by removing specific patterns and extracting titles.
-        
+
         Args:
             doc (Document): The document to be cleaned.
 
@@ -384,7 +409,7 @@ class BoeProcessor(TextPreprocess):
     def _extract_titles(self, text: str) -> dict[str, str]:
         """
         Extract titles from the document text using predefined patterns.
-        
+
         Args:
             text (str): The document text to extract titles from.
 
@@ -395,9 +420,12 @@ class BoeProcessor(TextPreprocess):
         title_2 = r'^###(?!\#).*$'
         title_3 = r'^####(?!\#).*$'
 
-        titles_1 = list(set([re.sub(r'#', '', t).strip() for t in re.findall(title_1, text, re.MULTILINE)]))
-        titles_2 = list(set([re.sub(r'#', '', t).strip() for t in re.findall(title_2, text, re.MULTILINE)]))
-        titles_3 = list(set([re.sub(r'#', '', t).strip() for t in re.findall(title_3, text, re.MULTILINE)]))
+        titles_1 = list(set([re.sub(r'#', '', t).strip()
+                        for t in re.findall(title_1, text, re.MULTILINE)]))
+        titles_2 = list(set([re.sub(r'#', '', t).strip()
+                        for t in re.findall(title_2, text, re.MULTILINE)]))
+        titles_3 = list(set([re.sub(r'#', '', t).strip()
+                        for t in re.findall(title_3, text, re.MULTILINE)]))
 
         patterns_to_eliminate_titles = [
             r'I', r'II', r'III',
@@ -418,7 +446,7 @@ class BoeProcessor(TextPreprocess):
     def _clean_titles(self, titles: list[str], patterns: list[str]) -> list[str]:
         """
         Clean the titles by removing specific patterns.
-        
+
         Args:
             titles (list[str]): The list of titles to be cleaned.
             patterns (list[str]): The patterns to remove from the titles.
@@ -495,18 +523,18 @@ class BoeProcessor(TextPreprocess):
             r'cve: BOE-[A-Z]-\d{4}-\d{4}',
             r'https://www.boe.es',
             r'cve: BOE-[A-Z]-\d{4}-\d{4}',
-            r'Núm. \d+ [A-Za-z]+ \d+ de [A-Za-z]+ de \d{4} Sec. [A-Z]+\. Pág\. \d+', 
-            r'## Núm. \d+ [A-Za-z]+ \d+ de [A-Za-z]+ de \d{4} Sec. [A-Z]+\. Pág\. \d+', 
+            r'Núm. \d+ [A-Za-z]+ \d+ de [A-Za-z]+ de \d{4} Sec. [A-Z]+\. Pág\. \d+',
+            r'## Núm. \d+ [A-Za-z]+ \d+ de [A-Za-z]+ de \d{4} Sec. [A-Z]+\. Pág\. \d+',
             r'BOLETÍN OFICIAL DEL ESTADO',
-            r'Lunes \d+ de abril de \d{4}', 
+            r'Lunes \d+ de abril de \d{4}',
             r'ISSN: \d{4}-\d{3}[XD]',
             r'cv\se:\sB\sO\sE-\sA-\s\d{4}-\d+\sVe\srif\sic\sab\sle\se\sn\sht\stp\ss://\sw\sw\w\.boe\.es',
             r'D\. L\.: M-\d+/\d{4} - ISSN: \d{4}-\d{4}',
             r"BOLETÍN", r"OFICIAL",
-            r"DEL", r"ESTADO", r"CONSEJO", 
-            r"GENERAL", r"DEL", r"PODER", 
+            r"DEL", r"ESTADO", r"CONSEJO",
+            r"GENERAL", r"DEL", r"PODER",
             r"JUDICIAL", r"cve", r"Núm",
-            r"ISSN:", r"Pág.", r"Sec.", 
+            r"ISSN:", r"Pág.", r"Sec.",
             r"### Primero.", r"### Segundo."
         ]
 
@@ -516,12 +544,12 @@ class BoeProcessor(TextPreprocess):
         logger.info(f"Text len after preprocess {len(text)=}")
         doc.page_content = text
         logger.debug(f"After preprocess {doc.page_content=}")
-        logger.info(f"Page content len after preprocess {len(doc.page_content)=}")
-        
+        logger.info(
+            f"Page content len after preprocess {len(doc.page_content)=}")
+
         new_doc = self._put_metadata(doc=doc, new_metadata=metadata)
 
         return new_doc
-
 
     def _get_date_creation_doc(self, doc: Document) -> tuple[str, Document]:
         doc_copy = deepcopy(doc)

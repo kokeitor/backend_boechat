@@ -1,19 +1,16 @@
 import os
-import json
 import re
 import uuid
 import torch
-import pytz
 import tiktoken
 import numpy as np
-import pandas as pd
 import torch.nn as nn
 import matplotlib.pyplot as plt
-from transformers import AutoTokenizer, DebertaModel, GPT2Tokenizer
+from transformers import AutoTokenizer, GPT2Tokenizer
 from typing import Union, Optional, ClassVar
 from langchain.schema import Document
 # from langchain_huggingface import HuggingFaceEmbeddings
-from langchain.embeddings.huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 from langchain_community.embeddings import GPT4AllEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from datetime import datetime, timezone
@@ -33,11 +30,14 @@ logger = logging.getLogger("splitters_module_logger")
 
 # Tokenizers
 TOKENIZER_GPT3 = tiktoken.encoding_for_model("gpt-3.5")
-tokenizer_gpt2 = GPT2Tokenizer.from_pretrained('gpt2')
-TOKENIZER_LLAMA3 = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B")
-tokenizer_deberta = AutoTokenizer.from_pretrained("microsoft/deberta-base")
+tokenizer_gpt2 = GPT2Tokenizer.from_pretrained(
+    'gpt2', clean_up_tokenization_spaces=False)
+TOKENIZER_LLAMA3 = AutoTokenizer.from_pretrained(
+    "meta-llama/Meta-Llama-3-8B", clean_up_tokenization_spaces=False)
+tokenizer_deberta = AutoTokenizer.from_pretrained(
+    "microsoft/deberta-base", clean_up_tokenization_spaces=False)
 tokenizer_roberta = AutoTokenizer.from_pretrained(
-    "PlanTL-GOB-ES/roberta-base-bne")
+    "PlanTL-GOB-ES/roberta-base-bne", clean_up_tokenization_spaces=False)
 
 # Embedding model
 EMBEDDING_MODEL = HuggingFaceEmbeddings(
