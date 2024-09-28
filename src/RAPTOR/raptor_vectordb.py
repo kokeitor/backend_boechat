@@ -139,7 +139,7 @@ class RaptorVectorDB:
             else:
                 return retrieved_docs
 
-    def delete_index_content(self):
+    def delete_index_content(self) -> None:
         try:
             self.index.delete(delete_all=True, namespace=str(
                 os.getenv('PINECONE_INDEX_NAMESPACE')))
