@@ -70,7 +70,7 @@
   },
   "storer": {
     "store_path": "./data/boedataset",
-    "file_name":"RAPTOR_CHUNKS",
+    "file_name":"RAPTOR-CHUNKS",
     "file_format": "csv"
   }
 }

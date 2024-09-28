@@ -36,11 +36,13 @@ class RaptorVectorDB:
             pc = Pinecone(api_key=self.api_key)
             existing_indexes = [index_info["name"]
                                 for index_info in pc.list_indexes()]
+            logger.info(f"existing_indexes : {existing_indexes}")
 
             if self.index_name not in existing_indexes:
+                logger.warning(f"Creting Index : {self.index_name}")
                 pc.create_index(
                     name=self.index_name,
-                    dimension=1536,
+                    dimension=384,
                     metric="cosine",
                     spec=ServerlessSpec(cloud="aws", region="us-east-1"),
                 )
@@ -82,12 +84,12 @@ class RaptorVectorDB:
 
     def store_docs(self, docs: list[Document]) -> None:
         if self.retriever and self.vectorstore:
-            print(self.retriever, self.vectorstore)
             # Check if the list is not empty
             if isinstance(docs, list) and docs and isinstance(docs[0], Document):
                 docs_clean = self.clean_metadata(docs=docs)
                 try:
-                    self.vectorstore.add_documents(documents=docs_clean)
+                    self.vectorstore.add_documents(documents=docs_clean, kwargs={
+                                                   "namespace": str(os.getenv('PINECONE_INDEX_NAMESPACE'))})
                 except Exception as e:
                     logger.exception(
                         "Failed to store documents in vector store", exc_info=e)
@@ -115,7 +117,8 @@ class RaptorVectorDB:
 
     def delete_index_content(self):
         try:
-            self.index.delete(delete_all=True)
+            self.index.delete(delete_all=True, namespace=str(
+                os.getenv('PINECONE_INDEX_NAMESPACE')))
             logger.info(
                 f"All content in index '{self.index_name}' has been deleted.")
         except Exception as e:

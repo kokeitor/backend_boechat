@@ -154,11 +154,14 @@ class RaptorDataset(BaseModel):
             raise DirectoryNotFoundError(
                 f"The specified directory '{self.data_dir_path}' does not exist.")
         dataframes = []
+        logger.warning(
+            f"os.listdir(self.data_dir_path) : {os.listdir(self.data_dir_path)}")
         for filename in os.listdir(self.data_dir_path):
             logger.warning(f"filename : {filename}")
             if self.file_name:
                 if filename.split("_")[1] == self.file_name:
                     file_path = os.path.join(self.data_dir_path, filename)
+                    logger.warning(f"file_path : {file_path}")
                     if filename.endswith('.csv'):
                         df = pd.read_csv(file_path)
                         logger.warning(f"Reading CSV file : {file_path}")
