@@ -48,14 +48,24 @@ class RaptorVectorDB:
                 )
                 while not pc.describe_index(self.index_name).status["ready"]:
                     time.sleep(1)
-
-            self.index = pc.Index(self.index_name)
-            pinecone_vectorstore = PineconeVectorStore(
-                index=self.index,
-                embedding=self.embedding_model,
-                text_key='page_content',
-                distance_strategy=DistanceStrategy.COSINE
-            )
+                    self.index = pc.Index(self.index_name)
+                self.index = pc.Index(self.index_name)
+                pinecone_vectorstore = PineconeVectorStore(
+                    index=self.index,
+                    embedding=self.embedding_model,
+                    text_key='page_content',
+                    distance_strategy=DistanceStrategy.COSINE
+                )
+            else:
+                self.index = pc.Index(self.index_name)
+                self.delete_index_content()
+                self.index = pc.Index(self.index_name)
+                pinecone_vectorstore = PineconeVectorStore(
+                    index=self.index,
+                    embedding=self.embedding_model,
+                    text_key='page_content',
+                    distance_strategy=DistanceStrategy.COSINE
+                )
         except Exception as e:
             logger.error(
                 f"Error while connecting to PineCone DB from existing index : {self.index_name} -> {e}")
@@ -116,13 +126,6 @@ class RaptorVectorDB:
 
     def get_context(self, query: str, filter_key: str, filter_value: str) -> list[Document]:
         if self.retriever and self.vectorstore:
-            """ 
-                retrieved_docs = self.retriever.invoke(
-                input=query,
-                # filter={filter_key: filter_value},
-                # namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
-            )
-            """
             retrieved_docs = self.vectorstore.similarity_search(
                 query=query,
                 k=3,

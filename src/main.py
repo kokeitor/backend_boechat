@@ -110,8 +110,6 @@ def execute_raptor():
         index_name=str(os.getenv('PINECONE_INDEX_NAME')),
         embd_model=str(os.getenv('EMBEDDING_MODEL'))
     )
-    # Restart index namesapce content
-    # db.delete_index_content()
     # Store new embedings
     db.store_docs(docs=raptor_dataset.documents)
     # Try database query
@@ -120,7 +118,6 @@ def execute_raptor():
     filter_value = "Todos los Tipos de Decretos (Legislativos y no Legislativos)"
     context = db.get_context(
         query=query, filter_key=filter_key, filter_value=filter_value)
-    print(context)
     try:
         logger.info(f"{query=} - {filter_key=} - {filter_value=}:\n{context=}")
         logger.info(
