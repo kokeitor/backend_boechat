@@ -2,21 +2,16 @@ import os
 import re
 import uuid
 import torch
-import tiktoken
 import numpy as np
 import torch.nn as nn
 import matplotlib.pyplot as plt
-from transformers import AutoTokenizer, GPT2Tokenizer
+from transformers import AutoTokenizer
 from typing import Union, Optional, ClassVar
 from langchain.schema import Document
-# from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
-from langchain_community.embeddings import GPT4AllEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from datetime import datetime, timezone
 from dataclasses import dataclass, field
 import logging
-
 from ETL.utils import get_current_spanish_date_iso, setup_logging
 
 # Set the default font to DejaVu Sans
@@ -28,29 +23,16 @@ plt.rcParams['font.family'] = 'DejaVu Sans'
 # Child logger [for this module]
 logger = logging.getLogger("splitters_module_logger")
 
-# Tokenizers
-TOKENIZER_GPT3 = tiktoken.encoding_for_model("gpt-3.5")
-tokenizer_gpt2 = GPT2Tokenizer.from_pretrained(
-    'gpt2', clean_up_tokenization_spaces=False)
-TOKENIZER_LLAMA3 = AutoTokenizer.from_pretrained(
-    "meta-llama/Meta-Llama-3-8B", clean_up_tokenization_spaces=False)
-tokenizer_deberta = AutoTokenizer.from_pretrained(
-    "microsoft/deberta-base", clean_up_tokenization_spaces=False)
-tokenizer_roberta = AutoTokenizer.from_pretrained(
-    "PlanTL-GOB-ES/roberta-base-bne", clean_up_tokenization_spaces=False)
-
-# Embedding model
-EMBEDDING_MODEL = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
-
 
 class CustomSemanticSplitter:
     MIN_INITIAL_LONG_CHUNKS: int = 5
 
     def __init__(
             self,
-            embedding_model=EMBEDDING_MODEL,
-            tokenizer=TOKENIZER_LLAMA3,
+            embedding_model=HuggingFaceEmbeddings(
+                model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"),
+            tokenizer=AutoTokenizer.from_pretrained(
+                "meta-llama/Meta-Llama-3-8B", clean_up_tokenization_spaces=False),
             buffer_size: int = 2,
             threshold: int = 75,
             verbose: int = 0,

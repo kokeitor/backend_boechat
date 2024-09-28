@@ -2,7 +2,6 @@ import tiktoken
 import logging
 import logging.config
 import logging.handlers
-from transformers import AutoTokenizer, DebertaModel, GPT2Tokenizer
 from langchain.schema import Document
 from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
@@ -20,16 +19,6 @@ plt.rcParams['font.family'] = 'DejaVu Sans'
 # Logging configuration
 # Child logger [for this module]
 logger = logging.getLogger("ETL_module_logger")
-
-
-# Tokenizers
-TOKENIZER_GPT3 = tiktoken.encoding_for_model("gpt-3.5")
-tokenizer_gpt2 = GPT2Tokenizer.from_pretrained(
-    'gpt2', clean_up_tokenization_spaces=False)
-TOKENIZER_LLAMA3 = AutoTokenizer.from_pretrained(
-    "meta-llama/Meta-Llama-3-8B", clean_up_tokenization_spaces=False)
-tokenizer_deberta = AutoTokenizer.from_pretrained(
-    "microsoft/deberta-base", clean_up_tokenization_spaces=False)
 
 
 class LabelGenerator:

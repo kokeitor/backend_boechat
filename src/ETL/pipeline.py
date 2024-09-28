@@ -10,7 +10,6 @@ import matplotlib.pyplot as plt
 from transformers import AutoTokenizer, GPT2Tokenizer
 from typing import Union, Optional
 from langchain.schema import Document
-# from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 import ETL.splitters
 import ETL.parsers
@@ -23,23 +22,10 @@ from ETL.llm import LabelGenerator
 # Set the default font to DejaVu Sans
 plt.rcParams['font.family'] = 'DejaVu Sans'
 
-# Suppress the specific FutureWarning
-warnings.filterwarnings("ignore", category=FutureWarning,
-                        module="huggingface_hub.file_download")
 
 # Logging configuration
 # Child logger [for this module]
 logger = logging.getLogger("ETL_module_logger")
-
-
-# Tokenizers
-TOKENIZER_GPT3 = tiktoken.encoding_for_model("gpt-3.5")
-tokenizer_gpt2 = GPT2Tokenizer.from_pretrained(
-    'gpt2', clean_up_tokenization_spaces=False)
-TOKENIZER_LLAMA3 = AutoTokenizer.from_pretrained(
-    "meta-llama/Meta-Llama-3-8B", clean_up_tokenization_spaces=False)
-tokenizer_deberta = AutoTokenizer.from_pretrained(
-    "microsoft/deberta-base", clean_up_tokenization_spaces=False)
 
 
 class Storer:

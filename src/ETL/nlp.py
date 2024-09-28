@@ -10,10 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from typing import Union, Optional, ClassVar
 from langchain.schema import Document
-# from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
-from langchain_community.embeddings import GPT4AllEmbeddings
-from datetime import datetime, timezone
+from datetime import datetime
 from dataclasses import dataclass, field
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
@@ -29,7 +26,6 @@ plt.rcParams['font.family'] = 'DejaVu Sans'
 # Logging configuration
 # Child logger [for this module]
 logger = logging.getLogger("nlp_module_logger")
-# LOG_FILE = os.path.join(os.path.abspath("../../../logs/download"), "download.log")  # If not using json config
 
 # NLP download resources
 

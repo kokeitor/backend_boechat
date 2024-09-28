@@ -10,7 +10,6 @@ import asyncio
 # Logging configuration
 # Child logger [for this module]
 logger = logging.getLogger("parser_module_logger")
-# LOG_FILE = os.path.join(os.path.abspath("../../../logs/download"), "download.log")  # If not using json config
 
 
 class Parser:
