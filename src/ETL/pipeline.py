@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from transformers import AutoTokenizer, GPT2Tokenizer
 from typing import Union, Optional
 from langchain.schema import Document
-from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 import ETL.splitters
 import ETL.parsers
 import ETL.nlp

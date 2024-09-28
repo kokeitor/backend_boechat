@@ -49,15 +49,15 @@
                         "custom_del": {
                             "apply":true,
                             "delete": false,
-                            "plot": true,
+                            "plot": false,
                             "storage_path":"./data/figures/text"
                                       },
                         "bow": { 
-                            "apply":true,
+                            "apply":false,
                             "storage_path":"./data/figures/text/bow"
                                 },
                         "bow_tf_idf": {
-                              "apply":true,
+                              "apply":false,
                               "storage_path":"./data/figures/text/bow_tf_idf"
                                       }
                       }
@@ -70,11 +70,8 @@
   },
   "storer": {
     "store_path": "./data/boedataset",
-    "file_name":"boe_id_BOE-A-2024-7296",
+    "file_name":"RAPTOR_CHUNKS",
     "file_format": "csv"
-  },
-  "google_sheet_database": {
-    "api_call_max_tries": 10
   }
 }
 

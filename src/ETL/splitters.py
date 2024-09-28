@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from transformers import AutoTokenizer
 from typing import Union, Optional, ClassVar
 from langchain.schema import Document
-from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from dataclasses import dataclass, field
 import logging

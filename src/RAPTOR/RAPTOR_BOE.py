@@ -32,7 +32,7 @@ class ClusterSummaryGenerator:
         self.tokenizer = tiktoken.encoding_for_model("gpt-3.5")
 
         self.prompt = PromptTemplate(
-            template="""You are an assistant specialized in summarizing texts from the Spanish Boletín Oficial del Estado (BOE).\n 
+            template="""You are an assistant specialized in summarizing texts from the Spanish Boletín Oficial del Estado (BOE).\n
             Create a precise and factual summary in Spanish, strictly reflecting the original content without adding \n
             any comments or interpretations.\n
             Text: {text}""",
@@ -43,7 +43,7 @@ class ClusterSummaryGenerator:
             [
                 (
                     "system",
-                    """You are an assistant specialized in summarizing texts from the Spanish Boletín Oficial del Estado (BOE).\n 
+                    """You are an assistant specialized in summarizing texts from the Spanish Boletín Oficial del Estado (BOE).\n
             Create a precise and factual summary in Spanish, strictly reflecting the original content without adding \n
             any comments or interpretations.""",
                 ),
@@ -105,8 +105,9 @@ class ClusterSummaryGenerator:
 class RaptorDataset(BaseModel):
 
     data_dir_path: str = Field(default="./")
-    from_date: str = Field()
-    to_date: str = Field()
+    file_name: Optional[str] = Field(default=None)
+    from_date:  Optional[str] = Field(default=None)
+    to_date:  Optional[str] = Field(default=None)
     desire_columns: Optional[List[str]] = Field(default=None)
     data: Optional[pd.DataFrame] = None
     documents: Optional[list[Document]] = None
@@ -135,7 +136,10 @@ class RaptorDataset(BaseModel):
             f"Informacion de data :\n{self.data.shape} \n{self.data.head()}\n{self.data.columns}")
         self._get_documents()
         logger.info(f"Number of Document objects : {len(self.documents)}")
-        logger.info(f"Document samples :\n {self.documents[2]}")
+        try:
+            logger.info(f"Document samples :\n {self.documents[2]}")
+        except:
+            logger.info(f"Document samples :\n {self.documents}")
 
     def _get_data(self) -> pd.DataFrame:
         """
@@ -149,24 +153,11 @@ class RaptorDataset(BaseModel):
         if not os.path.isdir(self.data_dir_path):
             raise DirectoryNotFoundError(
                 f"The specified directory '{self.data_dir_path}' does not exist.")
-
         dataframes = []
         for filename in os.listdir(self.data_dir_path):
             logger.info(f"filename : {filename}")
-            if "_" in filename and filename[0].isdigit():
-                try:
-                    file_date = datetime.strptime(
-                        filename.split("_")[0], '%Y%m%d%H%M%S')
-                except ValueError as e:
-                    logger.error(f"Error parsing the date: {e}")
-                    continue
-
-                logger.info(f"file_date parsed to correct format: {file_date}")
-
-                if self.parse_date(self.from_date) <= file_date <= self.parse_date(self.to_date):
-                    logger.info(
-                        f"File name date {file_date} between : {self.parse_date(self.from_date)} and {self.parse_date(self.to_date)}")
-                    logger.info(f"Trying to append it")
+            if self.file_name:
+                if filename.split("_")[1] == self.file_name:
                     file_path = os.path.join(self.data_dir_path, filename)
                     if filename.endswith('.csv'):
                         df = pd.read_csv(file_path)
@@ -176,7 +167,31 @@ class RaptorDataset(BaseModel):
                         df = pd.read_parquet(file_path)
                         logger.info(f"Reading parquet file : {file_path}")
                         dataframes.append(df)
+            else:
+                if "_" in filename and filename[0].isdigit():
+                    try:
+                        file_date = datetime.strptime(
+                            filename.split("_")[0], '%Y%m%d%H%M%S')
+                    except ValueError as e:
+                        logger.error(f"Error parsing the date: {e}")
+                        continue
 
+                    logger.info(
+                        f"file_date parsed to correct format: {file_date}")
+
+                    if self.parse_date(self.from_date) <= file_date <= self.parse_date(self.to_date):
+                        logger.info(
+                            f"File name date {file_date} between : {self.parse_date(self.from_date)} and {self.parse_date(self.to_date)}")
+                        logger.info(f"Trying to append it")
+                        file_path = os.path.join(self.data_dir_path, filename)
+                        if filename.endswith('.csv'):
+                            df = pd.read_csv(file_path)
+                            logger.info(f"Reading CSV file : {file_path}")
+                            dataframes.append(df)
+                        elif filename.endswith('.parquet'):
+                            df = pd.read_parquet(file_path)
+                            logger.info(f"Reading parquet file : {file_path}")
+                            dataframes.append(df)
         if dataframes:
             combined_df = pd.concat(dataframes, ignore_index=True)
         else:
@@ -213,7 +228,7 @@ class RaptorDataset(BaseModel):
         else:
             return data
 
-    @staticmethod
+    @ staticmethod
     def parse_date(date_str: str) -> datetime:
         """
         Parses a date string into a datetime object.
@@ -244,7 +259,7 @@ class RaptorDataset(BaseModel):
         to label names and adds them as a new column `label_str` to the DataFrame.
 
         If a row has a label, the label is processed and converted to a string.
-        If no label is present or if the label is NaN, the `label_str` column is 
+        If no label is present or if the label is NaN, the `label_str` column is
         set to "NotExist".
 
         Logs detailed information about the processing at various steps.
@@ -298,8 +313,8 @@ class RaptorDataset(BaseModel):
         """
         Parses a string of label IDs into a list of integers.
 
-        The input string is expected to be in the format "['12', '26', '24']". 
-        This method removes the brackets and quotes, splits the string by commas, 
+        The input string is expected to be in the format "['12', '26', '24']".
+        This method removes the brackets and quotes, splits the string by commas,
         and converts each segment into an integer.
 
         Parameters:
@@ -326,9 +341,9 @@ class RaptorDataset(BaseModel):
         Generates and stores a summary for each unique label in the DataFrame.
 
         This method iterates over each unique label in the `label_str` column,
-        aggregates the text associated with each label up to a specified 
-        maximum length (`MAX_LEN`), and generates a summary using the 
-        `cluster_summary_generator`. The summary is then stored in the 
+        aggregates the text associated with each label up to a specified
+        maximum length (`MAX_LEN`), and generates a summary using the
+        `cluster_summary_generator`. The summary is then stored in the
         `cluster_summary` column of the DataFrame.
 
         Logs detailed information during the processing and summary generation.
@@ -357,9 +372,9 @@ class RaptorDataset(BaseModel):
         """
         Loads documents from the DataFrame and stores them in the `documents` attribute.
 
-        This method utilizes the `DataFrameLoader` to load documents from the 
-        `self.data` DataFrame, with the text content being extracted from the 
-        `page_content_column`. The loaded documents are stored in the `documents` 
+        This method utilizes the `DataFrameLoader` to load documents from the
+        `self.data` DataFrame, with the text content being extracted from the
+        `page_content_column`. The loaded documents are stored in the `documents`
         attribute of the class.
 
         Logs the loading process for debugging purposes.

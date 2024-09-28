@@ -20,7 +20,7 @@
                 "class": "logging.handlers.RotatingFileHandler",
                 "level": "INFO",
                 "formatter": "detailed",
-                "filename": "C:\\Users\\Jorge\\Desktop\\MASTER_IA\\TFM\\proyecto\\logs\\graph\\graph.log",
+                "filename": ".\\logs\\graph\\graph.log",
                 "maxBytes": 100000,
                 "backupCount": 3,
                 "encoding": "utf-8"

@@ -20,7 +20,7 @@
                 "class": "logging.handlers.RotatingFileHandler",
                 "level": "DEBUG",
                 "formatter": "detailed",
-                "filename": "C:\\Users\\Jorge\\Desktop\\MASTER_IA\\TFM\\proyecto\\logs\\rag_eval\\rag_eval.log",
+                "filename": ".\\logs\\rag_eval\\rag_eval.log",
                 "maxBytes": 100000,
                 "backupCount": 3,
                 "encoding": "utf-8"
