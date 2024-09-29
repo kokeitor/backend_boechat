@@ -56,8 +56,6 @@ os.environ['RAPTOR_CHUNKS_FILE_NAME'] = os.getenv('RAPTOR_CHUNKS_FILE_NAME')
 
 
 def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
-    setup_logging(file_name="graph.json")
-
     # Config graph file
     CONFIG_PATH = os.path.join(os.path.dirname(
         __file__), '..', 'config/graph', 'graph.json')
@@ -87,8 +85,6 @@ def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
 
 
 def setup_etl_pipeline():
-    setup_logging(file_name="etl.json")
-
     ETL_CONFIG_PATH = os.path.join(os.path.abspath("./config/etl"), "etl.json")
     logger.info(F"ETL_CONFIG_PATH : {ETL_CONFIG_PATH}")
 
@@ -99,7 +95,6 @@ def setup_etl_pipeline():
 
 
 def setup_raptor_dataset():
-    setup_logging(file_name="raptor_boe.json")
     # raptor_dataset.initialize_data()
     return RaptorDataset(
         data_dir_path="./data/boedataset",
@@ -128,16 +123,20 @@ def setup_vector_db():
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     setup_logging(file_name="api.json")
+    setup_logging(file_name="graph.json")
+    setup_logging(file_name="etl.json")
+    setup_logging(file_name="raptor_boe.json")
     # Load the model in the state atribute of the app object
     app.state.config_graph, app.state.graph = get_graph()
-    app.state.etl_pipeline = setup_etl_pipeline()
+    app.state.etl_config_pipeline = os.path.join(
+        os.path.abspath("./config/etl"), "etl.json")
     app.state.raptor_dataset = setup_raptor_dataset()
     app.state.vector_db = setup_vector_db()
     yield
     # Clean up the model and release the resources
     app.state.config_graph = None
     app.state.graph = None
-    app.state.etl_pipeline = None
+    app.state.etl_config_pipeline = None
     app.state.raptor_dataset = None
     app.state.vector_db = None
 

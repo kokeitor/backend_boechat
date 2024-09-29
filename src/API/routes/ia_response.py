@@ -1,6 +1,7 @@
 from fastapi import HTTPException, APIRouter, Request
 from fastapi.responses import StreamingResponse
 from src.API.models.models import ChatResponse
+from src.ETL.pipeline import Pipeline
 from typing import Optional, Annotated
 from fastapi import UploadFile, File, Form
 import os
@@ -17,15 +18,6 @@ logger.info(f"UPLOAD_DIR : {UPLOAD_DIR}")
 
 iaResponse = APIRouter()
 
-# Example Pydantic model config for avoiding namespace conflicts
-
-
-class GPT4AllEmbeddings(BaseModel):
-    model_name: str
-
-    class Config:
-        protected_namespaces = ()
-
 
 @iaResponse.get('/restartmemory')
 async def restartMemory(request: Request):
@@ -36,7 +28,7 @@ async def restartMemory(request: Request):
 
 
 @iaResponse.post("/streamboeresponse")
-async def getBoeIaResponse(
+async def getBoeStreamIaResponse(
     request: Request,
     userMessage: Annotated[str, Form()],
     uploadFiles: Optional[list[UploadFile]] = None
@@ -52,7 +44,7 @@ async def getBoeIaResponse(
             with open(os.path.join(UPLOAD_DIR, fileName), "wb") as f:
                 f.write(fileContent)
     # perform etl and raptor in the new files
-    etl = request.app.state.etl_pipeline
+    etl = Pipeline(config_path=request.app.state.etl_config_pipeline)
     raptor_dataset = request.app.state.raptor_dataset
     database = request.app.state.vector_db
     etl.run()
@@ -108,8 +100,8 @@ async def getBoeIaResponse(
             with open(os.path.join(UPLOAD_DIR, fileName), "wb") as f:
                 f.write(fileContent)
 
-    # perform etl and raptor in the new files
-    etl = request.app.state.etl_pipeline
+   # perform etl and raptor in the new files
+    etl = Pipeline(config_path=request.app.state.etl_config_pipeline)
     raptor_dataset = request.app.state.raptor_dataset
     database = request.app.state.vector_db
     etl.run()
