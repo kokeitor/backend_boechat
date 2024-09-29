@@ -81,24 +81,6 @@ class ConfigGraph:
         "answer_grader": Agent(agent_name="answer_grader", model="GROQ", get_model=get_groq, temperature=0.0, prompt=grade_answer_groq_prompt, parser=StrOutputParser),
     }
 
-    VECTOR_DB: ClassVar = {
-        "chromadb": VectorDB(
-            client="chromadb",
-            hg_embedding_model="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-            k=3
-        ),
-        "pinecone": VectorDB(
-            client="pinecone",
-            hg_embedding_model="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-            k=3
-        ),
-        "qdrant": VectorDB(
-            client="qdrant",
-            hg_embedding_model="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-            k=3
-        )
-    }
-
     config_path: Union[str, None] = None
     graph: Union[StateGraph, None] = None
     compile_graph: Union[CompiledGraph, None] = None

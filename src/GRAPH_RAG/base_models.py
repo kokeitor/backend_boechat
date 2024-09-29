@@ -2,10 +2,7 @@ from typing import Union, Optional, Callable, ClassVar, TypedDict, Annotated, Li
 from pydantic import BaseModel, Field
 from langchain_core.output_parsers import JsonOutputParser, StrOutputParser, BaseTransformOutputParser
 from langchain.prompts import PromptTemplate
-from langchain_core.agents import AgentAction, AgentFinish
 from dataclasses import dataclass
-from VectorDB.db import get_chromadb_retriever, get_pinecone_retriever, get_qdrant_retriever
-from GRAPH_RAG.models import get_hg_emb
 import operator
 from langchain_core.vectorstores import VectorStoreRetriever
 from langchain_core.vectorstores import VectorStore
@@ -56,3 +53,6 @@ class Agent:
 class VectorDB(BaseModel):
     vectorstore: VectorStore
     retriever: VectorStoreRetriever
+
+    class Config:
+        arbitrary_types_allowed = True
