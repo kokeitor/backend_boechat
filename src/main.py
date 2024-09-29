@@ -130,13 +130,6 @@ def execute_raptor():
     return db
 
 
-FRONT_END_URL = os.getenv('FRONT_END_URL')
-logger.info(f"FRONT_END_URL : {FRONT_END_URL}")
-origins = [
-    FRONT_END_URL
-]
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Load the model in the state atribute of the app object
@@ -146,6 +139,11 @@ async def lifespan(app: FastAPI):
     app.state.config_graph = None
     app.state.graph = None
 
+FRONT_END_URL = os.getenv('FRONT_END_URL')
+logger.info(f"FRONT_END_URL : {FRONT_END_URL}")
+origins = [
+    FRONT_END_URL
+]
 
 app = FastAPI(
     title="Boe ChatBot BACKEND",

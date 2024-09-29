@@ -70,17 +70,15 @@ def retriever(vector_database: VectorDB, state: State) -> dict:
     if query_label == 'Otra':
         print(colored(f"\nInvoking db retriever without metadata filter",
               'light_blue', attrs=["bold"]))
-        documents = vector_database.vectorstore.similarity_search(
+        documents = vector_database.retriever.invoke(
             query=question,
-            k=3,
             namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
         )
     else:
         print(colored(
             f"\nInvoking db retriever with metadata filter : {query_label}", 'light_blue', attrs=["bold"]))
-        documents = vector_database.vectorstore.similarity_search(
+        documents = vector_database.retriever.invoke(
             query=question,
-            k=3,
             filter={"label_str": query_label},
             namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
         )
