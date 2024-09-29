@@ -5,19 +5,19 @@ import time
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from decouple import config
-from API.routes.ia_response import iaResponse
-from API.routes.get_data import getData
-from API.Apis.openai_api import OpenAiModel
+from src.API.routes.ia_response import iaResponse
+from src.API.routes.get_data import getData
+from src.API.Apis.openai_api import OpenAiModel
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
-from utils.utils import setup_logging, get_current_spanish_date_iso
-from ETL.pipeline import Pipeline
-from RAPTOR.RAPTOR_BOE import RaptorDataset
-from RAPTOR.raptor_vectordb import RaptorVectorDB
-from GRAPH_RAG.graph import create_graph, compile_graph, save_graph
-from GRAPH_RAG.config import ConfigGraph
+from src.utils.utils import setup_logging, get_current_spanish_date_iso
+from src.ETL.pipeline import Pipeline
+from src.RAPTOR.RAPTOR_BOE import RaptorDataset
+from src.RAPTOR.raptor_vectordb import RaptorVectorDB
+from src.GRAPH_RAG.graph import create_graph, compile_graph, save_graph
+from src.GRAPH_RAG.config import ConfigGraph
 from langgraph.graph.graph import CompiledGraph
-from RAG_EVAL.base_models import RagasDataset
+from src.RAG_EVAL.base_models import RagasDataset
 from langgraph.errors import InvalidUpdateError
 from langchain_core.runnables.config import RunnableConfig
 
@@ -166,7 +166,7 @@ def main():
     logger.info(f"config graph  : {config}")
     logger.info(f"graph  : {graph}")
     inputs = {
-        "question": [f"Hola"],
+        "question": [f"En  la  provincia  de  Santa  Cruz"],
         "date": get_current_spanish_date_iso(),
         "query_label":  None,
         "generation": None,
@@ -174,7 +174,7 @@ def main():
         "fact_based_answer": None,
         "useful_answer": None
     }
-    print(graph.compile_graph.invoke(input=inputs, config=config))
+    graph.compile_graph.invoke(input=inputs, config=config)
     """ 
     ##
     run_app()
@@ -188,7 +188,3 @@ def main():
     vectorDB = execute_raptor()
     logger.info(f"vectorDB  : {vectorDB}")
     """
-
-
-if __name__ == "__main__":
-    main()

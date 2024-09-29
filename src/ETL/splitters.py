@@ -12,7 +12,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from dataclasses import dataclass, field
 import logging
-from ETL.utils import get_current_spanish_date_iso, setup_logging
+from src.ETL.utils import get_current_spanish_date_iso, setup_logging
 
 # Set the default font to DejaVu Sans
 # or another font that includes the glyphs

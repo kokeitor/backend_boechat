@@ -9,10 +9,11 @@ from langgraph.graph.graph import CompiledGraph
 from typing import Union, Optional, Callable, ClassVar
 from langchain_core.output_parsers import JsonOutputParser, StrOutputParser, BaseOutputParser, BaseTransformOutputParser
 from langchain_pinecone import PineconeVectorStore
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores.kinetica import DistanceStrategy
-from exceptions.exceptions import VectorDatabaseError
+from src.exceptions.exceptions import VectorDatabaseError
 from pinecone import Pinecone, ServerlessSpec
-from GRAPH_RAG.prompts import (
+from src.GRAPH_RAG.prompts import (
     query_classify_prompt_openai,
     query_classify_prompt,
     grader_docs_prompt,
@@ -32,17 +33,17 @@ from GRAPH_RAG.prompts import (
     hallucination_prompt_openai,
     grade_answer_prompt_openai
 )
-from GRAPH_RAG.base_models import (
+from src.GRAPH_RAG.base_models import (
     Question,
     Agent,
     VectorDB
 )
-from GRAPH_RAG.graph_utils import (
+from src.GRAPH_RAG.graph_utils import (
     get_current_spanish_date_iso,
     get_id
 )
-from exceptions.exceptions import NoOpenAIToken, JsonlFormatError, ConfigurationFileError
-from GRAPH_RAG.models import (
+from src.exceptions.exceptions import NoOpenAIToken, JsonlFormatError, ConfigurationFileError
+from src.GRAPH_RAG.models import (
     get_nvdia,
     get_ollama,
     get_open_ai_json,
@@ -251,7 +252,8 @@ class ConfigGraph:
             self.index = self.pc.Index(os.getenv('PINECONE_INDEX_NAME'))
             pinecone_vectorstore = PineconeVectorStore(
                 index=self.index,
-                embedding=(os.getenv('EMBEDDING_MODEL')),
+                embedding=HuggingFaceEmbeddings(
+                    model_name=str(os.getenv('EMBEDDING_MODEL'))),
                 text_key='page_content',
                 distance_strategy=DistanceStrategy.COSINE
             )

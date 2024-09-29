@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional, Union, ClassVar
-from ETL.llm import LabelGenerator
+from src.ETL.llm import LabelGenerator
 
 
 class ClassifyChunk(BaseModel):

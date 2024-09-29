@@ -6,13 +6,13 @@ from langgraph.graph import StateGraph, END
 # from langgraph.checkpoint import MemorySaver
 from langgraph.graph.graph import CompiledGraph
 from langchain_core.runnables.graph import MermaidDrawMethod
-from GRAPH_RAG.base_models import (
+from src.GRAPH_RAG.base_models import (
     State
 )
-from GRAPH_RAG.config import ConfigGraph
-from GRAPH_RAG.graph_utils import get_current_spanish_date_iso_file_name_format
-from GRAPH_RAG.chains import get_chain
-from GRAPH_RAG.nodes import (
+from src.GRAPH_RAG.config import ConfigGraph
+from src.GRAPH_RAG.graph_utils import get_current_spanish_date_iso_file_name_format
+from src.GRAPH_RAG.chains import get_chain
+from src.GRAPH_RAG.nodes import (
     query_classificator,
     retriever,
     retreived_docs_grader,

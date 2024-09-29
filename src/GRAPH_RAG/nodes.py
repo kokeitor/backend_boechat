@@ -4,14 +4,14 @@ from termcolor import colored
 from typing import Dict, List, Tuple, Union, Optional, Callable
 from langchain.prompts import PromptTemplate
 from pydantic import ValidationError
-from GRAPH_RAG.base_models import (
+from src.GRAPH_RAG.base_models import (
     State,
     VectorDB,
     Agent
 )
-from GRAPH_RAG.chains import get_chain
-from ETL.llm import LabelGenerator
-from GRAPH_RAG.graph_utils import get_current_spanish_date_iso, merge_page_content
+from src.GRAPH_RAG.chains import get_chain
+from src.ETL.llm import LabelGenerator
+from src.GRAPH_RAG.graph_utils import get_current_spanish_date_iso, merge_page_content
 import re
 
 # Logging configuration
@@ -70,16 +70,18 @@ def retriever(vector_database: VectorDB, state: State) -> dict:
     if query_label == 'Otra':
         print(colored(f"\nInvoking db retriever without metadata filter",
               'light_blue', attrs=["bold"]))
-        documents = vector_database.retriever.invoke(
+        documents = vector_database.vectorstore.similarity_search(
             query=question,
+            k=3,
             namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
         )
 
     else:
         print(colored(
             f"\nInvoking db retriever with metadata filter : {query_label}", 'light_blue', attrs=["bold"]))
-        documents = vector_database.retriever.invoke(
+        documents = vector_database.vectorstore.similarity_search(
             query=question,
+            k=3,
             filter={"label_str": query_label},
             namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
         )

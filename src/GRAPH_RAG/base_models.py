@@ -53,4 +53,4 @@ class Agent:
 class VectorDB:
     def __init__(self, vectorstore: VectorStore, retriever: VectorStoreRetriever):
         self.vectorstore = vectorstore
-        self.retriever: retriever
+        self.retriever = retriever

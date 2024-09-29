@@ -1,10 +1,12 @@
 from fastapi import HTTPException, APIRouter, Request
 from fastapi.responses import StreamingResponse
-from API.models.models import ChatResponse
+from src.API.models.models import ChatResponse
 from typing import Optional, Annotated
 from fastapi import UploadFile, File, Form
 import os
+from src.utils.utils import setup_logging, get_current_spanish_date_iso
 import logging
+from pydantic import BaseModel
 
 # Logging configuration
 # Child logger [for this module]
@@ -15,6 +17,15 @@ logger.info(f"UPLOAD_DIR : {UPLOAD_DIR}")
 
 iaResponse = APIRouter()
 
+# Example Pydantic model config for avoiding namespace conflicts
+
+
+class GPT4AllEmbeddings(BaseModel):
+    model_name: str
+
+    class Config:
+        protected_namespaces = ()
+
 
 @iaResponse.get('/restartmemory')
 async def restartMemory(request: Request):
@@ -22,6 +33,33 @@ async def restartMemory(request: Request):
     openAi = request.app.state.AI_MODEL
     openAi.messages = []
     return {"severResponse": "Memoria del chat borrada con éxito"}
+
+
+@iaResponse.post("/boeresponse")
+async def getBoeIaResponse(
+    request: Request,
+    userMessage: str
+):
+    graph = request.app.state.graph
+    config_graph = request.app.state.config_graph
+    inputs = {
+        "question": [userMessage],
+        "date": get_current_spanish_date_iso(),
+        "query_label":  None,
+        "generation": None,
+        "documents": None,
+        "fact_based_answer": None,
+        "useful_answer": None
+    }
+
+    def stream():
+        stream = graph.compile_graph.astream(input=inputs, config=config_graph)
+        for event in stream:
+            if event["final_report"] and event["final_report"]["report"]:
+                print(event)
+                current_response = event["final_report"]["report"]
+                yield current_response + "\n\n"
+    return StreamingResponse(stream, media_type='text/event-stream')
 
 
 @iaResponse.post("/iaresponse")

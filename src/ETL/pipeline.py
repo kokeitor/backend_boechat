@@ -11,12 +11,12 @@ from transformers import AutoTokenizer, GPT2Tokenizer
 from typing import Union, Optional
 from langchain.schema import Document
 from langchain_huggingface import HuggingFaceEmbeddings
-import ETL.splitters
-import ETL.parsers
-import ETL.nlp
+import src.ETL.splitters
+import src.ETL.parsers
+import src.ETL.nlp
 import warnings
-from ETL.utils import get_current_spanish_date_iso
-from ETL.llm import LabelGenerator
+from src.ETL.utils import get_current_spanish_date_iso
+from src.ETL.llm import LabelGenerator
 
 
 # Set the default font to DejaVu Sans
@@ -88,9 +88,9 @@ class Pipeline:
             config = json.load(file)
         return config
 
-    def _create_parser(self) -> ETL.parsers.Parser:
+    def _create_parser(self) -> src.ETL.parsers.Parser:
         parser_config = self.config.get('parser', {})
-        return ETL.parsers.Parser(
+        return src.ETL.parsers.Parser(
             directory_path=os.path.abspath(parser_config.get(
                 'directory_path', './data/boe/dias/')),
             file_type=parser_config.get('file_type', '.pdf'),
@@ -101,13 +101,13 @@ class Pipeline:
                 'api_key', os.getenv('LLAMA_CLOUD_API_KEY_RAPTOR'))
         )
 
-    def _create_processor(self, docs: list[Document]) -> ETL.nlp.BoeProcessor:
+    def _create_processor(self, docs: list[Document]) -> src.ETL.nlp.BoeProcessor:
         txt_process_config = self.config.get('TextPreprocess', None)
         if txt_process_config is not None:
             spc_words = txt_process_config.get('spc_words', None)
             special_char = txt_process_config.get('spc_caracters', None)
             preprocess_task = txt_process_config.get('task_name', "Default")
-            processor = ETL.nlp.BoeProcessor(
+            processor = src.ETL.nlp.BoeProcessor(
                 task=preprocess_task, docs=docs, spc_caracters=special_char, spc_words=spc_words)
 
             txt_process_methods = txt_process_config.get('methods', None)
@@ -190,13 +190,14 @@ class Pipeline:
             logger.warning(
                 "Configuration of TextPreprocess not found, applying default one")
             preprocess_task = "Default process config"
-            processor = ETL.nlp.BoeProcessor(task=preprocess_task, docs=docs)
+            processor = src.ETL.nlp.BoeProcessor(
+                task=preprocess_task, docs=docs)
 
         return processor
 
-    def _create_splitter(self) -> ETL.splitters.Splitter:
+    def _create_splitter(self) -> src.ETL.splitters.Splitter:
         splitter_config = self.config.get('splitter', {})
-        return ETL.splitters.Splitter(
+        return src.ETL.splitters.Splitter(
             chunk_size=splitter_config.get('chunk_size', 200),
             embedding_model=self._get_embd_model(embd_model=splitter_config.get(
                 'embedding_model', str(os.getenv('EMBEDDING_MODEL')))),

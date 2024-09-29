@@ -8,7 +8,7 @@ from langchain_core.embeddings import Embeddings
 from langchain_core.vectorstores import VectorStore
 from langchain_community.vectorstores.kinetica import DistanceStrategy
 from langchain_huggingface import HuggingFaceEmbeddings
-from exceptions.exceptions import VectorDatabaseError
+from src.exceptions.exceptions import VectorDatabaseError
 from dotenv import load_dotenv
 import time
 from pinecone import Pinecone, ServerlessSpec

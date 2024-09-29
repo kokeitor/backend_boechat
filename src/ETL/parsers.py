@@ -2,7 +2,7 @@ import os
 from langchain.schema import Document
 from llama_parse import LlamaParse
 from llama_index.core import SimpleDirectoryReader
-from ETL.utils import exec_time
+from src.ETL.utils import exec_time
 import logging
 import asyncio
 
