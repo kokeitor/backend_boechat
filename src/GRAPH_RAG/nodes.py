@@ -74,6 +74,7 @@ def retriever(vector_database: VectorDB, state: State) -> dict:
             query=question,
             namespace=os.getenv('PINECONE_INDEX_NAMESPACE')
         )
+
     else:
         print(colored(
             f"\nInvoking db retriever with metadata filter : {query_label}", 'light_blue', attrs=["bold"]))
