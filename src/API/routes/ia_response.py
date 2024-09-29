@@ -13,9 +13,6 @@ from pydantic import BaseModel
 # Child logger [for this module]
 logger = logging.getLogger("routes_ia_response_logger")
 
-UPLOAD_DIR = os.path.join(os.getcwd(), 'data', 'boe', 'uploads')
-logger.info(f"UPLOAD_DIR : {UPLOAD_DIR}")
-
 iaResponse = APIRouter()
 
 
@@ -33,37 +30,64 @@ async def getBoeStreamIaResponse(
     userMessage: Annotated[str, Form()],
     uploadFiles: Optional[list[UploadFile]] = None
 ):
-    logger.info(f"uploadFiles : {uploadFiles}")
+    print(f"uploadFiles: {uploadFiles}")
     fileNames = None
+    upload_directory = os.path.join(os.getcwd(), 'data', 'boe', 'uploads')
+
+    # Ensure the upload directory exists
+    if not os.path.exists(upload_directory):
+        os.makedirs(upload_directory)
+
     if uploadFiles:
         fileNames = []
         for file in uploadFiles:
             fileName = file.filename
             fileNames.append(fileName)
-            fileContent = await file.read()
-            with open(os.path.join(UPLOAD_DIR, fileName), "wb") as f:
-                f.write(fileContent)
-    # perform etl and raptor in the new files
+
+            # Read the file content
+            try:
+                fileContent = await file.read()
+                file_path = os.path.join(upload_directory, fileName)
+
+                # Save the file to the specified directory
+                with open(file_path, "wb") as f:
+                    f.write(fileContent)
+
+                # Check if the file has been saved successfully
+                if not os.path.exists(file_path):
+                    raise HTTPException(
+                        status_code=500, detail=f"Failed to save the file: {fileName}")
+
+                print(f"File '{fileName}' uploaded and saved at {file_path}")
+
+            except Exception as e:
+                raise HTTPException(
+                    status_code=500, detail=f"Error reading or saving file {fileName}: {str(e)}")
+
+    # Perform ETL and Raptor processes with the new files
     etl = Pipeline(config_path=request.app.state.etl_config_pipeline)
     raptor_dataset = request.app.state.raptor_dataset
     database = request.app.state.vector_db
-    etl.run()
-    raptor_dataset.initialize_data()
-    database.delete_index_content()
+
+    etl.run()  # Run the ETL process
+    raptor_dataset.initialize_data()  # Initialize the dataset for Raptor
+    database.delete_index_content()  # Clear the index in the vector database
+    # Store the new documents in the database
     database.store_docs(docs=raptor_dataset.documents)
 
-    # graph and config
+    # Graph and configuration
     graph = request.app.state.graph
     config_graph = request.app.state.config_graph
     inputs = {
         "question": [userMessage],
         "date": get_current_spanish_date_iso(),
-        "query_label":  None,
+        "query_label": None,
         "generation": None,
         "documents": None,
         "fact_based_answer": None,
         "useful_answer": None
     }
+
     final_state = graph.compile_graph.invoke(input=inputs, config=config_graph)
 
     def event_stream(final_state):
@@ -71,58 +95,78 @@ async def getBoeStreamIaResponse(
             current_response = chunk
             # Format the response for server-sent events (SSE)
             yield f"data: {current_response}\n\n"
-        """
-                # Use asynchronous streaming from the graph
-                async for event in graph.compile_graph.astream(input=inputs, config=config_graph):
-                    if event.get("generator") and event["generator"].get("generation"):
-                current_response = event["generator"]["generation"]
-                # Format the response for server-sent events (SSE)
-                yield f"data: {current_response}\n\n"
-        """
+
     # Return the stream as a StreamingResponse with the appropriate media type for SSE
     return StreamingResponse(event_stream(final_state), media_type='text/event-stream')
 
 
-@iaResponse.post("/boeresponse")
-async def getBoeIaResponse(
+@ iaResponse.post("/boeresponse")
+async def getBoeStreamIaResponse(
     request: Request,
     userMessage: Annotated[str, Form()],
     uploadFiles: Optional[list[UploadFile]] = None
 ):
-    logger.info(f"uploadFiles : {uploadFiles}")
+    print(f"uploadFiles: {uploadFiles}")
     fileNames = None
+    upload_directory = os.path.join(os.getcwd(), 'data', 'boe', 'uploads')
+
+    # Ensure the upload directory exists
+    if not os.path.exists(upload_directory):
+        os.makedirs(upload_directory)
+
     if uploadFiles:
         fileNames = []
         for file in uploadFiles:
             fileName = file.filename
             fileNames.append(fileName)
-            fileContent = await file.read()
-            with open(os.path.join(UPLOAD_DIR, fileName), "wb") as f:
-                f.write(fileContent)
 
-   # perform etl and raptor in the new files
+            # Read the file content
+            try:
+                fileContent = await file.read()
+                file_path = os.path.join(upload_directory, fileName)
+
+                # Save the file to the specified directory
+                with open(file_path, "wb") as f:
+                    f.write(fileContent)
+
+                # Check if the file has been saved successfully
+                if not os.path.exists(file_path):
+                    raise HTTPException(
+                        status_code=500, detail=f"Failed to save the file: {fileName}")
+
+                print(f"File '{fileName}' uploaded and saved at {file_path}")
+
+            except Exception as e:
+                raise HTTPException(
+                    status_code=500, detail=f"Error reading or saving file {fileName}: {str(e)}")
+
+    # Perform ETL and Raptor processes with the new files
     etl = Pipeline(config_path=request.app.state.etl_config_pipeline)
     raptor_dataset = request.app.state.raptor_dataset
     database = request.app.state.vector_db
-    etl.run()
-    raptor_dataset.initialize_data()
-    database.delete_index_content()
+
+    etl.run()  # Run the ETL process
+    raptor_dataset.initialize_data()  # Initialize the dataset for Raptor
+    database.delete_index_content()  # Clear the index in the vector database
+    # Store the new documents in the database
     database.store_docs(docs=raptor_dataset.documents)
 
-    # graph and config
+    # Graph and configuration
     graph = request.app.state.graph
     config_graph = request.app.state.config_graph
     inputs = {
         "question": [userMessage],
         "date": get_current_spanish_date_iso(),
-        "query_label":  None,
+        "query_label": None,
         "generation": None,
         "documents": None,
         "fact_based_answer": None,
         "useful_answer": None
     }
+
+    # Invoke the graph with the input and config
     final_state = graph.compile_graph.invoke(input=inputs, config=config_graph)
-    return {"response": final_state["finaal_reprt"]}
+    return {"status": "success", "final_state": final_state}
 
 
 @iaResponse.post("/iaresponse")

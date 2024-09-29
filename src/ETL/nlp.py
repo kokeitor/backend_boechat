@@ -357,6 +357,8 @@ class BoeProcessor(TextPreprocess):
 
         logger.info(
             f"Number of docs after invoke BoeProcessor : {len(new_docs)}")
+        print(f"Number of docs after invoke BoeProcessor : {len(new_docs)}")
+        print(f"docs after invoke BoeProcessor : {new_docs}")
 
         # check to avoid empty docs returned
         flag = True if (isinstance(new_docs, list) or isinstance(
@@ -365,7 +367,7 @@ class BoeProcessor(TextPreprocess):
             return new_docs
         else:
             logger.exception("After preprocessing -> new docs list empty")
-            raise ValueError("After preprocessing -> new docs lisr empty")
+            raise ValueError("After preprocessing -> new docs list empty")
 
     def reconstruct_docs(self, corpus: list[str], metadata_list: list[str]) -> list[Document]:
         docs = []
