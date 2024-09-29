@@ -47,7 +47,7 @@
                         "stem": {"apply":false},
                         "lemmatize": {"apply":false},
                         "custom_del": {
-                            "apply":true,
+                            "apply":false,
                             "delete": false,
                             "plot": false,
                             "storage_path":"./data/figures/text"
