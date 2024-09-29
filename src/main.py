@@ -86,58 +86,60 @@ def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
     ), config_graph
 
 
-def run_app():
-    setup_logging(file_name="api.json")
-
-
-def execute_etl():
+def setup_etl_pipeline():
     setup_logging(file_name="etl.json")
 
     ETL_CONFIG_PATH = os.path.join(os.path.abspath("./config/etl"), "etl.json")
     logger.info(F"ETL_CONFIG_PATH : {ETL_CONFIG_PATH}")
 
     pipeline = Pipeline(config_path=ETL_CONFIG_PATH)
+    # pipeline.run()
 
-    return pipeline.run()
+    return pipeline
 
 
-def execute_raptor():
+def setup_raptor_dataset():
     setup_logging(file_name="raptor_boe.json")
-
-    # Create Raptor data (make cluster summary, process and store in vector database)
-    raptor_dataset = RaptorDataset(
+    # raptor_dataset.initialize_data()
+    return RaptorDataset(
         data_dir_path="./data/boedataset",
         file_name=f"{os.getenv('RAPTOR_CHUNKS_FILE_NAME')}.{os.getenv('RAPTOR_CHUNKS_FILE_EXTENSION')}",
         # from_date="2024-09-28",
         # to_date="2024-08-31",
         desire_columns=None  # Means all columns
     )
-    raptor_dataset.initialize_data()
 
+
+def setup_vector_db():
     # Store in vector database
-    db = RaptorVectorDB(
+
+    # Delete index content
+    # db.delete_index_content()
+    # Store new embedings
+    # db.store_docs(docs=raptor_dataset.documents)
+
+    return RaptorVectorDB(
         api_key=str(os.getenv('PINECONE_API_KEY')),
         index_name=str(os.getenv('PINECONE_INDEX_NAME')),
         embd_model=str(os.getenv('EMBEDDING_MODEL'))
     )
 
-    # Delete index content
-    db.delete_index_content()
-
-    # Store new embedings
-    db.store_docs(docs=raptor_dataset.documents)
-
-    return db
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    setup_logging(file_name="api.json")
     # Load the model in the state atribute of the app object
     app.state.config_graph, app.state.graph = get_graph()
+    app.state.etl_pipeline = setup_etl_pipeline()
+    app.state.raptor_dataset = setup_raptor_dataset()
+    app.state.vector_db = setup_vector_db()
     yield
     # Clean up the model and release the resources
     app.state.config_graph = None
     app.state.graph = None
+    app.state.etl_pipeline = None
+    app.state.raptor_dataset = None
+    app.state.vector_db = None
 
 FRONT_END_URL = os.getenv('FRONT_END_URL')
 logger.info(f"FRONT_END_URL : {FRONT_END_URL}")
