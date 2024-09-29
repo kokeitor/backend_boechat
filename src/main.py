@@ -181,6 +181,7 @@ def main():
     config, graph = get_graph()
     logger.info(f"config graph  : {config}")
     logger.info(f"graph  : {graph}")
+    """ 
     ##
     run_app()
     ##
@@ -192,6 +193,7 @@ def main():
     ##
     vectorDB = execute_raptor()
     logger.info(f"vectorDB  : {vectorDB}")
+    """
 
 
 if __name__ == "__main__":
