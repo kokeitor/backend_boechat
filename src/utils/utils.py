@@ -1,6 +1,8 @@
 import json
 import os
+import pytz
 import logging
+from datetime import datetime
 
 
 def setup_logging(file_name: str) -> None:
@@ -15,3 +17,9 @@ def setup_logging(file_name: str) -> None:
     with open(CONFIG_LOGGER_FILE, encoding='utf-8') as f:
         content = json.load(f)
     logging.config.dictConfig(content)
+
+
+def get_current_spanish_date_iso():
+    """Get the current date and time in the Europe/Madrid time zone"""
+    spanish_tz = pytz.timezone('Europe/Madrid')
+    return str(datetime.now(spanish_tz).strftime("%Y-%m-%d %H:%M:%S"))

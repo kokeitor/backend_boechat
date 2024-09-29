@@ -50,9 +50,7 @@ class Agent:
     parser: BaseTransformOutputParser
 
 
-class VectorDB(BaseModel):
-    vectorstore: VectorStore
-    retriever: VectorStoreRetriever
-
-    class Config:
-        arbitrary_types_allowed = True
+class VectorDB:
+    def __init__(self, vectorstore: VectorStore, retriever: VectorStoreRetriever):
+        self.vectorstore = vectorstore
+        self.retriever: retriever

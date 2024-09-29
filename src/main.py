@@ -1,6 +1,7 @@
 import os
 import logging
 import warnings
+import time
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from decouple import config
@@ -9,7 +10,7 @@ from API.routes.get_data import getData
 from API.Apis.openai_api import OpenAiModel
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
-from utils.utils import setup_logging
+from utils.utils import setup_logging, get_current_spanish_date_iso
 from ETL.pipeline import Pipeline
 from RAPTOR.RAPTOR_BOE import RaptorDataset
 from RAPTOR.raptor_vectordb import RaptorVectorDB
@@ -27,39 +28,6 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 logger = logging.getLogger(__name__)
 
 
-"""
-print(f"OPENAI_API_KEY : {config('OPENAI_API_KEY')}")
-FRONT_END_URL = config('FRONT_END_URL')
-print(f"FRONT_END_URL : {FRONT_END_URL}")
-origins = [
-    FRONT_END_URL
-]
-
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Load the model in the state atribute of the app object
-    app.state.AI_MODEL = OpenAiModel(api_ky=config('OPENAI_API_KEY'))
-    yield
-    # Clean up the model and release the resources
-    app.state.AI_MODEL = None
-
-
-app = FastAPI(
-    title="Boe ChatBot BACKEND",
-    lifespan=lifespan
-)
-app.include_router(iaResponse)
-app.include_router(getData)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["POST", "GET"],
-    allow_headers=["*"],
-)
-
-"""
 load_dotenv()
 
 # Set environment variables
@@ -87,18 +55,6 @@ os.environ['NVIDIA_API_KEY'] = os.getenv('NVIDIA_API_KEY')
 os.environ['RAPTOR_CHUNKS_FILE_NAME'] = os.getenv('RAPTOR_CHUNKS_FILE_NAME')
 
 
-def run_app():
-    setup_logging(file_name="api.json")
-
-
-def execute_etl():
-    setup_logging(file_name="etl.json")
-    ETL_CONFIG_PATH = os.path.join(os.path.abspath("./config/etl"), "etl.json")
-    logger.info(F"ETL_CONFIG_PATH : {ETL_CONFIG_PATH}")
-    pipeline = Pipeline(config_path=ETL_CONFIG_PATH)
-    return pipeline.run()
-
-
 def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
     setup_logging(file_name="graph.json")
 
@@ -108,6 +64,7 @@ def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
 
     logger.info(f"Getting Graph configuration from {CONFIG_PATH=}")
     config_graph = ConfigGraph(config_path=CONFIG_PATH)
+    logger.info(f"config_graph : {config_graph}")
 
     logger.info("Creating graph and compiling workflow...")
 
@@ -119,7 +76,7 @@ def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
     config_graph.compile_graph = compile_graph(config_graph.graph)
 
     # save graph diagram
-    save_graph(compile_graph=config_graph.compile_graph)
+    # save_graph(compile_graph=config_graph.compile_graph)
 
     logger.info("Graph and workflow created")
 
@@ -127,6 +84,21 @@ def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
         recursion_limit=config_graph.iteraciones,
         configurable={"thread_id": config_graph.thread_id}
     ), config_graph
+
+
+def run_app():
+    setup_logging(file_name="api.json")
+
+
+def execute_etl():
+    setup_logging(file_name="etl.json")
+
+    ETL_CONFIG_PATH = os.path.join(os.path.abspath("./config/etl"), "etl.json")
+    logger.info(F"ETL_CONFIG_PATH : {ETL_CONFIG_PATH}")
+
+    pipeline = Pipeline(config_path=ETL_CONFIG_PATH)
+
+    return pipeline.run()
 
 
 def execute_raptor():
@@ -155,25 +127,39 @@ def execute_raptor():
     # Store new embedings
     db.store_docs(docs=raptor_dataset.documents)
 
-    # Try database query
-
-    query = "Se modifica la circunscripción consular de la Oficina Consular honoraria en Puerto San Julián"
-    filter_key = "label_str"
-    filter_value = "Todos los Tipos de Decretos (Legislativos y no Legislativos)"
-    filter_value = "Todos los Tipos de Decretos (Legislativos y no Legislativos)"
-    context = db.get_context(query=query)
-    try:
-        logger.info(f"{query=} - {filter_key=} - {filter_value=}:\n{context=}")
-        logger.info(
-            f"k=1 : {filter_key=} - {filter_value=}:\n{filter_key=} - {context[0].metadata[filter_key]}")
-        logger.info(
-            f"k=2 : {filter_key=} - {filter_value=}:\n{filter_key=} - {context[1].metadata[filter_key]}")
-        logger.info(
-            f"k=3 : {filter_key=} - {filter_value=}:\n{filter_key=} - {context[2].metadata[filter_key]}")
-    except Exception as e:
-        logger.error(f"{e}")
-
     return db
+
+
+FRONT_END_URL = os.getenv('FRONT_END_URL')
+logger.info(f"FRONT_END_URL : {FRONT_END_URL}")
+origins = [
+    FRONT_END_URL
+]
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Load the model in the state atribute of the app object
+    app.state.config_graph, app.state.graph = get_graph()
+    yield
+    # Clean up the model and release the resources
+    app.state.config_graph = None
+    app.state.graph = None
+
+
+app = FastAPI(
+    title="Boe ChatBot BACKEND",
+    lifespan=lifespan
+)
+app.include_router(iaResponse)
+app.include_router(getData)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["POST", "GET"],
+    allow_headers=["*"],
+)
 
 
 def main():
@@ -181,6 +167,16 @@ def main():
     config, graph = get_graph()
     logger.info(f"config graph  : {config}")
     logger.info(f"graph  : {graph}")
+    inputs = {
+        "question": [f"Hola"],
+        "date": get_current_spanish_date_iso(),
+        "query_label":  None,
+        "generation": None,
+        "documents": None,
+        "fact_based_answer": None,
+        "useful_answer": None
+    }
+    print(graph.compile_graph.invoke(input=inputs, config=config))
     """ 
     ##
     run_app()
