@@ -342,32 +342,42 @@ class BoeProcessor(TextPreprocess):
             self.processed_docs = deepcopy(docs)
 
         logger.info(f"NUMERO DE DOCS A ANALIZAR : {len(self.processed_docs)}")
+
+        # Log content of each document before preprocessing
+        for i, doc in enumerate(self.processed_docs):
+            logger.info(
+                f"Original doc {i+1} content length: {len(doc.page_content)}")
+
         for i, doc in enumerate(self.processed_docs):
             new_metadata = {}
             new_metadata["fecha_publicacion_boe"], doc = self._get_date_creation_doc(
                 doc=doc)
+
+            # Log content before and after each preprocessing step
+            # Log the first 200 chars
+            logger.info(
+                f"Doc {i+1} content before preprocessing: {doc.page_content[:200]}")
+            # Example: this step might be removing too much content
             doc = self.get_del_patrones(doc=doc)
-            # titles, doc = self._clean_doc(doc=doc)
-            # new_metadata.update(titles)
+            logger.info(
+                f"Doc {i+1} content after removing patterns: {doc.page_content[:200]}")
+
             new_metadata['pdf_id'] = self._get_id()
             new_docs.append(self._put_metadata(
                 doc=doc, new_metadata=new_metadata))
-            logger.info(f"Update metadata of doc {i} :  {doc.metadata}")
-            logger.info(f"Char len of doc {i} : {len(doc.page_content)}")
+
+            logger.info(f"Update metadata of doc {i+1}: {doc.metadata}")
+            logger.info(f"Char length of doc {i+1}: {len(doc.page_content)}")
 
         logger.info(
-            f"Number of docs after invoke BoeProcessor : {len(new_docs)}")
-        print(f"Number of docs after invoke BoeProcessor : {len(new_docs)}")
-        print(f"docs after invoke BoeProcessor : {new_docs}")
+            f"Number of docs after invoke BoeProcessor: {len(new_docs)}")
 
-        # check to avoid empty docs returned
-        flag = True if (isinstance(new_docs, list) or isinstance(
-            new_docs, Document)) and len(new_docs) > 0 else False
-        if flag:
-            return new_docs
-        else:
-            logger.exception("After preprocessing -> new docs list empty")
+        # Check the length of the processed docs
+        if len(new_docs) == 0:
+            logger.error("After preprocessing -> new docs list is empty")
             raise ValueError("After preprocessing -> new docs list empty")
+
+        return new_docs
 
     def reconstruct_docs(self, corpus: list[str], metadata_list: list[str]) -> list[Document]:
         docs = []
