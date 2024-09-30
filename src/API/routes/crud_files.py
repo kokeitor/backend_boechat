@@ -49,7 +49,7 @@ async def upload_files(uploadFiles: Optional[list[UploadFile]] = None):
                 raise HTTPException(
                     status_code=500, detail=f"Error reading or saving file {fileName}: {str(e)}")
 
-        return {"response": f"Files uploaded inside {upload_directory}: {'-'.join(fileNames)}"}
+        return {"response": f"Files uploaded inside {upload_directory} are -> {' // '.join(fileNames)}"}
     else:
         return {"response": "No files were uploaded"}
 
@@ -69,8 +69,8 @@ async def delete_files():
         if not fileNames:
             return {"response": "No PDF files found to delete"}
 
-        fileNamesFormat = "-".join(fileNames)
-        return {"response": f"Files: {fileNamesFormat} deleted successfully from {upload_directory}"}
+        fileNamesFormat = ' // '.join(fileNames)
+        return {"response": f"Files -> {fileNamesFormat} deleted successfully from {upload_directory}"}
 
     except Exception as e:
         raise HTTPException(
