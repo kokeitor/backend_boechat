@@ -110,7 +110,7 @@ async def getIaResponse(
 @iaResponse.post('/iaresponsestream/')
 async def stream(
     request: Request,
-    userMessage: Annotated[str, Form()],
+    userMessage: Annotated[str, Form()]
 ):
     logger.info(f"userMessage : {userMessage}")
     print(f"userMessage : {userMessage}")
