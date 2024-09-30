@@ -14,7 +14,7 @@ logger = logging.getLogger("routes_ia_response_logger")
 crudfiles = APIRouter()
 
 
-@crudfiles.post("/uploadfiles/")
+@crudfiles.post("/uploadfiles")
 async def upload_files(request: Request, uploadFiles: Optional[list[UploadFile]] = None):
 
     logger.info(f"uploadFiles: {uploadFiles}")
@@ -79,7 +79,7 @@ async def upload_files(request: Request, uploadFiles: Optional[list[UploadFile]]
         return {"response": "No files were uploaded"}
 
 
-@ crudfiles.delete("/deletefiles/")
+@ crudfiles.delete("/deletefiles")
 async def delete_files():
     upload_directory = os.path.join(os.getcwd(), 'data', 'boe', 'uploads')
 

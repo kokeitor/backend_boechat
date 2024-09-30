@@ -73,11 +73,13 @@ class OpenAiModel:
 
         # Create the iterator
         for event in streamMessage:
-            logger.info("event.choices[0].delta.content : ",
-                        event.choices[0].delta.content)
+            logger.info(
+                f"event.choices[0].delta.content : {event.choices[0].delta.content}")
             if event.choices[0].delta.content != None:
                 current_response = event.choices[0].delta.content
                 completeMessage += current_response
+                logger.info(
+                    f"event.choices[0].delta.content : {current_response}")
                 yield current_response + "\n\n"
                 self.completeMessages.append(streamMessage)
         # append the commplete ia response to the memory
@@ -87,4 +89,4 @@ class OpenAiModel:
                 "content": completeMessage
             }
         )
-        logger.info("complete message : ", completeMessage)
+        logger.info(f"complete message :  {completeMessage}")
