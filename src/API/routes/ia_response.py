@@ -87,19 +87,10 @@ async def getBoeStreamIaResponse(
 @iaResponse.post("/iaresponse/")
 async def getIaResponse(
     request: Request,
-    userMessage: Annotated[str, Form()],
-    uploadFiles: Optional[list[UploadFile]] = None
+    userMessage: Annotated[str, Form()]
 ):
-    logger.info(f"uploadFiles : {uploadFiles}")
-    fileNames = None
-    if uploadFiles:
-        fileNames = []
-        for file in uploadFiles:
-            fileName = file.filename
-            fileNames.append(fileName)
-            fileContent = await file.read()
-            with open(os.path.join(UPLOAD_DIR, fileName), "wb") as f:
-                f.write(fileContent)
+    logger.info(f"uploadFiles : {userMessage}")
+    print(f"userMessage : {userMessage}")
 
     # getting from tha app state the client instance model:
     openAi = request.app.state.open_ai_model
@@ -108,20 +99,11 @@ async def getIaResponse(
     logger.info(f"userMessage : {userMessage}")
     logger.info(f"iaResponse : {iaResponse}")
     logger.info(f"Memory : {openAi.messages}")
-
-    if fileNames:
-        openAi.files.extend(fileNames)
-        chat = ChatResponse(
-            userMessage=userMessage,
-            iaResponse=iaResponse,
-            files=fileNames
-        )
-    else:
-        chat = ChatResponse(
-            userMessage=userMessage,
-            iaResponse=iaResponse,
-            files=[]
-        )
+    chat = ChatResponse(
+        userMessage=userMessage,
+        iaResponse=iaResponse,
+        files=[]
+    )
     return chat
 
 
@@ -129,20 +111,8 @@ async def getIaResponse(
 async def stream(
     request: Request,
     userMessage: Annotated[str, Form()],
-    uploadFiles: Optional[list[UploadFile]] = None
 ):
     logger.info(f"userMessage : {userMessage}")
-    logger.info(f"uploadFiles : {uploadFiles}")
-    fileNames = None
-    if uploadFiles:
-        fileNames = []
-        for file in uploadFiles:
-            fileName = file.filename
-            fileNames.append(fileName)
-            fileContent = await file.read()
-            with open(os.path.join(UPLOAD_DIR, fileName), "wb") as f:
-                f.write(fileContent)
-
-    logger.info(f"userMessage : {userMessage}")
+    print(f"userMessage : {userMessage}")
     openAi = request.app.state.open_ai_model
     return StreamingResponse(openAi.getStreamResponse(newUserMessage=userMessage), media_type='text/event-stream')
