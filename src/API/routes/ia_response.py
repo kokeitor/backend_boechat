@@ -10,6 +10,8 @@ from src.RAPTOR.RAPTOR_BOE import RaptorDataset
 import logging
 from pydantic import BaseModel
 
+UPLOAD_DIR = os.path.join(os.getcwd(), 'src', 'assets', 'uploads')
+
 # Logging configuration
 # Child logger [for this module]
 logger = logging.getLogger("routes_ia_response_logger")

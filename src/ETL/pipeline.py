@@ -17,7 +17,7 @@ import src.ETL.nlp
 import warnings
 from src.ETL.utils import get_current_spanish_date_iso
 from src.ETL.llm import LabelGenerator
-
+import asyncio
 
 # Set the default font to DejaVu Sans
 plt.rcParams['font.family'] = 'DejaVu Sans'
@@ -269,20 +269,41 @@ class Pipeline:
         plt.savefig(path, format='png')
         plt.close(fig)
 
-    async def run(self) -> list[Document]:
-
+    def run(self) -> list[Document]:
+        """
+        Runs the pipeline asynchronously to parse, process, split, label, and store documents.
+        Returns the final labeled documents.
+        """
+        # Parse the documents asynchronously
         self.parsed_docs = self.parser.invoke()
-        print(f"self.parsed_docs : {self.parsed_docs}")
+
+        # Ensure parsed_docs is a valid list of Document objects
+        if not isinstance(self.parsed_docs, list) or not all(isinstance(doc, Document) for doc in self.parsed_docs):
+            raise ValueError(
+                "Parsed documents are not in the expected format.")
+
+        logger.info(f"Number of parsed docs: {len(self.parsed_docs)}")
+
+        # Process the parsed documents
         self.processor = self._create_processor(docs=self.parsed_docs)
         processed_docs = self.processor.invoke()
-        logger.info(f"Number of processed_docs {len(processed_docs)}")
-        try:
+
+        # Log the number of processed documents
+        logger.info(f"Number of processed_docs: {len(processed_docs)}")
+
+        # Log the type of the first processed document, if available
+        if processed_docs:
             logger.debug(
-                f"Type of processed_docs[0] {type(processed_docs[0])}")
-        except:
-            pass
+                f"Type of processed_docs[0]: {type(processed_docs[0])}")
+
+        # Split the processed documents
         split_docs = self.splitter.invoke(processed_docs)
+
+        # Label the split documents
         labeled_docs = self.label_generator.invoke(split_docs)
+
+        # Store the labeled documents
         self.storer.invoke(labeled_docs)
 
+        # Return the final labeled documents
         return labeled_docs

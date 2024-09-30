@@ -332,20 +332,20 @@ class BoeProcessor(TextPreprocess):
         new_docs = []
 
         if docs is None:
-            print(
+            logger.info(
                 "Transformando en 'Document' los textos BOE preprocesados")
             self.processed_docs = self.reconstruct_docs(
                 corpus=self.corpus, metadata_list=self.metadata)
         else:
-            print(
+            logger.info(
                 f"Los documentos BOE en {self} han sido cambiados en el metodo invoke")
             self.processed_docs = deepcopy(docs)
 
-        print(f"NUMERO DE DOCS A ANALIZAR : {len(self.processed_docs)}")
+        logger.info(f"NUMERO DE DOCS A ANALIZAR : {len(self.processed_docs)}")
 
         # Log content of each document before preprocessing
         for i, doc in enumerate(self.processed_docs):
-            print(
+            logger.info(
                 f"Original doc {i+1} content length: {len(doc.page_content)}")
 
         for i, doc in enumerate(self.processed_docs):
@@ -355,26 +355,26 @@ class BoeProcessor(TextPreprocess):
 
             # Log content before and after each preprocessing step
             # Log the first 200 chars
-            print(
+            logger.info(
                 f"Doc {i+1} content before preprocessing: {doc.page_content[:200]}")
             # Example: this step might be removing too much content
             doc = self.get_del_patrones(doc=doc)
-            print(
+            logger.info(
                 f"Doc {i+1} content after removing patterns: {doc.page_content[:200]}")
 
             new_metadata['pdf_id'] = self._get_id()
             new_docs.append(self._put_metadata(
                 doc=doc, new_metadata=new_metadata))
 
-            print(f"Update metadata of doc {i+1}: {doc.metadata}")
-            print(f"Char length of doc {i+1}: {len(doc.page_content)}")
+            logger.info(f"Update metadata of doc {i+1}: {doc.metadata}")
+            logger.info(f"Char length of doc {i+1}: {len(doc.page_content)}")
 
-        print(
+        logger.info(
             f"Number of docs after invoke BoeProcessor: {len(new_docs)}")
 
         # Check the length of the processed docs
         if len(new_docs) == 0:
-            print("After preprocessing -> new docs list is empty")
+            logger.info("After preprocessing -> new docs list is empty")
             raise ValueError("After preprocessing -> new docs list empty")
 
         return new_docs

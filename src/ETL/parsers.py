@@ -43,17 +43,22 @@ class Parser:
         # returns List[llama doc obj]
         try:
             self.llama_parsed_docs = self.reader.load_data()
+            print("parsed num of docs : ", len(self.llama_parsed_docs))
+            logger.info("parsed num of docs : ", len(self.llama_parsed_docs))
             self.lang_parsed_docs = [d.to_langchain_format()
                                      for d in self.llama_parsed_docs]
 
             if len(self.lang_parsed_docs) == 0:
                 logger.error("Parsed docs list empty")
+                print("Parsed docs list empty")
             else:
                 logger.info(
                     f"Parsed num of docs -> {len(self.lang_parsed_docs)}")
+                print(f"Parsed num of docs -> {len(self.lang_parsed_docs)}")
             return self.lang_parsed_docs
         except Exception as e:
             logger.error(f"Failed to parse documents: {str(e)}")
+            print(f"Failed to parse documents: {str(e)}")
             return []
 
     @exec_time
