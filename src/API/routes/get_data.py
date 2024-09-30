@@ -9,7 +9,8 @@ import logging
 logger = logging.getLogger("routes_get_data_logger")
 
 
-DATA_DIR = os.path.join(os.getcwd(), 'src', 'assets', 'data')
+DATA_DIR = os.path.join(os.getcwd(), 'src', 'API', 'assets', 'data')
+print("DATA_DIR", DATA_DIR)
 logger.info(f"UPLOAD_DIR : {DATA_DIR}")
 
 getData = APIRouter()
