@@ -222,8 +222,12 @@ class RaptorDataset(BaseModel):
             The cleaned DataFrame.
         """
         data_nulls = data.dropna(axis=0, inplace=True)
-        logger.info(f"Null dopped labelled chunk : {data_nulls.shape}")
-        print(f"Null dopped labelled chunk : {data_nulls.shape}")
+        try:
+            logger.info(f"Null dopped labelled chunk : {data_nulls.shape}")
+            print(f"Null dopped labelled chunk : {data_nulls.shape}")
+        except Exception as e:
+            logger.info(f"Null dopped labelled chunk : {e}")
+            print(f"Null dopped labelled chunk : {e}")
         columns_to_keep = []
         if self.desire_columns:
             logger.debug(f"Data columns : {data.columns.to_list()}")
