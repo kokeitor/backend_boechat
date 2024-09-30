@@ -5,7 +5,10 @@ from llama_index.core import SimpleDirectoryReader
 from src.ETL.utils import exec_time
 import logging
 import asyncio
+import nest_asyncio
 
+# Apply nest_asyncio to allow nested event loops
+nest_asyncio.apply()
 
 # Logging configuration
 # Child logger [for this module]
@@ -37,24 +40,43 @@ class Parser:
 
     @exec_time
     def invoke(self) -> list[Document]:
+        # returns List[llama doc obj]
+        try:
+            self.llama_parsed_docs = self.reader.load_data()
+            self.lang_parsed_docs = [d.to_langchain_format()
+                                     for d in self.llama_parsed_docs]
 
-        # returns List[llama doc objt]
-        self.llama_parsed_docs = self.reader.load_data()
-        self.lang_parsed_docs = [d.to_langchain_format()
-                                 for d in self.llama_parsed_docs]
-
-        if len(self.lang_parsed_docs) == 0:
-            logger.error("Parsed docs list empty")
-        else:
-            logger.info(f"Parsed num of docs -> {len(self.lang_parsed_docs) }")
-        return self.lang_parsed_docs
+            if len(self.lang_parsed_docs) == 0:
+                logger.error("Parsed docs list empty")
+            else:
+                logger.info(
+                    f"Parsed num of docs -> {len(self.lang_parsed_docs)}")
+            return self.lang_parsed_docs
+        except Exception as e:
+            logger.error(f"Failed to parse documents: {str(e)}")
+            return []
 
     @exec_time
     async def async_invoke(self) -> list[Document]:
-        loop = asyncio.get_event_loop()
-        tasks = [loop.run_in_executor(None, self.reader.aload_data, [
-                                      file]) for file in os.listdir(self.path) if file.endswith(".pdf")]
-        llama_parsed_docs = await asyncio.gather(*tasks)
-        self.lang_parsed_docs = [d.to_langchain_format()
-                                 for docs in llama_parsed_docs for d in docs]
-        return self.lang_parsed_docs
+        """
+        Asynchronously parse documents in the directory.
+        """
+        try:
+            # Run the asynchronous LlamaParse parser using `aload_data`
+            llama_parsed_docs = await self.reader.aload_data()
+
+            # Convert the parsed documents to LangChain format
+            self.lang_parsed_docs = [d.to_langchain_format()
+                                     for d in llama_parsed_docs]
+
+            if len(self.lang_parsed_docs) == 0:
+                logger.error("Parsed docs list empty")
+            else:
+                logger.info(
+                    f"Parsed num of docs -> {len(self.lang_parsed_docs)}")
+
+            return self.lang_parsed_docs
+
+        except Exception as e:
+            logger.error(f"Failed to asynchronously parse documents: {str(e)}")
+            return []

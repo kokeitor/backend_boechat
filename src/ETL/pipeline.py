@@ -271,7 +271,7 @@ class Pipeline:
 
     def run(self) -> list[Document]:
 
-        self.parsed_docs = self.parser.invoke()
+        self.parsed_docs = self.parser.async_invoke()
         self.processor = self._create_processor(docs=self.parsed_docs)
         processed_docs = self.processor.invoke()
         logger.info(f"Number of processed_docs {len(processed_docs)}")
