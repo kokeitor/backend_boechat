@@ -223,11 +223,9 @@ class RaptorDataset(BaseModel):
         """
         data_nulls = data.dropna(axis=0, inplace=True)
         try:
-            logger.info(f"Null dopped labelled chunk : {data_nulls.shape}")
-            print(f"Null dopped labelled chunk : {data_nulls.shape}")
+            logger.info(f"Null dropped labelled chunk : {data_nulls.shape}")
         except Exception as e:
-            logger.info(f"Null dopped labelled chunk : {e}")
-            print(f"Null dopped labelled chunk : {e}")
+            logger.info(f"Null dropped labelled chunk : {e}")
         columns_to_keep = []
         if self.desire_columns:
             logger.debug(f"Data columns : {data.columns.to_list()}")
