@@ -4,6 +4,7 @@ import os
 from src.utils.utils import setup_logging, get_current_spanish_date_iso
 from src.API.routes.utils import delete_pdf_files
 import logging
+from src.ETL.pipeline import Pipeline
 
 
 # Logging configuration
@@ -14,7 +15,8 @@ crudfiles = APIRouter()
 
 
 @crudfiles.post("/uploadfiles/")
-async def upload_files(uploadFiles: Optional[list[UploadFile]] = None):
+async def upload_files(request: Request, uploadFiles: Optional[list[UploadFile]] = None):
+    logger.info(f"uploadFiles: {uploadFiles}")
     print(f"uploadFiles: {uploadFiles}")
     fileNames = []
 
@@ -48,6 +50,18 @@ async def upload_files(uploadFiles: Optional[list[UploadFile]] = None):
             except Exception as e:
                 raise HTTPException(
                     status_code=500, detail=f"Error reading or saving file {fileName}: {str(e)}")
+
+            # Perform ETL and Raptor processes with the new files
+            etl_config = request.app.state.etl_config
+            etl = Pipeline(config_path=etl_config)
+            raptor_dataset = request.app.state.raptor_dataset
+            database = request.app.state.vector_db
+
+            etl.run()  # Run the ETL process
+            raptor_dataset.initialize_data()  # Initialize the dataset for Raptor
+            database.delete_index_content()  # Clear the index in the vector database
+            # Store the new documents in the database
+            database.store_docs(docs=raptor_dataset.documents)
 
         return {"response": f"Files uploaded inside {upload_directory} are -> {' // '.join(fileNames)}"}
     else:

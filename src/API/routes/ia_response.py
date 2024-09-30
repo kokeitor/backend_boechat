@@ -32,17 +32,6 @@ async def getBoeStreamIaResponse(
 ):
     print(f"userMessage: {userMessage}")
 
-    # Perform ETL and Raptor processes with the new files
-    etl = Pipeline(config_path=request.app.state.etl_config_pipeline)
-    raptor_dataset = request.app.state.raptor_dataset
-    database = request.app.state.vector_db
-
-    etl.run()  # Run the ETL process
-    raptor_dataset.initialize_data()  # Initialize the dataset for Raptor
-    database.delete_index_content()  # Clear the index in the vector database
-    # Store the new documents in the database
-    database.store_docs(docs=raptor_dataset.documents)
-
     # Graph and configuration
     graph = request.app.state.graph
     config_graph = request.app.state.config_graph
@@ -74,24 +63,6 @@ async def getBoeStreamIaResponse(
     userMessage: Annotated[str, Form()]
 ):
     print(f"userMessage: {userMessage}")
-
-    # Perform ETL and Raptor processes with the new files
-    print(request.app.state.etl_config_pipeline)
-    etl = Pipeline(config_path=request.app.state.etl_config_pipeline)
-    etl.run()  # Run the ETL process
-    # raptor_dataset = request.app.state.raptor_dataset
-    raptor_dataset = RaptorDataset(
-        data_dir_path="./data/boedataset",
-        file_name=f"{os.getenv('RAPTOR_CHUNKS_FILE_NAME')}.{os.getenv('RAPTOR_CHUNKS_FILE_EXTENSION')}",
-        # from_date="2024-09-28",
-        # to_date="2024-08-31",
-        desire_columns=None  # Means all columns
-    )
-    raptor_dataset.initialize_data()  # Initialize the dataset for Raptor
-    database = request.app.state.vector_db
-    database.delete_index_content()  # Clear the index in the vector database
-    # Store the new documents in the database
-    database.store_docs(docs=raptor_dataset.documents)
 
     # Graph and configuration
     graph = request.app.state.graph

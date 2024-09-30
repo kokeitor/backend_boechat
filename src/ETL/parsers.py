@@ -61,6 +61,7 @@ class Parser:
         """
         Asynchronously parse documents in the directory.
         """
+        nest_asyncio.apply()
         try:
             # Run the asynchronous LlamaParse parser using `aload_data`
             llama_parsed_docs = await self.reader.aload_data()

@@ -85,8 +85,12 @@ def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
     ), config_graph
 
 
+def setup_etl():
+    return os.path.join(
+        os.path.abspath("./config/etl"), "etl.json")
+
+
 def setup_raptor_dataset():
-    # raptor_dataset.initialize_data()
     return RaptorDataset(
         data_dir_path="./data/boedataset",
         file_name=f"{os.getenv('RAPTOR_CHUNKS_FILE_NAME')}.{os.getenv('RAPTOR_CHUNKS_FILE_EXTENSION')}",
@@ -98,12 +102,6 @@ def setup_raptor_dataset():
 
 def setup_vector_db():
     # Store in vector database
-
-    # Delete index content
-    # db.delete_index_content()
-    # Store new embedings
-    # db.store_docs(docs=raptor_dataset.documents)
-
     return RaptorVectorDB(
         api_key=str(os.getenv('PINECONE_API_KEY')),
         index_name=str(os.getenv('PINECONE_INDEX_NAME')),
@@ -114,20 +112,16 @@ def setup_vector_db():
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     setup_logging(file_name="api.json")
-    setup_logging(file_name="graph.json")
-    setup_logging(file_name="etl.json")
-    setup_logging(file_name="raptor_boe.json")
     # Load the model in the state atribute of the app object
     app.state.config_graph, app.state.graph = get_graph()
-    app.state.etl_config_pipeline = os.path.join(
-        os.path.abspath("./config/etl"), "etl.json")
+    app.state.etl_config = setup_etl()
     app.state.raptor_dataset = setup_raptor_dataset()
     app.state.vector_db = setup_vector_db()
     yield
     # Clean up the model and release the resources
     app.state.config_graph = None
     app.state.graph = None
-    app.state.etl_config_pipeline = None
+    app.state.etl_config = None
     app.state.raptor_dataset = None
     app.state.vector_db = None
 

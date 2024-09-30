@@ -143,8 +143,11 @@ class RaptorVectorDB:
                 os.getenv('PINECONE_INDEX_NAMESPACE')))
             logger.info(
                 f"All content in index '{self.index_name}' has been deleted.")
-            while not self.pc.describe_index(self.index_name).status["ready"]:
-                logger.info(self.pc.describe_index(self.index_name))
+            # while not self.pc.describe_index(self.index_name).status["ready"]:
+            while self.index.describe_index_stats()["total_vector_count"] > 0:
+                logger.info(
+                    f"self.index.describe_index_stats()['total_vector_count] == {self.index.describe_index_stats()['total_vector_count']}"
+                )
                 time.sleep(1)
         except Exception as e:
             logger.error(

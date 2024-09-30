@@ -269,9 +269,10 @@ class Pipeline:
         plt.savefig(path, format='png')
         plt.close(fig)
 
-    def run(self) -> list[Document]:
+    async def run(self) -> list[Document]:
 
-        self.parsed_docs = self.parser.async_invoke()
+        self.parsed_docs = self.parser.invoke()
+        print(f"self.parsed_docs : {self.parsed_docs}")
         self.processor = self._create_processor(docs=self.parsed_docs)
         processed_docs = self.processor.invoke()
         logger.info(f"Number of processed_docs {len(processed_docs)}")
