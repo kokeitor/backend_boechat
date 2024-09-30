@@ -113,6 +113,7 @@ def setup_vector_db():
 async def lifespan(app: FastAPI):
     setup_logging(file_name="api.json")
     # Load the model in the state atribute of the app object
+    app.state.open_ai_model = OpenAiModel(api_ky=os.getenv('OPENAI_API_KEY'))
     app.state.config_graph, app.state.graph = get_graph()
     app.state.etl_config = setup_etl()
     app.state.raptor_dataset = setup_raptor_dataset()
@@ -145,33 +146,3 @@ app.add_middleware(
     allow_methods=["POST", "GET"],
     allow_headers=["*"],
 )
-
-
-def main():
-    ##
-    config, graph = get_graph()
-    logger.info(f"config graph  : {config}")
-    logger.info(f"graph  : {graph}")
-    inputs = {
-        "question": [f"En  la  provincia  de  Santa  Cruz"],
-        "date": get_current_spanish_date_iso(),
-        "query_label":  None,
-        "generation": None,
-        "documents": None,
-        "fact_based_answer": None,
-        "useful_answer": None
-    }
-    graph.compile_graph.invoke(input=inputs, config=config)
-    """ 
-    ##
-    run_app()
-    ##
-    setup_logging(file_name="main.json")
-    logger.info(f"{__name__} script execution path -> {os.getcwd()}")
-    ##
-    etl_result = execute_etl()
-    logger.info(f"ETL Docs len : {len(etl_result)}")
-    ##
-    vectorDB = execute_raptor()
-    logger.info(f"vectorDB  : {vectorDB}")
-    """

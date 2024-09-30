@@ -19,7 +19,7 @@ logger = logging.getLogger("routes_ia_response_logger")
 iaResponse = APIRouter()
 
 
-@iaResponse.get('/restartmemory')
+@iaResponse.get('/restartmemory/')
 async def restartMemory(request: Request):
     # getting from tha app state the client instance model:
     openAi = request.app.state.AI_MODEL
@@ -27,7 +27,7 @@ async def restartMemory(request: Request):
     return {"severResponse": "Memoria del chat borrada con éxito"}
 
 
-@iaResponse.post("/streamboeresponse")
+@iaResponse.post("/streamboeresponse/")
 async def getBoeStreamIaResponse(
     request: Request,
     userMessage: Annotated[str, Form()],
@@ -59,7 +59,7 @@ async def getBoeStreamIaResponse(
     return StreamingResponse(event_stream(final_state), media_type='text/event-stream')
 
 
-@iaResponse.post("/boeresponse")
+@iaResponse.post("/boeresponse/")
 async def getBoeStreamIaResponse(
     request: Request,
     userMessage: Annotated[str, Form()]
@@ -84,7 +84,7 @@ async def getBoeStreamIaResponse(
     return {"status": "success", "final_state": final_state}
 
 
-@iaResponse.post("/iaresponse")
+@iaResponse.post("/iaresponse/")
 async def getIaResponse(
     request: Request,
     userMessage: Annotated[str, Form()],
@@ -102,7 +102,7 @@ async def getIaResponse(
                 f.write(fileContent)
 
     # getting from tha app state the client instance model:
-    openAi = request.app.state.AI_MODEL
+    openAi = request.app.state.open_ai_model
     # get ia response
     iaResponse = openAi.getResponse(newUserMessage=userMessage)
     logger.info(f"userMessage : {userMessage}")
@@ -125,7 +125,7 @@ async def getIaResponse(
     return chat
 
 
-@iaResponse.post('/iaresponsestream')
+@iaResponse.post('/iaresponsestream/')
 async def stream(
     request: Request,
     userMessage: Annotated[str, Form()],
@@ -144,5 +144,5 @@ async def stream(
                 f.write(fileContent)
 
     logger.info(f"userMessage : {userMessage}")
-    openAi = request.app.state.AI_MODEL
+    openAi = request.app.state.open_ai_model
     return StreamingResponse(openAi.getStreamResponse(newUserMessage=userMessage), media_type='text/event-stream')

@@ -4,6 +4,8 @@
 # Ignore documentos directory
 /documentos
 
+/config/graph/querys_ejemplo.json
+
 # Ignore data directory
 /data/boe
 /data/boedataset

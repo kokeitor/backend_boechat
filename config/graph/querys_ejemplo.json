@@ -4,6 +4,18 @@
         "ground_truth": "Se remonta a 1969",
         "date": "2024-04-15",
         "boe_id": "BOE-A-2024-7295"
+    },
+    {
+        "user_question": "¿ El Calafate?",
+        "ground_truth": "El objetivo de la creación del Viceconsulado Honorario en El Calafate es facilitar la atención de casos urgentes de protección y asistencia consular en esta ciudad. Su circunscripción consular abarcará los departamentos de Lago Argentino y Río Chico, en la provincia de Santa Cruz.",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7295"
+    },
+    {
+        "user_question": "¿En la provincia de Santa Cruz?",
+        "ground_truth": "",
+        "date": "2024-04-15",
+        "boe_id": "BOE-A-2024-7295"
     }
     
 ]

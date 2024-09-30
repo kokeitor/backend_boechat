@@ -15,7 +15,7 @@ logger.info(f"UPLOAD_DIR : {DATA_DIR}")
 getData = APIRouter()
 
 
-@getData.get('/diagram_1')
+@getData.get('/diagram_1/')
 async def getDiagram():
     files = list_files_in_directory(DATA_DIR)
     png_files = [file for file in files if file.endswith(
@@ -28,7 +28,7 @@ async def getDiagram():
     return FileResponse(file_path, media_type='image/png')
 
 
-@getData.get('/diagram_2')
+@getData.get('/diagram_2/')
 async def getDiagram():
     files = list_files_in_directory(DATA_DIR)
     png_files = [file for file in files if file.endswith(
@@ -41,7 +41,7 @@ async def getDiagram():
     return FileResponse(file_path, media_type='image/png')
 
 
-@getData.get('/graph')
+@getData.get('/graph/')
 async def getDiagram():
     files = list_files_in_directory(DATA_DIR)
     png_files = [file for file in files if file.endswith(
@@ -54,7 +54,7 @@ async def getDiagram():
     return FileResponse(file_path, media_type='image/png')
 
 
-@getData.get('/tfm')
+@getData.get('/tfm/')
 async def getTfm():
     files = list_files_in_directory(DATA_DIR)
     pdf_files = [file for file in files if file.endswith('.pdf')]

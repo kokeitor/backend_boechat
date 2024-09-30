@@ -74,7 +74,7 @@ async def upload_files(request: Request, uploadFiles: Optional[list[UploadFile]]
         # Store the new documents in the database
         database.store_docs(docs=raptor_dataset.documents)
 
-        return {"response": f"{warningMessage} // The files uploaded inside {upload_directory} are -> {' // '.join(fileNames)}"}
+        return {"response": f"The files uploaded inside {upload_directory} are -> {' // '.join(fileNames)} // {warningMessage}"}
     else:
         return {"response": "No files were uploaded"}
 
