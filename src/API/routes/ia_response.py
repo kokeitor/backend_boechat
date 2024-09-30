@@ -98,6 +98,7 @@ async def getIaResponse(
     iaResponse = openAi.getResponse(newUserMessage=userMessage)
     logger.info(f"userMessage : {userMessage}")
     logger.info(f"iaResponse : {iaResponse}")
+    print(f"iaResponse : {iaResponse}")
     logger.info(f"Memory : {openAi.messages}")
     chat = ChatResponse(
         userMessage=userMessage,
