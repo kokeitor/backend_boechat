@@ -82,6 +82,7 @@ class OpenAiModel:
                     f"event.choices[0].delta.content : {current_response}")
                 yield current_response + "\n\n"
                 self.completeMessages.append(streamMessage)
+
         # append the commplete ia response to the memory
         self.messages.append(
             {
@@ -89,4 +90,5 @@ class OpenAiModel:
                 "content": completeMessage
             }
         )
+
         logger.info(f"complete message :  {completeMessage}")
