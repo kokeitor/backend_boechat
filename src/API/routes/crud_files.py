@@ -2,7 +2,7 @@ from fastapi import HTTPException, APIRouter, Request, UploadFile, File, Form
 from typing import Optional, Annotated
 import os
 from src.utils.utils import setup_logging, get_current_spanish_date_iso
-from src.API.routes.utils import setup_logging, get_current_spanish_date_iso, delete_pdf_files
+from src.API.routes.utils import delete_pdf_files
 import logging
 
 
