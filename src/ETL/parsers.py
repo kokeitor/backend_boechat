@@ -44,7 +44,7 @@ class Parser:
         try:
             self.llama_parsed_docs = self.reader.load_data()
             print("parsed num of docs : ", len(self.llama_parsed_docs))
-            logger.info("parsed num of docs : ", len(self.llama_parsed_docs))
+            logger.info(f"parsed num of docs :{len(self.llama_parsed_docs)}")
             self.lang_parsed_docs = [d.to_langchain_format()
                                      for d in self.llama_parsed_docs]
 

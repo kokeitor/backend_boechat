@@ -68,7 +68,8 @@ async def upload_files(request: Request, uploadFiles: Optional[list[UploadFile]]
         database = request.app.state.vector_db
 
         _ = etl.run()  # Run the ETL process
-        raptor_dataset.initialize_data()  # Initialize the dataset for Raptor
+        # Initialize the dataset for Raptor, create cluster summary for each chunk
+        raptor_dataset.initialize_data()
         database.delete_index_content()  # Clear the index in the vector database
         # Store the new documents in the database
         database.store_docs(docs=raptor_dataset.documents)

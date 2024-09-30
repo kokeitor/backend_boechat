@@ -221,21 +221,23 @@ class RaptorDataset(BaseModel):
         pd.DataFrame
             The cleaned DataFrame.
         """
-        data_no_null = data.dropna(axis=0)
+        data_nulls = data.dropna(axis=0, inplace=True)
+        logger.info(f"Null dopped labelled chunk : {data_nulls.shape}")
+        print(f"Null dopped labelled chunk : {data_nulls.shape}")
         columns_to_keep = []
         if self.desire_columns:
-            logger.debug(f"Data columns : {data_no_null.columns.to_list()}")
+            logger.debug(f"Data columns : {data.columns.to_list()}")
             for col in self.desire_columns:
-                if col in data_no_null.columns.to_list():
+                if col in data.columns.to_list():
                     columns_to_keep.append(col)
                     logger.debug(
                         f"Data column to keep {col} exists in file columns")
                 else:
                     logger.warning(
                         f"Data column to keep {col} NOT IN file columns")
-            return data_no_null[columns_to_keep]
+            return data[columns_to_keep]
         else:
-            return data_no_null
+            return data
 
     @ staticmethod
     def parse_date(date_str: str) -> datetime:
