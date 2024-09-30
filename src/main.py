@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from decouple import config
 from src.API.routes.ia_response import iaResponse
+from src.API.routes.crud_files import crudfiles
 from src.API.routes.get_data import getData
 from src.API.Apis.openai_api import OpenAiModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -84,16 +85,6 @@ def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
     ), config_graph
 
 
-def setup_etl_pipeline():
-    ETL_CONFIG_PATH = os.path.join(os.path.abspath("./config/etl"), "etl.json")
-    logger.info(F"ETL_CONFIG_PATH : {ETL_CONFIG_PATH}")
-
-    pipeline = Pipeline(config_path=ETL_CONFIG_PATH)
-    # pipeline.run()
-
-    return pipeline
-
-
 def setup_raptor_dataset():
     # raptor_dataset.initialize_data()
     return RaptorDataset(
@@ -152,6 +143,7 @@ app = FastAPI(
 )
 app.include_router(iaResponse)
 app.include_router(getData)
+app.include_router(crudfiles)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,

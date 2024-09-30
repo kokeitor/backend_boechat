@@ -6,6 +6,7 @@ from typing import Optional, Annotated
 from fastapi import UploadFile, File, Form
 import os
 from src.utils.utils import setup_logging, get_current_spanish_date_iso
+from src.RAPTOR.RAPTOR_BOE import RaptorDataset
 import logging
 from pydantic import BaseModel
 
@@ -28,41 +29,8 @@ async def restartMemory(request: Request):
 async def getBoeStreamIaResponse(
     request: Request,
     userMessage: Annotated[str, Form()],
-    uploadFiles: Optional[list[UploadFile]] = None
 ):
-    print(f"uploadFiles: {uploadFiles}")
-    fileNames = None
-    upload_directory = os.path.join(os.getcwd(), 'data', 'boe', 'uploads')
-
-    # Ensure the upload directory exists
-    if not os.path.exists(upload_directory):
-        os.makedirs(upload_directory)
-
-    if uploadFiles:
-        fileNames = []
-        for file in uploadFiles:
-            fileName = file.filename
-            fileNames.append(fileName)
-
-            # Read the file content
-            try:
-                fileContent = await file.read()
-                file_path = os.path.join(upload_directory, fileName)
-
-                # Save the file to the specified directory
-                with open(file_path, "wb") as f:
-                    f.write(fileContent)
-
-                # Check if the file has been saved successfully
-                if not os.path.exists(file_path):
-                    raise HTTPException(
-                        status_code=500, detail=f"Failed to save the file: {fileName}")
-
-                print(f"File '{fileName}' uploaded and saved at {file_path}")
-
-            except Exception as e:
-                raise HTTPException(
-                    status_code=500, detail=f"Error reading or saving file {fileName}: {str(e)}")
+    print(f"userMessage: {userMessage}")
 
     # Perform ETL and Raptor processes with the new files
     etl = Pipeline(config_path=request.app.state.etl_config_pipeline)
@@ -100,53 +68,27 @@ async def getBoeStreamIaResponse(
     return StreamingResponse(event_stream(final_state), media_type='text/event-stream')
 
 
-@ iaResponse.post("/boeresponse")
+@iaResponse.post("/boeresponse")
 async def getBoeStreamIaResponse(
     request: Request,
-    userMessage: Annotated[str, Form()],
-    uploadFiles: Optional[list[UploadFile]] = None
+    userMessage: Annotated[str, Form()]
 ):
-    print(f"uploadFiles: {uploadFiles}")
-    fileNames = None
-    upload_directory = os.path.join(os.getcwd(), 'data', 'boe', 'uploads')
-
-    # Ensure the upload directory exists
-    if not os.path.exists(upload_directory):
-        os.makedirs(upload_directory)
-
-    if uploadFiles:
-        fileNames = []
-        for file in uploadFiles:
-            fileName = file.filename
-            fileNames.append(fileName)
-
-            # Read the file content
-            try:
-                fileContent = await file.read()
-                file_path = os.path.join(upload_directory, fileName)
-
-                # Save the file to the specified directory
-                with open(file_path, "wb") as f:
-                    f.write(fileContent)
-
-                # Check if the file has been saved successfully
-                if not os.path.exists(file_path):
-                    raise HTTPException(
-                        status_code=500, detail=f"Failed to save the file: {fileName}")
-
-                print(f"File '{fileName}' uploaded and saved at {file_path}")
-
-            except Exception as e:
-                raise HTTPException(
-                    status_code=500, detail=f"Error reading or saving file {fileName}: {str(e)}")
+    print(f"userMessage: {userMessage}")
 
     # Perform ETL and Raptor processes with the new files
+    print(request.app.state.etl_config_pipeline)
     etl = Pipeline(config_path=request.app.state.etl_config_pipeline)
-    raptor_dataset = request.app.state.raptor_dataset
-    database = request.app.state.vector_db
-
     etl.run()  # Run the ETL process
+    # raptor_dataset = request.app.state.raptor_dataset
+    raptor_dataset = RaptorDataset(
+        data_dir_path="./data/boedataset",
+        file_name=f"{os.getenv('RAPTOR_CHUNKS_FILE_NAME')}.{os.getenv('RAPTOR_CHUNKS_FILE_EXTENSION')}",
+        # from_date="2024-09-28",
+        # to_date="2024-08-31",
+        desire_columns=None  # Means all columns
+    )
     raptor_dataset.initialize_data()  # Initialize the dataset for Raptor
+    database = request.app.state.vector_db
     database.delete_index_content()  # Clear the index in the vector database
     # Store the new documents in the database
     database.store_docs(docs=raptor_dataset.documents)
