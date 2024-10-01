@@ -22,7 +22,7 @@ iaResponse = APIRouter()
 @iaResponse.get('/restartmemory')
 async def restartMemory(request: Request):
     # getting from tha app state the client instance model:
-    openAi = request.app.state.AI_MODEL
+    openAi = request.app.state.open_ai_model
     openAi.messages = []
     return {"severResponse": "Memoria del chat borrada con éxito"}
 
