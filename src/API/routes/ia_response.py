@@ -1,6 +1,6 @@
 from fastapi import HTTPException, APIRouter, Request
 from fastapi.responses import StreamingResponse
-from src.API.models.models import ChatResponse
+from src.API.models.models import ChatResponse, OpenAIChatGraph
 from src.ETL.pipeline import Pipeline
 from typing import Optional, Annotated
 from fastapi import UploadFile, File, Form
@@ -81,7 +81,11 @@ async def getBoeStreamIaResponse(
 
     # Invoke the graph with the input and config
     final_state = graph.compile_graph.invoke(input=inputs, config=config_graph)
-    return {"status": "success", "final_state": final_state}
+    chat = ChatResponse(
+        userMessage=userMessage,
+        iaResponse=final_state["generation"]
+    )
+    return chat
 
 
 @iaResponse.post("/iaresponse")
@@ -92,17 +96,41 @@ async def getIaResponse(
     logger.info(f"uploadFiles : {userMessage}")
     print(f"userMessage : {userMessage}")
 
+    # Graph and configuration
+    graph = request.app.state.graph
+    config_graph = request.app.state.config_graph
+    inputs = {
+        "question": [userMessage],
+        "date": get_current_spanish_date_iso(),
+        "query_label": None,
+        "generation": None,
+        "documents": None,
+        "fact_based_answer": None,
+        "useful_answer": None
+    }
+
+    final_state = graph.compile_graph.invoke(input=inputs, config=config_graph)
+    openAIChat = OpenAIChatGraph(
+        userMessage=userMessage,
+        generationGraph=final_state["generation"],
+        context='\n\n'.join(final_state["documents"])
+    )
+
     # getting from tha app state the client instance model:
     openAi = request.app.state.open_ai_model
+
     # get ia response
-    iaResponse = openAi.getResponse(newUserMessage=userMessage)
+    # iaResponse = openAi.getResponse(newUserMessage=userMessage)
+    openAIChat.iaResponse = openAi.getResponseFromGraph(input=openAIChat)
+
     logger.info(f"userMessage : {userMessage}")
     logger.info(f"iaResponse : {iaResponse}")
     print(f"iaResponse : {iaResponse}")
     logger.info(f"Memory : {openAi.messages}")
+
     chat = ChatResponse(
         userMessage=userMessage,
-        iaResponse=iaResponse
+        iaResponse=openAIChat.iaResponse
     )
     return chat
 
@@ -114,5 +142,21 @@ async def stream(
 ):
     logger.info(f"userMessage : {userMessage}")
     print(f"userMessage : {userMessage}")
+
+    # Graph and configuration
+    graph = request.app.state.graph
+    config_graph = request.app.state.config_graph
+    inputs = {
+        "question": [userMessage],
+        "date": get_current_spanish_date_iso(),
+        "query_label": None,
+        "generation": None,
+        "documents": None,
+        "fact_based_answer": None,
+        "useful_answer": None
+    }
+
+    final_state = graph.compile_graph.invoke(input=inputs, config=config_graph)
+
     openAi = request.app.state.open_ai_model
     return StreamingResponse(openAi.getStreamResponse(newUserMessage=userMessage), media_type='text/event-stream')

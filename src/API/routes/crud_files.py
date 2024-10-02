@@ -79,9 +79,9 @@ async def upload_files(request: Request, uploadFiles: Optional[list[UploadFile]]
         return {"response": "No files were uploaded"}
 
 
-@ crudfiles.delete("/deletefiles")
-async def delete_files():
-    upload_directory = os.path.join(os.getcwd(), 'data', 'boe', 'uploads')
+@ crudfiles.get("/deletefiles")
+async def delete_files(request: Request):
+    upload_directory = request.app.state.upload_directory
 
     # Ensure the upload directory exists
     if not os.path.exists(upload_directory):

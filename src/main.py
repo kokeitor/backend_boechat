@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from decouple import config
 from src.API.routes.ia_response import iaResponse
+from src.API.routes.utils import delete_pdf_files
 from src.API.routes.crud_files import crudfiles
 from src.API.routes.get_data import getData
 from src.API.Apis.openai_api import OpenAiModel
@@ -118,6 +119,8 @@ async def lifespan(app: FastAPI):
     app.state.etl_config = setup_etl()
     app.state.raptor_dataset = setup_raptor_dataset()
     app.state.vector_db = setup_vector_db()
+    app.state.upload_directory = os.path.join(
+        os.getcwd(), 'data', 'boe', 'uploads')
     yield
     # Clean up the model and release the resources
     app.state.config_graph = None
@@ -125,6 +128,10 @@ async def lifespan(app: FastAPI):
     app.state.etl_config = None
     app.state.raptor_dataset = None
     app.state.vector_db = None
+    fileNames = delete_pdf_files(app.state.upload_directory)
+    print(f"fileNames deleted : {fileNames}")
+    app.state.upload_directory = None
+
 
 FRONT_END_URL = os.getenv('FRONT_END_URL')
 logger.info(f"FRONT_END_URL : {FRONT_END_URL}")
@@ -143,6 +150,6 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["POST", "GET", "DELETE"],
+    allow_methods=["POST", "GET"],
     allow_headers=["*"],
 )

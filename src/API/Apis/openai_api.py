@@ -2,6 +2,7 @@ from openai import OpenAI
 from decouple import config
 import openai
 import logging
+from src.API.models.models import OpenAIChatGraph
 
 # Logging configuration
 # Child logger [for this module]
@@ -40,6 +41,28 @@ class OpenAiModel:
             {
                 "role": "user",
                 "content": newUserMessage
+            }
+        )
+        completeMessage = self.client.chat.completions.create(
+            model=self.model,
+            messages=self.messages,
+            temperature=self.temperature
+        )
+        self.completeMessages.append(completeMessage)
+        self.messages.append(
+            {
+                "role": "system",
+                "content": completeMessage.choices[0].message.content
+            }
+        )
+        return self.messages[-1]["content"]
+
+    def getResponseFromGraph(self, input: OpenAIChatGraph) -> str:
+        self.messages.append(
+            {
+                "role": "user",
+                "content": input.userMessage,
+
             }
         )
         completeMessage = self.client.chat.completions.create(
