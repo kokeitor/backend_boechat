@@ -114,7 +114,7 @@ async def getIaResponse(
             input=inputs, config=config_graph)
     except Exception as e:
         final_state = {
-            "generation": "Error en la generación de la respuesta por parte del LLM : {e}",
+            "generation": f"Error en la generación de la respuesta por parte del LLM : {e}",
             "documents": [Document(page_content="Error en la generación de la respuesta por parte del LLM : {e}")],
         }
     openAIChat = OpenAIChatGraph(
@@ -166,7 +166,7 @@ async def stream(
             input=inputs, config=config_graph)
     except Exception as e:
         final_state = {
-            "generation": "Error en la generación de la respuesta por parte del LLM : {e}",
+            "generation": f"Error en la generación de la respuesta por parte del LLM : {e}",
             "documents": [Document(page_content="Error en la generación de la respuesta por parte del LLM : {e}")],
         }
     openAIChat = OpenAIChatGraph(
