@@ -74,6 +74,7 @@ class OpenAiModel:
             messages=self.messages,
             temperature=self.temperature
         )
+
         print(f"\nuserMesage : {input.userMessage}")
         print(f"\ncontext : {input.context}")
         print(f"\ngenerationGraph : {input.generationGraph}")
