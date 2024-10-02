@@ -25,7 +25,7 @@
                                 "temperature":0
                                 }
         },
-      "iteraciones": 100,
+      "iteraciones": 50,
       "thread_id": "4",
       "verbose": 0
   }

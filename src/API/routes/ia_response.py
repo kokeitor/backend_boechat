@@ -93,8 +93,7 @@ async def getIaResponse(
     request: Request,
     userMessage: Annotated[str, Form()]
 ):
-    logger.info(f"uploadFiles : {userMessage}")
-    print(f"userMessage : {userMessage}")
+    logger.info(f"userMessage : {userMessage}")
 
     # Graph and configuration
     graph = request.app.state.graph
@@ -141,7 +140,6 @@ async def stream(
     userMessage: Annotated[str, Form()]
 ):
     logger.info(f"userMessage : {userMessage}")
-    print(f"userMessage : {userMessage}")
 
     # Graph and configuration
     graph = request.app.state.graph
@@ -157,6 +155,14 @@ async def stream(
     }
 
     final_state = graph.compile_graph.invoke(input=inputs, config=config_graph)
+    openAIChat = OpenAIChatGraph(
+        userMessage=userMessage,
+        generationGraph=final_state["generation"],
+        context='\n\n'.join(final_state["documents"])
+    )
 
+    # getting from tha app state the client instance model:
     openAi = request.app.state.open_ai_model
-    return StreamingResponse(openAi.getStreamResponse(newUserMessage=userMessage), media_type='text/event-stream')
+
+    # return StreamingResponse(openAi.getStreamResponse(newUserMessage=userMessage), media_type='text/event-stream')
+    return StreamingResponse(openAi.getStreamResponseFromGraph(input=openAIChat), media_type='text/event-stream')
