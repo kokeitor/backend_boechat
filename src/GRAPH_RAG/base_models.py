@@ -6,6 +6,7 @@ from dataclasses import dataclass
 import operator
 from langchain_core.vectorstores import VectorStoreRetriever
 from langchain_core.vectorstores import VectorStore
+from langchain.schema import Document
 
 
 class Question(BaseModel):
@@ -34,7 +35,7 @@ class State(TypedDict):
     question: Annotated[list[str], operator.add]
     query_label: str
     generation: str
-    documents: Union[list[str], None] = None
+    documents: Union[list[Document], None] = None
     fact_based_answer: str
     useful_answer: int
     report: str

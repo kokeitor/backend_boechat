@@ -112,7 +112,8 @@ async def getIaResponse(
     openAIChat = OpenAIChatGraph(
         userMessage=userMessage,
         generationGraph=final_state["generation"],
-        context='\n\n'.join(final_state["documents"])
+        context="\n\n".join(
+            doc.page_content for doc in final_state["documents"])
     )
 
     # getting from tha app state the client instance model:
@@ -158,7 +159,8 @@ async def stream(
     openAIChat = OpenAIChatGraph(
         userMessage=userMessage,
         generationGraph=final_state["generation"],
-        context='\n\n'.join(final_state["documents"])
+        context="\n\n".join(
+            doc.page_content for doc in final_state["documents"])
     )
 
     # getting from tha app state the client instance model:

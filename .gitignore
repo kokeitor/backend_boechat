@@ -40,3 +40,5 @@ __pycache__
 
 # Ignore specific __pycache__ directory
 /src/package/__pycache__
+
+git_tips.md
