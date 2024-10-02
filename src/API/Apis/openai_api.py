@@ -75,7 +75,7 @@ class OpenAiModel:
             temperature=self.temperature
         )
 
-        print(f"\nuserMesage : {input.userMessage}")
+        print(f"\n userMesage : {input.userMessage}")
         print(f"\ncontext : {input.context}")
         print(f"\ngenerationGraph : {input.generationGraph}")
         print(f"\nOpenAi complete response obj : {completeMessage}")
