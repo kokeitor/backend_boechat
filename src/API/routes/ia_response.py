@@ -115,7 +115,7 @@ async def getIaResponse(
     except Exception as e:
         final_state = {
             "generation": f"Error en la generación de la respuesta por parte del LLM : {e}",
-            "documents": [Document(page_content="Error en la generación de la respuesta por parte del LLM : {e}")],
+            "documents": [Document(page_content=f"Error en la generación de la respuesta por parte del LLM : {e}")],
         }
     openAIChat = OpenAIChatGraph(
         userMessage=userMessage,
