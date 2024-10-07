@@ -59,11 +59,14 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'BOE-ChatBot-BackEnd'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_82CD6F78E7F243A0A2CF594AB080FC66 }}
+          app-name: 'BOE-ChatBot-BackEnd'  # Cambia este nombre si es necesario
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_82CD6F78E7F243A0A2CF594AB080FC66 }}  # Cambia al nombre del secret que creaste
+
+      - name: Set environment variables and run FastAPI app
+        run: |
+          source venv/bin/activate
+          uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
