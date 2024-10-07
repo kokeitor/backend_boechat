@@ -136,7 +136,8 @@ async def lifespan(app: FastAPI):
 FRONT_END_URL = os.getenv('FRONT_END_URL')
 logger.info(f"FRONT_END_URL : {FRONT_END_URL}")
 origins = [
-    FRONT_END_URL
+    FRONT_END_URL,
+    "https://happy-moss-0b3378a10.5.azurestaticapps.net/"
 ]
 
 app = FastAPI(
