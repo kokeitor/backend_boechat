@@ -45,10 +45,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name : Azure login 
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
 
       - name: Azure Web app settings
         uses: azure/appservice-settings@v1
