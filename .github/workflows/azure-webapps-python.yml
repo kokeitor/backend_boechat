@@ -3,7 +3,9 @@ name: Build and deploy Python app to Azure Web App
 env:
   AZURE_WEBAPP_NAME: BOE-ChatBot-BackEnd  # set this to the name of your Azure Web App
   AZURE_RESOURCE_GROUP_NAME: BOE-ChatBot   # set this to the name of your Azure Resource Group
-  PYTHON_VERSION: '3.11'              # set this to the Python version to use
+  PYTHON_VERSION: '3.11' 
+  WORKING_DIRECTORY: '.'        # set this to the path to your path of working directory inside github repository, defaults to the repository root
+  STARTUP_COMMAND: 'uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload'
 
 on:
   push:
@@ -17,7 +19,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name : Python checkout
+        uses: actions/checkout@v4
 
       - name: Set up Python version
         uses: actions/setup-python@v5
@@ -37,32 +40,30 @@ jobs:
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
-      - name: Zip the application for deployment
-        run: |
-          zip -r python-app.zip . -x "venv/*" "*.git/*" "*.github/*"
-
-      - name: Upload deployment package
-        uses: actions/upload-artifact@v3
-        with:
-          name: python-app
-          path: python-app.zip
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Cloning repository
-        uses: actions/checkout@v4
+      - name : Azure login 
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
 
-      - name: Building web app
-        uses: azure/appservice-build@v3
-
-      - name: Deploying web app to Azure
-        uses: azure/webapps-deploy@v1
+      - name: Azure Web app settings
+        uses: azure/appservice-settings@v1
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
+          mask-inputs: false
+          general-settings-json: '{"linuxFxVersion": "PYTHON|${{ env.PYTHON_VERSION }}"}' #'General configuration settings as Key Value pairs'
+      
+      - name: Deploying web app to Azure
+        uses: azure/webapps-deploy@v2
+        with:
+          publish-profile : ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          package: ${{ env.WORKING_DIRECTORY }}
+          startup-command: ${{ env.STARTUP_COMMAND }}
+      - name: Azure logout
+        run: az logout
 
-      - name: Configure FastAPI startup command in Azure Web App
-        run: |
-          az webapp config set --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group ${{ env.AZURE_RESOURCE_GROUP_NAME }} --startup-file "uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload"
