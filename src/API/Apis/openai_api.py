@@ -74,10 +74,20 @@ class OpenAiModel:
             messages=self.messages,
             temperature=self.temperature
         )
-        print(f"userMesage : {input.userMessage}")
-        print(f"context : {input.context}")
-        print(f"generationGraph : {input.generationGraph}")
-        print(f"OpenAi response : {completeMessage}")
+
+        print(f"\n userMesage : {input.userMessage}")
+        print(f"\ncontext : {input.context}")
+        print(f"\ngenerationGraph : {input.generationGraph}")
+        print(f"\nOpenAi complete response obj : {completeMessage}")
+        print(
+            f"\nOpenAi response : {completeMessage.choices[0].message.content}")
+
+        logger.info(f"userMesage : {input.userMessage}")
+        logger.info(f"context : {input.context}")
+        logger.info(f"generationGraph : {input.generationGraph}")
+        logger.info(f"OpenAi complete response obj : {completeMessage}")
+        logger.info(
+            f"OpenAi response : {completeMessage.choices[0].message.content}")
 
         self.completeMessages.append(completeMessage)
         self.messages.append(

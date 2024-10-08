@@ -134,9 +134,12 @@ async def lifespan(app: FastAPI):
 
 
 FRONT_END_URL = os.getenv('FRONT_END_URL')
+FRONT_END_PRO_URL = os.getenv('FRONT_END_PRO_URL')
 logger.info(f"FRONT_END_URL : {FRONT_END_URL}")
+logger.info(f"FRONT_END_PRO_URL : {FRONT_END_PRO_URL}")
 origins = [
-    FRONT_END_URL
+    FRONT_END_URL,
+    FRONT_END_PRO_URL
 ]
 
 app = FastAPI(

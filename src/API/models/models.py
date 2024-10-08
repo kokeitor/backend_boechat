@@ -9,7 +9,6 @@ class ChatResponse(BaseModel):
 
 class OpenAIChatGraph(BaseModel):
     userMessage: str
-    userMessage: str
     generationGraph: str
     context: str
     iaResponse: Optional[str] = None

@@ -9,6 +9,7 @@ from src.utils.utils import setup_logging, get_current_spanish_date_iso
 from src.RAPTOR.RAPTOR_BOE import RaptorDataset
 import logging
 from pydantic import BaseModel
+from langchain.schema import Document
 
 UPLOAD_DIR = os.path.join(os.getcwd(), 'src', 'assets', 'uploads')
 
@@ -108,7 +109,14 @@ async def getIaResponse(
         "useful_answer": None
     }
 
-    final_state = graph.compile_graph.invoke(input=inputs, config=config_graph)
+    try:
+        final_state = graph.compile_graph.invoke(
+            input=inputs, config=config_graph)
+    except Exception as e:
+        final_state = {
+            "generation": f"Error en la generación de la respuesta por parte del LLM : {e}",
+            "documents": [Document(page_content=f"Error en la generación de la respuesta por parte del LLM : {e}")],
+        }
     openAIChat = OpenAIChatGraph(
         userMessage=userMessage,
         generationGraph=final_state["generation"],
@@ -125,7 +133,6 @@ async def getIaResponse(
 
     logger.info(f"userMessage : {userMessage}")
     logger.info(f"iaResponse : {iaResponse}")
-    print(f"iaResponse : {iaResponse}")
     logger.info(f"Memory : {openAi.messages}")
 
     chat = ChatResponse(
@@ -154,8 +161,14 @@ async def stream(
         "fact_based_answer": None,
         "useful_answer": None
     }
-
-    final_state = graph.compile_graph.invoke(input=inputs, config=config_graph)
+    try:
+        final_state = graph.compile_graph.invoke(
+            input=inputs, config=config_graph)
+    except Exception as e:
+        final_state = {
+            "generation": f"Error en la generación de la respuesta por parte del LLM : {e}",
+            "documents": [Document(page_content="Error en la generación de la respuesta por parte del LLM : {e}")],
+        }
     openAIChat = OpenAIChatGraph(
         userMessage=userMessage,
         generationGraph=final_state["generation"],
