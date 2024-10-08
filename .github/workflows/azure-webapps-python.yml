@@ -93,4 +93,4 @@ jobs:
 
       - name: Configure FastApi startup command in Azure Web App
         run: |
-        az webapp config set --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group ${{ env.AZURE_RESOURCE_GROUP_NAME }} --startup-file "uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload"
+          az webapp config set --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group ${{ env.AZURE_RESOURCE_GROUP_NAME }} --startup-file "uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload"
