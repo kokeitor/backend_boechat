@@ -45,14 +45,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-
-      - name: Azure Web app settings
-        uses: azure/appservice-settings@v1
-        with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          mask-inputs: false
-          general-settings-json: '{"linuxFxVersion": "PYTHON|${{ env.PYTHON_VERSION }}"}' #'General configuration settings as Key Value pairs'
-      
       - name: Deploying web app to Azure
         uses: azure/webapps-deploy@v2
         with:
