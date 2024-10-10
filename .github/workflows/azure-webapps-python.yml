@@ -107,7 +107,7 @@ jobs:
         run: unzip release.zip
 
       
-      - name: 'Deploy to Azure Web App'
+      - name: 'Deploy to Azure Web Appp'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
