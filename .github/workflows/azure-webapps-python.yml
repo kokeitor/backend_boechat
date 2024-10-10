@@ -3,7 +3,7 @@ name: FastApi BoeChatBot build and deploy to Azure Web app
 env:
   AZURE_WEBAPP_NAME: BOE-ChatBot-BackEnd     
   PYTHON_VERSION: '3.11' 
-  STARTUP_COMMAND: 'uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload'
+  STARTUP_COMMAND: 'gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.main:app --bind 0.0.0.0:8000'
 
 on:
   push:
