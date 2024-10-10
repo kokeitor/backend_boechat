@@ -4,10 +4,10 @@ import warnings
 import time
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
-from decouple import config
 from src.API.routes.ia_response import iaResponse
 from src.API.routes.utils import delete_pdf_files
 from src.API.routes.crud_files import crudfiles
+from src.API.routes.initial_page import initial_page
 from src.API.routes.get_data import getData
 from src.API.Apis.openai_api import OpenAiModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -149,6 +149,7 @@ app = FastAPI(
 app.include_router(iaResponse)
 app.include_router(getData)
 app.include_router(crudfiles)
+app.include_router(initial_page)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
