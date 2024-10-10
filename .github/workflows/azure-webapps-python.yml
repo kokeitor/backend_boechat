@@ -1,4 +1,4 @@
-name: Build and deploy Python app to Azure Web App
+name: FastApi BoeChatBot build and deploy to Azure Web app
 
 env:
   AZURE_WEBAPP_NAME: BOE-ChatBot-BackEnd     
