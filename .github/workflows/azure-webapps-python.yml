@@ -1,10 +1,10 @@
 name: Build and deploy Python app to Azure Web App
 
 env:
-  AZURE_WEBAPP_NAME: BOE-ChatBot-BackEnd  # set this to the name of your Azure Web App
-  AZURE_RESOURCE_GROUP_NAME: BOE-ChatBot   # set this to the name of your Azure Resource Group
+  AZURE_WEBAPP_NAME: BOE-ChatBot-BackEnd  
+  AZURE_RESOURCE_GROUP_NAME: BOE-ChatBot   
   PYTHON_VERSION: '3.11' 
-  WORKING_DIRECTORY: '.'        # set this to the path to your path of working directory inside github repository, defaults to the repository root
+  WORKING_DIRECTORY: '.'     
   STARTUP_COMMAND: 'uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload'
 
 on:
@@ -45,6 +45,26 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Azure CLI script
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az account show
+
+      - name: 
+        uses: azure/appservice-settings@v1
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          mask-inputs: false
+          general-settings-json: '{"linuxFxVersion": "PYTHON|${{ env.PYTHON_VERSION }}"}' #'General configuration settings as Key Value pairs'
       - name: Deploying web app to Azure
         uses: azure/webapps-deploy@v2
         with:
@@ -52,4 +72,8 @@ jobs:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           package: ${{ env.WORKING_DIRECTORY }}
           startup-command: ${{ env.STARTUP_COMMAND }}
+          
+      - name: Azure logout
+        run: |
+          az logout
 
