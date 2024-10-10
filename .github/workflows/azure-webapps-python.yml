@@ -103,6 +103,6 @@ jobs:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           package: ${{ env.WORKING_DIRECTORY }}
           startup-command: ${{ env.STARTUP_COMMAND }}
-      - name : Azure logoutt
+      - name : Final Azure logout
         run: |
           az logout
