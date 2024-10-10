@@ -12,39 +12,35 @@ on:
       - pro
   workflow_dispatch:
 
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name : Python checkout
-        uses: actions/checkout@v4
+    # Checkout the repository
+    - name: 'Checkout GitHub Action'
+      uses: actions/checkout@v3
 
-      - name: Set up Python version
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: 'pip'
+    # Set up Python
+    - name: 'Set up Python'
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Create and start virtual environment
-        run: |
-          python -m venv venv
-          source venv/bin/activate
+    # Install dependencies
+    - name: 'Install dependencies'
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
+    # Archive the FastAPI app for deployment
+    - name: 'Archive FastAPI app'
+      run: zip -r myfastapiapp.zip ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
-      - name: Building web app
-        uses: azure/appservice-build@v2
-
-      - name: Deploy web App using GH Action azure/webapps-deploy
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-          startup-command: ${{ env.STARTUP_COMMAND }}
-
+    # Deploy to Azure Web App using Publish Profile
+    - name: 'Deploy to Azure Web App'
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ./myfastapiapp.zip
