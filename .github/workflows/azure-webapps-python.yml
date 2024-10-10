@@ -113,4 +113,4 @@ jobs:
         with:
           app-name: 'boe-chatbot-backend'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BB748093AF6E480ABA5A3E31ECAA712E }}
