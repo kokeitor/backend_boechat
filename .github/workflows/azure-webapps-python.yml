@@ -1,4 +1,15 @@
-name: FastApi BoeChatBot build and deploy to Azure Web app
+
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+# More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
+
+name: Build and deploy Python app to Azure Web App - boe-chatbot-backend
+
+on:
+  push:
+    branches:
+      - pro
+  workflow_dispatch:
 
 env:
   AZURE_WEBAPP_NAME: BOE-ChatBot-BackEnd     
@@ -20,13 +31,6 @@ env:
   FRONT_END_URL: http://localhost:5173
   FRONT_END_PRO_URL: https://happy-moss-0b3378a10.5.azurestaticapps.net/
 
-
-on:
-  push:
-    branches: 
-      - pro
-
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -37,72 +41,76 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version: '3.11'
 
       - name: Create and start virtual environment
         run: |
           python -m venv venv
           source venv/bin/activate
-
-      - name: Set up dependency caching for faster installs
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
+      
       - name: Install dependencies
         run: pip install -r requirements.txt
-      
+
       - name: Set up environment variables
         run: |
+            echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
+            echo "LANGSMITH=${{ secrets.LANGSMITH }}" >> .env
+            echo "LLAMA_CLOUD_API_KEY=${{ secrets.LLAMA_CLOUD_API_KEY }}" >> .env
+            echo "LLAMA_CLOUD_API_KEY_RAPTOR=${{ secrets.LLAMA_CLOUD_API_KEY_RAPTOR }}" >> .env
+            echo "LANGCHAIN_API_KEY=${{ secrets.LANGCHAIN_API_KEY }}" >> .env
+            echo "HUG_API_KEY=${{ secrets.HUG_API_KEY }}" >> .env
+            echo "GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}" >> .env
+            echo "NVIDIA_API_KEY=${{ secrets.NVIDIA_API_KEY }}" >> .env
+            echo "PINECONE_INDEX_NAME=${{ env.PINECONE_INDEX_NAME }}" >> .env
+            echo "PINECONE_INDEX_NAMESPACE=${{ env.PINECONE_INDEX_NAMESPACE }}" >> .env
+            echo "APP_MODE=${{ env.APP_MODE }}" >> .env
+            echo "EMBEDDING_MODEL=${{ env.EMBEDDING_MODEL }}" >> .env
+            echo "EMBEDDING_MODEL_GPT4=${{ env.EMBEDDING_MODEL_GPT4 }}" >> .env
+            echo "LOCAL_LLM=${{ env.LOCAL_LLM }}" >> .env
+            echo "BOE_WEB_URL=${{ env.BOE_WEB_URL }}" >> .env
+            echo "HG_REPO_DATASET_ID=${{ env.HG_REPO_DATASET_ID }}" >> .env
+            echo "HG_REPO_RAGAS_TESTSET_ID=${{ env.HG_REPO_RAGAS_TESTSET_ID }}" >> .env
+            echo "RAPTOR_CHUNKS_FILE_NAME=${{ env.RAPTOR_CHUNKS_FILE_NAME }}" >> .env
+            echo "RAPTOR_CHUNKS_FILE_EXTENSION=${{ env.RAPTOR_CHUNKS_FILE_EXTENSION }}" >> .env
+            echo "MAX_FILES=${{ env.MAX_FILES }}" >> .env
+            echo "FRONT_END_URL=${{ env.FRONT_END_URL }}" >> .env
+            echo "FRONT_END_PRO_URL=${{ env.FRONT_END_PRO_URL }}" >> .env
 
-          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
-          echo "LANGSMITH=${{ secrets.LANGSMITH }}" >> .env
-          echo "LLAMA_CLOUD_API_KEY=${{ secrets.LLAMA_CLOUD_API_KEY }}" >> .env
-          echo "LLAMA_CLOUD_API_KEY_RAPTOR=${{ secrets.LLAMA_CLOUD_API_KEY_RAPTOR }}" >> .env
-          echo "LANGCHAIN_API_KEY=${{ secrets.LANGCHAIN_API_KEY }}" >> .env
-          echo "HUG_API_KEY=${{ secrets.HUG_API_KEY }}" >> .env
-          echo "GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}" >> .env
-          echo "NVIDIA_API_KEY=${{ secrets.NVIDIA_API_KEY }}" >> .env
-          echo "PINECONE_INDEX_NAME=${{ env.PINECONE_INDEX_NAME }}" >> .env
-          echo "PINECONE_INDEX_NAMESPACE=${{ env.PINECONE_INDEX_NAMESPACE }}" >> .env
-          echo "APP_MODE=${{ env.APP_MODE }}" >> .env
-          echo "EMBEDDING_MODEL=${{ env.EMBEDDING_MODEL }}" >> .env
-          echo "EMBEDDING_MODEL_GPT4=${{ env.EMBEDDING_MODEL_GPT4 }}" >> .env
-          echo "LOCAL_LLM=${{ env.LOCAL_LLM }}" >> .env
-          echo "BOE_WEB_URL=${{ env.BOE_WEB_URL }}" >> .env
-          echo "HG_REPO_DATASET_ID=${{ env.HG_REPO_DATASET_ID }}" >> .env
-          echo "HG_REPO_RAGAS_TESTSET_ID=${{ env.HG_REPO_RAGAS_TESTSET_ID }}" >> .env
-          echo "RAPTOR_CHUNKS_FILE_NAME=${{ env.RAPTOR_CHUNKS_FILE_NAME }}" >> .env
-          echo "RAPTOR_CHUNKS_FILE_EXTENSION=${{ env.RAPTOR_CHUNKS_FILE_EXTENSION }}" >> .env
-          echo "MAX_FILES=${{ env.MAX_FILES }}" >> .env
-          echo "FRONT_END_URL=${{ env.FRONT_END_URL }}" >> .env
-          echo "FRONT_END_PRO_URL=${{ env.FRONT_END_PRO_URL }}" >> .env
+        
+      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
-      # Optional: Add a step to run tests here (PyTest, Django test suites, etc.)
+      - name: Zip artifact for deployment
+        run: zip release.zip ./* -r
+
+      - name: Upload artifact for deployment jobs
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-app
+          path: |
+            release.zip
+            !venv/
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    steps: 
-      - name : Azure login
-        uses: azure/login@v1
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS_GITHUB_SECRET }}
-      - name: Azure CLI script
-        uses: azure/appservice-settings@v1
+          name: python-app
+
+      - name: Unzip artifact for deployment
+        run: unzip release.zip
+
+      
+      - name: 'Deploy to Azure Web App'
+        uses: azure/webapps-deploy@v3
+        id: deploy-to-webapp
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          mask-inputs: false
-          general-settings-json: '{"linuxFxVersion": "PYTHON|${{ env.PYTHON_VERSION }}"}' #'General configuration settings as Key Value pairs'
-      - name : deploy web app
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          package: ${{ env.WORKING_DIRECTORY }}
-          startup-command: ${{ env.STARTUP_COMMAND }}
-      - name : Final Azure logout
-        run: |
-          az logout
+          app-name: 'boe-chatbot-backend'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
