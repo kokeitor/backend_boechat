@@ -8,8 +8,12 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Copy application files to /app directory in the container
-COPY ./src /app/src
-COPY ./requirements.txt /app/requirements.txt
+COPY ./src /app/src/
+COPY ./config /app/config/
+COPY ./logs /app/logs/
+COPY ./data /app/data/
+COPY ./requirements_production.txt /app/requirements_production.txt
+COPY ./.env /app/.env
 
 # Set the working directory to /app
 WORKDIR /app

@@ -23,7 +23,7 @@ from langgraph.graph.graph import CompiledGraph
 from src.RAG_EVAL.base_models import RagasDataset
 from langgraph.errors import InvalidUpdateError
 from langchain_core.runnables.config import RunnableConfig
-
+from huggingface_hub import login
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
@@ -56,6 +56,7 @@ os.environ['HG_REPO_RAGAS_TESTSET_ID'] = os.getenv('HG_REPO_RAGAS_TESTSET_ID')
 os.environ['GROQ_API_KEY'] = os.getenv('GROQ_API_KEY')
 os.environ['NVIDIA_API_KEY'] = os.getenv('NVIDIA_API_KEY')
 os.environ['RAPTOR_CHUNKS_FILE_NAME'] = os.getenv('RAPTOR_CHUNKS_FILE_NAME')
+login(token=os.getenv('HUG_API_KEY'))
 
 
 def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
