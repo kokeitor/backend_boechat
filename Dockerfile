@@ -14,13 +14,14 @@ COPY ./requirements.txt /app/requirements.txt
 # Set the working directory to /app
 WORKDIR /app
 
-# Install dependencies from requirements.txt
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+# Install dependencies in a virtual environment
+RUN python -m venv venv
+RUN venv/bin/pip install --upgrade pip
+RUN venv/bin/pip install -r requirements_production.txt
 
 # Expose the port that Uvicorn will run on
 ENV PORT=8000
 EXPOSE 8000
 
 # Command to start the Uvicorn server with hot-reload
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["venv/bin/uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
