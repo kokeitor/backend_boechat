@@ -1,8 +1,3 @@
-
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-# More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
-
 name: Build and deploy Python app to Azure Web App - boe-chatbot-backend
 
 on:
@@ -49,7 +44,8 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
 
       - name: Set up environment variables
         run: |
@@ -75,7 +71,6 @@ jobs:
             echo "MAX_FILES=${{ env.MAX_FILES }}" >> .env
             echo "FRONT_END_URL=${{ env.FRONT_END_URL }}" >> .env
             echo "FRONT_END_PRO_URL=${{ env.FRONT_END_PRO_URL }}" >> .env
-
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -106,11 +101,20 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      
-      - name: 'Deploy to Azure Web Appp'
+      - name: Set App Platform to Python
+        uses: azure/appservice-settings@v1
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          general-settings-json: '{"linuxFxVersion": "PYTHON|3.11"}'
+
+      - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
           app-name: 'boe-chatbot-backend'
           slot-name: 'production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BB748093AF6E480ABA5A3E31ECAA712E }}
+
+      - name: Final Azure logout
+        run: |
+          az logout

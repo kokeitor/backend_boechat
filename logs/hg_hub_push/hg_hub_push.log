@@ -1,0 +1,1037 @@
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-05-22 17:11:56
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-06-09 21:42:33
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-06-09 21:50:03
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-06-10 00:15:38
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-06-10 00:43:31
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-06-10 00:48:07
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-09 17:15:04
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-09 18:25:28
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-09 18:31:57
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-09 18:37:57
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-09 19:04:53
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-09 19:08:45
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-09 19:22:06
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-09 23:42:16
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-09 23:50:11
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 00:10:52
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 00:24:32
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 00:47:02
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 00:56:43
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 01:02:09
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 01:10:22
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 01:17:36
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 07:37:51
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 08:16:29
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 08:27:30
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 08:56:26
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 09:14:32
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 09:25:46
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-10 09:49:57
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-11 22:54:14
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-11 23:30:23
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-11 23:38:50
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-11 23:43:31
+[INFO|hg|L38] 2024-07-12 01:19:49: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L37] 2024-07-12 12:22:33: filename : 20240522171156_train.parquet
+[INFO|hg|L40] 2024-07-12 12:22:33: file_date parsed to correct format: 2024-05-22 17:11:56
+[INFO|hg|L37] 2024-07-12 12:26:36: filename : 20240712004410_train_test.csv
+[INFO|hg|L40] 2024-07-12 12:26:36: file_date parsed to correct format: 2024-07-12 00:44:10
+[ERROR|hg|L63] 2024-07-12 12:26:36: clean data method exception : "None of [Index(['text', 'chunk_id', 'label'], dtype='object')] are in the [columns]"
+Traceback (most recent call last):
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAPTOR\hg.py", line 61, in clean_data
+    return data[self.desire_columns]
+           ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\frame.py", line 4096, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\indexes\base.py", line 6199, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\indexes\base.py", line 6248, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['text', 'chunk_id', 'label'], dtype='object')] are in the [columns]"
+[ERROR|hg|L93] 2024-07-12 12:26:36: Error creating HG dataset: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[ERROR|hg|L93] 2024-07-12 12:26:36: Error creating HG dataset: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[INFO|hg|L37] 2024-07-12 12:27:03: filename : 20240712004410_train_test.csv
+[INFO|hg|L40] 2024-07-12 12:27:03: file_date parsed to correct format: 2024-07-12 00:44:10
+[ERROR|hg|L63] 2024-07-12 12:27:03: clean data method exception : "None of [Index(['text', 'chunk_id', 'label'], dtype='object')] are in the [columns]"
+Traceback (most recent call last):
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAPTOR\hg.py", line 61, in clean_data
+    return data[self.desire_columns]
+           ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\frame.py", line 4096, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\indexes\base.py", line 6199, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\indexes\base.py", line 6248, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['text', 'chunk_id', 'label'], dtype='object')] are in the [columns]"
+[ERROR|hg|L93] 2024-07-12 12:27:03: Error creating HG dataset: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[ERROR|hg|L93] 2024-07-12 12:27:03: Error creating HG dataset: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[INFO|hg|L37] 2024-07-12 12:29:45: filename : 20240712004410_train_test.csv
+[INFO|hg|L40] 2024-07-12 12:29:45: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L60] 2024-07-12 12:29:45: Data columns : []
+[ERROR|hg|L94] 2024-07-12 12:29:45: Error creating HG dataset: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[ERROR|hg|L94] 2024-07-12 12:29:45: Error creating HG dataset: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[INFO|hg|L38] 2024-07-12 12:32:27: filename : 20240712004410_train_test.csv
+[INFO|hg|L41] 2024-07-12 12:32:27: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L38] 2024-07-12 12:32:27: filename : data.csv
+[INFO|hg|L38] 2024-07-12 12:32:27: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 12:33:29: filename : 20240712004410_train_test.csv
+[INFO|hg|L41] 2024-07-12 12:33:29: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L38] 2024-07-12 12:33:29: filename : data.csv
+[INFO|hg|L38] 2024-07-12 12:33:29: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 12:37:05: filename : 20240712004410_train_test.csv
+[INFO|hg|L41] 2024-07-12 12:37:05: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L44] 2024-07-12 12:37:05: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L45] 2024-07-12 12:37:05: Trying to append it
+[INFO|hg|L49] 2024-07-12 12:37:05: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L38] 2024-07-12 12:37:05: filename : data.csv
+[INFO|hg|L38] 2024-07-12 12:37:05: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 12:40:20: filename : 20240712004410_train_test.csv
+[INFO|hg|L46] 2024-07-12 12:40:20: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L49] 2024-07-12 12:40:20: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L50] 2024-07-12 12:40:20: Trying to append it
+[INFO|hg|L54] 2024-07-12 12:40:20: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L38] 2024-07-12 12:40:20: filename : data.csv
+[INFO|hg|L38] 2024-07-12 12:40:20: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 12:40:20: filename : train.csv
+[INFO|hg|L70] 2024-07-12 12:40:20: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L89] 2024-07-12 12:40:20: Test df shape: (13, 16)
+[INFO|hg|L92] 2024-07-12 12:40:20: Train df shape: (43, 16)
+[INFO|hg|L93] 2024-07-12 12:40:20: Validation df shape: (5, 16)
+[INFO|hg|L94] 2024-07-12 12:40:20: ---------------------------------------------------
+
+[INFO|hg|L102] 2024-07-12 12:40:20: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L89] 2024-07-12 12:40:20: Test df shape: (13, 16)
+[INFO|hg|L92] 2024-07-12 12:40:20: Train df shape: (43, 16)
+[INFO|hg|L93] 2024-07-12 12:40:20: Validation df shape: (5, 16)
+[INFO|hg|L94] 2024-07-12 12:40:20: ---------------------------------------------------
+
+[INFO|hg|L102] 2024-07-12 12:40:20: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L38] 2024-07-12 12:45:15: filename : 20240712004410_train_test.csv
+[INFO|hg|L46] 2024-07-12 12:45:15: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L49] 2024-07-12 12:45:15: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L50] 2024-07-12 12:45:15: Trying to append it
+[INFO|hg|L54] 2024-07-12 12:45:15: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L38] 2024-07-12 12:45:15: filename : data.csv
+[INFO|hg|L38] 2024-07-12 12:45:15: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 12:45:15: filename : train.csv
+[INFO|hg|L70] 2024-07-12 12:45:15: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L89] 2024-07-12 12:45:15: Test df shape: (13, 16)
+[INFO|hg|L92] 2024-07-12 12:45:15: Train df shape: (43, 16)
+[INFO|hg|L93] 2024-07-12 12:45:15: Validation df shape: (5, 16)
+[INFO|hg|L94] 2024-07-12 12:45:15: ---------------------------------------------------
+
+[INFO|hg|L102] 2024-07-12 12:45:15: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L38] 2024-07-12 12:47:18: filename : 20240712004410_train_test.csv
+[INFO|hg|L46] 2024-07-12 12:47:18: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L49] 2024-07-12 12:47:18: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L50] 2024-07-12 12:47:18: Trying to append it
+[INFO|hg|L54] 2024-07-12 12:47:18: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L38] 2024-07-12 12:47:18: filename : data.csv
+[INFO|hg|L38] 2024-07-12 12:47:18: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 12:47:18: filename : train.csv
+[INFO|hg|L70] 2024-07-12 12:47:18: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L89] 2024-07-12 12:47:18: Test df shape: (13, 16)
+[INFO|hg|L92] 2024-07-12 12:47:18: Train df shape: (43, 16)
+[INFO|hg|L93] 2024-07-12 12:47:18: Validation df shape: (5, 16)
+[INFO|hg|L94] 2024-07-12 12:47:18: ---------------------------------------------------
+
+[INFO|hg|L102] 2024-07-12 12:47:18: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label', '__index_level_0__'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L38] 2024-07-12 12:54:27: filename : 20240712004410_train_test.csv
+[INFO|hg|L46] 2024-07-12 12:54:27: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L49] 2024-07-12 12:54:27: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L50] 2024-07-12 12:54:27: Trying to append it
+[INFO|hg|L54] 2024-07-12 12:54:27: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L38] 2024-07-12 12:54:27: filename : data.csv
+[INFO|hg|L38] 2024-07-12 12:54:27: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 12:54:27: filename : train.csv
+[INFO|hg|L71] 2024-07-12 12:54:27: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L75] 2024-07-12 12:54:27: Data column to keep text exist in file columns
+[INFO|hg|L75] 2024-07-12 12:54:27: Data column to keep chunk_id exist in file columns
+[INFO|hg|L75] 2024-07-12 12:54:27: Data column to keep label exist in file columns
+[INFO|hg|L38] 2024-07-12 12:55:47: filename : 20240712004410_train_test.csv
+[INFO|hg|L46] 2024-07-12 12:55:47: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L49] 2024-07-12 12:55:47: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L50] 2024-07-12 12:55:47: Trying to append it
+[INFO|hg|L54] 2024-07-12 12:55:47: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L38] 2024-07-12 12:55:47: filename : data.csv
+[INFO|hg|L38] 2024-07-12 12:55:47: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 12:55:47: filename : train.csv
+[INFO|hg|L71] 2024-07-12 12:55:47: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L75] 2024-07-12 12:55:47: Data column to keep text exist in file columns
+[INFO|hg|L75] 2024-07-12 12:55:47: Data column to keep chunk_id exist in file columns
+[INFO|hg|L75] 2024-07-12 12:55:47: Data column to keep label exist in file columns
+[INFO|hg|L93] 2024-07-12 12:55:47: Test df shape: (13, 13)
+[INFO|hg|L96] 2024-07-12 12:55:47: Train df shape: (43, 13)
+[INFO|hg|L97] 2024-07-12 12:55:47: Validation df shape: (5, 13)
+[INFO|hg|L98] 2024-07-12 12:55:47: ---------------------------------------------------
+
+[INFO|hg|L106] 2024-07-12 12:55:47: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'num_tokens', 'num_caracteres', '__index_level_0__'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'num_tokens', 'num_caracteres', '__index_level_0__'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'num_tokens', 'num_caracteres', '__index_level_0__'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L38] 2024-07-12 12:57:17: filename : 20240712004410_train_test.csv
+[INFO|hg|L46] 2024-07-12 12:57:17: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L49] 2024-07-12 12:57:17: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L50] 2024-07-12 12:57:17: Trying to append it
+[INFO|hg|L54] 2024-07-12 12:57:17: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L38] 2024-07-12 12:57:17: filename : data.csv
+[INFO|hg|L38] 2024-07-12 12:57:17: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 12:57:17: filename : train.csv
+[INFO|hg|L71] 2024-07-12 12:57:17: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L75] 2024-07-12 12:57:17: Data column to keep text exist in file columns
+[INFO|hg|L75] 2024-07-12 12:57:17: Data column to keep chunk_id exist in file columns
+[INFO|hg|L75] 2024-07-12 12:57:17: Data column to keep label exist in file columns
+[INFO|hg|L93] 2024-07-12 12:57:17: Test df shape: (13, 3)
+[INFO|hg|L96] 2024-07-12 12:57:17: Train df shape: (43, 3)
+[INFO|hg|L97] 2024-07-12 12:57:17: Validation df shape: (5, 3)
+[INFO|hg|L98] 2024-07-12 12:57:17: ---------------------------------------------------
+
+[INFO|hg|L106] 2024-07-12 12:57:17: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L38] 2024-07-12 13:06:52: filename : 20240712004410_train_test.csv
+[INFO|hg|L46] 2024-07-12 13:06:52: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L49] 2024-07-12 13:06:52: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L50] 2024-07-12 13:06:52: Trying to append it
+[INFO|hg|L54] 2024-07-12 13:06:52: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L38] 2024-07-12 13:06:52: filename : data.csv
+[INFO|hg|L38] 2024-07-12 13:06:52: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 13:06:52: filename : train.csv
+[INFO|hg|L71] 2024-07-12 13:06:52: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L75] 2024-07-12 13:06:52: Data column to keep text exist in file columns
+[INFO|hg|L75] 2024-07-12 13:06:52: Data column to keep chunk_id exist in file columns
+[INFO|hg|L75] 2024-07-12 13:06:52: Data column to keep label exist in file columns
+[INFO|hg|L93] 2024-07-12 13:06:52: Test df shape: (13, 3)
+[INFO|hg|L95] 2024-07-12 13:06:52: Train df shape: (43, 3)
+[INFO|hg|L96] 2024-07-12 13:06:52: Validation df shape: (5, 3)
+[INFO|hg|L103] 2024-07-12 13:06:52: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L38] 2024-07-12 13:07:03: filename : 20240712004410_train_test.csv
+[INFO|hg|L46] 2024-07-12 13:07:03: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L49] 2024-07-12 13:07:03: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L50] 2024-07-12 13:07:03: Trying to append it
+[INFO|hg|L54] 2024-07-12 13:07:03: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L38] 2024-07-12 13:07:03: filename : data.csv
+[INFO|hg|L38] 2024-07-12 13:07:03: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 13:07:03: filename : train.csv
+[INFO|hg|L71] 2024-07-12 13:07:03: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L75] 2024-07-12 13:07:03: Data column to keep text exist in file columns
+[INFO|hg|L75] 2024-07-12 13:07:03: Data column to keep chunk_id exist in file columns
+[INFO|hg|L75] 2024-07-12 13:07:03: Data column to keep label exist in file columns
+[INFO|hg|L93] 2024-07-12 13:07:03: Test df shape: (13, 3)
+[INFO|hg|L95] 2024-07-12 13:07:03: Train df shape: (43, 3)
+[INFO|hg|L96] 2024-07-12 13:07:03: Validation df shape: (5, 3)
+[INFO|hg|L103] 2024-07-12 13:07:03: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L38] 2024-07-12 13:07:16: filename : 20240712004410_train_test.csv
+[INFO|hg|L46] 2024-07-12 13:07:16: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L49] 2024-07-12 13:07:16: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L50] 2024-07-12 13:07:16: Trying to append it
+[INFO|hg|L54] 2024-07-12 13:07:16: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L38] 2024-07-12 13:07:16: filename : data.csv
+[INFO|hg|L38] 2024-07-12 13:07:16: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 13:07:16: filename : train.csv
+[INFO|hg|L71] 2024-07-12 13:07:16: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L75] 2024-07-12 13:07:16: Data column to keep text exist in file columns
+[INFO|hg|L75] 2024-07-12 13:07:16: Data column to keep chunk_id exist in file columns
+[INFO|hg|L75] 2024-07-12 13:07:16: Data column to keep label exist in file columns
+[INFO|hg|L93] 2024-07-12 13:07:16: Test df shape: (13, 3)
+[INFO|hg|L95] 2024-07-12 13:07:16: Train df shape: (43, 3)
+[INFO|hg|L96] 2024-07-12 13:07:16: Validation df shape: (5, 3)
+[INFO|hg|L103] 2024-07-12 13:07:16: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label', '__index_level_0__'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L38] 2024-07-12 13:09:41: filename : 20240712004410_train_test.csv
+[INFO|hg|L46] 2024-07-12 13:09:41: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L49] 2024-07-12 13:09:41: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L50] 2024-07-12 13:09:41: Trying to append it
+[INFO|hg|L54] 2024-07-12 13:09:41: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L38] 2024-07-12 13:09:41: filename : data.csv
+[INFO|hg|L38] 2024-07-12 13:09:41: filename : sample_data.csv
+[INFO|hg|L38] 2024-07-12 13:09:41: filename : train.csv
+[INFO|hg|L71] 2024-07-12 13:09:41: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L75] 2024-07-12 13:09:41: Data column to keep text exist in file columns
+[INFO|hg|L75] 2024-07-12 13:09:41: Data column to keep chunk_id exist in file columns
+[INFO|hg|L75] 2024-07-12 13:09:41: Data column to keep label exist in file columns
+[INFO|hg|L93] 2024-07-12 13:09:41: Test df shape: (13, 3)
+[INFO|hg|L95] 2024-07-12 13:09:41: Train df shape: (43, 3)
+[INFO|hg|L96] 2024-07-12 13:09:41: Validation df shape: (5, 3)
+[INFO|hg|L103] 2024-07-12 13:09:41: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:11:54: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:11:54: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:11:54: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:11:54: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:11:54: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:11:54: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:11:54: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:11:54: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:11:54: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:11:54: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:11:54: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:11:54: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:11:54: Test df shape: (13, 3)
+[INFO|hg|L96] 2024-07-12 13:11:54: Train df shape: (43, 3)
+[INFO|hg|L97] 2024-07-12 13:11:54: Validation df shape: (5, 3)
+[INFO|hg|L104] 2024-07-12 13:11:54: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:14:03: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:14:03: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:14:03: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:14:03: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:14:03: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:14:03: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:14:03: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:14:03: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:14:03: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:14:03: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:14:03: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:14:03: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:14:03: Test df shape: (13, 3)
+[INFO|hg|L96] 2024-07-12 13:14:03: Train df shape: (43, 3)
+[INFO|hg|L97] 2024-07-12 13:14:03: Validation df shape: (5, 3)
+[INFO|hg|L104] 2024-07-12 13:14:03: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:14:54: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:14:54: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:14:54: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:14:54: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:14:54: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:14:54: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:14:54: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:14:54: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:14:54: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:14:54: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:14:54: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:14:54: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:14:54: Test df shape: (13, 3)
+[INFO|hg|L96] 2024-07-12 13:14:54: Train df shape: (43, 3)
+[INFO|hg|L97] 2024-07-12 13:14:54: Validation df shape: (5, 3)
+[INFO|hg|L104] 2024-07-12 13:14:54: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:15:10: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:15:10: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:15:10: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:15:10: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:15:10: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:15:10: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:15:10: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:15:10: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:15:10: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:15:10: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:15:10: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:15:10: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:15:10: Test df shape: (13, 3)
+[INFO|hg|L96] 2024-07-12 13:15:10: Train df shape: (43, 3)
+[INFO|hg|L97] 2024-07-12 13:15:10: Validation df shape: (5, 3)
+[INFO|hg|L104] 2024-07-12 13:15:10: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:17:10: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:17:10: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:17:10: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:17:10: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:17:10: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:17:10: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:17:10: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:17:10: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:17:10: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:17:10: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:17:10: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:17:10: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:17:10: Test df shape: (13, 3)
+[INFO|hg|L96] 2024-07-12 13:17:10: Train df shape: (43, 3)
+[INFO|hg|L97] 2024-07-12 13:17:10: Validation df shape: (5, 3)
+[INFO|hg|L104] 2024-07-12 13:17:10: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:17:26: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:17:26: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:17:26: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:17:26: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:17:26: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:17:26: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:17:26: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:17:26: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:17:26: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:17:26: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:17:26: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:17:26: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:17:26: Test df shape: (13, 3)
+[INFO|hg|L96] 2024-07-12 13:17:26: Train df shape: (43, 3)
+[INFO|hg|L97] 2024-07-12 13:17:26: Validation df shape: (5, 3)
+[INFO|hg|L104] 2024-07-12 13:17:26: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:18:49: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:18:49: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:18:49: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:18:49: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:18:49: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:18:49: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:18:49: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:18:49: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:18:49: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:18:49: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:18:49: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:18:49: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:18:49: Test df shape: (13, 3)
+[INFO|hg|L96] 2024-07-12 13:18:49: Train df shape: (43, 3)
+[INFO|hg|L97] 2024-07-12 13:18:49: Validation df shape: (5, 3)
+[INFO|hg|L104] 2024-07-12 13:18:49: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:19:08: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:19:08: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:19:08: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:19:08: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:19:08: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:19:08: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:19:08: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:19:08: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:19:08: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:19:08: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:19:08: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:19:08: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:19:08: Test df shape: (13, 3)
+[INFO|hg|L96] 2024-07-12 13:19:08: Train df shape: (43, 3)
+[INFO|hg|L97] 2024-07-12 13:19:08: Validation df shape: (5, 3)
+[INFO|hg|L104] 2024-07-12 13:19:08: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 43
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 5
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 13
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:19:56: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:19:56: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:19:56: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:19:56: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:19:56: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:19:56: filename : 20240712004411_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:19:56: file_date parsed to correct format: 2024-07-12 00:44:11
+[INFO|hg|L50] 2024-07-12 13:19:56: File name date 2024-07-12 00:44:11 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:19:56: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:19:56: Reading CSV file : ./data/boedataset\20240712004411_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:19:56: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:19:56: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:19:56: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:19:56: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:19:56: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:19:56: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:19:56: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:19:56: Test df shape: (25, 3)
+[INFO|hg|L96] 2024-07-12 13:19:56: Train df shape: (87, 3)
+[INFO|hg|L97] 2024-07-12 13:19:56: Validation df shape: (10, 3)
+[INFO|hg|L104] 2024-07-12 13:19:56: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 87
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 10
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 25
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:23:08: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:23:08: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:23:08: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:23:08: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:23:08: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:23:08: filename : 20240712004411_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:23:08: file_date parsed to correct format: 2024-07-12 00:44:11
+[INFO|hg|L50] 2024-07-12 13:23:08: File name date 2024-07-12 00:44:11 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:23:08: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:23:08: Reading CSV file : ./data/boedataset\20240712004411_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:23:08: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:23:08: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:23:08: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:23:08: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:23:08: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:23:08: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:23:08: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:23:08: Test df shape: (25, 3)
+[INFO|hg|L96] 2024-07-12 13:23:08: Train df shape: (87, 3)
+[INFO|hg|L97] 2024-07-12 13:23:08: Validation df shape: (10, 3)
+[INFO|hg|L104] 2024-07-12 13:23:08: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 87
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 10
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 25
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:23:50: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:23:50: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:23:50: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:23:50: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:23:50: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:23:50: filename : 20240712004411_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:23:50: file_date parsed to correct format: 2024-07-12 00:44:11
+[INFO|hg|L50] 2024-07-12 13:23:50: File name date 2024-07-12 00:44:11 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:23:50: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:23:50: Reading CSV file : ./data/boedataset\20240712004411_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:23:50: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:23:50: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:23:50: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:23:50: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:23:50: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:23:50: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:23:50: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:23:50: Test df shape: (25, 3)
+[INFO|hg|L96] 2024-07-12 13:23:50: Train df shape: (87, 3)
+[INFO|hg|L97] 2024-07-12 13:23:50: Validation df shape: (10, 3)
+[INFO|hg|L104] 2024-07-12 13:23:50: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 87
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 10
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 25
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:24:08: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:24:08: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:24:08: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:24:08: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:24:08: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:24:08: filename : 20240712004411_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:24:08: file_date parsed to correct format: 2024-07-12 00:44:11
+[INFO|hg|L50] 2024-07-12 13:24:08: File name date 2024-07-12 00:44:11 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:24:08: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:24:08: Reading CSV file : ./data/boedataset\20240712004411_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:24:08: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:24:08: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:24:08: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:24:08: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:24:08: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:24:08: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:24:08: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:24:08: Test df shape: (25, 3)
+[INFO|hg|L96] 2024-07-12 13:24:08: Train df shape: (87, 3)
+[INFO|hg|L97] 2024-07-12 13:24:08: Validation df shape: (10, 3)
+[INFO|hg|L104] 2024-07-12 13:24:08: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 87
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 10
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 25
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:24:44: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:24:44: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:24:44: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:24:44: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:24:44: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:24:44: filename : 20240712004411_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:24:44: file_date parsed to correct format: 2024-07-12 00:44:11
+[INFO|hg|L50] 2024-07-12 13:24:44: File name date 2024-07-12 00:44:11 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:24:44: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:24:44: Reading CSV file : ./data/boedataset\20240712004411_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:24:44: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:24:44: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:24:44: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:24:44: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:24:44: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:24:44: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:24:44: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:24:44: Test df shape: (25, 3)
+[INFO|hg|L96] 2024-07-12 13:24:44: Train df shape: (87, 3)
+[INFO|hg|L97] 2024-07-12 13:24:44: Validation df shape: (10, 3)
+[INFO|hg|L104] 2024-07-12 13:24:44: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 87
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 10
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 25
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:25:27: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:25:27: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:25:27: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:25:27: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:25:27: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:25:27: filename : 20240712004411_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:25:27: file_date parsed to correct format: 2024-07-12 00:44:11
+[INFO|hg|L50] 2024-07-12 13:25:27: File name date 2024-07-12 00:44:11 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:25:27: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:25:27: Reading CSV file : ./data/boedataset\20240712004411_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:25:27: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:25:27: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:25:27: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:25:27: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:25:27: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:25:27: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:25:27: Data column to keep label exist in file columns
+[INFO|hg|L94] 2024-07-12 13:25:27: Test df shape: (25, 3)
+[INFO|hg|L96] 2024-07-12 13:25:27: Train df shape: (87, 3)
+[INFO|hg|L97] 2024-07-12 13:25:27: Validation df shape: (10, 3)
+[INFO|hg|L104] 2024-07-12 13:25:27: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 87
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 10
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label'],
+        num_rows: 25
+    })
+})
+[INFO|hg|L39] 2024-07-12 13:31:18: filename : 20240712004410_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:31:18: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg|L50] 2024-07-12 13:31:18: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:31:18: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:31:18: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:31:18: filename : 20240712004411_train_test.csv
+[INFO|hg|L47] 2024-07-12 13:31:18: file_date parsed to correct format: 2024-07-12 00:44:11
+[INFO|hg|L50] 2024-07-12 13:31:18: File name date 2024-07-12 00:44:11 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg|L51] 2024-07-12 13:31:18: Trying to append it
+[INFO|hg|L55] 2024-07-12 13:31:18: Reading CSV file : ./data/boedataset\20240712004411_train_test.csv
+[INFO|hg|L39] 2024-07-12 13:31:18: filename : data.csv
+[INFO|hg|L39] 2024-07-12 13:31:18: filename : sample_data.csv
+[INFO|hg|L39] 2024-07-12 13:31:18: filename : train.csv
+[INFO|hg|L72] 2024-07-12 13:31:18: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg|L76] 2024-07-12 13:31:18: Data column to keep text exist in file columns
+[INFO|hg|L76] 2024-07-12 13:31:18: Data column to keep chunk_id exist in file columns
+[INFO|hg|L76] 2024-07-12 13:31:18: Data column to keep label exist in file columns
+[INFO|hg|L76] 2024-07-12 13:31:18: Data column to keep pdf_id exist in file columns
+[INFO|hg|L94] 2024-07-12 13:31:18: Test df shape: (25, 4)
+[INFO|hg|L96] 2024-07-12 13:31:18: Train df shape: (87, 4)
+[INFO|hg|L97] 2024-07-12 13:31:18: Validation df shape: (10, 4)
+[INFO|hg|L104] 2024-07-12 13:31:18: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 87
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 10
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 25
+    })
+})
+[INFO|hg_push|L69] 2024-07-12 13:35:35: filename : 20240712004410_train_test.csv
+[INFO|hg_push|L77] 2024-07-12 13:35:35: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg_push|L80] 2024-07-12 13:35:35: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg_push|L81] 2024-07-12 13:35:35: Trying to append it
+[INFO|hg_push|L85] 2024-07-12 13:35:35: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg_push|L69] 2024-07-12 13:35:35: filename : 20240712004411_train_test.csv
+[INFO|hg_push|L77] 2024-07-12 13:35:35: file_date parsed to correct format: 2024-07-12 00:44:11
+[INFO|hg_push|L80] 2024-07-12 13:35:35: File name date 2024-07-12 00:44:11 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg_push|L81] 2024-07-12 13:35:35: Trying to append it
+[INFO|hg_push|L85] 2024-07-12 13:35:35: Reading CSV file : ./data/boedataset\20240712004411_train_test.csv
+[INFO|hg_push|L69] 2024-07-12 13:35:35: filename : data.csv
+[INFO|hg_push|L69] 2024-07-12 13:35:35: filename : sample_data.csv
+[INFO|hg_push|L69] 2024-07-12 13:35:35: filename : train.csv
+[INFO|hg_push|L115] 2024-07-12 13:35:35: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg_push|L119] 2024-07-12 13:35:35: Data column to keep text exists in file columns
+[INFO|hg_push|L119] 2024-07-12 13:35:35: Data column to keep chunk_id exists in file columns
+[INFO|hg_push|L119] 2024-07-12 13:35:35: Data column to keep label exists in file columns
+[INFO|hg_push|L119] 2024-07-12 13:35:35: Data column to keep pdf_id exists in file columns
+[INFO|hg_push|L158] 2024-07-12 13:35:35: Test df shape: (25, 4)
+[INFO|hg_push|L160] 2024-07-12 13:35:35: Train df shape: (87, 4)
+[INFO|hg_push|L161] 2024-07-12 13:35:35: Validation df shape: (10, 4)
+[INFO|hg_push|L168] 2024-07-12 13:35:35: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 87
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 10
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 25
+    })
+})
+[ERROR|hg_push|L180] 2024-07-12 13:35:35: Error cleaning dataset columns: Column name ['__index_level_0__'] not in the dataset. Current columns in the dataset: ['text', 'chunk_id', 'label', 'pdf_id']
+[INFO|hg_push|L69] 2024-07-12 13:49:15: filename : 20240712004410_train_test.csv
+[INFO|hg_push|L77] 2024-07-12 13:49:15: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg_push|L80] 2024-07-12 13:49:15: File name date 2024-07-12 00:44:10 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg_push|L81] 2024-07-12 13:49:15: Trying to append it
+[INFO|hg_push|L85] 2024-07-12 13:49:15: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg_push|L69] 2024-07-12 13:49:15: filename : 20240712004411_train_test.csv
+[INFO|hg_push|L77] 2024-07-12 13:49:15: file_date parsed to correct format: 2024-07-12 00:44:11
+[INFO|hg_push|L80] 2024-07-12 13:49:15: File name date 2024-07-12 00:44:11 between : 2024-07-10 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg_push|L81] 2024-07-12 13:49:15: Trying to append it
+[INFO|hg_push|L85] 2024-07-12 13:49:15: Reading CSV file : ./data/boedataset\20240712004411_train_test.csv
+[INFO|hg_push|L69] 2024-07-12 13:49:15: filename : data.csv
+[INFO|hg_push|L69] 2024-07-12 13:49:15: filename : sample_data.csv
+[INFO|hg_push|L69] 2024-07-12 13:49:15: filename : train.csv
+[INFO|hg_push|L115] 2024-07-12 13:49:15: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg_push|L119] 2024-07-12 13:49:15: Data column to keep text exists in file columns
+[INFO|hg_push|L119] 2024-07-12 13:49:15: Data column to keep chunk_id exists in file columns
+[INFO|hg_push|L119] 2024-07-12 13:49:15: Data column to keep label exists in file columns
+[INFO|hg_push|L119] 2024-07-12 13:49:15: Data column to keep pdf_id exists in file columns
+[INFO|hg_push|L158] 2024-07-12 13:49:15: Test df shape: (25, 4)
+[INFO|hg_push|L160] 2024-07-12 13:49:15: Train df shape: (87, 4)
+[INFO|hg_push|L161] 2024-07-12 13:49:15: Validation df shape: (10, 4)
+[INFO|hg_push|L168] 2024-07-12 13:49:15: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 87
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 10
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 25
+    })
+})
+[ERROR|hg_push|L180] 2024-07-12 13:49:15: Error cleaning dataset columns: Column name ['__index_level_0__'] not in the dataset. Current columns in the dataset: ['text', 'chunk_id', 'label', 'pdf_id']
+[INFO|hg_push|L69] 2024-07-12 16:31:56: filename : 20240712004410_train_test.csv
+[INFO|hg_push|L77] 2024-07-12 16:31:56: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg_push|L80] 2024-07-12 16:31:56: File name date 2024-07-12 00:44:10 between : 2024-07-11 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg_push|L81] 2024-07-12 16:31:56: Trying to append it
+[INFO|hg_push|L85] 2024-07-12 16:31:56: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg_push|L69] 2024-07-12 16:31:56: filename : 20240712004411_train_test.csv
+[INFO|hg_push|L77] 2024-07-12 16:31:56: file_date parsed to correct format: 2024-07-12 00:44:11
+[INFO|hg_push|L80] 2024-07-12 16:31:56: File name date 2024-07-12 00:44:11 between : 2024-07-11 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg_push|L81] 2024-07-12 16:31:56: Trying to append it
+[INFO|hg_push|L85] 2024-07-12 16:31:56: Reading CSV file : ./data/boedataset\20240712004411_train_test.csv
+[INFO|hg_push|L69] 2024-07-12 16:31:56: filename : 20240712152322_train_test.csv
+[INFO|hg_push|L77] 2024-07-12 16:31:56: file_date parsed to correct format: 2024-07-12 15:23:22
+[INFO|hg_push|L80] 2024-07-12 16:31:56: File name date 2024-07-12 15:23:22 between : 2024-07-11 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg_push|L81] 2024-07-12 16:31:56: Trying to append it
+[INFO|hg_push|L85] 2024-07-12 16:31:56: Reading CSV file : ./data/boedataset\20240712152322_train_test.csv
+[INFO|hg_push|L69] 2024-07-12 16:31:56: filename : data.csv
+[INFO|hg_push|L69] 2024-07-12 16:31:56: filename : sample_data.csv
+[INFO|hg_push|L69] 2024-07-12 16:31:56: filename : train.csv
+[INFO|hg_push|L115] 2024-07-12 16:31:56: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg_push|L119] 2024-07-12 16:31:56: Data column to keep text exists in file columns
+[INFO|hg_push|L119] 2024-07-12 16:31:56: Data column to keep chunk_id exists in file columns
+[INFO|hg_push|L119] 2024-07-12 16:31:56: Data column to keep label exists in file columns
+[INFO|hg_push|L119] 2024-07-12 16:31:56: Data column to keep pdf_id exists in file columns
+[INFO|hg_push|L158] 2024-07-12 16:31:56: Test df shape: (829, 4)
+[INFO|hg_push|L160] 2024-07-12 16:31:56: Train df shape: (2982, 4)
+[INFO|hg_push|L161] 2024-07-12 16:31:56: Validation df shape: (332, 4)
+[INFO|hg_push|L168] 2024-07-12 16:31:56: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 2982
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 332
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 829
+    })
+})
+[ERROR|hg_push|L180] 2024-07-12 16:31:56: Error cleaning dataset columns: Column name ['__index_level_0__'] not in the dataset. Current columns in the dataset: ['text', 'chunk_id', 'label', 'pdf_id']
+[INFO|hg_push|L69] 2024-07-18 22:52:21: filename : 20240712004410_train_test.csv
+[INFO|hg_push|L77] 2024-07-18 22:52:21: file_date parsed to correct format: 2024-07-12 00:44:10
+[INFO|hg_push|L80] 2024-07-18 22:52:21: File name date 2024-07-12 00:44:10 between : 2024-07-11 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg_push|L81] 2024-07-18 22:52:21: Trying to append it
+[INFO|hg_push|L85] 2024-07-18 22:52:21: Reading CSV file : ./data/boedataset\20240712004410_train_test.csv
+[INFO|hg_push|L69] 2024-07-18 22:52:21: filename : 20240712004411_train_test.csv
+[INFO|hg_push|L77] 2024-07-18 22:52:21: file_date parsed to correct format: 2024-07-12 00:44:11
+[INFO|hg_push|L80] 2024-07-18 22:52:21: File name date 2024-07-12 00:44:11 between : 2024-07-11 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg_push|L81] 2024-07-18 22:52:21: Trying to append it
+[INFO|hg_push|L85] 2024-07-18 22:52:21: Reading CSV file : ./data/boedataset\20240712004411_train_test.csv
+[INFO|hg_push|L69] 2024-07-18 22:52:21: filename : 20240712152322_train_test.csv
+[INFO|hg_push|L77] 2024-07-18 22:52:21: file_date parsed to correct format: 2024-07-12 15:23:22
+[INFO|hg_push|L80] 2024-07-18 22:52:21: File name date 2024-07-12 15:23:22 between : 2024-07-11 00:00:00 and 2024-07-16 00:00:00
+[INFO|hg_push|L81] 2024-07-18 22:52:21: Trying to append it
+[INFO|hg_push|L85] 2024-07-18 22:52:22: Reading CSV file : ./data/boedataset\20240712152322_train_test.csv
+[INFO|hg_push|L69] 2024-07-18 22:52:22: filename : data.csv
+[INFO|hg_push|L69] 2024-07-18 22:52:22: filename : sample_data.csv
+[INFO|hg_push|L69] 2024-07-18 22:52:22: filename : train.csv
+[INFO|hg_push|L115] 2024-07-18 22:52:22: Data columns : ['text', 'file_path', 'file_name', 'file_type', 'file_size', 'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden', 'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens', 'num_caracteres', 'label']
+[INFO|hg_push|L119] 2024-07-18 22:52:22: Data column to keep text exists in file columns
+[INFO|hg_push|L119] 2024-07-18 22:52:22: Data column to keep chunk_id exists in file columns
+[INFO|hg_push|L119] 2024-07-18 22:52:22: Data column to keep label exists in file columns
+[INFO|hg_push|L119] 2024-07-18 22:52:22: Data column to keep pdf_id exists in file columns
+[INFO|hg_push|L158] 2024-07-18 22:52:22: Test df shape: (829, 4)
+[INFO|hg_push|L160] 2024-07-18 22:52:22: Train df shape: (2982, 4)
+[INFO|hg_push|L161] 2024-07-18 22:52:22: Validation df shape: (332, 4)
+[INFO|hg_push|L168] 2024-07-18 22:52:22: 
+HG DATASET: DatasetDict({
+    train: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 2982
+    })
+    validation: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 332
+    })
+    test: Dataset({
+        features: ['text', 'chunk_id', 'label', 'pdf_id'],
+        num_rows: 829
+    })
+})
+[ERROR|hg_push|L180] 2024-07-18 22:52:22: Error cleaning dataset columns: Column name ['__index_level_0__'] not in the dataset. Current columns in the dataset: ['text', 'chunk_id', 'label', 'pdf_id']

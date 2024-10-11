@@ -1,0 +1,1050 @@
+[INFO|testset|L103] 2024-09-02 10:53:38: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L107] 2024-09-02 10:53:39: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L83] 2024-09-02 10:53:39: Getting visual report analysis ... 
+[ERROR|testset|L87] 2024-09-02 10:53:39: Error while cretaing result dataframe
+Traceback (most recent call last):
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\nanops.py", line 85, in _f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\nanops.py", line 147, in f
+    result = alt(values, axis=axis, skipna=skipna, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\nanops.py", line 1013, in nanvar
+    avg = _ensure_numeric(values.sum(axis=axis, dtype=np.float64)) / count
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\numpy\core\_methods.py", line 49, in _sum
+    return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '¿Cuál es la duración total de las enseñanzas del ciclo de grado medio para Técnico Deportivo en Atletismo?'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 84, in run
+    self.get_visual_report(df=self.results_df, output_file=f"{results_file_path}/metrics_report.png")
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 124, in get_visual_report
+    summary_stats['variance'] = df.var()
+                                ^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\frame.py", line 11707, in var
+    result = super().var(axis, skipna, ddof, numeric_only, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\generic.py", line 12339, in var
+    return self._stat_function_ddof(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\generic.py", line 12315, in _stat_function_ddof
+    return self._reduce(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\frame.py", line 11535, in _reduce
+    res = df._mgr.reduce(blk_func)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\internals\managers.py", line 1501, in reduce
+    nbs = blk.reduce(func)
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\internals\blocks.py", line 404, in reduce
+    result = func(self.values)
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\frame.py", line 11454, in blk_func
+    return op(values, axis=axis, skipna=skipna, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\nanops.py", line 92, in _f
+    raise TypeError(e) from e
+TypeError: could not convert string to float: '¿Cuál es la duración total de las enseñanzas del ciclo de grado medio para Técnico Deportivo en Atletismo?'
+[INFO|testset|L62] 2024-09-02 10:58:45: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 10:58:47: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:47: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 10:58:48: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 10:58:48: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 10:58:49: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 10:58:49: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:50: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:50: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:50: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:51: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 10:58:53: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L79] 2024-09-02 10:58:53: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L104] 2024-09-02 10:58:53: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L108] 2024-09-02 10:58:53: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L84] 2024-09-02 10:58:53: Getting visual report analysis ... 
+[ERROR|testset|L88] 2024-09-02 10:58:53: Error while cretaing result dataframe
+Traceback (most recent call last):
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\nanops.py", line 85, in _f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\nanops.py", line 147, in f
+    result = alt(values, axis=axis, skipna=skipna, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\nanops.py", line 1013, in nanvar
+    avg = _ensure_numeric(values.sum(axis=axis, dtype=np.float64)) / count
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\numpy\core\_methods.py", line 49, in _sum
+    return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '¿Cuál es la duración total de las enseñanzas del ciclo de grado medio para Técnico Deportivo en Atletismo?'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 85, in run
+    self.get_visual_report(df=self.results_df, output_file=f"{results_file_path}/metrics_report.png")
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 128, in get_visual_report
+    summary_stats['variance'] = df.var()
+                                ^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\frame.py", line 11707, in var
+    result = super().var(axis, skipna, ddof, numeric_only, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\generic.py", line 12339, in var
+    return self._stat_function_ddof(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\generic.py", line 12315, in _stat_function_ddof
+    return self._reduce(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\frame.py", line 11535, in _reduce
+    res = df._mgr.reduce(blk_func)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\internals\managers.py", line 1501, in reduce
+    nbs = blk.reduce(func)
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\internals\blocks.py", line 404, in reduce
+    result = func(self.values)
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\frame.py", line 11454, in blk_func
+    return op(values, axis=axis, skipna=skipna, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\nanops.py", line 92, in _f
+    raise TypeError(e) from e
+TypeError: could not convert string to float: '¿Cuál es la duración total de las enseñanzas del ciclo de grado medio para Técnico Deportivo en Atletismo?'
+[INFO|testset|L62] 2024-09-02 11:00:35: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 11:00:37: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:00:38: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:00:38: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:00:38: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:00:39: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:00:41: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L79] 2024-09-02 11:00:41: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L104] 2024-09-02 11:00:41: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L108] 2024-09-02 11:00:41: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L84] 2024-09-02 11:00:41: Getting visual report analysis ... 
+[ERROR|testset|L88] 2024-09-02 11:00:44: Error while cretaing result dataframe
+Traceback (most recent call last):
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 85, in run
+    self.get_visual_report(df=self.results_df, output_file=f"{results_file_path}/metrics_report.png")
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 164, in get_visual_report
+    plt.savefig(output_file)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\pyplot.py", line 1134, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\figure.py", line 3390, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backend_bases.py", line 2193, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backend_bases.py", line 2043, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backends\backend_agg.py", line 497, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backends\backend_agg.py", line 446, in _print_pil
+    mpl.image.imsave(
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\image.py", line 1656, in imsave
+    image.save(fname, **pil_kwargs)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\PIL\Image.py", line 2436, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: './data/rag evaluation/results/results.csv/metrics_report.png'
+[INFO|testset|L62] 2024-09-02 11:02:34: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 11:02:37: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:02:37: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:02:37: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:37: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:37: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:37: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:37: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:37: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:37: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:02:38: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:02:38: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:39: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:39: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:39: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:02:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L79] 2024-09-02 11:02:40: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L105] 2024-09-02 11:02:40: Directory already exists: ./data/rag evaluation/results/results.csv
+[ERROR|testset|L88] 2024-09-02 11:02:40: Error while cretaing result dataframe
+Traceback (most recent call last):
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 81, in run
+    self._save_df(file_path=results_file_path)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 108, in _save_df
+    self.results_df.to_csv(path_or_buf=file_path, index=False)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\generic.py", line 3961, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\io\formats\format.py", line 1014, in to_csv
+    csv_formatter.save()
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\io\common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\io\common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'data\rag evaluation\results\results.csv'
+[INFO|testset|L62] 2024-09-02 11:05:47: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 11:05:49: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:49: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:49: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:49: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:05:49: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:05:50: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:05:50: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:05:50: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:50: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:50: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:50: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:50: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:51: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:51: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:51: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:51: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:52: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:05:52: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L79] 2024-09-02 11:05:53: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L101] 2024-09-02 11:05:53: Directory already exists: ./data/rag evaluation/results/results.csv
+[ERROR|testset|L88] 2024-09-02 11:05:53: Error while cretaing result dataframe
+Traceback (most recent call last):
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 81, in run
+    self._save_df(file_path=results_file_path)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 105, in _save_df
+    self.results_df.to_csv(path_or_buf=file_path, index=False)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\core\generic.py", line 3961, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\io\formats\format.py", line 1014, in to_csv
+    csv_formatter.save()
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\io\common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\pandas\io\common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'data\rag evaluation\results\results.csv'
+[INFO|testset|L62] 2024-09-02 11:08:18: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 11:08:21: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:08:21: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:08:22: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:22: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:22: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:22: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:22: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:22: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:22: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:22: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:08:22: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:08:22: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:23: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:23: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:23: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:24: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:24: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:08:25: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L79] 2024-09-02 11:08:25: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L104] 2024-09-02 11:08:25: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L108] 2024-09-02 11:08:25: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L84] 2024-09-02 11:08:25: Getting visual report analysis ... 
+[ERROR|testset|L88] 2024-09-02 11:08:26: Error while cretaing result dataframe
+Traceback (most recent call last):
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 85, in run
+    self.get_visual_report(df=self.results_df, output_file=results_file_path)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 165, in get_visual_report
+    plt.savefig(output_file)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\pyplot.py", line 1134, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\figure.py", line 3390, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backend_bases.py", line 2193, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backend_bases.py", line 2043, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backends\backend_agg.py", line 497, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backends\backend_agg.py", line 446, in _print_pil
+    mpl.image.imsave(
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\image.py", line 1656, in imsave
+    image.save(fname, **pil_kwargs)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\PIL\Image.py", line 2436, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: './data/rag evaluation/results/results.csv/metrics_report.png'
+[INFO|testset|L62] 2024-09-02 11:09:24: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 11:09:26: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:09:27: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:09:27: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:27: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:27: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:27: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:27: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:27: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:27: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:27: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:09:27: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:09:28: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:29: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:29: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:29: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:29: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:29: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:09:30: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L79] 2024-09-02 11:09:30: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L104] 2024-09-02 11:09:30: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L108] 2024-09-02 11:09:30: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L84] 2024-09-02 11:09:30: Getting visual report analysis ... 
+[INFO|testset|L169] 2024-09-02 11:09:31: Report saved as ./data/rag evaluation/results/metrics_report.png
+[INFO|testset|L62] 2024-09-02 11:17:37: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 11:17:39: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:17:40: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:17:40: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:17:40: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:17:41: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:41: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:41: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:41: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:42: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:42: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:42: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:42: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:17:43: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L79] 2024-09-02 11:17:43: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L104] 2024-09-02 11:17:43: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L108] 2024-09-02 11:17:43: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L84] 2024-09-02 11:17:43: Getting visual report analysis ... 
+[ERROR|testset|L88] 2024-09-02 11:17:44: Error while cretaing result dataframe
+Traceback (most recent call last):
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 85, in run
+    self.get_visual_report(df=self.results_df, output_file=results_file_path)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\src\RAG_EVAL\testset.py", line 140, in get_visual_report
+    plt.savefig(directory + "/metrics_heatmap.png")
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\pyplot.py", line 1134, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\figure.py", line 3390, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backend_bases.py", line 2193, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backend_bases.py", line 2043, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backends\backend_agg.py", line 497, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\backends\backend_agg.py", line 446, in _print_pil
+    mpl.image.imsave(
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\matplotlib\image.py", line 1656, in imsave
+    image.save(fname, **pil_kwargs)
+  File "C:\Users\Jorge\Desktop\MASTER_IA\TFM\proyecto\env\Lib\site-packages\PIL\Image.py", line 2436, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: './data/rag evaluation/results/metrics_report.png/metrics_heatmap.png'
+[INFO|testset|L62] 2024-09-02 11:18:12: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 11:18:14: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:18:14: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:18:14: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:15: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:15: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:15: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:15: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:15: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:15: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:15: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:18:15: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 11:18:15: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:15: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:15: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:16: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:16: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:16: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 11:18:16: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L79] 2024-09-02 11:18:17: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L104] 2024-09-02 11:18:17: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L108] 2024-09-02 11:18:17: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L84] 2024-09-02 11:18:17: Getting visual report analysis ... 
+[INFO|testset|L174] 2024-09-02 11:18:18: Report saved as ./data/rag evaluation/results
+[INFO|testset|L60] 2024-09-02 18:11:34: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|testset|L60] 2024-09-02 18:12:39: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 18:12:42: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:42: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:42: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:12:42: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:12:43: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:43: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:43: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:43: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:43: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:43: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:12:43: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:12:43: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:43: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:43: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:44: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:44: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:44: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:12:45: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L77] 2024-09-02 18:12:46: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L153] 2024-09-02 18:12:46: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L157] 2024-09-02 18:12:46: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[ERROR|testset|L207] 2024-09-02 18:12:47: 'context_precison'
+[INFO|testset|L132] 2024-09-02 18:12:48: Getting means and distribution reports visual analysis ... 
+[INFO|testset|L134] 2024-09-02 18:12:48: Reports saved as ./data/rag evaluation/results
+[INFO|testset|L60] 2024-09-02 18:23:42: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 18:23:45: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:45: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:23:45: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:23:46: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:46: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:46: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:46: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:46: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:46: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:46: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:23:46: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:23:46: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:47: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:47: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:47: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:47: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:23:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L77] 2024-09-02 18:23:49: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L153] 2024-09-02 18:23:49: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L157] 2024-09-02 18:23:49: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[ERROR|testset|L209] 2024-09-02 18:23:49: 'context_precison'
+[INFO|testset|L132] 2024-09-02 18:23:50: Getting means and distribution reports visual analysis ... 
+[INFO|testset|L134] 2024-09-02 18:23:50: Reports saved inside ./data/rag evaluation/results/metric reports
+[INFO|testset|L60] 2024-09-02 18:26:08: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 18:26:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:26:11: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:26:11: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:26:11: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:26:11: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:13: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:13: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:13: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:14: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:26:15: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L77] 2024-09-02 18:26:16: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L153] 2024-09-02 18:26:16: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L157] 2024-09-02 18:26:16: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[ERROR|testset|L209] 2024-09-02 18:26:16: 'context_precison'
+[INFO|testset|L132] 2024-09-02 18:26:17: Getting means and distribution reports visual analysis ... 
+[INFO|testset|L134] 2024-09-02 18:26:18: Reports saved inside ./data/rag evaluation/results/metric reports
+[INFO|testset|L60] 2024-09-02 18:28:50: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 18:28:53: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:28:53: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:28:53: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:53: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:53: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:53: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:53: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:53: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:53: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:53: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:28:54: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 18:28:54: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:55: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:55: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:55: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:55: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:56: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 18:28:56: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L77] 2024-09-02 18:28:57: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L153] 2024-09-02 18:28:57: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L157] 2024-09-02 18:28:57: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L132] 2024-09-02 18:28:58: Getting means and distribution reports visual analysis ... 
+[INFO|testset|L134] 2024-09-02 18:28:58: Reports saved inside ./data/rag evaluation/results/metric reports
+[INFO|testset|L60] 2024-09-02 19:40:25: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 2
+    })
+})
+[INFO|_client|L1773] 2024-09-02 19:40:28: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 19:40:28: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 19:40:28: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:28: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:28: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:28: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:28: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:28: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:28: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:29: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 19:40:29: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 19:40:29: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:30: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:30: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:30: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:31: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:31: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 19:40:31: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L77] 2024-09-02 19:40:32: Ragas Eval result dataframe :
+                                            question  ... context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  ...            1.0
+1  ¿Qué pruebas son necesarias para acceder al ci...  ...            1.0
+
+[2 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(2, 8)
+[INFO|testset|L153] 2024-09-02 19:40:32: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L157] 2024-09-02 19:40:32: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L132] 2024-09-02 19:40:33: Getting means and distribution reports visual analysis ... 
+[INFO|testset|L134] 2024-09-02 19:40:34: Reports saved inside ./data/rag evaluation/results/metric reports
+[INFO|testset|L60] 2024-09-02 20:40:01: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 10
+    })
+})
+[INFO|_client|L1773] 2024-09-02 20:40:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:04: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:05: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:06: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:06: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:07: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:08: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:08: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:08: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:09: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:11: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:12: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:12: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 20:40:12: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:13: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:13: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:14: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 20:40:16: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L77] 2024-09-02 20:40:17: Ragas Eval result dataframe :
+                                            question                                             answer                                           contexts  ... faithfulness  answer_relevancy  context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  La duración total de las enseñanzas correspond...  [ 1. La duración total de las enseñanzas corre...  ...          1.0          0.945168        1.000000
+1  ¿Qué pruebas son necesarias para acceder al ci...  Para acceder al ciclo inicial de grado medio e...  [ # Ciclo inicial de grado medio en atletismo,...  ...          1.0          0.872942        1.000000
+2  ¿Qué se menciona sobre la accesibilidad univer...  Según el contexto, los espacios y equipamiento...  [ Los espacios y equipamientos que deben reuni...  ...          1.0          0.918540        1.000000
+3  ¿Qué competencias desarrolla el módulo de 'Tec...  El módulo de "Tecnificación y perfeccionamient...  [ La formación del módulo contribuye a complet...  ...          1.0          0.932397        0.333333
+4  ¿Qué aspectos se analizan en la técnica de la ...  Según el contexto, en el análisis mecánico de ...  [. 92 Lunes   I.  41328  # Enseñanza de los ej...  ...          1.0          0.943748        0.500000
+
+[5 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(10, 8)
+[INFO|testset|L153] 2024-09-02 20:40:17: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L157] 2024-09-02 20:40:17: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L132] 2024-09-02 20:40:17: Getting means and distribution reports visual analysis ... 
+[INFO|testset|L134] 2024-09-02 20:40:18: Reports saved inside ./data/rag evaluation/results/metric reports
+[INFO|testset|L60] 2024-09-02 21:12:59: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 10
+    })
+})
+[INFO|_client|L1773] 2024-09-02 21:13:02: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:02: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:02: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:03: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:04: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:04: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:04: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:05: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:05: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:07: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:09: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:10: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:10: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:10: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:10: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-02 21:13:11: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-02 21:13:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L77] 2024-09-02 21:13:13: Ragas Eval result dataframe :
+                                            question                                             answer                                           contexts  ... faithfulness  answer_relevancy  context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  La duración total de las enseñanzas correspond...  [ 1. La duración total de las enseñanzas corre...  ...          1.0          0.945168        1.000000
+1  ¿Qué pruebas son necesarias para acceder al ci...  Para acceder al ciclo inicial de grado medio e...  [ # Ciclo inicial de grado medio en atletismo,...  ...          1.0          0.873002        1.000000
+2  ¿Qué se menciona sobre la accesibilidad univer...  Según el contexto, los espacios y equipamiento...  [ Los espacios y equipamientos que deben reuni...  ...          1.0          0.918540        1.000000
+3  ¿Qué competencias desarrolla el módulo de 'Tec...  El módulo de "Tecnificación y perfeccionamient...  [ La formación del módulo contribuye a complet...  ...          1.0          0.874645        0.333333
+4  ¿Qué aspectos se analizan en la técnica de la ...  Según el contexto, en el análisis mecánico de ...  [. 92 Lunes   I.  41328  # Enseñanza de los ej...  ...          1.0          0.943695        0.500000
+
+[5 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(10, 8)
+[INFO|testset|L153] 2024-09-02 21:13:13: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L157] 2024-09-02 21:13:13: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L132] 2024-09-02 21:13:14: Getting means and distribution reports visual analysis ... 
+[INFO|testset|L134] 2024-09-02 21:13:14: Reports saved inside ./data/rag evaluation/results/metric reports
+[INFO|testset|L60] 2024-09-03 18:06:57: RAGAS hg testset DatasetDict({
+    train: Dataset({
+        features: ['question', 'answer', 'contexts', 'ground_truth'],
+        num_rows: 10
+    })
+})
+[INFO|_client|L1773] 2024-09-03 18:06:59: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:00: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:01: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:02: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:02: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:02: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:03: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:04: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:05: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:05: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:05: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:06: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:06: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:06: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:08: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:09: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:09: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1026] 2024-09-03 18:07:09: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|_client|L1773] 2024-09-03 18:07:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|testset|L77] 2024-09-03 18:07:13: Ragas Eval result dataframe :
+                                            question                                             answer                                           contexts  ... faithfulness  answer_relevancy  context_recall
+0  ¿Cuál es la duración total de las enseñanzas d...  La duración total de las enseñanzas correspond...  [ 1. La duración total de las enseñanzas corre...  ...          1.0          0.945168        1.000000
+1  ¿Qué pruebas son necesarias para acceder al ci...  Para acceder al ciclo inicial de grado medio e...  [ # Ciclo inicial de grado medio en atletismo,...  ...          1.0          0.872942        1.000000
+2  ¿Qué se menciona sobre la accesibilidad univer...  Se menciona que los espacios y equipamientos n...  [ Los espacios y equipamientos que deben reuni...  ...          1.0          0.950934        1.000000
+3  ¿Qué competencias desarrolla el módulo de 'Tec...  El módulo de "Tecnificación y perfeccionamient...  [ La formación del módulo contribuye a complet...  ...          1.0          0.932397        0.333333
+4  ¿Qué aspectos se analizan en la técnica de la ...  Según el contexto, en el análisis mecánico de ...  [. 92 Lunes   I.  41328  # Enseñanza de los ej...  ...          1.0          0.943695        0.500000
+
+[5 rows x 8 columns]
+self.results_df.columns=Index(['question', 'answer', 'contexts', 'ground_truth', 'context_precision',
+       'faithfulness', 'answer_relevancy', 'context_recall'],
+      dtype='object')
+self.results_df.shape=(10, 8)
+[INFO|testset|L153] 2024-09-03 18:07:13: Directory already exists: ./data/rag evaluation/results
+[INFO|testset|L157] 2024-09-03 18:07:13: DataFrame saved to CSV at: ./data/rag evaluation/results/results.csv
+[INFO|testset|L132] 2024-09-03 18:07:14: Getting means and distribution reports visual analysis ... 
+[INFO|testset|L134] 2024-09-03 18:07:15: Reports saved inside ./data/rag evaluation/results/metric reports
