@@ -1,9 +1,9 @@
 name: FastApi BoeChatBot build and deploy to Azure Web app
 
 env:
-  AZURE_WEBAPP_NAME: BOE-ChatBot-BackEnd     
+  AZURE_WEBAPP_NAME: boe-chatbot-backend    
   PYTHON_VERSION: '3.11' 
-  STARTUP_COMMAND: 'gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.main:app --bind 0.0.0.0:8000'
+  STARTUP_COMMAND: 'gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.main:app --bind 0.0.0.0:$PORT'
   WORKING_DIRECTORY: '.'
   PINECONE_INDEX_NAME: boe
   PINECONE_INDEX_NAMESPACE: boe_namespace_1
@@ -105,6 +105,7 @@ jobs:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           package: ${{ env.WORKING_DIRECTORY }}
           startup-command: ${{ env.STARTUP_COMMAND }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BB748093AF6E480ABA5A3E31ECAA712E }}
       - name : Final Azure logout
         run: |
           az logout
