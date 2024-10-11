@@ -30,7 +30,6 @@ __pycache__
 # Ignore specific __pycache__ directory
 /src/package/__pycache__
 
-requirements_win.txt
 
 COMANDS.md
 
