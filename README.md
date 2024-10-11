@@ -61,28 +61,3 @@ Detalles:
 La aplicacion se ha construido utilizando patra el fron Node.js y Vit. Estas tecnologias han permitido el desarrollo del UI (user interface) de la aplicacion.
 Por otro lado el modelo de procesamiento de los archivos PDF del BOE, se aloja en el backend dsarrollado con Python y que cuenta con una API construida con FastApi que permite la interaccion frontend-backend de la aplicacion. El modelo de procesamiento se ha desarrollado y diseñado como parte de mi trabajo de fin de grado con el objetivo de mejorar , optimizar y hacer mas accesibles los textos y corpus legales del BOE a todo usuario no experto o con poco tiempo. El modelo por debajo cuenta una arquitectura de grafo logico que hace uso de agentes, deferentes métodos de procesamiento del lenguaje natural (NLP) y  avanzadas técnicas de RAG para dar una respuesta precisa al usuario segun el PDF o los PDFs del BOE que este quiera consultar.
 
-## publi
-Aquí tienes un posible texto para tu publicación en LinkedIn:
-
----
-
-🚀 ¡Nuevo proyecto terminado! 🚀
-
-Me complace compartir que he desarrollado una **aplicación web full stack** para el procesamiento de archivos PDF del BOE (Boletín Oficial del Estado). 💻📄
-
-🔧 **Tecnologías utilizadas:**
-- **Frontend:** React.js junto con Node.js y Vite para la construcción de una interfaz de usuario (UI) moderna y eficiente.
-- **Backend:** FastAPI con Python, donde se aloja el modelo de procesamiento de PDFs.
-
-Este proyecto forma parte de mi **Trabajo de Fin de Grado**, con el objetivo de mejorar, optimizar y hacer más accesibles los textos y corpus legales del BOE para usuarios sin experiencia técnica o que disponen de poco tiempo. ⏳
-
-🔍 **Características principales:**
-- El backend incluye un modelo de procesamiento de archivos PDF, diseñado con una arquitectura de **grafo lógico**, que utiliza **agentes** y avanzadas técnicas de **Procesamiento del Lenguaje Natural (NLP)**, además de técnicas de **Retrieval-Augmented Generation (RAG)** para proporcionar respuestas precisas según los documentos del BOE consultados por el usuario.
-
-Este proyecto es una apuesta por la accesibilidad y eficiencia en el manejo de información legal, ofreciendo una herramienta útil para cualquier persona que necesite interactuar con documentos del BOE. 📜✨
-
-#reactjs #fastapi #python #nodejs #vite #nlp #procesamientodelenguaje #webdevelopment #fullstack #TFG #boe #legaltech
-
----
-
-Este texto resalta las tecnologías que has utilizado, el propósito de la aplicación y cómo funciona, asegurando que sea atractivo para una audiencia técnica en LinkedIn.

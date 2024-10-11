@@ -56,7 +56,6 @@ os.environ['HG_REPO_RAGAS_TESTSET_ID'] = os.getenv('HG_REPO_RAGAS_TESTSET_ID')
 os.environ['GROQ_API_KEY'] = os.getenv('GROQ_API_KEY')
 os.environ['NVIDIA_API_KEY'] = os.getenv('NVIDIA_API_KEY')
 os.environ['RAPTOR_CHUNKS_FILE_NAME'] = os.getenv('RAPTOR_CHUNKS_FILE_NAME')
-login(token=os.getenv('HUG_API_KEY'))
 
 
 def get_graph() -> tuple[RunnableConfig, CompiledGraph]:
@@ -114,6 +113,7 @@ def setup_vector_db():
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    login(token=os.getenv('HUG_API_KEY'))
     setup_logging(file_name="api.json")
     # Load the model in the state atribute of the app object
     app.state.open_ai_model = OpenAiModel(api_ky=os.getenv('OPENAI_API_KEY'))
