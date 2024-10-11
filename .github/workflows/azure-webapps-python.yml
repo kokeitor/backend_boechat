@@ -4,7 +4,17 @@ on:
   push:
     branches:
       - pro
-  workflow_dispatch:
+    paths-ignore:
+      - README.md
+      - EXECUTION.md
+      - AZURE_COMANDS.md
+      - GIT_TIPS.md
+      - .env.local
+      - requirements_win.txt
+      - src.RAG_EVAL
+      - src.main_rag_eval.py
+      - src.tests
+
 
 env:
   AZURE_WEBAPP_NAME: BOE-ChatBot-BackEnd     
@@ -117,4 +127,5 @@ jobs:
 
       - name: Final Azure logout
         run: |
+
           az logout
