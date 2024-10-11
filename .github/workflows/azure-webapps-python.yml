@@ -110,7 +110,12 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-
+      
+      - name : Azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS_GITHUB_SECRET }}
+          
       - name: Set App Platform to Python
         uses: azure/appservice-settings@v1
         with:
