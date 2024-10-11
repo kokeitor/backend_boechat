@@ -32,7 +32,9 @@ __pycache__
 
 requirements_win.txt
 
-COMANDS.md
+AZURE_COMANDS.md
+GIT_TIPS.md
+EXECUTION.md
 
 .env.local
 requirements_production.txt
