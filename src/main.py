@@ -2,6 +2,7 @@ import os
 import logging
 import warnings
 import time
+import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from src.API.routes.ia_response import iaResponse
@@ -159,3 +160,6 @@ app.add_middleware(
     allow_methods=["POST", "GET"],
     allow_headers=["*"],
 )
+
+if __name__ == "__main__":
+    uvicorn.run("src.main:app", host="0.0.0.0", port=8000, reload=True)
