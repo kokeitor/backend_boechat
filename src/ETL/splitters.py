@@ -32,7 +32,7 @@ class CustomSemanticSplitter:
             embedding_model=HuggingFaceEmbeddings(
                 model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"),
             tokenizer=AutoTokenizer.from_pretrained(
-                "meta-llama/Meta-Llama-3-8B"),
+                "meta-llama/Meta-Llama-3-8B", trust_remote_code=True),
             buffer_size: int = 2,
             threshold: int = 75,
             verbose: int = 0,
