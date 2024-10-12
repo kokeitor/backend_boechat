@@ -1,69 +1,136 @@
-name: Build and deploy Python app to Azure Web App
-
-env:
-  AZURE_WEBAPP_NAME: BOE-ChatBot-BackEnd  # set this to the name of your Azure Web App
-  AZURE_RESOURCE_GROUP_NAME: BOE-ChatBot   # set this to the name of your Azure Resource Group
-  PYTHON_VERSION: '3.11' 
-  WORKING_DIRECTORY: '.'        # set this to the path to your path of working directory inside github repository, defaults to the repository root
-  STARTUP_COMMAND: 'uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload'
+name: Build and deploy Python app to Azure Web App - boe-chatbot-backend
 
 on:
   push:
-    branches: 
+    branches:
       - pro
-  workflow_dispatch:
+    paths-ignore:
+      - README.md
+      - EXECUTION.md
+      - AZURE_COMANDS.md
+      - GIT_TIPS.md
+      - .env.local
+      - requirements_win.txt
+      - src.RAG_EVAL
+      - src.main_rag_eval.py
+      - src.tests
 
+
+env:
+  AZURE_WEBAPP_NAME: boe-chatbot-backend   
+  PYTHON_VERSION: '3.11' 
+  STARTUP_COMMAND: 'gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.main:app --bind 0.0.0.0:$PORT'
+  WORKING_DIRECTORY: '.'
+  PINECONE_INDEX_NAME: boe
+  PINECONE_INDEX_NAMESPACE: boe_namespace_1
+  APP_MODE: graph
+  EMBEDDING_MODEL: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+  EMBEDDING_MODEL_GPT4: all‑MiniLM‑L6‑v2.gguf2.f16.gguf
+  LOCAL_LLM: llama3
+  BOE_WEB_URL: https://boe.es
+  HG_REPO_DATASET_ID: koke143/boedata
+  HG_REPO_RAGAS_TESTSET_ID: koke143/ragas_testset
+  RAPTOR_CHUNKS_FILE_NAME: RAPTOR-CHUNKS
+  RAPTOR_CHUNKS_FILE_EXTENSION: csv
+  MAX_FILES: 2
+  FRONT_END_URL: http://localhost:5173
+  FRONT_END_PRO_URL: https://happy-moss-0b3378a10.5.azurestaticapps.net/
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name : Python checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Set up Python version
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: 'pip'
+          python-version: '3.11'
 
       - name: Create and start virtual environment
         run: |
           python -m venv venv
           source venv/bin/activate
-
+      
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Set up environment variables
+        run: |
+            echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
+            echo "LANGSMITH=${{ secrets.LANGSMITH }}" >> .env
+            echo "LLAMA_CLOUD_API_KEY=${{ secrets.LLAMA_CLOUD_API_KEY }}" >> .env
+            echo "LLAMA_CLOUD_API_KEY_RAPTOR=${{ secrets.LLAMA_CLOUD_API_KEY_RAPTOR }}" >> .env
+            echo "LANGCHAIN_API_KEY=${{ secrets.LANGCHAIN_API_KEY }}" >> .env
+            echo "HUG_API_KEY=${{ secrets.HUG_API_KEY }}" >> .env
+            echo "GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}" >> .env
+            echo "NVIDIA_API_KEY=${{ secrets.NVIDIA_API_KEY }}" >> .env
+            echo "PINECONE_INDEX_NAME=${{ env.PINECONE_INDEX_NAME }}" >> .env
+            echo "PINECONE_INDEX_NAMESPACE=${{ env.PINECONE_INDEX_NAMESPACE }}" >> .env
+            echo "APP_MODE=${{ env.APP_MODE }}" >> .env
+            echo "EMBEDDING_MODEL=${{ env.EMBEDDING_MODEL }}" >> .env
+            echo "EMBEDDING_MODEL_GPT4=${{ env.EMBEDDING_MODEL_GPT4 }}" >> .env
+            echo "LOCAL_LLM=${{ env.LOCAL_LLM }}" >> .env
+            echo "BOE_WEB_URL=${{ env.BOE_WEB_URL }}" >> .env
+            echo "HG_REPO_DATASET_ID=${{ env.HG_REPO_DATASET_ID }}" >> .env
+            echo "HG_REPO_RAGAS_TESTSET_ID=${{ env.HG_REPO_RAGAS_TESTSET_ID }}" >> .env
+            echo "RAPTOR_CHUNKS_FILE_NAME=${{ env.RAPTOR_CHUNKS_FILE_NAME }}" >> .env
+            echo "RAPTOR_CHUNKS_FILE_EXTENSION=${{ env.RAPTOR_CHUNKS_FILE_EXTENSION }}" >> .env
+            echo "MAX_FILES=${{ env.MAX_FILES }}" >> .env
+            echo "FRONT_END_URL=${{ env.FRONT_END_URL }}" >> .env
+            echo "FRONT_END_PRO_URL=${{ env.FRONT_END_PRO_URL }}" >> .env
+        
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
+      - name: Zip artifact for deployment
+        run: zip release.zip ./* -r
+
+      - name: Upload artifact for deployment jobs
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-app
+          path: |
+            release.zip
+            !venv/
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    
     steps:
-      - name : Azure login 
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: python-app
+
+      - name: Unzip artifact for deployment
+        run: unzip release.zip
+      
+      - name : Azure login
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
-
-      - name: Azure Web app settings
+          creds: ${{ secrets.AZURE_CREDENTIALS_GITHUB_SECRET }}
+          
+      - name: Set App Platform to Python
         uses: azure/appservice-settings@v1
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          mask-inputs: false
-          general-settings-json: '{"linuxFxVersion": "PYTHON|${{ env.PYTHON_VERSION }}"}' #'General configuration settings as Key Value pairs'
-      
-      - name: Deploying web app to Azure
-        uses: azure/webapps-deploy@v2
-        with:
-          publish-profile : ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          package: ${{ env.WORKING_DIRECTORY }}
-          startup-command: ${{ env.STARTUP_COMMAND }}
-      - name: Azure logout
-        run: az logout
+          general-settings-json: '{"linuxFxVersion": "PYTHON|3.11"}'
 
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        id: deploy-to-webapp
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BB748093AF6E480ABA5A3E31ECAA712E }}
+
+      - name: Final Azure logout
+        run: |
+
+          az logout

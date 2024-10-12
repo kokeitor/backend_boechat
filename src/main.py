@@ -2,12 +2,13 @@ import os
 import logging
 import warnings
 import time
+import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
-from decouple import config
 from src.API.routes.ia_response import iaResponse
 from src.API.routes.utils import delete_pdf_files
 from src.API.routes.crud_files import crudfiles
+from src.API.routes.initial_page import initial_page
 from src.API.routes.get_data import getData
 from src.API.Apis.openai_api import OpenAiModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -22,7 +23,7 @@ from langgraph.graph.graph import CompiledGraph
 from src.RAG_EVAL.base_models import RagasDataset
 from langgraph.errors import InvalidUpdateError
 from langchain_core.runnables.config import RunnableConfig
-
+from huggingface_hub import login
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
@@ -112,6 +113,7 @@ def setup_vector_db():
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    login(token=os.getenv('HUG_API_KEY'))
     setup_logging(file_name="api.json")
     # Load the model in the state atribute of the app object
     app.state.open_ai_model = OpenAiModel(api_ky=os.getenv('OPENAI_API_KEY'))
@@ -137,10 +139,12 @@ FRONT_END_URL = os.getenv('FRONT_END_URL')
 FRONT_END_PRO_URL = os.getenv('FRONT_END_PRO_URL')
 logger.info(f"FRONT_END_URL : {FRONT_END_URL}")
 logger.info(f"FRONT_END_PRO_URL : {FRONT_END_PRO_URL}")
-origins = [
+
+_origins = [
     FRONT_END_URL,
     FRONT_END_PRO_URL
 ]
+origins = ['*']
 
 app = FastAPI(
     title="Boe ChatBot BACKEND",
@@ -149,6 +153,7 @@ app = FastAPI(
 app.include_router(iaResponse)
 app.include_router(getData)
 app.include_router(crudfiles)
+app.include_router(initial_page)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,

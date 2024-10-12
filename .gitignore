@@ -6,15 +6,6 @@
 
 /config/graph/querys_ejemplo.json
 
-# Ignore data directory
-/data/boe
-/data/boedataset
-/data/boedataset_processed
-/data/
-/data/figures
-/data/notes
-/data/diagramas
-
 # Ignore environment variable files
 .env
 
@@ -22,8 +13,6 @@
 __pycache__
 **/__pycache__/
 
-# Ignore logs directory
-/logs
 
 # Ignore notebooks directory
 /src/notebooks
@@ -41,6 +30,8 @@ __pycache__
 # Ignore specific __pycache__ directory
 /src/package/__pycache__
 
-git_tips.md
 
-requirements_win.txt
+COMANDS.md
+LINKEDIN.md
+
+.env.local
