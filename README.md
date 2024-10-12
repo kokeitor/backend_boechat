@@ -1,3 +1,4 @@
+
 # 🚀 BOE ChatBot
 
 ## Pasos para usar BOE ChatBot y chatear con tus PDFs del BOE 📄🤖:
@@ -25,21 +26,21 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
    npm run dev
    ```
 
-4. 📝 Anota la URL donde se levanta el cliente en local:
+4. 📝 Anota la URL donde se levanta el cliente en local y añádela como variable de entorno en el archivo `.env` dentro de `./backend_boechat/.env`, es decir, dentro del repositorio del backend, en la variable `FRONT_END_URL` 📎.
 
-   Ejemplo: 
-
+   En `./backend_boechat/.env`:
    ```env
-   FRONT_END_URL=http://localhost:5173/
+   FRONT_END_URL=http://localhost:5173
    ```
 
 5. Cuando levantes el backend, añade la URL del endpoint de la API en el archivo `.env` del frontend:
 
-    Ejemplo:
+   Ejemplo:
     
    ```env
    VITE_BACK_END_BASE_URL=http://localhost:8000
    ```
+6. Renombra el archivo `.env` a `.env.local` 
 
 ### 💻 Back-End
 
@@ -74,7 +75,7 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
    pip install -r requirements_production.txt
    ```
 
-6. Renombra el archivo `.env.example` a `.env` y añade tus keys (como variables de entorno) de OpenAI, LangSmith, LangChain, HuggingFace, RAPTOR, Pinecone, NVIDIA, GRoQ y otras APIs necesarias 🔑.
+6. Renombra el archivo `.env.example` a `.env` y añade tus claves (como variables de entorno) de OpenAI, LangSmith, LangChain, HuggingFace, RAPTOR, Pinecone, NVIDIA, GRoQ y otras APIs necesarias 🔑.
 
    Para obtener las claves de estas APIs, puedes seguir los siguientes enlaces:
 
@@ -89,24 +90,25 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
    Asegúrate de rellenar tu archivo `.env` con las siguientes variables:
 
    ```env
-   OPENAI_API_KEY=
-   LANGSMITH=
-   LLAMA_CLOUD_API_KEY=
-   LANGCHAIN_API_KEY=
-   PINECONE_API_KEY=
-   PINECONE_INDEX_NAME=boe
-   PINECONE_INDEX_NAMESPACE=boe_namespace_1
-   APP_MODE=graph
-   EMBEDDING_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-   EMBEDDING_MODEL_GPT4=all‑MiniLM‑L6‑v2.gguf2.f16.gguf
-   BOE_WEB_URL=https://boe.es
-   HUG_API_KEY=
-   GROQ_API_KEY=
-   NVIDIA_API_KEY=
-   RAPTOR_CHUNKS_FILE_NAME=RAPTOR-CHUNKS
-   RAPTOR_CHUNKS_FILE_EXTENSION=csv
-   MAX_FILES=2
-   FRONT_END_URL=
+    OPENAI_API_KEY=
+    LANGSMITH= 
+    LLAMA_CLOUD_API_KEY=
+    LLAMA_CLOUD_API_KEY_RAPTOR=
+    LANGCHAIN_API_KEY=
+    PINECONE_API_KEY= 
+    PINECONE_INDEX_NAME=boe
+    PINECONE_INDEX_NAMESPACE=boe_namespace_1
+    APP_MODE=graph
+    EMBEDDING_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+    EMBEDDING_MODEL_GPT4=all‑MiniLM‑L6‑v2.gguf2.f16.gguf
+    BOE_WEB_URL=https://boe.es
+    HUG_API_KEY=
+    GROQ_API_KEY=
+    NVIDIA_API_KEY=
+    RAPTOR_CHUNKS_FILE_NAME=RAPTOR-CHUNKS
+    RAPTOR_CHUNKS_FILE_EXTENSION=csv
+    MAX_FILES=2
+    FRONT_END_URL=
    ```
 
 7. Pega la URL de tu cliente de React en la variable `FRONT_END_URL` 📎.
@@ -119,8 +121,12 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
 
 9. 📝 Anota la URL donde se levanta el servidor en local y añádela como variable de entorno en el archivo `.env` dentro de `./chatbot-boe-frontend-react/.env`, es decir, dentro del repositorio del frontend, en la variable `VITE_BACK_END_BASE_URL` 📎.
 
-   Ejemplo: 
-    
+   ```sh
+   Uvicorn running on http://127.0.0.1:8000
+   ```
+
+   En `./chatbot-boe-frontend-react/.env`:
    ```env
    VITE_BACK_END_BASE_URL=http://localhost:8000
    ```
+
