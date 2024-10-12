@@ -31,14 +31,16 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
 5. Anota la URL donde se levanta el cliente en local.
 
    Ejemplo: 
-   ```sh
+
+   ```env
    FRONT_END_URL=http://localhost:5173
    ```
 
 6. Cuando levantes el backend, añade la URL del endpoint de la API en el archivo `.env` del frontend:
 
     Ejemplo:
-   ```sh
+    
+   ```env
    VITE_BACK_END_BASE_URL=http://localhost:8000
    ```
 
