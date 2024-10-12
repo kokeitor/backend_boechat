@@ -1,11 +1,12 @@
-# BOE ChatBot
 
-## Pasos para usar BOE ChatBot y chatear con tus PDFs del BOE:
+# 🚀 BOE ChatBot
 
-### Paso previo: 
+## Pasos para usar BOE ChatBot y chatear con tus PDFs del BOE 📄🤖:
+
+### ⚙️ Paso previo: 
 Crea una carpeta en tu máquina local donde clonar los repositorios del frontend y del backend.
 
-### Front-End
+### 🖥️ Front-End
 
 1. Clona el repositorio del frontend:
 
@@ -17,26 +18,23 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
 
    - Accede a [https://nodejs.org/es/download/](https://nodejs.org/es/download/) y descarga la versión de Node.js correspondiente a tu sistema operativo.
 
-3. Instala Vite si aún no lo tienes:
-
-   Vite se instalará automáticamente cuando ejecutes el siguiente paso.
-
-4. Levanta el cliente en local:
+3. Entra en la carpeta del repo: **"chatbot-boe-frontend-react"** y ejecuta los siguientes comandos para levantar el cliente en local:
 
    ```sh
    npm install
+   npm run build
    npm run dev
    ```
 
-5. Anota la URL donde se levanta el cliente en local.
+4. 📝 Anota la URL donde se levanta el cliente en local:
 
    Ejemplo: 
 
    ```env
-   FRONT_END_URL=http://localhost:5173
+   FRONT_END_URL=http://localhost:5173/
    ```
 
-6. Cuando levantes el backend, añade la URL del endpoint de la API en el archivo `.env` del frontend:
+5. Cuando levantes el backend, añade la URL del endpoint de la API en el archivo `.env` del frontend:
 
     Ejemplo:
     
@@ -44,7 +42,7 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
    VITE_BACK_END_BASE_URL=http://localhost:8000
    ```
 
-### Back-End
+### 💻 Back-End
 
 1. Clona el repositorio del backend:
 
@@ -52,7 +50,7 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
    git clone https://github.com/kokeitor/backend_boechat.git
    ```
 
-2. Abre la carpeta "backend" en tu editor de código favorito.
+2. Entra en la carpeta del repo: **"backend_boechat"**
 
 3. Crea un entorno virtual de Python con el siguiente comando:
 
@@ -77,15 +75,14 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
    pip install -r requirements_production.txt
    ```
 
-6. Renombra el archivo `.env.example` a `.env` y añade tus claves de OpenAI, LangSmith, LangChain, HuggingFace, RAPTOR, Pinecone, NVIDIA y otras APIs necesarias.
+6. Renombra el archivo `.env.example` a `.env` y añade tus claves de OpenAI, LangSmith, LangChain, HuggingFace, RAPTOR, Pinecone, NVIDIA y otras APIs necesarias 🔑.
 
    Para obtener las claves de estas APIs, puedes seguir los siguientes enlaces:
 
    - [OpenAI API Key](https://platform.openai.com/account/api-keys)
-   - [LangSmith API Key](https://platform.langchain.com/account/api-keys)
-   - [LangChain API Key](https://platform.langchain.com/account/api-keys)
+   - [LangSmith API Key](https://smith.langchain.com/)
+   - [LangChain API Key](https://smith.langchain.com/)
    - [HuggingFace API Key](https://huggingface.co/settings/tokens)
-   - [RAPTOR API Key](https://raptor.ai/api-keys)
    - [Pinecone API Key](https://app.pinecone.io/organizations/my-organization/keys)
    - [NVIDIA API Key](https://developer.nvidia.com/)
 
@@ -112,10 +109,11 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
    FRONT_END_URL=
    ```
 
-7. Pega la URL de tu cliente de React en la variable `FRONT_END_URL`.
+7. Pega la URL de tu cliente de React en la variable `FRONT_END_URL` 📎.
 
-8. Navega hasta la raíz del directorio y levanta el servidor FastAPI en local:
+8. Navega hasta la raíz del directorio y levanta el servidor FastAPI en local 🚀:
 
    ```sh
    uvicorn src.main:app --reload
    ```
+
