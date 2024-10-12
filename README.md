@@ -1,4 +1,3 @@
-
 # 🚀 BOE ChatBot
 
 ## Pasos para usar BOE ChatBot y chatear con tus PDFs del BOE 📄🤖:
@@ -75,7 +74,7 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
    pip install -r requirements_production.txt
    ```
 
-6. Renombra el archivo `.env.example` a `.env` y añade tus claves de OpenAI, LangSmith, LangChain, HuggingFace, RAPTOR, Pinecone, NVIDIA y otras APIs necesarias 🔑.
+6. Renombra el archivo `.env.example` a `.env` y añade tus keys (como variables de entorno) de OpenAI, LangSmith, LangChain, HuggingFace, RAPTOR, Pinecone, NVIDIA, GRoQ y otras APIs necesarias 🔑.
 
    Para obtener las claves de estas APIs, puedes seguir los siguientes enlaces:
 
@@ -85,6 +84,7 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
    - [HuggingFace API Key](https://huggingface.co/settings/tokens)
    - [Pinecone API Key](https://app.pinecone.io/organizations/my-organization/keys)
    - [NVIDIA API Key](https://developer.nvidia.com/)
+   - [GRoQ API Key](https://console.groq.com/keys)
 
    Asegúrate de rellenar tu archivo `.env` con las siguientes variables:
 
@@ -103,7 +103,7 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
    HUG_API_KEY=
    GROQ_API_KEY=
    NVIDIA_API_KEY=
-   RAPTOR_CHUNKS_FILE_NAME=
+   RAPTOR_CHUNKS_FILE_NAME=RAPTOR-CHUNKS
    RAPTOR_CHUNKS_FILE_EXTENSION=csv
    MAX_FILES=2
    FRONT_END_URL=
@@ -117,3 +117,10 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
    uvicorn src.main:app --reload
    ```
 
+9. 📝 Anota la URL donde se levanta el servidor en local y añádela como variable de entorno en el archivo `.env` dentro de `./chatbot-boe-frontend-react/.env`, es decir, dentro del repositorio del frontend, en la variable `VITE_BACK_END_BASE_URL` 📎.
+
+   Ejemplo: 
+    
+   ```env
+   VITE_BACK_END_BASE_URL=http://localhost:8000
+   ```
