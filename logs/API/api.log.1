@@ -1,444 +1,564 @@
-[INFO|nodes|L175] 2024-10-07 19:30:28: RAG Generator node : 
- {'date': '2024-10-07 19:27:59', 'question': ['holaaaa', '¿Qué deseas saber o hablar sobre?', '¿Cuál es el tema o asunto que te gustaría discutir o aprender?', '¿Qué tema o área de interés te gustaría explorar o profundizar?', '¿Cuál es el tema o área de interés que deseas investigar o aprender más sobre?', '¿Qué tema o área de estudio te gustaría explorar o profundizar en?', '¿Cuál es el campo de estudio o área de interés que deseas investigar o dominar?', '¿Cuál es el tema o disciplina que te gustaría explorar o especializarte en?', '¿Cuál área de estudio o campo profesional te interesa investigar o dominar?'], 'query_label': 'Otra', 'generation': "I don't know. The provided context is about the creation of a Viceconsulate in El Calafate, Argentina, and its jurisdiction, which doesn't relate to a specific theme or discipline that I'd like to explore or specialize in.", 'documents': [Document(id='295986df-90f4-44c8-b307-a1f89c00d7ce', metadata={'chunk_id': '6ef44726-eb2d-5d1a-94b0-8cc3da0b7054', 'cluster_summary': 'Se crea un Viceconsulado Honorario en El Calafate para atender casos urgentes de protección y asistencia consular. Su sede estará en esta ciudad y su circunscripción abarcará los departamentos de Lago Argentino y Río Chico, en la provincia de Santa Cruz. Se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián: el primero abarcará los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos en la provincia de Santa Cruz.', 'creation_date': '2024-10-02', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['2', '13', '40']", 'label_str': 'Tratados y Convenios Internacionales', 'last_modified_date': '2024-10-02', 'ministerios': '[]', 'num_caracteres': 625.0, 'num_tokens': 164.0, 'orden': "['Orden AUC/319/2024']", 'pdf_id': '13d91cbf-7cef-48ad-9c68-f12bcf2b6118', 'real_decreto': "['Real Decreto 1390/2007']"}, page_content='La creación de este Viceconsulado Honorario facilitará la atención de casos urgentes de protección y asistencia consular en El Calafate. Tendrá su sede en esta ciudad y su circunscripción consular abarcará los departamentos de Lago Argentino y Río Chico en la provincia de Santa Cruz. En consecuencia, es preciso modificar la circunscripción de los Viceconsulados Honorarios de Río Gallegos y de Puerto San Julián para que abarquen, el primero, los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos ellos en la provincia de Santa Cruz. Verificable en  '), Document(id='e8be5ab8-728e-417b-a901-583d28bc45e9', metadata={'chunk_id': '2b180d68-0892-5c73-a393-a9087a0e88fd', 'cluster_summary': 'Se crea un Viceconsulado Honorario en El Calafate para atender casos urgentes de protección y asistencia consular. Su sede estará en esta ciudad y su circunscripción abarcará los departamentos de Lago Argentino y Río Chico, en la provincia de Santa Cruz. Se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián: el primero abarcará los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos en la provincia de Santa Cruz.', 'creation_date': '2024-10-02', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['2', '26', '25']", 'label_str': 'Tratados y Convenios Internacionales', 'last_modified_date': '2024-10-02', 'ministerios': '[]', 'num_caracteres': 109.0, 'num_tokens': 33.0, 'orden': "['Orden AUC/319/2024']", 'pdf_id': '13d91cbf-7cef-48ad-9c68-f12bcf2b6118', 'real_decreto': "['Real Decreto 1390/2007']"}, page_content='# Artículo 1. Creación de la Oficina Consular honoraria en El Calafate y delimitación de su circunscripción. ')], 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-07 19:30:28: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-07 19:30:29: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-[INFO|_base_client|L1067] 2024-10-07 19:30:29: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
-[INFO|_client|L1038] 2024-10-07 19:30:31: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L196] 2024-10-07 19:30:31: RAG Context : 
- La creación de este Viceconsulado Honorario facilitará la atención de casos urgentes de protección y asistencia consular en El Calafate. Tendrá su sede en esta ciudad y su circunscripción consular abarcará los departamentos de Lago Argentino y Río Chico en la provincia de Santa Cruz. En consecuencia, es preciso modificar la circunscripción de los Viceconsulados Honorarios de Río Gallegos y de Puerto San Julián para que abarquen, el primero, los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos ellos en la provincia de Santa Cruz. Verificable en  
-
-# Artículo 1. Creación de la Oficina Consular honoraria en El Calafate y delimitación de su circunscripción. 
-[INFO|nodes|L197] 2024-10-07 19:30:31: RAG Question : 
- ¿Cuál área de estudio o campo profesional te interesa investigar o dominar?
-[INFO|nodes|L198] 2024-10-07 19:30:31: RAG Response : 
- I don't know.
-[INFO|nodes|L237] 2024-10-07 19:30:31: hallucination_checker node : 
- {'date': '2024-10-07 19:27:59', 'question': ['holaaaa', '¿Qué deseas saber o hablar sobre?', '¿Cuál es el tema o asunto que te gustaría discutir o aprender?', '¿Qué tema o área de interés te gustaría explorar o profundizar?', '¿Cuál es el tema o área de interés que deseas investigar o aprender más sobre?', '¿Qué tema o área de estudio te gustaría explorar o profundizar en?', '¿Cuál es el campo de estudio o área de interés que deseas investigar o dominar?', '¿Cuál es el tema o disciplina que te gustaría explorar o especializarte en?', '¿Cuál área de estudio o campo profesional te interesa investigar o dominar?'], 'query_label': 'Otra', 'generation': "I don't know.", 'documents': [Document(id='295986df-90f4-44c8-b307-a1f89c00d7ce', metadata={'chunk_id': '6ef44726-eb2d-5d1a-94b0-8cc3da0b7054', 'cluster_summary': 'Se crea un Viceconsulado Honorario en El Calafate para atender casos urgentes de protección y asistencia consular. Su sede estará en esta ciudad y su circunscripción abarcará los departamentos de Lago Argentino y Río Chico, en la provincia de Santa Cruz. Se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián: el primero abarcará los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos en la provincia de Santa Cruz.', 'creation_date': '2024-10-02', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['2', '13', '40']", 'label_str': 'Tratados y Convenios Internacionales', 'last_modified_date': '2024-10-02', 'ministerios': '[]', 'num_caracteres': 625.0, 'num_tokens': 164.0, 'orden': "['Orden AUC/319/2024']", 'pdf_id': '13d91cbf-7cef-48ad-9c68-f12bcf2b6118', 'real_decreto': "['Real Decreto 1390/2007']"}, page_content='La creación de este Viceconsulado Honorario facilitará la atención de casos urgentes de protección y asistencia consular en El Calafate. Tendrá su sede en esta ciudad y su circunscripción consular abarcará los departamentos de Lago Argentino y Río Chico en la provincia de Santa Cruz. En consecuencia, es preciso modificar la circunscripción de los Viceconsulados Honorarios de Río Gallegos y de Puerto San Julián para que abarquen, el primero, los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos ellos en la provincia de Santa Cruz. Verificable en  '), Document(id='e8be5ab8-728e-417b-a901-583d28bc45e9', metadata={'chunk_id': '2b180d68-0892-5c73-a393-a9087a0e88fd', 'cluster_summary': 'Se crea un Viceconsulado Honorario en El Calafate para atender casos urgentes de protección y asistencia consular. Su sede estará en esta ciudad y su circunscripción abarcará los departamentos de Lago Argentino y Río Chico, en la provincia de Santa Cruz. Se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián: el primero abarcará los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos en la provincia de Santa Cruz.', 'creation_date': '2024-10-02', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['2', '26', '25']", 'label_str': 'Tratados y Convenios Internacionales', 'last_modified_date': '2024-10-02', 'ministerios': '[]', 'num_caracteres': 109.0, 'num_tokens': 33.0, 'orden': "['Orden AUC/319/2024']", 'pdf_id': '13d91cbf-7cef-48ad-9c68-f12bcf2b6118', 'real_decreto': "['Real Decreto 1390/2007']"}, page_content='# Artículo 1. Creación de la Oficina Consular honoraria en El Calafate y delimitación de su circunscripción. ')], 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[WARNING|nodes|L251] 2024-10-07 19:30:31: Generator LLM says I don't know., founded coincidencias=["don't", 'know'] -> need requery
-[INFO|nodes|L356] 2024-10-07 19:30:31: Router Generation or Grader Generation : 
- {'fact_based_answer': 'reprocess_query', 'date': '2024-10-07 19:27:59', 'question': ['holaaaa', '¿Qué deseas saber o hablar sobre?', '¿Cuál es el tema o asunto que te gustaría discutir o aprender?', '¿Qué tema o área de interés te gustaría explorar o profundizar?', '¿Cuál es el tema o área de interés que deseas investigar o aprender más sobre?', '¿Qué tema o área de estudio te gustaría explorar o profundizar en?', '¿Cuál es el campo de estudio o área de interés que deseas investigar o dominar?', '¿Cuál es el tema o disciplina que te gustaría explorar o especializarte en?', '¿Cuál área de estudio o campo profesional te interesa investigar o dominar?'], 'query_label': 'Otra', 'generation': "I don't know.", 'documents': [Document(id='295986df-90f4-44c8-b307-a1f89c00d7ce', metadata={'chunk_id': '6ef44726-eb2d-5d1a-94b0-8cc3da0b7054', 'cluster_summary': 'Se crea un Viceconsulado Honorario en El Calafate para atender casos urgentes de protección y asistencia consular. Su sede estará en esta ciudad y su circunscripción abarcará los departamentos de Lago Argentino y Río Chico, en la provincia de Santa Cruz. Se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián: el primero abarcará los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos en la provincia de Santa Cruz.', 'creation_date': '2024-10-02', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['2', '13', '40']", 'label_str': 'Tratados y Convenios Internacionales', 'last_modified_date': '2024-10-02', 'ministerios': '[]', 'num_caracteres': 625.0, 'num_tokens': 164.0, 'orden': "['Orden AUC/319/2024']", 'pdf_id': '13d91cbf-7cef-48ad-9c68-f12bcf2b6118', 'real_decreto': "['Real Decreto 1390/2007']"}, page_content='La creación de este Viceconsulado Honorario facilitará la atención de casos urgentes de protección y asistencia consular en El Calafate. Tendrá su sede en esta ciudad y su circunscripción consular abarcará los departamentos de Lago Argentino y Río Chico en la provincia de Santa Cruz. En consecuencia, es preciso modificar la circunscripción de los Viceconsulados Honorarios de Río Gallegos y de Puerto San Julián para que abarquen, el primero, los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos ellos en la provincia de Santa Cruz. Verificable en  '), Document(id='e8be5ab8-728e-417b-a901-583d28bc45e9', metadata={'chunk_id': '2b180d68-0892-5c73-a393-a9087a0e88fd', 'cluster_summary': 'Se crea un Viceconsulado Honorario en El Calafate para atender casos urgentes de protección y asistencia consular. Su sede estará en esta ciudad y su circunscripción abarcará los departamentos de Lago Argentino y Río Chico, en la provincia de Santa Cruz. Se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián: el primero abarcará los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos en la provincia de Santa Cruz.', 'creation_date': '2024-10-02', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['2', '26', '25']", 'label_str': 'Tratados y Convenios Internacionales', 'last_modified_date': '2024-10-02', 'ministerios': '[]', 'num_caracteres': 109.0, 'num_tokens': 33.0, 'orden': "['Orden AUC/319/2024']", 'pdf_id': '13d91cbf-7cef-48ad-9c68-f12bcf2b6118', 'real_decreto': "['Real Decreto 1390/2007']"}, page_content='# Artículo 1. Creación de la Oficina Consular honoraria en El Calafate y delimitación de su circunscripción. ')], 'useful_answer': None}
-[INFO|nodes|L369] 2024-10-07 19:30:31: Routing to -> 'reprocess_query'
-[INFO|nodes|L213] 2024-10-07 19:30:31: Query Processing : 
- {'date': '2024-10-07 19:27:59', 'question': ['holaaaa', '¿Qué deseas saber o hablar sobre?', '¿Cuál es el tema o asunto que te gustaría discutir o aprender?', '¿Qué tema o área de interés te gustaría explorar o profundizar?', '¿Cuál es el tema o área de interés que deseas investigar o aprender más sobre?', '¿Qué tema o área de estudio te gustaría explorar o profundizar en?', '¿Cuál es el campo de estudio o área de interés que deseas investigar o dominar?', '¿Cuál es el tema o disciplina que te gustaría explorar o especializarte en?', '¿Cuál área de estudio o campo profesional te interesa investigar o dominar?'], 'query_label': 'Otra', 'generation': "I don't know.", 'documents': [Document(id='295986df-90f4-44c8-b307-a1f89c00d7ce', metadata={'chunk_id': '6ef44726-eb2d-5d1a-94b0-8cc3da0b7054', 'cluster_summary': 'Se crea un Viceconsulado Honorario en El Calafate para atender casos urgentes de protección y asistencia consular. Su sede estará en esta ciudad y su circunscripción abarcará los departamentos de Lago Argentino y Río Chico, en la provincia de Santa Cruz. Se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián: el primero abarcará los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos en la provincia de Santa Cruz.', 'creation_date': '2024-10-02', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['2', '13', '40']", 'label_str': 'Tratados y Convenios Internacionales', 'last_modified_date': '2024-10-02', 'ministerios': '[]', 'num_caracteres': 625.0, 'num_tokens': 164.0, 'orden': "['Orden AUC/319/2024']", 'pdf_id': '13d91cbf-7cef-48ad-9c68-f12bcf2b6118', 'real_decreto': "['Real Decreto 1390/2007']"}, page_content='La creación de este Viceconsulado Honorario facilitará la atención de casos urgentes de protección y asistencia consular en El Calafate. Tendrá su sede en esta ciudad y su circunscripción consular abarcará los departamentos de Lago Argentino y Río Chico en la provincia de Santa Cruz. En consecuencia, es preciso modificar la circunscripción de los Viceconsulados Honorarios de Río Gallegos y de Puerto San Julián para que abarquen, el primero, los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos ellos en la provincia de Santa Cruz. Verificable en  '), Document(id='e8be5ab8-728e-417b-a901-583d28bc45e9', metadata={'chunk_id': '2b180d68-0892-5c73-a393-a9087a0e88fd', 'cluster_summary': 'Se crea un Viceconsulado Honorario en El Calafate para atender casos urgentes de protección y asistencia consular. Su sede estará en esta ciudad y su circunscripción abarcará los departamentos de Lago Argentino y Río Chico, en la provincia de Santa Cruz. Se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián: el primero abarcará los departamentos de Güer Aike y Corpen Aike, y el segundo los departamentos de Lago Buenos Aires, Deseado y Magallanes, todos en la provincia de Santa Cruz.', 'creation_date': '2024-10-02', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['2', '26', '25']", 'label_str': 'Tratados y Convenios Internacionales', 'last_modified_date': '2024-10-02', 'ministerios': '[]', 'num_caracteres': 109.0, 'num_tokens': 33.0, 'orden': "['Orden AUC/319/2024']", 'pdf_id': '13d91cbf-7cef-48ad-9c68-f12bcf2b6118', 'real_decreto': "['Real Decreto 1390/2007']"}, page_content='# Artículo 1. Creación de la Oficina Consular honoraria en El Calafate y delimitación de su circunscripción. ')], 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-07 19:30:31: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-07 19:30:32: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-[INFO|_base_client|L1067] 2024-10-07 19:30:32: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
-[INFO|_client|L1038] 2024-10-07 19:30:34: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L227] 2024-10-07 19:30:34: question='¿Cuál área de estudio o campo profesional te interesa investigar o dominar?' // after reprocessing question -> response='¿Cuál es el área de especialización o carrera que deseas explorar o desarrollar?'
-[INFO|_client|L1038] 2024-10-07 19:30:35: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : 
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : 
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : ¡
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : ¡
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : Hola
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : Hola
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : !
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : !
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  ¿
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  ¿
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : En
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : En
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  qué
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  qué
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  puedo
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  puedo
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  ayudarte
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  ayudarte
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  hoy
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  hoy
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  con
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  con
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  respecto
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  respecto
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  al
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  al
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  Bo
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  Bo
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : let
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : let
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : ín
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : ín
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  Oficial
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  Oficial
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  del
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  del
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  Estado
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  Estado
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  Español
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  Español
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  (
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  (
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : BO
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : BO
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : E
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : E
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : )?
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : )?
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  Si
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  Si
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  tienes
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  tienes
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  alguna
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  alguna
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  pregunta
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  pregunta
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  específica
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  específica
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : ,
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : ,
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  no
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  no
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  dudes
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  dudes
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  en
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  en
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content :  dec
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content :  dec
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : í
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : í
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : rm
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : rm
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : elo
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : elo
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : .
-[INFO|openai_api|L124] 2024-10-07 19:30:35: event.choices[0].delta.content : .
-[INFO|openai_api|L119] 2024-10-07 19:30:35: event.choices[0].delta.content : None
-[INFO|openai_api|L137] 2024-10-07 19:30:35: complete message :  ¡Hola! ¿En qué puedo ayudarte hoy con respecto al Boletín Oficial del Estado Español (BOE)? Si tienes alguna pregunta específica, no dudes en decírmelo.
-[INFO|main|L65] 2024-10-07 19:31:58: Getting Graph configuration from CONFIG_PATH='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json'
-[INFO|config|L93] 2024-10-07 19:31:58: Definida configuracion mediante archivo JSON en C:\Users\Jorge\Desktop\Boe ChatBot\backend\src\..\config/graph\graph.json
-[INFO|config|L224] 2024-10-07 19:31:58: Agent query_classificator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-07 19:31:58: Agent docs_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-07 19:31:58: Agent query_processor -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-07 19:31:58: Agent generator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-07 19:31:58: Agent hallucination_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-07 19:31:58: Agent answer_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L150] 2024-10-07 19:31:58: Graph Agents : {'query_classificator': Agent(agent_name='query_classificator', model='GROQ', get_model=<function get_groq at 0x00000208FF9C3BA0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['labels', 'text'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['labels'], input_types={}, partial_variables={}, template="You are an assistant specialized in categorizing a text from the Spanish Boletín Oficial del Estado (BOE).\n\n            Your task is to classify the provided text using the specified list of labels. The possible labels are: {labels}\n\n            If the text does not belong to a label, classify it as 'Otra'. Provide the label with no preamble or explanation"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['text'], input_types={}, partial_variables={}, template='{text}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'docs_grader': Agent(agent_name='docs_grader', model='GROQ', get_model=<function get_groq at 0x00000208FF9C3BA0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['document', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['document'], input_types={}, partial_variables={}, template="You are an AI model designed grade the relevance of a retrieved document to a user question.\n\n                If the document contains keywords related to the user question, grade it as relevant.\n\n                Give a binary score of 'yes' or 'no' to indicate whether the document is relevant to the question. \n\n                Provide the binary score with no explanation.\n\n                Here is the retrieved document: {document} "), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'query_processor': Agent(agent_name='query_processor', model='GROQ', get_model=<function get_groq at 0x00000208FF9C3BA0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], input_types={}, partial_variables={}, template='You are a question re-writer that converts an input question to a better version that is optimized for vectorstore retrieval. \n\n                    Look at the input and try to reason about the underlying semantic intent / meaning.\n\n                    Provide the reprocessed question in spanish with no preamble or explanation'), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'generator': Agent(agent_name='generator', model='GROQ', get_model=<function get_groq at 0x00000208FF9C3BA0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['context', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['context'], input_types={}, partial_variables={}, template="You are an assistant for question-answering tasks.\n\n                    Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say 'I you don't know'.\n\n                    Use three sentences maximum and keep the answer concise.\n\n                    Context:\n{context}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'hallucination_grader': Agent(agent_name='hallucination_grader', model='GROQ', get_model=<function get_groq at 0x00000208FF9C3BA0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['documents', 'generation'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['documents'], input_types={}, partial_variables={}, template="You are a grader assessing whether an answer is grounded in / supported by a set of facts. \n \n                Give a binary score 'yes' or 'no' score to indicate\n\n                whether the answer is grounded in or supported by a set of facts. Provide the binary score with no preamble or explanation.\n\n                Here are the facts:\n{documents}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'answer_grader': Agent(agent_name='answer_grader', model='GROQ', get_model=<function get_groq at 0x00000208FF9C3BA0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['generation', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template="You are a grader assessing whether an  answer is useful to resolve a question.\n\n                Give a binary score 'yes' or 'no' to indicate whether the answer is useful to resolve a question.\n\n                Provide the binary score with no preamble or explanation.\n                Here is the question:\n{question}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>)}
-[INFO|config|L229] 2024-10-07 19:31:58: Connecting to an existing index of PineCone DB cient
-[INFO|discover_namespace_packages|L12] 2024-10-07 19:31:58: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-07 19:31:58: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-07 19:31:58: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-07 19:31:58: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-07 19:31:58: Installing plugin inference into Pinecone
-[INFO|config|L236] 2024-10-07 19:31:59: existing_indexes : ['boe']
-[INFO|SentenceTransformer|L196] 2024-10-07 19:31:59: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-07 19:31:59: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|main|L67] 2024-10-07 19:32:01: config_graph : ConfigGraph(config_path='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json', graph=None, compile_graph=None)
-[INFO|main|L69] 2024-10-07 19:32:01: Creating graph and compiling workflow...
-[INFO|main|L81] 2024-10-07 19:32:01: Graph and workflow created
-[INFO|SentenceTransformer|L196] 2024-10-07 19:32:03: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-07 19:32:03: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|SentenceTransformer|L196] 2024-10-07 19:32:05: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-07 19:32:05: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|raptor_vectordb|L35] 2024-10-07 19:32:07: Connecting to an existing index of PineCone DB cient -> boe
-[INFO|discover_namespace_packages|L12] 2024-10-07 19:32:07: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-07 19:32:07: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-07 19:32:07: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-07 19:32:07: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-07 19:32:07: Installing plugin inference into Pinecone
-[INFO|raptor_vectordb|L40] 2024-10-07 19:32:08: existing_indexes : ['boe']
-[INFO|main|L65] 2024-10-08 21:07:42: Getting Graph configuration from CONFIG_PATH='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json'
-[INFO|config|L93] 2024-10-08 21:07:42: Definida configuracion mediante archivo JSON en C:\Users\Jorge\Desktop\Boe ChatBot\backend\src\..\config/graph\graph.json
-[INFO|config|L224] 2024-10-08 21:07:42: Agent query_classificator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-08 21:07:43: Agent docs_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-08 21:07:43: Agent query_processor -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-08 21:07:43: Agent generator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-08 21:07:43: Agent hallucination_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-08 21:07:43: Agent answer_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L150] 2024-10-08 21:07:43: Graph Agents : {'query_classificator': Agent(agent_name='query_classificator', model='GROQ', get_model=<function get_groq at 0x000002390AFA3CE0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['labels', 'text'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['labels'], input_types={}, partial_variables={}, template="You are an assistant specialized in categorizing a text from the Spanish Boletín Oficial del Estado (BOE).\n\n            Your task is to classify the provided text using the specified list of labels. The possible labels are: {labels}\n\n            If the text does not belong to a label, classify it as 'Otra'. Provide the label with no preamble or explanation"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['text'], input_types={}, partial_variables={}, template='{text}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'docs_grader': Agent(agent_name='docs_grader', model='GROQ', get_model=<function get_groq at 0x000002390AFA3CE0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['document', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['document'], input_types={}, partial_variables={}, template="You are an AI model designed grade the relevance of a retrieved document to a user question.\n\n                If the document contains keywords related to the user question, grade it as relevant.\n\n                Give a binary score of 'yes' or 'no' to indicate whether the document is relevant to the question. \n\n                Provide the binary score with no explanation.\n\n                Here is the retrieved document: {document} "), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'query_processor': Agent(agent_name='query_processor', model='GROQ', get_model=<function get_groq at 0x000002390AFA3CE0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], input_types={}, partial_variables={}, template='You are a question re-writer that converts an input question to a better version that is optimized for vectorstore retrieval. \n\n                    Look at the input and try to reason about the underlying semantic intent / meaning.\n\n                    Provide the reprocessed question in spanish with no preamble or explanation'), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'generator': Agent(agent_name='generator', model='GROQ', get_model=<function get_groq at 0x000002390AFA3CE0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['context', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['context'], input_types={}, partial_variables={}, template="You are an assistant for question-answering tasks.\n\n                    Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say 'I you don't know'.\n\n                    Use three sentences maximum and keep the answer concise.\n\n                    Context:\n{context}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'hallucination_grader': Agent(agent_name='hallucination_grader', model='GROQ', get_model=<function get_groq at 0x000002390AFA3CE0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['documents', 'generation'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['documents'], input_types={}, partial_variables={}, template="You are a grader assessing whether an answer is grounded in / supported by a set of facts. \n \n                Give a binary score 'yes' or 'no' score to indicate\n\n                whether the answer is grounded in or supported by a set of facts. Provide the binary score with no preamble or explanation.\n\n                Here are the facts:\n{documents}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'answer_grader': Agent(agent_name='answer_grader', model='GROQ', get_model=<function get_groq at 0x000002390AFA3CE0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['generation', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template="You are a grader assessing whether an  answer is useful to resolve a question.\n\n                Give a binary score 'yes' or 'no' to indicate whether the answer is useful to resolve a question.\n\n                Provide the binary score with no preamble or explanation.\n                Here is the question:\n{question}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>)}
-[INFO|config|L229] 2024-10-08 21:07:43: Connecting to an existing index of PineCone DB cient
-[INFO|discover_namespace_packages|L12] 2024-10-08 21:07:43: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-08 21:07:43: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-08 21:07:43: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-08 21:07:43: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-08 21:07:43: Installing plugin inference into Pinecone
-[INFO|config|L236] 2024-10-08 21:07:43: existing_indexes : ['boe']
-[INFO|SentenceTransformer|L196] 2024-10-08 21:07:43: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-08 21:07:43: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|main|L67] 2024-10-08 21:07:45: config_graph : ConfigGraph(config_path='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json', graph=None, compile_graph=None)
-[INFO|main|L69] 2024-10-08 21:07:45: Creating graph and compiling workflow...
-[INFO|main|L81] 2024-10-08 21:07:45: Graph and workflow created
-[INFO|SentenceTransformer|L196] 2024-10-08 21:07:47: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-08 21:07:47: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|SentenceTransformer|L196] 2024-10-08 21:07:49: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-08 21:07:49: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|raptor_vectordb|L35] 2024-10-08 21:07:51: Connecting to an existing index of PineCone DB cient -> boe
-[INFO|discover_namespace_packages|L12] 2024-10-08 21:07:51: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-08 21:07:51: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-08 21:07:51: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-08 21:07:51: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-08 21:07:51: Installing plugin inference into Pinecone
-[INFO|raptor_vectordb|L40] 2024-10-08 21:07:52: existing_indexes : ['boe']
-[INFO|main|L65] 2024-10-11 15:43:22: Getting Graph configuration from CONFIG_PATH='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json'
-[INFO|config|L93] 2024-10-11 15:43:22: Definida configuracion mediante archivo JSON en C:\Users\Jorge\Desktop\Boe ChatBot\backend\src\..\config/graph\graph.json
-[INFO|config|L224] 2024-10-11 15:43:22: Agent query_classificator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:43:22: Agent docs_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:43:22: Agent query_processor -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:43:22: Agent generator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:43:22: Agent hallucination_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:43:22: Agent answer_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L150] 2024-10-11 15:43:22: Graph Agents : {'query_classificator': Agent(agent_name='query_classificator', model='GROQ', get_model=<function get_groq at 0x0000020025C1ED40>, temperature=0, prompt=ChatPromptTemplate(input_variables=['labels', 'text'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['labels'], input_types={}, partial_variables={}, template="You are an assistant specialized in categorizing a text from the Spanish Boletín Oficial del Estado (BOE).\n\n            Your task is to classify the provided text using the specified list of labels. The possible labels are: {labels}\n\n            If the text does not belong to a label, classify it as 'Otra'. Provide the label with no preamble or explanation"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['text'], input_types={}, partial_variables={}, template='{text}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'docs_grader': Agent(agent_name='docs_grader', model='GROQ', get_model=<function get_groq at 0x0000020025C1ED40>, temperature=0, prompt=ChatPromptTemplate(input_variables=['document', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['document'], input_types={}, partial_variables={}, template="You are an AI model designed grade the relevance of a retrieved document to a user question.\n\n                If the document contains keywords related to the user question, grade it as relevant.\n\n                Give a binary score of 'yes' or 'no' to indicate whether the document is relevant to the question. \n\n                Provide the binary score with no explanation.\n\n                Here is the retrieved document: {document} "), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'query_processor': Agent(agent_name='query_processor', model='GROQ', get_model=<function get_groq at 0x0000020025C1ED40>, temperature=0, prompt=ChatPromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], input_types={}, partial_variables={}, template='You are a question re-writer that converts an input question to a better version that is optimized for vectorstore retrieval. \n\n                    Look at the input and try to reason about the underlying semantic intent / meaning.\n\n                    Provide the reprocessed question in spanish with no preamble or explanation'), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'generator': Agent(agent_name='generator', model='GROQ', get_model=<function get_groq at 0x0000020025C1ED40>, temperature=0, prompt=ChatPromptTemplate(input_variables=['context', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['context'], input_types={}, partial_variables={}, template="You are an assistant for question-answering tasks.\n\n                    Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say 'I you don't know'.\n\n                    Use three sentences maximum and keep the answer concise.\n\n                    Context:\n{context}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'hallucination_grader': Agent(agent_name='hallucination_grader', model='GROQ', get_model=<function get_groq at 0x0000020025C1ED40>, temperature=0, prompt=ChatPromptTemplate(input_variables=['documents', 'generation'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['documents'], input_types={}, partial_variables={}, template="You are a grader assessing whether an answer is grounded in / supported by a set of facts. \n \n                Give a binary score 'yes' or 'no' score to indicate\n\n                whether the answer is grounded in or supported by a set of facts. Provide the binary score with no preamble or explanation.\n\n                Here are the facts:\n{documents}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'answer_grader': Agent(agent_name='answer_grader', model='GROQ', get_model=<function get_groq at 0x0000020025C1ED40>, temperature=0, prompt=ChatPromptTemplate(input_variables=['generation', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template="You are a grader assessing whether an  answer is useful to resolve a question.\n\n                Give a binary score 'yes' or 'no' to indicate whether the answer is useful to resolve a question.\n\n                Provide the binary score with no preamble or explanation.\n                Here is the question:\n{question}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>)}
-[INFO|config|L229] 2024-10-11 15:43:22: Connecting to an existing index of PineCone DB cient
-[INFO|discover_namespace_packages|L12] 2024-10-11 15:43:22: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-11 15:43:22: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-11 15:43:22: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-11 15:43:22: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-11 15:43:22: Installing plugin inference into Pinecone
-[INFO|config|L236] 2024-10-11 15:43:23: existing_indexes : ['boe']
-[INFO|SentenceTransformer|L196] 2024-10-11 15:43:24: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 15:43:24: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|main|L67] 2024-10-11 15:43:26: config_graph : ConfigGraph(config_path='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json', graph=None, compile_graph=None)
-[INFO|main|L69] 2024-10-11 15:43:26: Creating graph and compiling workflow...
-[INFO|main|L81] 2024-10-11 15:43:26: Graph and workflow created
-[INFO|SentenceTransformer|L196] 2024-10-11 15:43:30: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 15:43:30: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|SentenceTransformer|L196] 2024-10-11 15:43:33: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 15:43:33: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|raptor_vectordb|L35] 2024-10-11 15:43:36: Connecting to an existing index of PineCone DB cient -> boe
-[INFO|discover_namespace_packages|L12] 2024-10-11 15:43:36: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-11 15:43:36: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-11 15:43:36: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-11 15:43:36: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-11 15:43:36: Installing plugin inference into Pinecone
-[INFO|raptor_vectordb|L40] 2024-10-11 15:43:37: existing_indexes : ['boe']
-[INFO|main|L66] 2024-10-11 15:44:38: Getting Graph configuration from CONFIG_PATH='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json'
-[INFO|config|L93] 2024-10-11 15:44:38: Definida configuracion mediante archivo JSON en C:\Users\Jorge\Desktop\Boe ChatBot\backend\src\..\config/graph\graph.json
-[INFO|config|L224] 2024-10-11 15:44:38: Agent query_classificator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:44:38: Agent docs_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:44:38: Agent query_processor -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:44:38: Agent generator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:44:38: Agent hallucination_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:44:38: Agent answer_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L150] 2024-10-11 15:44:38: Graph Agents : {'query_classificator': Agent(agent_name='query_classificator', model='GROQ', get_model=<function get_groq at 0x0000022CF31400E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['labels', 'text'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['labels'], input_types={}, partial_variables={}, template="You are an assistant specialized in categorizing a text from the Spanish Boletín Oficial del Estado (BOE).\n\n            Your task is to classify the provided text using the specified list of labels. The possible labels are: {labels}\n\n            If the text does not belong to a label, classify it as 'Otra'. Provide the label with no preamble or explanation"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['text'], input_types={}, partial_variables={}, template='{text}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'docs_grader': Agent(agent_name='docs_grader', model='GROQ', get_model=<function get_groq at 0x0000022CF31400E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['document', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['document'], input_types={}, partial_variables={}, template="You are an AI model designed grade the relevance of a retrieved document to a user question.\n\n                If the document contains keywords related to the user question, grade it as relevant.\n\n                Give a binary score of 'yes' or 'no' to indicate whether the document is relevant to the question. \n\n                Provide the binary score with no explanation.\n\n                Here is the retrieved document: {document} "), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'query_processor': Agent(agent_name='query_processor', model='GROQ', get_model=<function get_groq at 0x0000022CF31400E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], input_types={}, partial_variables={}, template='You are a question re-writer that converts an input question to a better version that is optimized for vectorstore retrieval. \n\n                    Look at the input and try to reason about the underlying semantic intent / meaning.\n\n                    Provide the reprocessed question in spanish with no preamble or explanation'), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'generator': Agent(agent_name='generator', model='GROQ', get_model=<function get_groq at 0x0000022CF31400E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['context', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['context'], input_types={}, partial_variables={}, template="You are an assistant for question-answering tasks.\n\n                    Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say 'I you don't know'.\n\n                    Use three sentences maximum and keep the answer concise.\n\n                    Context:\n{context}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'hallucination_grader': Agent(agent_name='hallucination_grader', model='GROQ', get_model=<function get_groq at 0x0000022CF31400E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['documents', 'generation'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['documents'], input_types={}, partial_variables={}, template="You are a grader assessing whether an answer is grounded in / supported by a set of facts. \n \n                Give a binary score 'yes' or 'no' score to indicate\n\n                whether the answer is grounded in or supported by a set of facts. Provide the binary score with no preamble or explanation.\n\n                Here are the facts:\n{documents}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'answer_grader': Agent(agent_name='answer_grader', model='GROQ', get_model=<function get_groq at 0x0000022CF31400E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['generation', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template="You are a grader assessing whether an  answer is useful to resolve a question.\n\n                Give a binary score 'yes' or 'no' to indicate whether the answer is useful to resolve a question.\n\n                Provide the binary score with no preamble or explanation.\n                Here is the question:\n{question}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>)}
-[INFO|config|L229] 2024-10-11 15:44:38: Connecting to an existing index of PineCone DB cient
-[INFO|discover_namespace_packages|L12] 2024-10-11 15:44:38: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-11 15:44:38: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-11 15:44:38: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-11 15:44:38: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-11 15:44:38: Installing plugin inference into Pinecone
-[INFO|config|L236] 2024-10-11 15:44:39: existing_indexes : ['boe']
-[INFO|SentenceTransformer|L196] 2024-10-11 15:44:40: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 15:44:40: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|main|L68] 2024-10-11 15:44:43: config_graph : ConfigGraph(config_path='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json', graph=None, compile_graph=None)
-[INFO|main|L70] 2024-10-11 15:44:43: Creating graph and compiling workflow...
-[INFO|main|L82] 2024-10-11 15:44:43: Graph and workflow created
-[INFO|SentenceTransformer|L196] 2024-10-11 15:44:47: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 15:44:47: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|SentenceTransformer|L196] 2024-10-11 15:44:50: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 15:44:50: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|raptor_vectordb|L35] 2024-10-11 15:44:53: Connecting to an existing index of PineCone DB cient -> boe
-[INFO|discover_namespace_packages|L12] 2024-10-11 15:44:53: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-11 15:44:53: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-11 15:44:53: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-11 15:44:53: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-11 15:44:53: Installing plugin inference into Pinecone
-[INFO|raptor_vectordb|L40] 2024-10-11 15:44:54: existing_indexes : ['boe']
-[INFO|main|L66] 2024-10-11 15:48:04: Getting Graph configuration from CONFIG_PATH='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json'
-[INFO|config|L93] 2024-10-11 15:48:04: Definida configuracion mediante archivo JSON en C:\Users\Jorge\Desktop\Boe ChatBot\backend\src\..\config/graph\graph.json
-[INFO|config|L224] 2024-10-11 15:48:04: Agent query_classificator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:48:04: Agent docs_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:48:04: Agent query_processor -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:48:04: Agent generator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:48:04: Agent hallucination_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 15:48:04: Agent answer_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L150] 2024-10-11 15:48:04: Graph Agents : {'query_classificator': Agent(agent_name='query_classificator', model='GROQ', get_model=<function get_groq at 0x000001EA4E1100E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['labels', 'text'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['labels'], input_types={}, partial_variables={}, template="You are an assistant specialized in categorizing a text from the Spanish Boletín Oficial del Estado (BOE).\n\n            Your task is to classify the provided text using the specified list of labels. The possible labels are: {labels}\n\n            If the text does not belong to a label, classify it as 'Otra'. Provide the label with no preamble or explanation"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['text'], input_types={}, partial_variables={}, template='{text}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'docs_grader': Agent(agent_name='docs_grader', model='GROQ', get_model=<function get_groq at 0x000001EA4E1100E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['document', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['document'], input_types={}, partial_variables={}, template="You are an AI model designed grade the relevance of a retrieved document to a user question.\n\n                If the document contains keywords related to the user question, grade it as relevant.\n\n                Give a binary score of 'yes' or 'no' to indicate whether the document is relevant to the question. \n\n                Provide the binary score with no explanation.\n\n                Here is the retrieved document: {document} "), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'query_processor': Agent(agent_name='query_processor', model='GROQ', get_model=<function get_groq at 0x000001EA4E1100E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], input_types={}, partial_variables={}, template='You are a question re-writer that converts an input question to a better version that is optimized for vectorstore retrieval. \n\n                    Look at the input and try to reason about the underlying semantic intent / meaning.\n\n                    Provide the reprocessed question in spanish with no preamble or explanation'), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'generator': Agent(agent_name='generator', model='GROQ', get_model=<function get_groq at 0x000001EA4E1100E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['context', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['context'], input_types={}, partial_variables={}, template="You are an assistant for question-answering tasks.\n\n                    Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say 'I you don't know'.\n\n                    Use three sentences maximum and keep the answer concise.\n\n                    Context:\n{context}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'hallucination_grader': Agent(agent_name='hallucination_grader', model='GROQ', get_model=<function get_groq at 0x000001EA4E1100E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['documents', 'generation'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['documents'], input_types={}, partial_variables={}, template="You are a grader assessing whether an answer is grounded in / supported by a set of facts. \n \n                Give a binary score 'yes' or 'no' score to indicate\n\n                whether the answer is grounded in or supported by a set of facts. Provide the binary score with no preamble or explanation.\n\n                Here are the facts:\n{documents}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'answer_grader': Agent(agent_name='answer_grader', model='GROQ', get_model=<function get_groq at 0x000001EA4E1100E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['generation', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template="You are a grader assessing whether an  answer is useful to resolve a question.\n\n                Give a binary score 'yes' or 'no' to indicate whether the answer is useful to resolve a question.\n\n                Provide the binary score with no preamble or explanation.\n                Here is the question:\n{question}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>)}
-[INFO|config|L229] 2024-10-11 15:48:04: Connecting to an existing index of PineCone DB cient
-[INFO|discover_namespace_packages|L12] 2024-10-11 15:48:04: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-11 15:48:04: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-11 15:48:04: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-11 15:48:05: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-11 15:48:05: Installing plugin inference into Pinecone
-[INFO|config|L236] 2024-10-11 15:48:05: existing_indexes : ['boe']
-[INFO|SentenceTransformer|L196] 2024-10-11 15:48:06: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 15:48:06: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|main|L68] 2024-10-11 15:48:09: config_graph : ConfigGraph(config_path='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json', graph=None, compile_graph=None)
-[INFO|main|L70] 2024-10-11 15:48:09: Creating graph and compiling workflow...
-[INFO|main|L82] 2024-10-11 15:48:09: Graph and workflow created
-[INFO|SentenceTransformer|L196] 2024-10-11 15:48:13: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 15:48:13: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|SentenceTransformer|L196] 2024-10-11 15:48:16: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 15:48:16: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|raptor_vectordb|L35] 2024-10-11 15:48:18: Connecting to an existing index of PineCone DB cient -> boe
-[INFO|discover_namespace_packages|L12] 2024-10-11 15:48:18: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-11 15:48:18: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-11 15:48:18: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-11 15:48:18: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-11 15:48:18: Installing plugin inference into Pinecone
-[INFO|raptor_vectordb|L40] 2024-10-11 15:48:19: existing_indexes : ['boe']
-[INFO|main|L66] 2024-10-11 20:18:53: Getting Graph configuration from CONFIG_PATH='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json'
-[INFO|config|L93] 2024-10-11 20:18:53: Definida configuracion mediante archivo JSON en C:\Users\Jorge\Desktop\Boe ChatBot\backend\src\..\config/graph\graph.json
-[INFO|config|L224] 2024-10-11 20:18:53: Agent query_classificator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 20:18:53: Agent docs_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 20:18:53: Agent query_processor -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 20:18:53: Agent generator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 20:18:53: Agent hallucination_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-11 20:18:53: Agent answer_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L150] 2024-10-11 20:18:53: Graph Agents : {'query_classificator': Agent(agent_name='query_classificator', model='GROQ', get_model=<function get_groq at 0x000002A6B55800E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['labels', 'text'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['labels'], input_types={}, partial_variables={}, template="You are an assistant specialized in categorizing a text from the Spanish Boletín Oficial del Estado (BOE).\n\n            Your task is to classify the provided text using the specified list of labels. The possible labels are: {labels}\n\n            If the text does not belong to a label, classify it as 'Otra'. Provide the label with no preamble or explanation"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['text'], input_types={}, partial_variables={}, template='{text}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'docs_grader': Agent(agent_name='docs_grader', model='GROQ', get_model=<function get_groq at 0x000002A6B55800E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['document', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['document'], input_types={}, partial_variables={}, template="You are an AI model designed grade the relevance of a retrieved document to a user question.\n\n                If the document contains keywords related to the user question, grade it as relevant.\n\n                Give a binary score of 'yes' or 'no' to indicate whether the document is relevant to the question. \n\n                Provide the binary score with no explanation.\n\n                Here is the retrieved document: {document} "), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'query_processor': Agent(agent_name='query_processor', model='GROQ', get_model=<function get_groq at 0x000002A6B55800E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], input_types={}, partial_variables={}, template='You are a question re-writer that converts an input question to a better version that is optimized for vectorstore retrieval. \n\n                    Look at the input and try to reason about the underlying semantic intent / meaning.\n\n                    Provide the reprocessed question in spanish with no preamble or explanation'), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'generator': Agent(agent_name='generator', model='GROQ', get_model=<function get_groq at 0x000002A6B55800E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['context', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['context'], input_types={}, partial_variables={}, template="You are an assistant for question-answering tasks.\n\n                    Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say 'I you don't know'.\n\n                    Use three sentences maximum and keep the answer concise.\n\n                    Context:\n{context}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'hallucination_grader': Agent(agent_name='hallucination_grader', model='GROQ', get_model=<function get_groq at 0x000002A6B55800E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['documents', 'generation'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['documents'], input_types={}, partial_variables={}, template="You are a grader assessing whether an answer is grounded in / supported by a set of facts. \n \n                Give a binary score 'yes' or 'no' score to indicate\n\n                whether the answer is grounded in or supported by a set of facts. Provide the binary score with no preamble or explanation.\n\n                Here are the facts:\n{documents}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'answer_grader': Agent(agent_name='answer_grader', model='GROQ', get_model=<function get_groq at 0x000002A6B55800E0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['generation', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template="You are a grader assessing whether an  answer is useful to resolve a question.\n\n                Give a binary score 'yes' or 'no' to indicate whether the answer is useful to resolve a question.\n\n                Provide the binary score with no preamble or explanation.\n                Here is the question:\n{question}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>)}
-[INFO|config|L229] 2024-10-11 20:18:53: Connecting to an existing index of PineCone DB cient
-[INFO|discover_namespace_packages|L12] 2024-10-11 20:18:53: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-11 20:18:53: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-11 20:18:53: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-11 20:18:53: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-11 20:18:53: Installing plugin inference into Pinecone
-[INFO|config|L236] 2024-10-11 20:18:54: existing_indexes : ['boe']
-[INFO|SentenceTransformer|L196] 2024-10-11 20:18:54: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 20:18:54: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|main|L68] 2024-10-11 20:18:57: config_graph : ConfigGraph(config_path='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json', graph=None, compile_graph=None)
-[INFO|main|L70] 2024-10-11 20:18:57: Creating graph and compiling workflow...
-[INFO|main|L82] 2024-10-11 20:18:57: Graph and workflow created
-[INFO|SentenceTransformer|L196] 2024-10-11 20:18:59: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 20:18:59: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|SentenceTransformer|L196] 2024-10-11 20:19:02: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 20:19:02: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|raptor_vectordb|L35] 2024-10-11 20:19:04: Connecting to an existing index of PineCone DB cient -> boe
-[INFO|discover_namespace_packages|L12] 2024-10-11 20:19:04: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-11 20:19:04: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-11 20:19:04: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-11 20:19:04: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-11 20:19:04: Installing plugin inference into Pinecone
-[INFO|raptor_vectordb|L40] 2024-10-11 20:19:05: existing_indexes : ['boe']
-[INFO|crud_files|L20] 2024-10-11 20:19:24: uploadFiles: [UploadFile(filename='Permiso (1).pdf', size=107618, headers=Headers({'content-disposition': 'form-data; name="uploadFiles"; filename="Permiso (1).pdf"', 'content-type': 'application/pdf'}))]
-[INFO|SentenceTransformer|L196] 2024-10-11 20:19:24: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 20:19:24: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|SentenceTransformer|L196] 2024-10-11 20:19:26: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-11 20:19:26: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|llm|L50] 2024-10-11 20:19:32: label2id : {'Leyes Orgánicas': 0, 'Reales Decretos y Reales Decretos-Leyes': 1, 'Tratados y Convenios Internacionales': 2, 'Leyes de Comunidades Autónomas': 3, 'Reglamentos y Normativas Generales': 4, 'Nombramientos y Ceses': 5, 'Promociones y Situaciones Especiales': 6, 'Convocatorias y Resultados de Oposiciones': 7, 'Anuncios de Concursos y Adjudicaciones de Plazas': 8, 'Ayudas': 9, 'Subvenciones y Becas': 10, 'Convenios Colectivos y Cartas de Servicio': 11, 'Planes de Estudio y Normativas Educativas': 12, 'Convenios Internacionales y Medidas Especiales': 13, 'Edictos y Notificaciones Judiciales': 14, 'Procedimientos y Citaciones Judiciales': 15, 'Licitaciones y Adjudicaciones Públicas': 16, 'Avisos y Notificaciones Oficiales': 17, 'Anuncios Comerciales y Convocatorias Privadas': 18, 'Sentencias y Autos del Tribunal Constitucional': 19, 'Orden de Publicaciones y Sumarios': 20, 'Publicaciones por Órgano Emisor': 21, 'Jerarquía y Autenticidad de Normativas': 22, 'Publicaciones en Lenguas Cooficiales': 23, 'Interpretaciones y Documentos Oficiales': 24, 'Informes y Comunicaciones de Interés General': 25, 'Documentos y Estrategias Nacionales': 26, 'Medidas de Emergencia y Seguridad Nacional': 27, 'Anuncios de Regulaciones Específicas': 28, 'Normativas Temporales y Urgentes': 29, 'Medidas y Políticas Sectoriales': 30, 'Todos los Tipos de Leyes (Nacionales y Autonómicas)': 31, 'Todos los Tipos de Decretos (Legislativos y no Legislativos)': 32, 'Convocatorias y Resultados Generales (Empleo y Educación)': 33, 'Anuncios y Avisos (Oficiales y Privados)': 34, 'Judicial y Procedimientos Legales': 35, 'Sentencias y Declaraciones Judiciales': 36, 'Publicaciones Multilingües y Cooficiales': 37, 'Informes y Estrategias de Política': 38, 'Emergencias Nacionales y Medidas Excepcionales': 39, 'Documentos y Comunicaciones Específicas': 40}
-[INFO|_client|L1786] 2024-10-11 20:19:34: HTTP Request: POST https://api.cloud.llamaindex.ai/api/parsing/upload "HTTP/1.1 200 OK"
-[INFO|_client|L1786] 2024-10-11 20:19:36: HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/900ea4e5-371c-4812-9e20-3b3635babd97 "HTTP/1.1 200 OK"
-[INFO|_client|L1786] 2024-10-11 20:19:39: HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/900ea4e5-371c-4812-9e20-3b3635babd97 "HTTP/1.1 200 OK"
-[INFO|_client|L1786] 2024-10-11 20:19:42: HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/900ea4e5-371c-4812-9e20-3b3635babd97 "HTTP/1.1 200 OK"
-[INFO|_client|L1786] 2024-10-11 20:19:44: HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/900ea4e5-371c-4812-9e20-3b3635babd97 "HTTP/1.1 200 OK"
-[INFO|_client|L1786] 2024-10-11 20:19:47: HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/900ea4e5-371c-4812-9e20-3b3635babd97 "HTTP/1.1 200 OK"
-[INFO|_client|L1786] 2024-10-11 20:19:47: HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/900ea4e5-371c-4812-9e20-3b3635babd97/result/markdown "HTTP/1.1 200 OK"
-[INFO|parsers|L48] 2024-10-11 20:19:47: parsed num of docs :1
-[INFO|parsers|L61] 2024-10-11 20:19:48: Parsed num of docs -> 1
-[INFO|pipeline|L285] 2024-10-11 20:19:48: Number of parsed docs: 1
-[INFO|pipeline|L114] 2024-10-11 20:19:48: Configuration of TextPreprocess for task : classification found
-[INFO|pipeline|L119] 2024-10-11 20:19:48: Trying to preprocess texts --> del_special_words : {'apply': True}
-[INFO|nlp|L335] 2024-10-11 20:19:48: Transformando en 'Document' los textos BOE preprocesados
-[INFO|nlp|L385] 2024-10-11 20:19:48: Page content len before preprocess for doc 1 : 2100
-[INFO|nlp|L389] 2024-10-11 20:19:48: Metadata before preprocess for doc 1: {'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\Permiso (1).pdf', 'file_name': 'Permiso (1).pdf', 'file_type': 'application/pdf', 'file_size': 107618, 'creation_date': '2024-10-11', 'last_modified_date': '2024-10-11'}
-[INFO|nlp|L344] 2024-10-11 20:19:48: NUMERO DE DOCS A ANALIZAR : 1
-[INFO|nlp|L348] 2024-10-11 20:19:48: Original doc 1 content length: 2100
-[INFO|nlp|L358] 2024-10-11 20:19:48: Doc 1 content before preprocessing: # Universidad Europea
-
-# PERMISO DE DIVULGACIÓN
-
-D / Dª [Rellenar] Jorge Resino Martin, con el expediente número 22396361, estudiante de Máster de Formación Permanente en Inteligencia Artificial
-
-Perm
-[INFO|nlp|L480] 2024-10-11 20:19:48: Inside get_del_patrones method ... 
-[INFO|nlp|L485] 2024-10-11 20:19:48: Text len Before preprocess len(text)=2100
-[INFO|nlp|L552] 2024-10-11 20:19:48: Text len after preprocess len(text)=2100
-[INFO|nlp|L555] 2024-10-11 20:19:48: Page content len after preprocess len(doc.page_content)=2100
-[INFO|nlp|L362] 2024-10-11 20:19:48: Doc 1 content after removing patterns: # Universidad Europea
-
-# PERMISO DE DIVULGACIÓN
-
-D / Dª [Rellenar] Jorge Resino Martin, con el expediente número 22396361, estudiante de Máster de Formación Permanente en Inteligencia Artificial
-
-Perm
-[INFO|nlp|L369] 2024-10-11 20:19:48: Update metadata of doc 1: {'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\Permiso (1).pdf', 'file_name': 'Permiso (1).pdf', 'file_type': 'application/pdf', 'file_size': 107618, 'creation_date': '2024-10-11', 'last_modified_date': '2024-10-11', 'fecha_publicacion_boe': 'data-boe-uploads', 'orden': [], 'real_decreto': [], 'ministerios': []}
-[INFO|nlp|L370] 2024-10-11 20:19:48: Char length of doc 1: 2100
-[INFO|nlp|L372] 2024-10-11 20:19:48: Number of docs after invoke BoeProcessor: 1
-[INFO|pipeline|L292] 2024-10-11 20:19:48: Number of processed_docs: 1
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 0 LEN -> 21
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 1 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 2 LEN -> 24
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 3 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 4 LEN -> 145
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 5 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 6 LEN -> 31
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 7 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 8 LEN -> 78
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 9 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 10 LEN -> 96
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 11 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 12 LEN -> 328
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 13 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 14 LEN -> 35
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 15 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 16 LEN -> 30
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 17 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 18 LEN -> 277
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 19 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 20 LEN -> 653
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 21 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 22 LEN -> 168
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 23 LEN -> 0
-[INFO|splitters|L75] 2024-10-11 20:19:48: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-11 20:19:48: CHUNK 24 LEN -> 190
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 0 // tokens : 16 // text len : 48
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 1 // tokens : 57 // text len : 194
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 2 // tokens : 58 // text len : 195
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 3 // tokens : 68 // text len : 227
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 4 // tokens : 64 // text len : 206
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 5 // tokens : 83 // text len : 284
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 6 // tokens : 74 // text len : 260
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 7 // tokens : 100 // text len : 356
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 8 // tokens : 59 // text len : 211
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 9 // tokens : 141 // text len : 539
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 10 // tokens : 131 // text len : 508
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 11 // tokens : 144 // text len : 543
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 12 // tokens : 125 // text len : 465
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 13 // tokens : 132 // text len : 495
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 14 // tokens : 106 // text len : 399
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 15 // tokens : 174 // text len : 676
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 16 // tokens : 90 // text len : 348
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 17 // tokens : 251 // text len : 1001
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 18 // tokens : 238 // text len : 966
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 19 // tokens : 277 // text len : 1134
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 20 // tokens : 270 // text len : 1104
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 21 // tokens : 318 // text len : 1294
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 22 // tokens : 251 // text len : 1016
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 23 // tokens : 252 // text len : 1015
-[INFO|splitters|L114] 2024-10-11 20:19:48: Combined sentence : index : 24 // tokens : 89 // text len : 361
-[INFO|splitters|L229] 2024-10-11 20:19:53: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241011201953_92866d51-5ff3-43bb-b4aa-58cc916d6158_similarity_plot.png
-[INFO|splitters|L246] 2024-10-11 20:19:53: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241011201953_92866d51-5ff3-43bb-b4aa-58cc916d6158_similarity_hist.png
-[INFO|_client|L1038] 2024-10-11 20:19:56: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|llm|L160] 2024-10-11 20:19:56: LLM output for chunk of len 21:
-generation={'Label1': 'Planes de Estudio y Normativas Educativas', 'Label2': 'Informes y Comunicaciones de Interés General', 'Label3': 'Publicaciones por Órgano Emisor'}
-[INFO|llm|L174] 2024-10-11 20:19:56: for doc 0 id2label : ['12', '25', '21']
-[INFO|_client|L1038] 2024-10-11 20:19:57: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|llm|L160] 2024-10-11 20:19:57: LLM output for chunk of len 205:
-generation={'Label1': 'Ayudas', 'Label2': 'Subvenciones y Becas', 'Label3': 'Planes de Estudio y Normativas Educativas'}
-[INFO|llm|L174] 2024-10-11 20:19:57: for doc 1 id2label : ['9', '10', '12']
-[INFO|llm|L160] 2024-10-11 20:19:57: LLM output for chunk of len 0:
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 10 LEN -> 203
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 11 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 12 LEN -> 107
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 13 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 14 LEN -> 250
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 15 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 16 LEN -> 112
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 17 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 18 LEN -> 274
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 19 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 20 LEN -> 67
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 21 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 22 LEN -> 433
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 23 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 24 LEN -> 44
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 25 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 26 LEN -> 108
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 27 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 28 LEN -> 101
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 29 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 30 LEN -> 20
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 0 // tokens : 16 // text len : 27
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 1 // tokens : 38 // text len : 102
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 2 // tokens : 39 // text len : 103
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 3 // tokens : 77 // text len : 250
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 4 // tokens : 76 // text len : 248
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 5 // tokens : 101 // text len : 329
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 6 // tokens : 89 // text len : 307
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 7 // tokens : 142 // text len : 510
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 8 // tokens : 120 // text len : 436
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 9 // tokens : 151 // text len : 543
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 10 // tokens : 113 // text len : 397
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 11 // tokens : 180 // text len : 647
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 12 // tokens : 155 // text len : 566
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 13 // tokens : 185 // text len : 678
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 14 // tokens : 132 // text len : 475
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 15 // tokens : 202 // text len : 749
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 16 // tokens : 171 // text len : 642
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 17 // tokens : 188 // text len : 709
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 18 // tokens : 121 // text len : 459
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 19 // tokens : 235 // text len : 892
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 20 // tokens : 205 // text len : 780
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 21 // tokens : 217 // text len : 824
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 22 // tokens : 147 // text len : 550
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 23 // tokens : 173 // text len : 658
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 24 // tokens : 156 // text len : 591
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 25 // tokens : 186 // text len : 692
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 26 // tokens : 72 // text len : 259
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 27 // tokens : 84 // text len : 279
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 28 // tokens : 71 // text len : 234
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 29 // tokens : 71 // text len : 233
+[INFO|splitters|L114] 2024-10-13 11:22:04: Combined sentence : index : 30 // tokens : 45 // text len : 124
+[INFO|splitters|L229] 2024-10-13 11:22:12: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013112212_3d496cd2-bd67-4f52-a000-c30577be12cb_similarity_plot.png
+[INFO|splitters|L246] 2024-10-13 11:22:12: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013112212_3d496cd2-bd67-4f52-a000-c30577be12cb_similarity_hist.png
+[INFO|llm|L160] 2024-10-13 11:22:13: LLM output for chunk of len 2:
 generation={'label1': '', 'label3': '', 'label2': ''}
-[INFO|llm|L174] 2024-10-11 20:19:57: for doc 2 id2label : ['999', '999', '999']
-[INFO|_client|L1038] 2024-10-11 20:19:58: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|llm|L160] 2024-10-11 20:19:58: LLM output for chunk of len 78:
-generation={'Label1': 'Anuncios y Avisos (Oficiales y Privados)', 'Label2': 'Publicaciones por Órgano Emisor', 'Label3': 'Informes y Comunicaciones de Interés General'}
-[INFO|llm|L174] 2024-10-11 20:19:58: for doc 3 id2label : ['34', '21', '25']
-[INFO|_client|L1038] 2024-10-11 20:20:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|llm|L160] 2024-10-11 20:20:00: LLM output for chunk of len 98:
-generation={'Label1': 'Informes y Comunicaciones de Interés General', 'Label2': 'Documentos y Estrategias Nacionales', 'Label3': 'Interpretaciones y Documentos Oficiales'}
-[INFO|llm|L174] 2024-10-11 20:20:00: for doc 4 id2label : ['25', '26', '24']
-[INFO|_client|L1038] 2024-10-11 20:20:02: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|llm|L160] 2024-10-11 20:20:02: LLM output for chunk of len 329:
-generation={'Label1': 'Informes y Comunicaciones de Interés General', 'Label2': 'Documentos y Estrategias Nacionales', 'Label3': 'Planes de Estudio y Normativas Educativas'}
-[INFO|llm|L174] 2024-10-11 20:20:02: for doc 5 id2label : ['25', '26', '12']
-[INFO|_client|L1038] 2024-10-11 20:20:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L174] 2024-10-13 11:22:13: for doc 0 id2label : ['999', '999', '999']
+[INFO|_client|L1038] 2024-10-13 11:22:15: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:15: LLM output for chunk of len 7:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 11:22:15: for doc 1 id2label : ['21', '20', '17']
+[INFO|_client|L1038] 2024-10-13 11:22:17: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:17: LLM output for chunk of len 9:
+generation={'Label1': 'Avisos y Notificaciones Oficiales', 'Label2': 'Publicaciones por Órgano Emisor', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 11:22:17: for doc 2 id2label : ['17', '21', '34']
+[INFO|_client|L1038] 2024-10-13 11:22:19: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:19: LLM output for chunk of len 13:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 11:22:19: for doc 3 id2label : ['21', '20', '17']
+[INFO|_client|L1038] 2024-10-13 11:22:21: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:21: LLM output for chunk of len 22:
+generation={'Label1': 'Reglamentos y Normativas Generales', 'Label2': 'Normativas Temporales y Urgentes', 'Label3': 'Documentos y Estrategias Nacionales'}
+[INFO|llm|L174] 2024-10-13 11:22:21: for doc 4 id2label : ['4', '29', '26']
+[INFO|_client|L1038] 2024-10-13 11:22:23: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:23: LLM output for chunk of len 1155:
+generation={'Label1': 'Tratados y Convenios Internacionales', 'Label2': 'Documentos y Comunicaciones Específicas', 'Label3': 'Informes y Comunicaciones de Interés General'}
+[INFO|llm|L174] 2024-10-13 11:22:23: for doc 5 id2label : ['2', '40', '25']
+[INFO|_client|L1038] 2024-10-13 11:22:25: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:25: LLM output for chunk of len 630:
+generation={'Label1': 'Informes y Comunicaciones de Interés General', 'Label2': 'Documentos y Estrategias Nacionales', 'Label3': 'Emergencias Nacionales y Medidas Excepcionales'}
+[INFO|llm|L174] 2024-10-13 11:22:25: for doc 6 id2label : ['25', '26', '39']
+[INFO|_client|L1038] 2024-10-13 11:22:28: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:28: LLM output for chunk of len 609:
+generation={'Label1': 'Tratados y Convenios Internacionales', 'Label2': 'Convenios Internacionales y Medidas Especiales', 'Label3': 'Documentos y Comunicaciones Específicas'}
+[INFO|llm|L174] 2024-10-13 11:22:28: for doc 7 id2label : ['2', '13', '40']
+[INFO|_client|L1038] 2024-10-13 11:22:30: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:30: LLM output for chunk of len 16:
+generation={'Label1': 'Avisos y Notificaciones Oficiales', 'Label2': 'Anuncios y Avisos (Oficiales y Privados)', 'Label3': 'Edictos y Notificaciones Judiciales'}
+[INFO|llm|L174] 2024-10-13 11:22:30: for doc 8 id2label : ['17', '34', '14']
+[INFO|_client|L1038] 2024-10-13 11:22:32: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:32: LLM output for chunk of len 721:
+generation={'Label1': 'Reales Decretos y Reales Decretos-Leyes', 'Label2': 'Leyes Orgánicas', 'Label3': 'Reglamentos y Normativas Generales'}
+[INFO|llm|L174] 2024-10-13 11:22:32: for doc 9 id2label : ['1', '0', '4']
+[INFO|_client|L1038] 2024-10-13 11:22:34: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:34: LLM output for chunk of len 235:
+generation={'Label1': 'Tratados y Convenios Internacionales', 'Label2': 'Documentos y Comunicaciones Específicas', 'Label3': 'Informes y Comunicaciones de Interés General'}
+[INFO|llm|L174] 2024-10-13 11:22:34: for doc 10 id2label : ['2', '40', '25']
+[INFO|llm|L160] 2024-10-13 11:22:34: LLM output for chunk of len 2:
+generation={'label1': '', 'label3': '', 'label2': ''}
+[INFO|llm|L174] 2024-10-13 11:22:34: for doc 11 id2label : ['999', '999', '999']
+[INFO|_client|L1038] 2024-10-13 11:22:36: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:36: LLM output for chunk of len 23:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 11:22:36: for doc 12 id2label : ['21', '20', '17']
+[INFO|_client|L1038] 2024-10-13 11:22:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:38: LLM output for chunk of len 307:
+generation={'Label1': 'Tratados y Convenios Internacionales', 'Label2': 'Documentos y Comunicaciones Específicas', 'Label3': 'Informes y Comunicaciones de Interés General'}
+[INFO|llm|L174] 2024-10-13 11:22:38: for doc 13 id2label : ['2', '40', '25']
+[INFO|_client|L1038] 2024-10-13 11:22:41: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:41: LLM output for chunk of len 204:
+generation={'Label1': 'Tratados y Convenios Internacionales', 'Label2': 'Convenios Internacionales y Medidas Especiales', 'Label3': 'Documentos y Comunicaciones Específicas'}
+[INFO|llm|L174] 2024-10-13 11:22:41: for doc 14 id2label : ['2', '13', '40']
+[INFO|_client|L1038] 2024-10-13 11:22:43: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:43: LLM output for chunk of len 108:
+generation={'Label1': 'Reglamentos y Normativas Generales', 'Label2': 'Leyes de Comunidades Autónomas', 'Label3': 'Documentos y Comunicaciones Específicas'}
+[INFO|llm|L174] 2024-10-13 11:22:43: for doc 15 id2label : ['4', '3', '40']
+[INFO|_client|L1038] 2024-10-13 11:22:45: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:45: LLM output for chunk of len 365:
+generation={'Label1': 'Tratados y Convenios Internacionales', 'Label2': 'Documentos y Comunicaciones Específicas', 'Label3': 'Informes y Comunicaciones de Interés General'}
+[INFO|llm|L174] 2024-10-13 11:22:45: for doc 16 id2label : ['2', '40', '25']
+[INFO|_client|L1038] 2024-10-13 11:22:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:48: LLM output for chunk of len 275:
+generation={'Label1': 'Tratados y Convenios Internacionales', 'Label2': 'Convenios Internacionales y Medidas Especiales', 'Label3': 'Documentos y Comunicaciones Específicas'}
+[INFO|llm|L174] 2024-10-13 11:22:48: for doc 17 id2label : ['2', '13', '40']
+[INFO|_client|L1038] 2024-10-13 11:22:50: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:50: LLM output for chunk of len 68:
+generation={'Label1': 'Reglamentos y Normativas Generales', 'Label2': 'Medidas y Políticas Sectoriales', 'Label3': 'Normativas Temporales y Urgentes'}
+[INFO|llm|L174] 2024-10-13 11:22:50: for doc 18 id2label : ['4', '30', '29']
+[INFO|_client|L1038] 2024-10-13 11:22:53: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:53: LLM output for chunk of len 480:
+generation={'Label1': 'Leyes Orgánicas', 'Label2': 'Reglamentos y Normativas Generales', 'Label3': 'Documentos y Estrategias Nacionales'}
+[INFO|llm|L174] 2024-10-13 11:22:53: for doc 19 id2label : ['0', '4', '26']
+[INFO|_client|L1038] 2024-10-13 11:22:56: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:56: LLM output for chunk of len 109:
+generation={'Label1': 'Orden de Publicaciones y Sumarios', 'Label2': 'Publicaciones por Órgano Emisor', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 11:22:56: for doc 20 id2label : ['20', '21', '17']
+[INFO|_client|L1038] 2024-10-13 11:22:58: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:22:58: LLM output for chunk of len 102:
+generation={'Label1': 'Nombramientos y Ceses', 'Label2': 'Informes y Comunicaciones de Interés General', 'Label3': 'Documentos y Comunicaciones Específicas'}
+[INFO|llm|L174] 2024-10-13 11:22:58: for doc 21 id2label : ['5', '25', '40']
+[INFO|_client|L1038] 2024-10-13 11:23:00: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 11:23:00: LLM output for chunk of len 20:
+generation={'Label1': 'Todos los Tipos de Decretos (Legislativos y no Legislativos)', 'Label2': 'Reales Decretos y Reales Decretos-Leyes', 'Label3': 'Leyes Orgánicas'}
+[INFO|llm|L174] 2024-10-13 11:23:00: for doc 22 id2label : ['32', '1', '0']
+[INFO|pipeline|L49] 2024-10-13 11:23:00: Number of classify docs to store inside file_format='csv' -> (23, 16)
+[WARNING|RAPTOR_BOE|L158] 2024-10-13 11:23:00: os.listdir(self.data_dir_path) : ['20241013112300_RAPTOR-CHUNKS.csv']
+[WARNING|RAPTOR_BOE|L161] 2024-10-13 11:23:00: filename : 20241013112300_RAPTOR-CHUNKS.csv
+[WARNING|RAPTOR_BOE|L165] 2024-10-13 11:23:00: file_path : ./data/boedataset\20241013112300_RAPTOR-CHUNKS.csv
+[WARNING|RAPTOR_BOE|L168] 2024-10-13 11:23:00: Reading CSV file : ./data/boedataset\20241013112300_RAPTOR-CHUNKS.csv
+[INFO|RAPTOR_BOE|L282] 2024-10-13 11:23:00: file_name : 20241013112300_RAPTOR-CHUNKS.csv
+[INFO|RAPTOR_BOE|L283] 2024-10-13 11:23:00: dir_path : ./data/boedataset
+[INFO|RAPTOR_BOE|L284] 2024-10-13 11:23:00: dest_path : ./data/boedataset_processed
+[INFO|RAPTOR_BOE|L296] 2024-10-13 11:23:00: File '20241013112300_RAPTOR-CHUNKS.csv' successfully moved to './data/boedataset_processed\20241013112300_RAPTOR-CHUNKS.csv'.
+[INFO|RAPTOR_BOE|L228] 2024-10-13 11:23:00: Null dropped labelled chunk : 'NoneType' object has no attribute 'shape'
+[INFO|RAPTOR_BOE|L319] 2024-10-13 11:23:00: Initial labels:
+ Leyes Orgánicas,Reales Decretos y Reales Decretos-Leyes,Tratados y Convenios Internacionales,
+    Leyes de Comunidades Autónomas,Reglamentos y Normativas Generales,Nombramientos y Ceses,
+    Promociones y Situaciones Especiales,Convocatorias y Resultados de Oposiciones,Anuncios de Concursos y Adjudicaciones de Plazas,
+    Ayudas, Subvenciones y Becas,Convenios Colectivos y Cartas de Servicio,Planes de Estudio y Normativas Educativas,
+    Convenios Internacionales y Medidas Especiales,Edictos y Notificaciones Judiciales,Procedimientos y Citaciones Judiciales,
+    Licitaciones y Adjudicaciones Públicas,Avisos y Notificaciones Oficiales,Anuncios Comerciales y Convocatorias Privadas,
+    Sentencias y Autos del Tribunal Constitucional,Orden de Publicaciones y Sumarios,Publicaciones por Órgano Emisor,
+    Jerarquía y Autenticidad de Normativas,Publicaciones en Lenguas Cooficiales,Interpretaciones y Documentos Oficiales,
+    Informes y Comunicaciones de Interés General,Documentos y Estrategias Nacionales,Medidas de Emergencia y Seguridad Nacional,
+    Anuncios de Regulaciones Específicas,Normativas Temporales y Urgentes,Medidas y Políticas Sectoriales,
+    Todos los Tipos de Leyes (Nacionales y Autonómicas),Todos los Tipos de Decretos (Legislativos y no Legislativos),
+    Convocatorias y Resultados Generales (Empleo y Educación),Anuncios y Avisos (Oficiales y Privados),
+    Judicial y Procedimientos Legales,Sentencias y Declaraciones Judiciales,Publicaciones Multilingües y Cooficiales,
+    Informes y Estrategias de Política,Emergencias Nacionales y Medidas Excepcionales,Documentos y Comunicaciones Específicas
+[INFO|RAPTOR_BOE|L324] 2024-10-13 11:23:00: Processed labels:
+ ['Leyes Orgánicas', 'Reales Decretos y Reales Decretos-Leyes', 'Tratados y Convenios Internacionales', 'Leyes de Comunidades Autónomas', 'Reglamentos y Normativas Generales', 'Nombramientos y Ceses', 'Promociones y Situaciones Especiales', 'Convocatorias y Resultados de Oposiciones', 'Anuncios de Concursos y Adjudicaciones de Plazas', 'Ayudas', 'Subvenciones y Becas', 'Convenios Colectivos y Cartas de Servicio', 'Planes de Estudio y Normativas Educativas', 'Convenios Internacionales y Medidas Especiales', 'Edictos y Notificaciones Judiciales', 'Procedimientos y Citaciones Judiciales', 'Licitaciones y Adjudicaciones Públicas', 'Avisos y Notificaciones Oficiales', 'Anuncios Comerciales y Convocatorias Privadas', 'Sentencias y Autos del Tribunal Constitucional', 'Orden de Publicaciones y Sumarios', 'Publicaciones por Órgano Emisor', 'Jerarquía y Autenticidad de Normativas', 'Publicaciones en Lenguas Cooficiales', 'Interpretaciones y Documentos Oficiales', 'Informes y Comunicaciones de Interés General', 'Documentos y Estrategias Nacionales', 'Medidas de Emergencia y Seguridad Nacional', 'Anuncios de Regulaciones Específicas', 'Normativas Temporales y Urgentes', 'Medidas y Políticas Sectoriales', 'Todos los Tipos de Leyes (Nacionales y Autonómicas)', 'Todos los Tipos de Decretos (Legislativos y no Legislativos)', 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Anuncios y Avisos (Oficiales y Privados)', 'Judicial y Procedimientos Legales', 'Sentencias y Declaraciones Judiciales', 'Publicaciones Multilingües y Cooficiales', 'Informes y Estrategias de Política', 'Emergencias Nacionales y Medidas Excepcionales', 'Documentos y Comunicaciones Específicas']
+[INFO|RAPTOR_BOE|L331] 2024-10-13 11:23:00: label2id mapping:
+ {'Leyes Orgánicas': 0, 'Reales Decretos y Reales Decretos-Leyes': 1, 'Tratados y Convenios Internacionales': 2, 'Leyes de Comunidades Autónomas': 3, 'Reglamentos y Normativas Generales': 4, 'Nombramientos y Ceses': 5, 'Promociones y Situaciones Especiales': 6, 'Convocatorias y Resultados de Oposiciones': 7, 'Anuncios de Concursos y Adjudicaciones de Plazas': 8, 'Ayudas': 9, 'Subvenciones y Becas': 10, 'Convenios Colectivos y Cartas de Servicio': 11, 'Planes de Estudio y Normativas Educativas': 12, 'Convenios Internacionales y Medidas Especiales': 13, 'Edictos y Notificaciones Judiciales': 14, 'Procedimientos y Citaciones Judiciales': 15, 'Licitaciones y Adjudicaciones Públicas': 16, 'Avisos y Notificaciones Oficiales': 17, 'Anuncios Comerciales y Convocatorias Privadas': 18, 'Sentencias y Autos del Tribunal Constitucional': 19, 'Orden de Publicaciones y Sumarios': 20, 'Publicaciones por Órgano Emisor': 21, 'Jerarquía y Autenticidad de Normativas': 22, 'Publicaciones en Lenguas Cooficiales': 23, 'Interpretaciones y Documentos Oficiales': 24, 'Informes y Comunicaciones de Interés General': 25, 'Documentos y Estrategias Nacionales': 26, 'Medidas de Emergencia y Seguridad Nacional': 27, 'Anuncios de Regulaciones Específicas': 28, 'Normativas Temporales y Urgentes': 29, 'Medidas y Políticas Sectoriales': 30, 'Todos los Tipos de Leyes (Nacionales y Autonómicas)': 31, 'Todos los Tipos de Decretos (Legislativos y no Legislativos)': 32, 'Convocatorias y Resultados Generales (Empleo y Educación)': 33, 'Anuncios y Avisos (Oficiales y Privados)': 34, 'Judicial y Procedimientos Legales': 35, 'Sentencias y Declaraciones Judiciales': 36, 'Publicaciones Multilingües y Cooficiales': 37, 'Informes y Estrategias de Política': 38, 'Emergencias Nacionales y Medidas Excepcionales': 39, 'Documentos y Comunicaciones Específicas': 40}
+[INFO|RAPTOR_BOE|L332] 2024-10-13 11:23:00: id2label mapping:
+ {0: 'Leyes Orgánicas', 1: 'Reales Decretos y Reales Decretos-Leyes', 2: 'Tratados y Convenios Internacionales', 3: 'Leyes de Comunidades Autónomas', 4: 'Reglamentos y Normativas Generales', 5: 'Nombramientos y Ceses', 6: 'Promociones y Situaciones Especiales', 7: 'Convocatorias y Resultados de Oposiciones', 8: 'Anuncios de Concursos y Adjudicaciones de Plazas', 9: 'Ayudas', 10: 'Subvenciones y Becas', 11: 'Convenios Colectivos y Cartas de Servicio', 12: 'Planes de Estudio y Normativas Educativas', 13: 'Convenios Internacionales y Medidas Especiales', 14: 'Edictos y Notificaciones Judiciales', 15: 'Procedimientos y Citaciones Judiciales', 16: 'Licitaciones y Adjudicaciones Públicas', 17: 'Avisos y Notificaciones Oficiales', 18: 'Anuncios Comerciales y Convocatorias Privadas', 19: 'Sentencias y Autos del Tribunal Constitucional', 20: 'Orden de Publicaciones y Sumarios', 21: 'Publicaciones por Órgano Emisor', 22: 'Jerarquía y Autenticidad de Normativas', 23: 'Publicaciones en Lenguas Cooficiales', 24: 'Interpretaciones y Documentos Oficiales', 25: 'Informes y Comunicaciones de Interés General', 26: 'Documentos y Estrategias Nacionales', 27: 'Medidas de Emergencia y Seguridad Nacional', 28: 'Anuncios de Regulaciones Específicas', 29: 'Normativas Temporales y Urgentes', 30: 'Medidas y Políticas Sectoriales', 31: 'Todos los Tipos de Leyes (Nacionales y Autonómicas)', 32: 'Todos los Tipos de Decretos (Legislativos y no Legislativos)', 33: 'Convocatorias y Resultados Generales (Empleo y Educación)', 34: 'Anuncios y Avisos (Oficiales y Privados)', 35: 'Judicial y Procedimientos Legales', 36: 'Sentencias y Declaraciones Judiciales', 37: 'Publicaciones Multilingües y Cooficiales', 38: 'Informes y Estrategias de Política', 39: 'Emergencias Nacionales y Medidas Excepcionales', 40: 'Documentos y Comunicaciones Específicas'}
+[INFO|RAPTOR_BOE|L91] 2024-10-13 11:23:00: numero tokens del cluster text : 5
+[INFO|RAPTOR_BOE|L92] 2024-10-13 11:23:00: numero caracteres del cluster text : 6
+[INFO|_client|L1038] 2024-10-13 11:23:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|RAPTOR_BOE|L419] 2024-10-13 11:23:03: cluster summary for unique_label='NotExist' :
+Parece que no has proporcionado el texto del Boletín Oficial del Estado (BOE) que deseas resumir. Por favor, comparte el contenido y estaré encantado de ayudarte con un resumen.
+[INFO|RAPTOR_BOE|L91] 2024-10-13 11:23:03: numero tokens del cluster text : 27
+[INFO|RAPTOR_BOE|L92] 2024-10-13 11:23:03: numero caracteres del cluster text : 46
+[INFO|_client|L1038] 2024-10-13 11:23:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|RAPTOR_BOE|L419] 2024-10-13 11:23:05: cluster summary for unique_label='Publicaciones por Órgano Emisor' :
+El texto proporcionado parece ser una referencia a un documento del Boletín Oficial del Estado (BOE) de España, indicando un número de boletín y posiblemente una fecha (lunes). Sin embargo, no contiene información adicional o contenido específico que se pueda resumir.
+[INFO|RAPTOR_BOE|L91] 2024-10-13 11:23:05: numero tokens del cluster text : 10
+[INFO|RAPTOR_BOE|L92] 2024-10-13 11:23:05: numero caracteres del cluster text : 27
+[INFO|_client|L1038] 2024-10-13 11:23:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|RAPTOR_BOE|L419] 2024-10-13 11:23:07: cluster summary for unique_label='Avisos y Notificaciones Oficiales' :
+Lo siento, pero no puedo proporcionar un resumen del texto que has compartido, ya que parece estar incompleto. Si puedes proporcionar más información o un texto más extenso, estaré encantado de ayudarte a resumirlo.
+[INFO|RAPTOR_BOE|L91] 2024-10-13 11:23:07: numero tokens del cluster text : 61
+[INFO|RAPTOR_BOE|L92] 2024-10-13 11:23:07: numero caracteres del cluster text : 201
+[INFO|_client|L1038] 2024-10-13 11:23:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|RAPTOR_BOE|L419] 2024-10-13 11:23:09: cluster summary for unique_label='Reglamentos y Normativas Generales' :
+Se modifica la circunscripción consular de la Oficina Consular honoraria en Río Gallegos. Se establece una disposición adicional única que indica que no habrá incremento del gasto de personal.
+[INFO|RAPTOR_BOE|L91] 2024-10-13 11:23:09: numero tokens del cluster text : 318
+[INFO|RAPTOR_BOE|L92] 2024-10-13 11:23:09: numero caracteres del cluster text : 1156
+[INFO|_client|L1038] 2024-10-13 11:23:16: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|RAPTOR_BOE|L419] 2024-10-13 11:23:16: cluster summary for unique_label='Tratados y Convenios Internacionales' :
+**Resumen:**
+
+Se crea la Oficina Consular honoraria en El Calafate, con categoría de Viceconsulado Honorario, mediante la Orden AUC/319/2024, de 9 de abril, del Ministerio de Asuntos Exteriores, Unión Europea y Cooperación. Además, se modifican las circunscripciones de las Oficinas Consulares honorarias en Río Gallegos y Puerto San Julián, en la República Argentina. En la provincia de Santa Cruz, España tiene actualmente dos Viceconsulados Honorarios: uno en Río Gallegos y otro en Puerto San Julián, abarcando un territorio de más de 240,000 km². Existen problemas de comunicación en la región, con distancias significativas y dificultades de desplazamiento para los vicecónsules honorarios hacia El Calafate.
+[INFO|RAPTOR_BOE|L91] 2024-10-13 11:23:16: numero tokens del cluster text : 166
+[INFO|RAPTOR_BOE|L92] 2024-10-13 11:23:16: numero caracteres del cluster text : 631
+[INFO|_client|L1038] 2024-10-13 11:23:19: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|RAPTOR_BOE|L419] 2024-10-13 11:23:19: cluster summary for unique_label='Informes y Comunicaciones de Interés General' :
+El Calafate, un municipio de más de 30,000 habitantes en la provincia de Santa Cruz, se ha convertido en un centro turístico con infraestructuras adecuadas, incluyendo hoteles, restaurantes y un hospital municipal que atiende a turistas durante todo el año, entre los cuales hay un número creciente de españoles. Muchos de estos turistas son montañeros que viajan a El Chaltén y a la montaña de Fitz Roy, ubicados cerca de El Calafate, y algunos realizan subidas de riesgo. En 2023, se registraron dos tragedias que involucraron a españoles.
+[INFO|RAPTOR_BOE|L91] 2024-10-13 11:23:19: numero tokens del cluster text : 198
+[INFO|RAPTOR_BOE|L92] 2024-10-13 11:23:19: numero caracteres del cluster text : 722
+[INFO|_client|L1038] 2024-10-13 11:23:21: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|RAPTOR_BOE|L419] 2024-10-13 11:23:21: cluster summary for unique_label='Reales Decretos y Reales Decretos-Leyes' :
+Se crea la Oficina Consular honoraria en El Calafate y se delimita su circunscripción, de acuerdo con el artículo 48.1 de la Ley 2/2014, el Reglamento de los Agentes Consulares Honorarios de España en el extranjero, y a iniciativa de la Dirección General del Servicio Exterior, con la propuesta de la Embajada de España en Buenos Aires y el informe favorable de las Direcciones Generales de Españoles en el Exterior y de Asuntos Consulares, y de Iberoamérica y el Caribe.
+[INFO|RAPTOR_BOE|L91] 2024-10-13 11:23:21: numero tokens del cluster text : 129
+[INFO|RAPTOR_BOE|L92] 2024-10-13 11:23:21: numero caracteres del cluster text : 481
+[INFO|_client|L1038] 2024-10-13 11:23:24: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|RAPTOR_BOE|L419] 2024-10-13 11:23:24: cluster summary for unique_label='Leyes Orgánicas' :
+La creación de la Oficina Consular honoraria no generará un aumento en el gasto de personal, según lo dispuesto en la disposición adicional trigésima tercera de la Ley 31/2022, de 23 de diciembre, de Presupuestos Generales del Estado para el año 2023. Su funcionamiento se llevará a cabo con los recursos materiales y humanos disponibles en el Ministerio de Asuntos Exteriores, Unión Europea y Cooperación.
+[INFO|RAPTOR_BOE|L91] 2024-10-13 11:23:24: numero tokens del cluster text : 28
+[INFO|RAPTOR_BOE|L92] 2024-10-13 11:23:24: numero caracteres del cluster text : 110
+[INFO|_client|L1038] 2024-10-13 11:23:25: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|RAPTOR_BOE|L419] 2024-10-13 11:23:25: cluster summary for unique_label='Orden de Publicaciones y Sumarios' :
+La orden entrará en vigor al día siguiente de su publicación en el Boletín Oficial del Estado.
+[INFO|RAPTOR_BOE|L91] 2024-10-13 11:23:25: numero tokens del cluster text : 32
+[INFO|RAPTOR_BOE|L92] 2024-10-13 11:23:25: numero caracteres del cluster text : 103
+[INFO|_client|L1038] 2024-10-13 11:23:27: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|RAPTOR_BOE|L419] 2024-10-13 11:23:27: cluster summary for unique_label='Nombramientos y Ceses' :
+El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.
+[INFO|RAPTOR_BOE|L91] 2024-10-13 11:23:27: numero tokens del cluster text : 14
+[INFO|RAPTOR_BOE|L92] 2024-10-13 11:23:27: numero caracteres del cluster text : 21
+[INFO|_client|L1038] 2024-10-13 11:23:28: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|RAPTOR_BOE|L419] 2024-10-13 11:23:28: cluster summary for unique_label='Todos los Tipos de Decretos (Legislativos y no Legislativos)' :
+El texto se refiere al Decreto Ley M-1/1958, que es un documento oficial publicado en el Boletín Oficial del Estado (BOE).
+[INFO|RAPTOR_BOE|L136] 2024-10-13 11:23:28: Informacion de data :
+(23, 18) 
+                     text  ...                                    cluster_summary
+0                      #   ...  Parece que no has proporcionado el texto del B...
+1                  # . 92  ...  El texto proporcionado parece ser una referenc...
+2                # Lunes   ...  Lo siento, pero no puedo proporcionar un resum...
+3            #  I.  41275  ...  El texto proporcionado parece ser una referenc...
+4   # I. DISPOSICIONES ES  ...  Se modifica la circunscripción consular de la ...
+
+[5 rows x 18 columns]
+Index(['text', 'file_path', 'file_name', 'file_type', 'file_size',
+       'creation_date', 'last_modified_date', 'fecha_publicacion_boe', 'orden',
+       'real_decreto', 'ministerios', 'pdf_id', 'chunk_id', 'num_tokens',
+       'num_caracteres', 'label', 'label_str', 'cluster_summary'],
+      dtype='object')
+[INFO|RAPTOR_BOE|L139] 2024-10-13 11:23:28: Number of Document objects : 23
+[INFO|RAPTOR_BOE|L141] 2024-10-13 11:23:28: Document samples :
+ page_content=' # Lunes ' metadata={'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_name': 'BOE-A-2024-7293.pdf', 'file_type': 'application/pdf', 'file_size': 202785, 'creation_date': '2024-10-13', 'last_modified_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'orden': "['Orden AUC/319/2024']", 'real_decreto': "['Real Decreto 1390/2007']", 'ministerios': '[]', 'pdf_id': 'dc9166ea-bb5e-4efb-a902-05e769a56d95', 'chunk_id': '278e366d-5f58-5917-92a3-baaa4f4fbd68', 'num_tokens': 4, 'num_caracteres': 9, 'label': "['17', '21', '34']", 'label_str': 'Avisos y Notificaciones Oficiales', 'cluster_summary': 'Lo siento, pero no puedo proporcionar un resumen del texto que has compartido, ya que parece estar incompleto. Si puedes proporcionar más información o un texto más extenso, estaré encantado de ayudarte a resumirlo.'}
+[INFO|raptor_vectordb|L144] 2024-10-13 11:23:30: All content in index 'boe' has been deleted.
+[INFO|raptor_vectordb|L99] 2024-10-13 11:23:34: VectorDB Index -> boe Stats : {'dimension': 384,
+ 'index_fullness': 0.0,
+ 'namespaces': {},
+ 'total_vector_count': 0}
+[INFO|raptor_vectordb|L99] 2024-10-13 11:23:35: VectorDB Index -> boe Stats : {'dimension': 384,
+ 'index_fullness': 0.0,
+ 'namespaces': {},
+ 'total_vector_count': 0}
+[INFO|raptor_vectordb|L99] 2024-10-13 11:23:36: VectorDB Index -> boe Stats : {'dimension': 384,
+ 'index_fullness': 0.0,
+ 'namespaces': {},
+ 'total_vector_count': 0}
+[INFO|raptor_vectordb|L99] 2024-10-13 11:23:38: VectorDB Index -> boe Stats : {'dimension': 384,
+ 'index_fullness': 0.0,
+ 'namespaces': {},
+ 'total_vector_count': 0}
+[INFO|raptor_vectordb|L99] 2024-10-13 11:23:40: VectorDB Index -> boe Stats : {'dimension': 384,
+ 'index_fullness': 0.0,
+ 'namespaces': {},
+ 'total_vector_count': 0}
+[INFO|raptor_vectordb|L99] 2024-10-13 11:23:41: VectorDB Index -> boe Stats : {'dimension': 384,
+ 'index_fullness': 0.0,
+ 'namespaces': {},
+ 'total_vector_count': 0}
+[INFO|raptor_vectordb|L102] 2024-10-13 11:23:43: VectorDB Index Ready
+[INFO|ia_response|L150] 2024-10-13 11:24:15: userMessage : ¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?
+[INFO|nodes|L26] 2024-10-13 11:24:15: Query Classificator node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?'], 'query_label': None, 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:15: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:18: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L44] 2024-10-13 11:24:18: Query : ¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?
+[INFO|nodes|L45] 2024-10-13 11:24:18: Query label: Nombramientos y Ceses
+[INFO|nodes|L46] 2024-10-13 11:24:18: Full Response :Nombramientos y Ceses
+[INFO|nodes|L57] 2024-10-13 11:24:18: Retriever node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L60] 2024-10-13 11:24:18: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000026DDDFEA290>
+[INFO|nodes|L88] 2024-10-13 11:24:22: Number of retrieved docs : 1
+[INFO|nodes|L100] 2024-10-13 11:24:22: Retrieved Documents Grader Node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': [Document(id='9aff934e-39c7-4ba5-8510-f0d50641a987', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '3d496cd2-bd67-4f52-a000-c30577be12cb', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:22: Initializing LangChain using : get_groq
+[INFO|nodes|L123] 2024-10-13 11:24:24: Document content : 
+  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
+[INFO|_client|L1038] 2024-10-13 11:24:24: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L145] 2024-10-13 11:24:24: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
+[INFO|_client|L1038] 2024-10-13 11:24:25: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L151] 2024-10-13 11:24:25: GRADE: DOCUMENT 0 as NOT RELEVANT
+[INFO|nodes|L339] 2024-10-13 11:24:25: Router Generation or Reprocess Query : 
+ {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L342] 2024-10-13 11:24:25: Routing to -> 'query_reprocess'
+[INFO|nodes|L213] 2024-10-13 11:24:25: Query Processing : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:25: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:26: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L227] 2024-10-13 11:24:26: question='¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?' // after reprocessing question -> response='¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'
+[INFO|nodes|L26] 2024-10-13 11:24:26: Query Classificator node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:26: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:27: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L44] 2024-10-13 11:24:27: Query : ¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?
+[INFO|nodes|L45] 2024-10-13 11:24:27: Query label: Nombramientos y Ceses
+[INFO|nodes|L46] 2024-10-13 11:24:27: Full Response :Nombramientos y Ceses
+[INFO|nodes|L57] 2024-10-13 11:24:27: Retriever node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L60] 2024-10-13 11:24:27: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000026DDDFEA290>
+[INFO|nodes|L88] 2024-10-13 11:24:27: Number of retrieved docs : 1
+[INFO|nodes|L100] 2024-10-13 11:24:27: Retrieved Documents Grader Node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': [Document(id='9aff934e-39c7-4ba5-8510-f0d50641a987', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '3d496cd2-bd67-4f52-a000-c30577be12cb', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:27: Initializing LangChain using : get_groq
+[INFO|nodes|L123] 2024-10-13 11:24:28: Document content : 
+  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
+[INFO|_client|L1038] 2024-10-13 11:24:29: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L145] 2024-10-13 11:24:29: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
+[INFO|_client|L1038] 2024-10-13 11:24:29: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L151] 2024-10-13 11:24:29: GRADE: DOCUMENT 0 as NOT RELEVANT
+[INFO|nodes|L339] 2024-10-13 11:24:29: Router Generation or Reprocess Query : 
+ {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L342] 2024-10-13 11:24:29: Routing to -> 'query_reprocess'
+[INFO|nodes|L213] 2024-10-13 11:24:29: Query Processing : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:29: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:30: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L227] 2024-10-13 11:24:30: question='¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?' // after reprocessing question -> response='¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'
+[INFO|nodes|L26] 2024-10-13 11:24:30: Query Classificator node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:30: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:32: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L44] 2024-10-13 11:24:32: Query : ¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?
+[INFO|nodes|L45] 2024-10-13 11:24:32: Query label: Nombramientos y Ceses
+[INFO|nodes|L46] 2024-10-13 11:24:32: Full Response :Nombramientos y Ceses
+[INFO|nodes|L57] 2024-10-13 11:24:32: Retriever node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L60] 2024-10-13 11:24:32: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000026DDDFEA290>
+[INFO|nodes|L88] 2024-10-13 11:24:33: Number of retrieved docs : 1
+[INFO|nodes|L100] 2024-10-13 11:24:33: Retrieved Documents Grader Node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': [Document(id='9aff934e-39c7-4ba5-8510-f0d50641a987', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '3d496cd2-bd67-4f52-a000-c30577be12cb', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:33: Initializing LangChain using : get_groq
+[INFO|nodes|L123] 2024-10-13 11:24:34: Document content : 
+  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
+[INFO|_client|L1038] 2024-10-13 11:24:34: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L145] 2024-10-13 11:24:34: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
+[INFO|_client|L1038] 2024-10-13 11:24:35: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L151] 2024-10-13 11:24:35: GRADE: DOCUMENT 0 as NOT RELEVANT
+[INFO|nodes|L339] 2024-10-13 11:24:35: Router Generation or Reprocess Query : 
+ {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L342] 2024-10-13 11:24:35: Routing to -> 'query_reprocess'
+[INFO|nodes|L213] 2024-10-13 11:24:35: Query Processing : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:35: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:36: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L227] 2024-10-13 11:24:36: question='¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?' // after reprocessing question -> response='¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'
+[INFO|nodes|L26] 2024-10-13 11:24:36: Query Classificator node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:36: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:38: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L44] 2024-10-13 11:24:38: Query : ¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?
+[INFO|nodes|L45] 2024-10-13 11:24:38: Query label: Nombramientos y Ceses
+[INFO|nodes|L46] 2024-10-13 11:24:38: Full Response :Nombramientos y Ceses
+[INFO|nodes|L57] 2024-10-13 11:24:38: Retriever node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L60] 2024-10-13 11:24:38: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000026DDDFEA290>
+[INFO|nodes|L88] 2024-10-13 11:24:38: Number of retrieved docs : 1
+[INFO|nodes|L100] 2024-10-13 11:24:38: Retrieved Documents Grader Node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': [Document(id='9aff934e-39c7-4ba5-8510-f0d50641a987', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '3d496cd2-bd67-4f52-a000-c30577be12cb', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:38: Initializing LangChain using : get_groq
+[INFO|nodes|L123] 2024-10-13 11:24:39: Document content : 
+  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
+[INFO|_client|L1038] 2024-10-13 11:24:39: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L145] 2024-10-13 11:24:39: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
+[INFO|_client|L1038] 2024-10-13 11:24:40: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L151] 2024-10-13 11:24:40: GRADE: DOCUMENT 0 as NOT RELEVANT
+[INFO|nodes|L339] 2024-10-13 11:24:40: Router Generation or Reprocess Query : 
+ {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L342] 2024-10-13 11:24:40: Routing to -> 'query_reprocess'
+[INFO|nodes|L213] 2024-10-13 11:24:40: Query Processing : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:40: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:41: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L227] 2024-10-13 11:24:41: question='¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?' // after reprocessing question -> response='¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'
+[INFO|nodes|L26] 2024-10-13 11:24:41: Query Classificator node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:41: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:43: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L44] 2024-10-13 11:24:43: Query : ¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?
+[INFO|nodes|L45] 2024-10-13 11:24:43: Query label: Nombramientos y Ceses
+[INFO|nodes|L46] 2024-10-13 11:24:43: Full Response :Nombramientos y Ceses
+[INFO|nodes|L57] 2024-10-13 11:24:43: Retriever node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L60] 2024-10-13 11:24:43: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000026DDDFEA290>
+[INFO|nodes|L88] 2024-10-13 11:24:43: Number of retrieved docs : 1
+[INFO|nodes|L100] 2024-10-13 11:24:43: Retrieved Documents Grader Node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': [Document(id='9aff934e-39c7-4ba5-8510-f0d50641a987', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '3d496cd2-bd67-4f52-a000-c30577be12cb', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:43: Initializing LangChain using : get_groq
+[INFO|nodes|L123] 2024-10-13 11:24:44: Document content : 
+  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
+[INFO|_client|L1038] 2024-10-13 11:24:44: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L145] 2024-10-13 11:24:44: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
+[INFO|_client|L1038] 2024-10-13 11:24:44: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L151] 2024-10-13 11:24:44: GRADE: DOCUMENT 0 as NOT RELEVANT
+[INFO|nodes|L339] 2024-10-13 11:24:44: Router Generation or Reprocess Query : 
+ {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L342] 2024-10-13 11:24:44: Routing to -> 'query_reprocess'
+[INFO|nodes|L213] 2024-10-13 11:24:44: Query Processing : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:44: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:46: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L227] 2024-10-13 11:24:46: question='¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?' // after reprocessing question -> response='¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'
+[INFO|nodes|L26] 2024-10-13 11:24:46: Query Classificator node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:46: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:47: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L44] 2024-10-13 11:24:47: Query : ¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?
+[INFO|nodes|L45] 2024-10-13 11:24:47: Query label: Nombramientos y Ceses
+[INFO|nodes|L46] 2024-10-13 11:24:47: Full Response :Nombramientos y Ceses
+[INFO|nodes|L57] 2024-10-13 11:24:47: Retriever node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L60] 2024-10-13 11:24:47: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000026DDDFEA290>
+[INFO|nodes|L88] 2024-10-13 11:24:48: Number of retrieved docs : 1
+[INFO|nodes|L100] 2024-10-13 11:24:48: Retrieved Documents Grader Node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': [Document(id='9aff934e-39c7-4ba5-8510-f0d50641a987', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '3d496cd2-bd67-4f52-a000-c30577be12cb', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:48: Initializing LangChain using : get_groq
+[INFO|nodes|L123] 2024-10-13 11:24:49: Document content : 
+  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
+[INFO|_client|L1038] 2024-10-13 11:24:49: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L145] 2024-10-13 11:24:49: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
+[INFO|_client|L1038] 2024-10-13 11:24:49: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L151] 2024-10-13 11:24:49: GRADE: DOCUMENT 0 as NOT RELEVANT
+[INFO|nodes|L339] 2024-10-13 11:24:49: Router Generation or Reprocess Query : 
+ {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L342] 2024-10-13 11:24:49: Routing to -> 'query_reprocess'
+[INFO|nodes|L213] 2024-10-13 11:24:49: Query Processing : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:49: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:51: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L227] 2024-10-13 11:24:51: question='¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?' // after reprocessing question -> response='¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'
+[INFO|nodes|L26] 2024-10-13 11:24:51: Query Classificator node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:51: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:52: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L44] 2024-10-13 11:24:52: Query : ¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?
+[INFO|nodes|L45] 2024-10-13 11:24:52: Query label: Nombramientos y Ceses
+[INFO|nodes|L46] 2024-10-13 11:24:52: Full Response :Nombramientos y Ceses
+[INFO|nodes|L57] 2024-10-13 11:24:52: Retriever node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L60] 2024-10-13 11:24:52: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000026DDDFEA290>
+[INFO|nodes|L88] 2024-10-13 11:24:52: Number of retrieved docs : 1
+[INFO|nodes|L100] 2024-10-13 11:24:52: Retrieved Documents Grader Node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': [Document(id='9aff934e-39c7-4ba5-8510-f0d50641a987', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '3d496cd2-bd67-4f52-a000-c30577be12cb', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:52: Initializing LangChain using : get_groq
+[INFO|nodes|L123] 2024-10-13 11:24:53: Document content : 
+  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
+[INFO|_client|L1038] 2024-10-13 11:24:54: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L145] 2024-10-13 11:24:54: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
+[INFO|_client|L1038] 2024-10-13 11:24:54: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L151] 2024-10-13 11:24:54: GRADE: DOCUMENT 0 as NOT RELEVANT
+[INFO|nodes|L339] 2024-10-13 11:24:54: Router Generation or Reprocess Query : 
+ {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L342] 2024-10-13 11:24:54: Routing to -> 'query_reprocess'
+[INFO|nodes|L213] 2024-10-13 11:24:54: Query Processing : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:54: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:56: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L227] 2024-10-13 11:24:56: question='¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?' // after reprocessing question -> response='¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'
+[INFO|nodes|L26] 2024-10-13 11:24:56: Query Classificator node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:56: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:24:57: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L44] 2024-10-13 11:24:57: Query : ¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?
+[INFO|nodes|L45] 2024-10-13 11:24:57: Query label: Nombramientos y Ceses
+[INFO|nodes|L46] 2024-10-13 11:24:57: Full Response :Nombramientos y Ceses
+[INFO|nodes|L57] 2024-10-13 11:24:57: Retriever node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L60] 2024-10-13 11:24:57: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000026DDDFEA290>
+[INFO|nodes|L88] 2024-10-13 11:24:58: Number of retrieved docs : 1
+[INFO|nodes|L100] 2024-10-13 11:24:58: Retrieved Documents Grader Node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': [Document(id='9aff934e-39c7-4ba5-8510-f0d50641a987', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '3d496cd2-bd67-4f52-a000-c30577be12cb', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:24:58: Initializing LangChain using : get_groq
+[INFO|nodes|L123] 2024-10-13 11:24:59: Document content : 
+  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
+[INFO|_client|L1038] 2024-10-13 11:24:59: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L145] 2024-10-13 11:24:59: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
+[INFO|_client|L1038] 2024-10-13 11:25:00: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L151] 2024-10-13 11:25:00: GRADE: DOCUMENT 0 as NOT RELEVANT
+[INFO|nodes|L339] 2024-10-13 11:25:00: Router Generation or Reprocess Query : 
+ {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L342] 2024-10-13 11:25:00: Routing to -> 'query_reprocess'
+[INFO|nodes|L213] 2024-10-13 11:25:00: Query Processing : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:25:00: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:25:01: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L227] 2024-10-13 11:25:01: question='¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?' // after reprocessing question -> response='¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'
+[INFO|nodes|L26] 2024-10-13 11:25:01: Query Classificator node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:25:01: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:25:03: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L44] 2024-10-13 11:25:03: Query : ¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?
+[INFO|nodes|L45] 2024-10-13 11:25:03: Query label: Nombramientos y Ceses
+[INFO|nodes|L46] 2024-10-13 11:25:03: Full Response :Nombramientos y Ceses
+[INFO|nodes|L57] 2024-10-13 11:25:03: Retriever node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L60] 2024-10-13 11:25:03: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000026DDDFEA290>
+[INFO|nodes|L88] 2024-10-13 11:25:04: Number of retrieved docs : 1
+[INFO|nodes|L100] 2024-10-13 11:25:04: Retrieved Documents Grader Node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': [Document(id='9aff934e-39c7-4ba5-8510-f0d50641a987', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '3d496cd2-bd67-4f52-a000-c30577be12cb', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:25:04: Initializing LangChain using : get_groq
+[INFO|nodes|L123] 2024-10-13 11:25:05: Document content : 
+  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
+[INFO|_client|L1038] 2024-10-13 11:25:06: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L145] 2024-10-13 11:25:06: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
+[INFO|_client|L1038] 2024-10-13 11:25:06: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[INFO|_base_client|L1067] 2024-10-13 11:25:06: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+[INFO|_client|L1038] 2024-10-13 11:25:09: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[WARNING|nodes|L151] 2024-10-13 11:25:09: GRADE: DOCUMENT 0 as NOT RELEVANT
+[INFO|nodes|L339] 2024-10-13 11:25:09: Router Generation or Reprocess Query : 
+ {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L342] 2024-10-13 11:25:09: Routing to -> 'query_reprocess'
+[INFO|nodes|L213] 2024-10-13 11:25:09: Query Processing : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:25:09: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:25:10: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[INFO|_base_client|L1067] 2024-10-13 11:25:10: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+[INFO|_client|L1038] 2024-10-13 11:25:16: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L227] 2024-10-13 11:25:16: question='¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?' // after reprocessing question -> response='¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'
+[INFO|nodes|L26] 2024-10-13 11:25:16: Query Classificator node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|chains|L31] 2024-10-13 11:25:16: Initializing LangChain using : get_groq
+[INFO|_client|L1038] 2024-10-13 11:25:17: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|nodes|L44] 2024-10-13 11:25:17: Query : ¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?
+[INFO|nodes|L45] 2024-10-13 11:25:17: Query label: Nombramientos y Ceses
+[INFO|nodes|L46] 2024-10-13 11:25:17: Full Response :Nombramientos y Ceses
+[INFO|nodes|L57] 2024-10-13 11:25:17: Retriever node : 
+ {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
+[INFO|nodes|L60] 2024-10-13 11:25:17: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000026DDDFEA290>
+[INFO|nodes|L88] 2024-10-13 11:25:19: Number of retrieved docs : 1
