@@ -8,7 +8,7 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
 
 ### 🖥️ Front-End
 
-1. Clona el repositorio del frontend:
+1. Clona el repositorio del frontend (rama main):
 
    ```sh
    git clone https://github.com/kokeitor/chatbot-boe-frontend-react.git
@@ -28,6 +28,14 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
 
 4. 📝 Anota la URL donde se levanta el cliente en local y añádela como variable de entorno en el archivo `.env` dentro de `./backend_boechat/.env`, es decir, dentro del repositorio del backend, en la variable `FRONT_END_URL` 📎.
 
+   ```sh
+   VITE v5.4.6  ready in 651 ms
+
+   ➜  Local:   http://localhost:5173/
+   ➜  Network: use --host to expose
+   ➜  press h + enter to show help
+   ```
+
    En `./backend_boechat/.env`:
    ```env
    FRONT_END_URL=http://localhost:5173
@@ -44,7 +52,7 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
 
 ### 💻 Back-End
 
-1. Clona el repositorio del backend:
+1. Clona el repositorio del backend (rama master):
 
    ```sh
    git clone https://github.com/kokeitor/backend_boechat.git
