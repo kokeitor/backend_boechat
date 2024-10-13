@@ -1,31 +1,534 @@
-[INFO|nodes|L100] 2024-10-13 11:25:19: Retrieved Documents Grader Node : 
- {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': [Document(id='9aff934e-39c7-4ba5-8510-f0d50641a987', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '3d496cd2-bd67-4f52-a000-c30577be12cb', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': None, 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:25:19: Initializing LangChain using : get_groq
-[INFO|nodes|L123] 2024-10-13 11:25:20: Document content : 
-  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
-[INFO|_client|L1038] 2024-10-13 11:25:24: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L145] 2024-10-13 11:25:24: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
-[INFO|_client|L1038] 2024-10-13 11:25:25: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L151] 2024-10-13 11:25:25: GRADE: DOCUMENT 0 as NOT RELEVANT
-[INFO|nodes|L339] 2024-10-13 11:25:25: Router Generation or Reprocess Query : 
- {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'fact_based_answer': None, 'useful_answer': None}
-[INFO|nodes|L342] 2024-10-13 11:25:25: Routing to -> 'query_reprocess'
-[INFO|nodes|L213] 2024-10-13 11:25:25: Query Processing : 
- {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:25:25: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:25:27: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L227] 2024-10-13 11:25:27: question='¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?' // after reprocessing question -> response='¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'
-[INFO|nodes|L26] 2024-10-13 11:25:27: Query Classificator node : 
- {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:25:27: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:25:28: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L44] 2024-10-13 11:25:28: Query : ¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?
-[INFO|nodes|L45] 2024-10-13 11:25:28: Query label: Nombramientos y Ceses
-[INFO|nodes|L46] 2024-10-13 11:25:28: Full Response :Nombramientos y Ceses
-[INFO|nodes|L57] 2024-10-13 11:25:28: Retriever node : 
- {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': None, 'fact_based_answer': None, 'useful_answer': None}
-[INFO|nodes|L60] 2024-10-13 11:25:28: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000026DDDFEA290>
-[INFO|nodes|L88] 2024-10-13 11:25:29: Number of retrieved docs : 1
-[INFO|nodes|L100] 2024-10-13 11:25:29: Retrieved Documents Grader Node : 
- {'date': '2024-10-13 11:24:15', 'question': ['¿Dónde estará ubicada la nueva Oficina Consular Honoraria según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la nueva Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?', '¿Cuál es la ubicación de la Oficina Consular Honoraria establecida por la Orden AUC/319/2024?', '¿Dónde se encuentra la Oficina Consular Honoraria creada según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': None, 'documents': [Document(id='9aff934e-39c7-4ba5-8510-f0d50641a987', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '3d496cd2-bd67-4f52-a000-c30577be12cb', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': None, 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:25:29: Initializing LangChain using : get_groq
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 18 // tokens : 78 // text len : 275
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 19 // tokens : 78 // text len : 269
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 20 // tokens : 78 // text len : 294
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 21 // tokens : 78 // text len : 318
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 22 // tokens : 74 // text len : 282
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 23 // tokens : 69 // text len : 246
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 24 // tokens : 64 // text len : 209
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 25 // tokens : 66 // text len : 194
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 26 // tokens : 62 // text len : 182
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 27 // tokens : 62 // text len : 166
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 28 // tokens : 62 // text len : 151
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 29 // tokens : 64 // text len : 143
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 30 // tokens : 71 // text len : 186
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 31 // tokens : 78 // text len : 229
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 32 // tokens : 85 // text len : 272
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 33 // tokens : 84 // text len : 274
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 34 // tokens : 92 // text len : 316
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 35 // tokens : 100 // text len : 358
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 36 // tokens : 108 // text len : 400
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 37 // tokens : 100 // text len : 363
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 38 // tokens : 91 // text len : 315
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 39 // tokens : 82 // text len : 267
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 40 // tokens : 84 // text len : 248
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 41 // tokens : 76 // text len : 218
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 42 // tokens : 64 // text len : 168
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 43 // tokens : 56 // text len : 128
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 44 // tokens : 54 // text len : 122
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 45 // tokens : 54 // text len : 147
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 46 // tokens : 56 // text len : 160
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 47 // tokens : 57 // text len : 167
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 48 // tokens : 55 // text len : 149
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 49 // tokens : 50 // text len : 134
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 50 // tokens : 40 // text len : 109
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 51 // tokens : 34 // text len : 95
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 52 // tokens : 32 // text len : 76
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 53 // tokens : 23 // text len : 53
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 54 // tokens : 15 // text len : 36
+[INFO|splitters|L114] 2024-10-13 18:08:48: Combined sentence : index : 55 // tokens : 7 // text len : 18
+[INFO|splitters|L229] 2024-10-13 18:08:50: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180850_b4feb674-7de5-4f0c-8c09-3f17788f7ebf_similarity_plot.png
+[INFO|splitters|L246] 2024-10-13 18:08:50: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180850_b4feb674-7de5-4f0c-8c09-3f17788f7ebf_similarity_hist.png
+[INFO|splitters|L75] 2024-10-13 18:08:50: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:50: CHUNK 0 LEN -> 2
+[INFO|splitters|L75] 2024-10-13 18:08:50: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:50: CHUNK 1 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:50: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:50: CHUNK 2 LEN -> 27
+[INFO|splitters|L75] 2024-10-13 18:08:50: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:50: CHUNK 3 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:50: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:50: CHUNK 4 LEN -> 55
+[INFO|splitters|L75] 2024-10-13 18:08:50: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:50: CHUNK 5 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:50: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:50: CHUNK 6 LEN -> 279
+[INFO|splitters|L75] 2024-10-13 18:08:50: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:50: CHUNK 7 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:50: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:50: CHUNK 8 LEN -> 29
+[INFO|splitters|L75] 2024-10-13 18:08:50: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 9 LEN -> 64
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 10 LEN -> 62
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 11 LEN -> 62
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 12 LEN -> 45
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 13 LEN -> 11
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 14 LEN -> 14
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 15 LEN -> 14
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 16 LEN -> 21
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 17 LEN -> 40
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 18 LEN -> 58
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 19 LEN -> 49
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 20 LEN -> 44
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 21 LEN -> 14
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 22 LEN -> 36
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 23 LEN -> 87
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 24 LEN -> 87
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 25 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 26 LEN -> 54
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 27 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 28 LEN -> 278
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 29 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 30 LEN -> 29
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 31 LEN -> 64
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 32 LEN -> 62
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 33 LEN -> 62
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 34 LEN -> 31
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 35 LEN -> 23
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 36 LEN -> 84
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 37 LEN -> 46
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 38 LEN -> 34
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 39 LEN -> 74
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 40 LEN -> 44
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 41 LEN -> 22
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 42 LEN -> 22
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 43 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 44 LEN -> 16
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 45 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:51: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:51: CHUNK 46 LEN -> 19
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 0 // tokens : 17 // text len : 32
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 1 // tokens : 30 // text len : 88
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 2 // tokens : 31 // text len : 89
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 3 // tokens : 94 // text len : 369
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 4 // tokens : 93 // text len : 367
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 5 // tokens : 103 // text len : 396
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 6 // tokens : 108 // text len : 433
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 7 // tokens : 127 // text len : 495
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 8 // tokens : 132 // text len : 502
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 9 // tokens : 145 // text len : 547
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 10 // tokens : 89 // text len : 279
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 11 // tokens : 98 // text len : 293
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 12 // tokens : 97 // text len : 278
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 13 // tokens : 83 // text len : 235
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 14 // tokens : 79 // text len : 213
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 15 // tokens : 80 // text len : 209
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 16 // tokens : 86 // text len : 213
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 17 // tokens : 88 // text len : 246
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 18 // tokens : 89 // text len : 246
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 19 // tokens : 87 // text len : 268
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 20 // tokens : 112 // text len : 334
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 21 // tokens : 127 // text len : 381
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 22 // tokens : 108 // text len : 323
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 23 // tokens : 103 // text len : 328
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 24 // tokens : 94 // text len : 284
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 25 // tokens : 148 // text len : 548
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 26 // tokens : 142 // text len : 512
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 27 // tokens : 122 // text len : 454
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 28 // tokens : 110 // text len : 431
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 29 // tokens : 129 // text len : 493
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 30 // tokens : 133 // text len : 501
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 31 // tokens : 142 // text len : 532
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 32 // tokens : 87 // text len : 277
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 33 // tokens : 120 // text len : 361
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 34 // tokens : 124 // text len : 378
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 35 // tokens : 118 // text len : 348
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 36 // tokens : 125 // text len : 360
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 37 // tokens : 116 // text len : 342
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 38 // tokens : 118 // text len : 333
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 39 // tokens : 119 // text len : 332
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 40 // tokens : 87 // text len : 248
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 41 // tokens : 78 // text len : 218
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 42 // tokens : 65 // text len : 184
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 43 // tokens : 51 // text len : 129
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 44 // tokens : 41 // text len : 84
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 45 // tokens : 30 // text len : 61
+[INFO|splitters|L114] 2024-10-13 18:08:51: Combined sentence : index : 46 // tokens : 19 // text len : 38
+[INFO|splitters|L229] 2024-10-13 18:08:53: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180853_9ed033b8-3ed4-4306-a5b4-bef38419575c_similarity_plot.png
+[INFO|splitters|L246] 2024-10-13 18:08:54: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180854_9ed033b8-3ed4-4306-a5b4-bef38419575c_similarity_hist.png
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 0 LEN -> 2
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 1 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 2 LEN -> 6
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 3 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 4 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 5 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 6 LEN -> 15
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 7 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 8 LEN -> 28
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 9 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 10 LEN -> 28
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 11 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 12 LEN -> 22
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 13 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 14 LEN -> 142
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 15 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 16 LEN -> 158
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 17 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 18 LEN -> 143
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 19 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 20 LEN -> 171
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 21 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 22 LEN -> 161
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 23 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 24 LEN -> 99
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 25 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 26 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 27 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 28 LEN -> 15
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 29 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:54: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:54: CHUNK 30 LEN -> 19
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 0 // tokens : 8 // text len : 11
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 1 // tokens : 12 // text len : 21
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 2 // tokens : 12 // text len : 22
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 3 // tokens : 21 // text len : 38
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 4 // tokens : 20 // text len : 36
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 5 // tokens : 30 // text len : 64
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 6 // tokens : 26 // text len : 58
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 7 // tokens : 35 // text len : 86
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 8 // tokens : 32 // text len : 77
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 9 // tokens : 37 // text len : 99
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 10 // tokens : 28 // text len : 84
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 11 // tokens : 63 // text len : 226
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 12 // tokens : 53 // text len : 198
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 13 // tokens : 98 // text len : 356
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 14 // tokens : 89 // text len : 328
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 15 // tokens : 126 // text len : 471
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 16 // tokens : 121 // text len : 449
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 17 // tokens : 163 // text len : 620
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 18 // tokens : 128 // text len : 478
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 19 // tokens : 168 // text len : 639
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 20 // tokens : 123 // text len : 481
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 21 // tokens : 156 // text len : 580
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 22 // tokens : 119 // text len : 437
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 23 // tokens : 119 // text len : 437
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 24 // tokens : 76 // text len : 266
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 25 // tokens : 81 // text len : 281
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 26 // tokens : 40 // text len : 120
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 27 // tokens : 52 // text len : 139
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 28 // tokens : 19 // text len : 39
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 29 // tokens : 19 // text len : 38
+[INFO|splitters|L114] 2024-10-13 18:08:54: Combined sentence : index : 30 // tokens : 18 // text len : 37
+[INFO|splitters|L229] 2024-10-13 18:08:55: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180855_459f684b-925a-4b0d-a6e2-0dc7bed733e0_similarity_plot.png
+[INFO|splitters|L246] 2024-10-13 18:08:55: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180855_459f684b-925a-4b0d-a6e2-0dc7bed733e0_similarity_hist.png
+[INFO|llm|L160] 2024-10-13 18:08:55: LLM output for chunk of len 2:
+generation={'label1': '', 'label3': '', 'label2': ''}
+[INFO|llm|L174] 2024-10-13 18:08:55: for doc 0 id2label : ['999', '999', '999']
+[INFO|_client|L1038] 2024-10-13 18:08:57: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:08:57: LLM output for chunk of len 7:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 18:08:57: for doc 1 id2label : ['21', '20', '17']
+[INFO|_client|L1038] 2024-10-13 18:08:59: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:08:59: LLM output for chunk of len 11:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Avisos y Notificaciones Oficiales', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:08:59: for doc 2 id2label : ['21', '17', '34']
+[INFO|_client|L1038] 2024-10-13 18:09:01: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:01: LLM output for chunk of len 16:
+generation={'Label1': 'Anuncios y Avisos (Oficiales y Privados)', 'Label2': 'Avisos y Notificaciones Oficiales', 'Label3': 'Edictos y Notificaciones Judiciales'}
+[INFO|llm|L174] 2024-10-13 18:09:01: for doc 3 id2label : ['34', '17', '14']
+[INFO|_client|L1038] 2024-10-13 18:09:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:03: LLM output for chunk of len 30:
+generation={'Label1': 'Nombramientos y Ceses', 'Label2': 'Promociones y Situaciones Especiales', 'Label3': 'Convocatorias y Resultados de Oposiciones'}
+[INFO|llm|L174] 2024-10-13 18:09:03: for doc 4 id2label : ['5', '6', '7']
+[INFO|_client|L1038] 2024-10-13 18:09:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:05: LLM output for chunk of len 28:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Anuncios de Concursos y Adjudicaciones de Plazas', 'Label3': 'Convocatorias y Resultados Generales (Empleo y Educación)'}
+[INFO|llm|L174] 2024-10-13 18:09:05: for doc 5 id2label : ['7', '8', '33']
+[INFO|_client|L1038] 2024-10-13 18:09:06: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:06: LLM output for chunk of len 1008:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Leyes de Comunidades Autónomas', 'Label3': 'Reales Decretos y Reales Decretos-Leyes'}
+[INFO|llm|L174] 2024-10-13 18:09:06: for doc 6 id2label : ['7', '3', '1']
+[INFO|_client|L1038] 2024-10-13 18:09:08: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:08: LLM output for chunk of len 771:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Leyes Orgánicas', 'Label3': 'Planes de Estudio y Normativas Educativas'}
+[INFO|llm|L174] 2024-10-13 18:09:08: for doc 7 id2label : ['7', '0', '12']
+[INFO|_client|L1038] 2024-10-13 18:09:10: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:10: LLM output for chunk of len 16:
+generation={'Label1': 'Reglamentos y Normativas Generales', 'Label2': 'Planes de Estudio y Normativas Educativas', 'Label3': 'Documentos y Estrategias Nacionales'}
+[INFO|llm|L174] 2024-10-13 18:09:10: for doc 8 id2label : ['4', '12', '26']
+[INFO|_client|L1038] 2024-10-13 18:09:12: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:12: LLM output for chunk of len 514:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Reglamentos y Normativas Generales', 'Label3': 'Reales Decretos y Reales Decretos-Leyes'}
+[INFO|llm|L174] 2024-10-13 18:09:12: for doc 9 id2label : ['7', '4', '1']
+[INFO|_client|L1038] 2024-10-13 18:09:14: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:14: LLM output for chunk of len 518:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Anuncios y Avisos (Oficiales y Privados)', 'Label3': 'Convocatorias y Resultados Generales (Empleo y Educación)'}
+[INFO|llm|L174] 2024-10-13 18:09:14: for doc 10 id2label : ['7', '34', '33']
+[INFO|_client|L1038] 2024-10-13 18:09:16: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:16: LLM output for chunk of len 218:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:09:16: for doc 11 id2label : ['7', '33', '34']
+[INFO|llm|L160] 2024-10-13 18:09:16: LLM output for chunk of len 2:
+generation={'label1': '', 'label3': '', 'label2': ''}
+[INFO|llm|L174] 2024-10-13 18:09:16: for doc 12 id2label : ['999', '999', '999']
+[INFO|_client|L1038] 2024-10-13 18:09:19: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:19: LLM output for chunk of len 1104:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Reales Decretos y Reales Decretos-Leyes', 'Label3': 'Leyes de Comunidades Autónomas'}
+[INFO|llm|L174] 2024-10-13 18:09:19: for doc 13 id2label : ['7', '1', '3']
+[INFO|_client|L1038] 2024-10-13 18:09:21: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:21: LLM output for chunk of len 755:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Reales Decretos y Reales Decretos-Leyes', 'Label3': 'Leyes de Comunidades Autónomas'}
+[INFO|llm|L174] 2024-10-13 18:09:21: for doc 14 id2label : ['7', '1', '3']
+[INFO|_client|L1038] 2024-10-13 18:09:22: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:22: LLM output for chunk of len 313:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Promociones y Situaciones Especiales', 'Label3': 'Ayudas'}
+[INFO|llm|L174] 2024-10-13 18:09:22: for doc 15 id2label : ['7', '6', '9']
+[INFO|_client|L1038] 2024-10-13 18:09:25: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:25: LLM output for chunk of len 350:
+generation={'Label1': 'Reales Decretos y Reales Decretos-Leyes', 'Label2': 'Convocatorias y Resultados de Oposiciones', 'Label3': 'Normativas Temporales y Urgentes'}
+[INFO|llm|L174] 2024-10-13 18:09:25: for doc 16 id2label : ['1', '7', '29']
+[INFO|_client|L1038] 2024-10-13 18:09:27: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:27: LLM output for chunk of len 85:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:09:27: for doc 17 id2label : ['7', '33', '34']
+[INFO|_client|L1038] 2024-10-13 18:09:29: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:29: LLM output for chunk of len 143:
+generation={'Label1': 'Promociones y Situaciones Especiales', 'Label2': 'Convocatorias y Resultados de Oposiciones', 'Label3': 'Convocatorias y Resultados Generales (Empleo y Educación)'}
+[INFO|llm|L174] 2024-10-13 18:09:29: for doc 18 id2label : ['6', '7', '33']
+[INFO|_client|L1038] 2024-10-13 18:09:31: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:31: LLM output for chunk of len 40:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:09:31: for doc 19 id2label : ['7', '33', '34']
+[INFO|_client|L1038] 2024-10-13 18:09:33: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:33: LLM output for chunk of len 15:
+generation={'Label1': 'Avisos y Notificaciones Oficiales', 'Label2': 'Edictos y Notificaciones Judiciales', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:09:33: for doc 20 id2label : ['17', '14', '34']
+[INFO|llm|L160] 2024-10-13 18:09:33: LLM output for chunk of len 0:
+generation={'label1': '', 'label3': '', 'label2': ''}
+[INFO|llm|L174] 2024-10-13 18:09:33: for doc 21 id2label : ['999', '999', '999']
+[INFO|_client|L1038] 2024-10-13 18:09:35: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:35: LLM output for chunk of len 5:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 18:09:35: for doc 22 id2label : ['21', '20', '17']
+[INFO|_client|L1038] 2024-10-13 18:09:36: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:36: LLM output for chunk of len 440:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Promociones y Situaciones Especiales', 'Label3': 'Convocatorias y Resultados Generales (Empleo y Educación)'}
+[INFO|llm|L174] 2024-10-13 18:09:36: for doc 23 id2label : ['7', '6', '33']
+[INFO|_client|L1038] 2024-10-13 18:09:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:38: LLM output for chunk of len 6:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Informes y Comunicaciones de Interés General'}
+[INFO|llm|L174] 2024-10-13 18:09:38: for doc 24 id2label : ['21', '20', '25']
+[INFO|_client|L1038] 2024-10-13 18:09:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:40: LLM output for chunk of len 599:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:09:40: for doc 25 id2label : ['7', '33', '34']
+[INFO|_client|L1038] 2024-10-13 18:09:42: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:42: LLM output for chunk of len 165:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:09:42: for doc 26 id2label : ['7', '33', '34']
+[INFO|llm|L160] 2024-10-13 18:09:42: LLM output for chunk of len 2:
+generation={'label1': '', 'label3': '', 'label2': ''}
+[INFO|llm|L174] 2024-10-13 18:09:42: for doc 27 id2label : ['999', '999', '999']
+[INFO|_client|L1038] 2024-10-13 18:09:44: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:44: LLM output for chunk of len 28:
+generation={'Label1': 'Avisos y Notificaciones Oficiales', 'Label2': 'Anuncios y Avisos (Oficiales y Privados)', 'Label3': 'Publicaciones por Órgano Emisor'}
+[INFO|llm|L174] 2024-10-13 18:09:44: for doc 28 id2label : ['17', '34', '21']
+[INFO|_client|L1038] 2024-10-13 18:09:46: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:46: LLM output for chunk of len 24:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:09:46: for doc 29 id2label : ['7', '33', '34']
+[INFO|_client|L1038] 2024-10-13 18:09:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:48: LLM output for chunk of len 109:
+generation={'Label1': 'Nombramientos y Ceses', 'Label2': 'Publicaciones por Órgano Emisor', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 18:09:48: for doc 30 id2label : ['5', '21', '17']
+[INFO|_client|L1038] 2024-10-13 18:09:50: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:50: LLM output for chunk of len 364:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Normativas Temporales y Urgentes'}
+[INFO|llm|L174] 2024-10-13 18:09:50: for doc 31 id2label : ['7', '33', '29']
+[INFO|_client|L1038] 2024-10-13 18:09:52: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:52: LLM output for chunk of len 642:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Promociones y Situaciones Especiales'}
+[INFO|llm|L174] 2024-10-13 18:09:52: for doc 32 id2label : ['7', '33', '6']
+[INFO|_client|L1038] 2024-10-13 18:09:54: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:54: LLM output for chunk of len 555:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Anuncios y Avisos (Oficiales y Privados)', 'Label3': 'Convocatorias y Resultados Generales (Empleo y Educación)'}
+[INFO|llm|L174] 2024-10-13 18:09:54: for doc 33 id2label : ['7', '34', '33']
+[INFO|_client|L1038] 2024-10-13 18:09:56: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:56: LLM output for chunk of len 146:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:09:56: for doc 34 id2label : ['7', '33', '34']
+[INFO|_client|L1038] 2024-10-13 18:09:59: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:09:59: LLM output for chunk of len 7:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Informes y Comunicaciones de Interés General'}
+[INFO|llm|L174] 2024-10-13 18:09:59: for doc 35 id2label : ['21', '20', '25']
+[INFO|_client|L1038] 2024-10-13 18:10:01: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:01: LLM output for chunk of len 440:
+generation={'Label1': 'Reglamentos y Normativas Generales', 'Label2': 'Convocatorias y Resultados de Oposiciones', 'Label3': 'Todos los Tipos de Decretos (Legislativos y no Legislativos)'}
+[INFO|llm|L174] 2024-10-13 18:10:01: for doc 36 id2label : ['4', '7', '32']
+[INFO|_client|L1038] 2024-10-13 18:10:03: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:03: LLM output for chunk of len 7:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 18:10:03: for doc 37 id2label : ['21', '20', '17']
+[INFO|_client|L1038] 2024-10-13 18:10:05: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:05: LLM output for chunk of len 362:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Reales Decretos y Reales Decretos-Leyes', 'Label3': 'Convocatorias y Resultados Generales (Empleo y Educación)'}
+[INFO|llm|L174] 2024-10-13 18:10:05: for doc 38 id2label : ['7', '1', '33']
+[INFO|_client|L1038] 2024-10-13 18:10:07: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:07: LLM output for chunk of len 333:
+generation={'Label1': 'Nombramientos y Ceses', 'Label2': 'Convocatorias y Resultados de Oposiciones', 'Label3': 'Publicaciones por Órgano Emisor'}
+[INFO|llm|L174] 2024-10-13 18:10:07: for doc 39 id2label : ['5', '7', '21']
+[INFO|_client|L1038] 2024-10-13 18:10:09: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:09: LLM output for chunk of len 8:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 18:10:09: for doc 40 id2label : ['21', '20', '17']
+[INFO|_client|L1038] 2024-10-13 18:10:11: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:11: LLM output for chunk of len 204:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Anuncios y Avisos (Oficiales y Privados)', 'Label3': 'Informes y Comunicaciones de Interés General'}
+[INFO|llm|L174] 2024-10-13 18:10:11: for doc 41 id2label : ['7', '34', '25']
+[INFO|llm|L160] 2024-10-13 18:10:11: LLM output for chunk of len 0:
+generation={'label1': '', 'label3': '', 'label2': ''}
+[INFO|llm|L174] 2024-10-13 18:10:11: for doc 42 id2label : ['999', '999', '999']
+[INFO|_client|L1038] 2024-10-13 18:10:16: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:16: LLM output for chunk of len 105:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Reglamentos y Normativas Generales'}
+[INFO|llm|L174] 2024-10-13 18:10:16: for doc 43 id2label : ['7', '33', '4']
+[INFO|_client|L1038] 2024-10-13 18:10:17: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:17: LLM output for chunk of len 7:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 18:10:17: for doc 44 id2label : ['21', '20', '17']
+[INFO|_client|L1038] 2024-10-13 18:10:20: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:20: LLM output for chunk of len 111:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:10:20: for doc 45 id2label : ['7', '33', '34']
+[INFO|_client|L1038] 2024-10-13 18:10:21: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:21: LLM output for chunk of len 7:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Informes y Comunicaciones de Interés General'}
+[INFO|llm|L174] 2024-10-13 18:10:21: for doc 46 id2label : ['21', '20', '25']
+[INFO|_client|L1038] 2024-10-13 18:10:22: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:22: LLM output for chunk of len 361:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Ayudas', 'Label3': 'Normativas Temporales y Urgentes'}
+[INFO|llm|L174] 2024-10-13 18:10:22: for doc 47 id2label : ['7', '9', '29']
+[INFO|llm|L160] 2024-10-13 18:10:22: LLM output for chunk of len 2:
+generation={'label1': '', 'label3': '', 'label2': ''}
+[INFO|llm|L174] 2024-10-13 18:10:22: for doc 48 id2label : ['999', '999', '999']
+[INFO|_client|L1038] 2024-10-13 18:10:24: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:24: LLM output for chunk of len 28:
+generation={'Label1': 'Avisos y Notificaciones Oficiales', 'Label2': 'Anuncios y Avisos (Oficiales y Privados)', 'Label3': 'Publicaciones por Órgano Emisor'}
+[INFO|llm|L174] 2024-10-13 18:10:24: for doc 49 id2label : ['17', '34', '21']
+[INFO|_client|L1038] 2024-10-13 18:10:26: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:26: LLM output for chunk of len 475:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Reales Decretos y Reales Decretos-Leyes'}
+[INFO|llm|L174] 2024-10-13 18:10:26: for doc 50 id2label : ['7', '33', '1']
+[INFO|_client|L1038] 2024-10-13 18:10:28: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:28: LLM output for chunk of len 119:
+generation={'Label1': 'Planes de Estudio y Normativas Educativas', 'Label2': 'Convocatorias y Resultados de Oposiciones', 'Label3': 'Ayudas'}
+[INFO|llm|L174] 2024-10-13 18:10:28: for doc 51 id2label : ['12', '7', '9']
+[INFO|_client|L1038] 2024-10-13 18:10:29: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:29: LLM output for chunk of len 428:
+generation={'Label1': 'Planes de Estudio y Normativas Educativas', 'Label2': 'Convocatorias y Resultados de Oposiciones', 'Label3': 'Ayudas'}
+[INFO|llm|L174] 2024-10-13 18:10:29: for doc 52 id2label : ['12', '7', '9']
+[INFO|_client|L1038] 2024-10-13 18:10:31: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:31: LLM output for chunk of len 205:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Promociones y Situaciones Especiales', 'Label3': 'Convocatorias y Resultados Generales (Empleo y Educación)'}
+[INFO|llm|L174] 2024-10-13 18:10:31: for doc 53 id2label : ['7', '6', '33']
+[INFO|_client|L1038] 2024-10-13 18:10:33: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:33: LLM output for chunk of len 1017:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Normativas Temporales y Urgentes', 'Label3': 'Todos los Tipos de Decretos (Legislativos y no Legislativos)'}
+[INFO|llm|L174] 2024-10-13 18:10:33: for doc 54 id2label : ['7', '29', '32']
+[INFO|_client|L1038] 2024-10-13 18:10:36: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:36: LLM output for chunk of len 17:
+generation={'Label1': 'Anuncios y Avisos (Oficiales y Privados)', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Ayudas'}
+[INFO|llm|L174] 2024-10-13 18:10:36: for doc 55 id2label : ['34', '33', '9']
+[INFO|llm|L160] 2024-10-13 18:10:36: LLM output for chunk of len 0:
+generation={'label1': '', 'label3': '', 'label2': ''}
+[INFO|llm|L174] 2024-10-13 18:10:36: for doc 56 id2label : ['999', '999', '999']
+[INFO|_client|L1038] 2024-10-13 18:10:38: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:38: LLM output for chunk of len 1208:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Reglamentos y Normativas Generales', 'Label3': 'Leyes Orgánicas'}
+[INFO|llm|L174] 2024-10-13 18:10:38: for doc 57 id2label : ['7', '4', '0']
+[INFO|_client|L1038] 2024-10-13 18:10:40: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:40: LLM output for chunk of len 233:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Anuncios y Avisos (Oficiales y Privados)', 'Label3': 'Convocatorias y Resultados Generales (Empleo y Educación)'}
+[INFO|llm|L174] 2024-10-13 18:10:40: for doc 58 id2label : ['7', '34', '33']
+[INFO|llm|L160] 2024-10-13 18:10:40: LLM output for chunk of len 2:
+generation={'label1': '', 'label3': '', 'label2': ''}
+[INFO|llm|L174] 2024-10-13 18:10:40: for doc 59 id2label : ['999', '999', '999']
+[INFO|_client|L1038] 2024-10-13 18:10:42: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:42: LLM output for chunk of len 7:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 18:10:42: for doc 60 id2label : ['21', '20', '17']
+[INFO|_client|L1038] 2024-10-13 18:10:43: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:43: LLM output for chunk of len 11:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Avisos y Notificaciones Oficiales', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:10:43: for doc 61 id2label : ['21', '17', '34']
+[INFO|_client|L1038] 2024-10-13 18:10:45: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:45: LLM output for chunk of len 16:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Avisos y Notificaciones Oficiales', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:10:45: for doc 62 id2label : ['21', '17', '34']
+[INFO|_client|L1038] 2024-10-13 18:10:48: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:48: LLM output for chunk of len 493:
+generation={'Label1': 'Convocatorias y Resultados de Oposiciones', 'Label2': 'Convocatorias y Resultados Generales (Empleo y Educación)', 'Label3': 'Ayudas'}
+[INFO|llm|L174] 2024-10-13 18:10:48: for doc 63 id2label : ['7', '33', '9']
+[INFO|_client|L1038] 2024-10-13 18:10:50: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:50: LLM output for chunk of len 6:
+generation={'Label1': 'Publicaciones por Órgano Emisor', 'Label2': 'Orden de Publicaciones y Sumarios', 'Label3': 'Avisos y Notificaciones Oficiales'}
+[INFO|llm|L174] 2024-10-13 18:10:50: for doc 64 id2label : ['21', '20', '17']
+[INFO|_client|L1038] 2024-10-13 18:10:52: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO|llm|L160] 2024-10-13 18:10:52: LLM output for chunk of len 725:
+generation={'Label1': 'Reglamentos y Normativas Generales', 'Label2': 'Ayudas', 'Label3': 'Anuncios y Avisos (Oficiales y Privados)'}
+[INFO|llm|L174] 2024-10-13 18:10:52: for doc 65 id2label : ['4', '9', '34']

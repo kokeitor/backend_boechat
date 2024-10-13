@@ -1,392 +1,1225 @@
-[INFO|nodes|L123] 2024-10-13 11:19:05: Document content : 
-  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
-[INFO|_client|L1038] 2024-10-13 11:19:06: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L145] 2024-10-13 11:19:06: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
-[INFO|_client|L1038] 2024-10-13 11:19:06: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L151] 2024-10-13 11:19:06: GRADE: DOCUMENT 0 as NOT RELEVANT
-[INFO|nodes|L339] 2024-10-13 11:19:06: Router Generation or Reprocess Query : 
- {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L342] 2024-10-13 11:19:06: Routing to -> 'query_reprocess'
-[INFO|nodes|L213] 2024-10-13 11:19:06: Query Processing : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:06: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:08: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L227] 2024-10-13 11:19:08: question='¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?' // after reprocessing question -> response='¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'
-[INFO|nodes|L26] 2024-10-13 11:19:08: Query Classificator node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:08: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:09: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L44] 2024-10-13 11:19:09: Query : ¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?
-[INFO|nodes|L45] 2024-10-13 11:19:09: Query label: Nombramientos y Ceses
-[INFO|nodes|L46] 2024-10-13 11:19:09: Full Response :Nombramientos y Ceses
-[INFO|nodes|L57] 2024-10-13 11:19:09: Retriever node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L60] 2024-10-13 11:19:09: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000018ADDA3AFD0>
-[INFO|nodes|L88] 2024-10-13 11:19:10: Number of retrieved docs : 1
-[INFO|nodes|L100] 2024-10-13 11:19:10: Retrieved Documents Grader Node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': [Document(id='857de119-1aac-437e-aed4-71decc179351', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '7a0bce03-5d7a-4077-bf74-3897783f3bd0', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:10: Initializing LangChain using : get_groq
-[INFO|nodes|L123] 2024-10-13 11:19:10: Document content : 
-  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
-[INFO|_client|L1038] 2024-10-13 11:19:11: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L145] 2024-10-13 11:19:11: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
-[INFO|_client|L1038] 2024-10-13 11:19:11: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L151] 2024-10-13 11:19:11: GRADE: DOCUMENT 0 as NOT RELEVANT
-[INFO|nodes|L339] 2024-10-13 11:19:11: Router Generation or Reprocess Query : 
- {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L342] 2024-10-13 11:19:11: Routing to -> 'query_reprocess'
-[INFO|nodes|L213] 2024-10-13 11:19:11: Query Processing : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:11: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:13: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L227] 2024-10-13 11:19:13: question='¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?' // after reprocessing question -> response='¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'
-[INFO|nodes|L26] 2024-10-13 11:19:13: Query Classificator node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:13: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:14: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L44] 2024-10-13 11:19:14: Query : ¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?
-[INFO|nodes|L45] 2024-10-13 11:19:14: Query label: Nombramientos y Ceses
-[INFO|nodes|L46] 2024-10-13 11:19:14: Full Response :Nombramientos y Ceses
-[INFO|nodes|L57] 2024-10-13 11:19:14: Retriever node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L60] 2024-10-13 11:19:14: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000018ADDA3AFD0>
-[INFO|nodes|L88] 2024-10-13 11:19:15: Number of retrieved docs : 1
-[INFO|nodes|L100] 2024-10-13 11:19:15: Retrieved Documents Grader Node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': [Document(id='857de119-1aac-437e-aed4-71decc179351', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '7a0bce03-5d7a-4077-bf74-3897783f3bd0', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:15: Initializing LangChain using : get_groq
-[INFO|nodes|L123] 2024-10-13 11:19:16: Document content : 
-  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
-[INFO|_client|L1038] 2024-10-13 11:19:16: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L145] 2024-10-13 11:19:16: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
-[INFO|_client|L1038] 2024-10-13 11:19:16: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L151] 2024-10-13 11:19:16: GRADE: DOCUMENT 0 as NOT RELEVANT
-[INFO|nodes|L339] 2024-10-13 11:19:16: Router Generation or Reprocess Query : 
- {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L342] 2024-10-13 11:19:16: Routing to -> 'query_reprocess'
-[INFO|nodes|L213] 2024-10-13 11:19:16: Query Processing : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:16: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:18: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L227] 2024-10-13 11:19:18: question='¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?' // after reprocessing question -> response='¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'
-[INFO|nodes|L26] 2024-10-13 11:19:18: Query Classificator node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:18: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:19: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L44] 2024-10-13 11:19:19: Query : ¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?
-[INFO|nodes|L45] 2024-10-13 11:19:19: Query label: Nombramientos y Ceses
-[INFO|nodes|L46] 2024-10-13 11:19:19: Full Response :Nombramientos y Ceses
-[INFO|nodes|L57] 2024-10-13 11:19:19: Retriever node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L60] 2024-10-13 11:19:19: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000018ADDA3AFD0>
-[INFO|nodes|L88] 2024-10-13 11:19:20: Number of retrieved docs : 1
-[INFO|nodes|L100] 2024-10-13 11:19:20: Retrieved Documents Grader Node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': [Document(id='857de119-1aac-437e-aed4-71decc179351', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '7a0bce03-5d7a-4077-bf74-3897783f3bd0', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:20: Initializing LangChain using : get_groq
-[INFO|nodes|L123] 2024-10-13 11:19:21: Document content : 
-  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
-[INFO|_client|L1038] 2024-10-13 11:19:21: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L145] 2024-10-13 11:19:21: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
-[INFO|_client|L1038] 2024-10-13 11:19:21: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L151] 2024-10-13 11:19:21: GRADE: DOCUMENT 0 as NOT RELEVANT
-[INFO|nodes|L339] 2024-10-13 11:19:21: Router Generation or Reprocess Query : 
- {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L342] 2024-10-13 11:19:21: Routing to -> 'query_reprocess'
-[INFO|nodes|L213] 2024-10-13 11:19:21: Query Processing : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:21: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:23: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L227] 2024-10-13 11:19:23: question='¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?' // after reprocessing question -> response='¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'
-[INFO|nodes|L26] 2024-10-13 11:19:23: Query Classificator node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:23: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:24: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L44] 2024-10-13 11:19:24: Query : ¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?
-[INFO|nodes|L45] 2024-10-13 11:19:24: Query label: Nombramientos y Ceses
-[INFO|nodes|L46] 2024-10-13 11:19:24: Full Response :Nombramientos y Ceses
-[INFO|nodes|L57] 2024-10-13 11:19:24: Retriever node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L60] 2024-10-13 11:19:24: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000018ADDA3AFD0>
-[INFO|nodes|L88] 2024-10-13 11:19:25: Number of retrieved docs : 1
-[INFO|nodes|L100] 2024-10-13 11:19:25: Retrieved Documents Grader Node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': [Document(id='857de119-1aac-437e-aed4-71decc179351', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '7a0bce03-5d7a-4077-bf74-3897783f3bd0', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:25: Initializing LangChain using : get_groq
-[INFO|nodes|L123] 2024-10-13 11:19:26: Document content : 
-  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
-[INFO|_client|L1038] 2024-10-13 11:19:26: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L145] 2024-10-13 11:19:26: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
-[INFO|_client|L1038] 2024-10-13 11:19:26: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L151] 2024-10-13 11:19:26: GRADE: DOCUMENT 0 as NOT RELEVANT
-[INFO|nodes|L339] 2024-10-13 11:19:26: Router Generation or Reprocess Query : 
- {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L342] 2024-10-13 11:19:26: Routing to -> 'query_reprocess'
-[INFO|nodes|L213] 2024-10-13 11:19:26: Query Processing : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:26: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:28: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-[INFO|_base_client|L1067] 2024-10-13 11:19:28: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
-[INFO|_client|L1038] 2024-10-13 11:19:29: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L227] 2024-10-13 11:19:29: question='¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?' // after reprocessing question -> response='¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'
-[INFO|nodes|L26] 2024-10-13 11:19:29: Query Classificator node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:29: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:31: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-[INFO|_base_client|L1067] 2024-10-13 11:19:31: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
-[INFO|_client|L1038] 2024-10-13 11:19:32: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L44] 2024-10-13 11:19:32: Query : ¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?
-[INFO|nodes|L45] 2024-10-13 11:19:32: Query label: Nombramientos y Ceses
-[INFO|nodes|L46] 2024-10-13 11:19:32: Full Response :Nombramientos y Ceses
-[INFO|nodes|L57] 2024-10-13 11:19:32: Retriever node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L60] 2024-10-13 11:19:32: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000018ADDA3AFD0>
-[INFO|nodes|L88] 2024-10-13 11:19:32: Number of retrieved docs : 1
-[INFO|nodes|L100] 2024-10-13 11:19:32: Retrieved Documents Grader Node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': [Document(id='857de119-1aac-437e-aed4-71decc179351', metadata={'chunk_id': 'a085da53-c1db-511e-b790-12108474d791', 'cluster_summary': 'El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno, se encuentra en Madrid.', 'creation_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'file_name': 'BOE-A-2024-7293.pdf', 'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_size': 202785.0, 'file_type': 'application/pdf', 'label': "['5', '25', '40']", 'label_str': 'Nombramientos y Ceses', 'last_modified_date': '2024-10-13', 'ministerios': "['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']", 'num_caracteres': 102.0, 'num_tokens': 31.0, 'orden': '[]', 'pdf_id': '7a0bce03-5d7a-4077-bf74-3897783f3bd0', 'real_decreto': '[]'}, page_content=' Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. ')], 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:32: Initializing LangChain using : get_groq
-[INFO|nodes|L123] 2024-10-13 11:19:33: Document content : 
-  Madrid, .–El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, José Manuel Albares Bueno. 
-[INFO|_client|L1038] 2024-10-13 11:19:33: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-[INFO|_base_client|L1067] 2024-10-13 11:19:33: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
-[INFO|_client|L1038] 2024-10-13 11:19:35: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L145] 2024-10-13 11:19:35: GRADE: DOCUMENT 0 as NOT RELEVANT TRYING WITH -> content = cluster_summary
-[INFO|_client|L1038] 2024-10-13 11:19:35: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-[INFO|_base_client|L1067] 2024-10-13 11:19:35: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
-[INFO|_client|L1038] 2024-10-13 11:19:37: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[WARNING|nodes|L151] 2024-10-13 11:19:37: GRADE: DOCUMENT 0 as NOT RELEVANT
-[INFO|nodes|L339] 2024-10-13 11:19:37: Router Generation or Reprocess Query : 
- {'documents': None, 'query_reprocess': 'yes', 'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L342] 2024-10-13 11:19:37: Routing to -> 'query_reprocess'
-[INFO|nodes|L213] 2024-10-13 11:19:37: Query Processing : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:37: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:39: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-[INFO|_base_client|L1067] 2024-10-13 11:19:39: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
-[INFO|_client|L1038] 2024-10-13 11:19:40: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L227] 2024-10-13 11:19:40: question='¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?' // after reprocessing question -> response='¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'
-[INFO|nodes|L26] 2024-10-13 11:19:40: Query Classificator node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|chains|L31] 2024-10-13 11:19:40: Initializing LangChain using : get_groq
-[INFO|_client|L1038] 2024-10-13 11:19:41: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
-[INFO|_base_client|L1067] 2024-10-13 11:19:41: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
-[INFO|_client|L1038] 2024-10-13 11:19:43: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|nodes|L44] 2024-10-13 11:19:43: Query : ¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?
-[INFO|nodes|L45] 2024-10-13 11:19:43: Query label: Nombramientos y Ceses
-[INFO|nodes|L46] 2024-10-13 11:19:43: Full Response :Nombramientos y Ceses
-[INFO|nodes|L57] 2024-10-13 11:19:43: Retriever node : 
- {'date': '2024-10-13 11:18:18', 'question': ['¿Cómo se modifican las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la disposición del Ministerio de Asuntos Exteriores en la Orden AUC/319/2024?', '¿Cuáles son los cambios en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidos por la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Qué modificaciones se establecieron para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián en la Orden AUC/319/2024 del Ministerio de Asuntos Exteriores?', '¿Cuáles fueron las modificaciones establecidas en la Orden AUC/319/2024 para las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián?', '¿Qué cambios se introdujeron en las circunscripciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se introdujeron en las demarcaciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?', '¿Qué cambios se realizaron en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián según la Orden AUC/319/2024?', '¿Cuáles fueron las modificaciones en las jurisdicciones de los Viceconsulados Honorarios de Río Gallegos y Puerto San Julián establecidas por la Orden AUC/319/2024?'], 'query_label': 'Nombramientos y Ceses', 'generation': "I don't know.", 'documents': None, 'fact_based_answer': 'reprocess_query', 'useful_answer': None}
-[INFO|nodes|L60] 2024-10-13 11:19:43: Using client for retrieval : <langchain_pinecone.vectorstores.PineconeVectorStore object at 0x0000018ADDA3AFD0>
-[INFO|nodes|L88] 2024-10-13 11:19:43: Number of retrieved docs : 1
-[INFO|_client|L1038] 2024-10-13 11:19:44: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-[INFO|openai_api|L119] 2024-10-13 11:19:44: event.choices[0].delta.content : 
-[INFO|openai_api|L124] 2024-10-13 11:19:44: event.choices[0].delta.content : 
-[INFO|main|L66] 2024-10-13 11:20:30: Getting Graph configuration from CONFIG_PATH='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json'
-[INFO|config|L93] 2024-10-13 11:20:30: Definida configuracion mediante archivo JSON en C:\Users\Jorge\Desktop\Boe ChatBot\backend\src\..\config/graph\graph.json
-[INFO|config|L224] 2024-10-13 11:20:30: Agent query_classificator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-13 11:20:30: Agent docs_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-13 11:20:30: Agent query_processor -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-13 11:20:30: Agent generator -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-13 11:20:30: Agent hallucination_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L224] 2024-10-13 11:20:30: Agent answer_grader -> Parser <class 'langchain_core.output_parsers.string.StrOutputParser'>
-[INFO|config|L150] 2024-10-13 11:20:30: Graph Agents : {'query_classificator': Agent(agent_name='query_classificator', model='GROQ', get_model=<function get_groq at 0x0000026DDDFAFEC0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['labels', 'text'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['labels'], input_types={}, partial_variables={}, template="You are an assistant specialized in categorizing a text from the Spanish Boletín Oficial del Estado (BOE).\n\n            Your task is to classify the provided text using the specified list of labels. The possible labels are: {labels}\n\n            If the text does not belong to a label, classify it as 'Otra'. Provide the label with no preamble or explanation"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['text'], input_types={}, partial_variables={}, template='{text}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'docs_grader': Agent(agent_name='docs_grader', model='GROQ', get_model=<function get_groq at 0x0000026DDDFAFEC0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['document', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['document'], input_types={}, partial_variables={}, template="You are an AI model designed grade the relevance of a retrieved document to a user question.\n\n                If the document contains keywords related to the user question, grade it as relevant.\n\n                Give a binary score of 'yes' or 'no' to indicate whether the document is relevant to the question. \n\n                Provide the binary score with no explanation.\n\n                Here is the retrieved document: {document} "), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'query_processor': Agent(agent_name='query_processor', model='GROQ', get_model=<function get_groq at 0x0000026DDDFAFEC0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], input_types={}, partial_variables={}, template='You are a question re-writer that converts an input question to a better version that is optimized for vectorstore retrieval. \n\n                    Look at the input and try to reason about the underlying semantic intent / meaning.\n\n                    Provide the reprocessed question in spanish with no preamble or explanation'), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'generator': Agent(agent_name='generator', model='GROQ', get_model=<function get_groq at 0x0000026DDDFAFEC0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['context', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['context'], input_types={}, partial_variables={}, template="You are an assistant for question-answering tasks.\n\n                    Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say 'I you don't know'.\n\n                    Use three sentences maximum and keep the answer concise.\n\n                    Context:\n{context}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template='{question}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'hallucination_grader': Agent(agent_name='hallucination_grader', model='GROQ', get_model=<function get_groq at 0x0000026DDDFAFEC0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['documents', 'generation'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['documents'], input_types={}, partial_variables={}, template="You are a grader assessing whether an answer is grounded in / supported by a set of facts. \n \n                Give a binary score 'yes' or 'no' score to indicate\n\n                whether the answer is grounded in or supported by a set of facts. Provide the binary score with no preamble or explanation.\n\n                Here are the facts:\n{documents}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>), 'answer_grader': Agent(agent_name='answer_grader', model='GROQ', get_model=<function get_groq at 0x0000026DDDFAFEC0>, temperature=0, prompt=ChatPromptTemplate(input_variables=['generation', 'question'], input_types={}, partial_variables={}, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=['question'], input_types={}, partial_variables={}, template="You are a grader assessing whether an  answer is useful to resolve a question.\n\n                Give a binary score 'yes' or 'no' to indicate whether the answer is useful to resolve a question.\n\n                Provide the binary score with no preamble or explanation.\n                Here is the question:\n{question}\n"), additional_kwargs={}), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['generation'], input_types={}, partial_variables={}, template='{generation}'), additional_kwargs={})]), parser=<class 'langchain_core.output_parsers.string.StrOutputParser'>)}
-[INFO|config|L229] 2024-10-13 11:20:30: Connecting to an existing index of PineCone DB cient
-[INFO|discover_namespace_packages|L12] 2024-10-13 11:20:30: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-13 11:20:30: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-13 11:20:31: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-13 11:20:31: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-13 11:20:31: Installing plugin inference into Pinecone
-[INFO|config|L236] 2024-10-13 11:20:32: existing_indexes : ['boe']
-[INFO|SentenceTransformer|L196] 2024-10-13 11:20:32: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-13 11:20:32: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|main|L68] 2024-10-13 11:20:35: config_graph : ConfigGraph(config_path='C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\src\\..\\config/graph\\graph.json', graph=None, compile_graph=None)
-[INFO|main|L70] 2024-10-13 11:20:35: Creating graph and compiling workflow...
-[INFO|main|L82] 2024-10-13 11:20:35: Graph and workflow created
-[INFO|SentenceTransformer|L196] 2024-10-13 11:20:39: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-13 11:20:39: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|SentenceTransformer|L196] 2024-10-13 11:20:43: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-13 11:20:43: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|raptor_vectordb|L35] 2024-10-13 11:20:52: Connecting to an existing index of PineCone DB cient -> boe
-[INFO|discover_namespace_packages|L12] 2024-10-13 11:20:52: Discovering subpackages in _NamespacePath(['C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\env\\Lib\\site-packages\\pinecone_plugins'])
-[INFO|discover_plugins|L9] 2024-10-13 11:20:52: Looking for plugins in pinecone_plugins.assistant
-[INFO|discover_plugins|L9] 2024-10-13 11:20:52: Looking for plugins in pinecone_plugins.inference
-[INFO|installation|L10] 2024-10-13 11:20:52: Installing plugin assistant into Pinecone
-[INFO|installation|L10] 2024-10-13 11:20:52: Installing plugin inference into Pinecone
-[INFO|raptor_vectordb|L40] 2024-10-13 11:20:53: existing_indexes : ['boe']
-[INFO|crud_files|L20] 2024-10-13 11:21:25: uploadFiles: [UploadFile(filename='BOE-A-2024-7293.pdf', size=202785, headers=Headers({'content-disposition': 'form-data; name="uploadFiles"; filename="BOE-A-2024-7293.pdf"', 'content-type': 'application/pdf'}))]
-[INFO|SentenceTransformer|L196] 2024-10-13 11:21:25: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-13 11:21:25: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|SentenceTransformer|L196] 2024-10-13 11:21:31: Use pytorch device_name: cpu
-[INFO|SentenceTransformer|L204] 2024-10-13 11:21:31: Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-[INFO|llm|L50] 2024-10-13 11:21:48: label2id : {'Leyes Orgánicas': 0, 'Reales Decretos y Reales Decretos-Leyes': 1, 'Tratados y Convenios Internacionales': 2, 'Leyes de Comunidades Autónomas': 3, 'Reglamentos y Normativas Generales': 4, 'Nombramientos y Ceses': 5, 'Promociones y Situaciones Especiales': 6, 'Convocatorias y Resultados de Oposiciones': 7, 'Anuncios de Concursos y Adjudicaciones de Plazas': 8, 'Ayudas': 9, 'Subvenciones y Becas': 10, 'Convenios Colectivos y Cartas de Servicio': 11, 'Planes de Estudio y Normativas Educativas': 12, 'Convenios Internacionales y Medidas Especiales': 13, 'Edictos y Notificaciones Judiciales': 14, 'Procedimientos y Citaciones Judiciales': 15, 'Licitaciones y Adjudicaciones Públicas': 16, 'Avisos y Notificaciones Oficiales': 17, 'Anuncios Comerciales y Convocatorias Privadas': 18, 'Sentencias y Autos del Tribunal Constitucional': 19, 'Orden de Publicaciones y Sumarios': 20, 'Publicaciones por Órgano Emisor': 21, 'Jerarquía y Autenticidad de Normativas': 22, 'Publicaciones en Lenguas Cooficiales': 23, 'Interpretaciones y Documentos Oficiales': 24, 'Informes y Comunicaciones de Interés General': 25, 'Documentos y Estrategias Nacionales': 26, 'Medidas de Emergencia y Seguridad Nacional': 27, 'Anuncios de Regulaciones Específicas': 28, 'Normativas Temporales y Urgentes': 29, 'Medidas y Políticas Sectoriales': 30, 'Todos los Tipos de Leyes (Nacionales y Autonómicas)': 31, 'Todos los Tipos de Decretos (Legislativos y no Legislativos)': 32, 'Convocatorias y Resultados Generales (Empleo y Educación)': 33, 'Anuncios y Avisos (Oficiales y Privados)': 34, 'Judicial y Procedimientos Legales': 35, 'Sentencias y Declaraciones Judiciales': 36, 'Publicaciones Multilingües y Cooficiales': 37, 'Informes y Estrategias de Política': 38, 'Emergencias Nacionales y Medidas Excepcionales': 39, 'Documentos y Comunicaciones Específicas': 40}
-[INFO|_client|L1786] 2024-10-13 11:21:52: HTTP Request: POST https://api.cloud.llamaindex.ai/api/parsing/upload "HTTP/1.1 200 OK"
-[INFO|_client|L1786] 2024-10-13 11:21:54: HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/dd42cc31-722c-44ce-90ee-14bf6440b0a6 "HTTP/1.1 200 OK"
-[INFO|_client|L1786] 2024-10-13 11:21:55: HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/dd42cc31-722c-44ce-90ee-14bf6440b0a6/result/markdown "HTTP/1.1 200 OK"
-[INFO|parsers|L48] 2024-10-13 11:21:55: parsed num of docs :2
-[INFO|parsers|L61] 2024-10-13 11:21:56: Parsed num of docs -> 2
-[INFO|pipeline|L285] 2024-10-13 11:21:56: Number of parsed docs: 2
-[INFO|pipeline|L114] 2024-10-13 11:21:56: Configuration of TextPreprocess for task : classification found
-[INFO|pipeline|L119] 2024-10-13 11:21:56: Trying to preprocess texts --> del_special_words : {'apply': True}
-[INFO|nlp|L335] 2024-10-13 11:21:56: Transformando en 'Document' los textos BOE preprocesados
-[INFO|nlp|L385] 2024-10-13 11:21:56: Page content len before preprocess for doc 1 : 3510
-[INFO|nlp|L389] 2024-10-13 11:21:56: Metadata before preprocess for doc 1: {'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_name': 'BOE-A-2024-7293.pdf', 'file_type': 'application/pdf', 'file_size': 202785, 'creation_date': '2024-10-13', 'last_modified_date': '2024-10-13'}
-[INFO|nlp|L385] 2024-10-13 11:21:56: Page content len before preprocess for doc 2 : 2246
-[INFO|nlp|L389] 2024-10-13 11:21:56: Metadata before preprocess for doc 2: {'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_name': 'BOE-A-2024-7293.pdf', 'file_type': 'application/pdf', 'file_size': 202785, 'creation_date': '2024-10-13', 'last_modified_date': '2024-10-13'}
-[INFO|nlp|L344] 2024-10-13 11:21:56: NUMERO DE DOCS A ANALIZAR : 2
-[INFO|nlp|L348] 2024-10-13 11:21:56: Original doc 1 content length: 3510
-[INFO|nlp|L348] 2024-10-13 11:21:56: Original doc 2 content length: 2246
-[INFO|nlp|L358] 2024-10-13 11:21:56: Doc 1 content before preprocessing: # BOLETÍN OFICIAL DEL ESTADO
-
-# Núm. 92
-
-# Lunes 15 de abril de 2024
-
-# Sec. I. Pág. 41275
-
-# I. DISPOSICIONES GENERALES
-
-# MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN
-
-Orden AUC/319
-[INFO|nlp|L480] 2024-10-13 11:21:56: Inside get_del_patrones method ... 
-[INFO|nlp|L485] 2024-10-13 11:21:56: Text len Before preprocess len(text)=3510
-[INFO|nlp|L552] 2024-10-13 11:21:56: Text len after preprocess len(text)=3429
-[INFO|nlp|L555] 2024-10-13 11:21:56: Page content len after preprocess len(doc.page_content)=3429
-[INFO|nlp|L362] 2024-10-13 11:21:56: Doc 1 content after removing patterns: # 
-
-# . 92
-
-# Lunes 
-
-#  I.  41275
-
-# I. DISPOSICIONES ES
-
-# MINISTERIO DE ASUNTOS EXTERIORES, UNIÓN EUROPEA Y COOPERACIÓN
-
-Orden AUC/319/2024, de 9 de abril, por la que se crea la Oficina Consular ho
-[INFO|nlp|L369] 2024-10-13 11:21:56: Update metadata of doc 1: {'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_name': 'BOE-A-2024-7293.pdf', 'file_type': 'application/pdf', 'file_size': 202785, 'creation_date': '2024-10-13', 'last_modified_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'orden': ['Orden AUC/319/2024'], 'real_decreto': ['Real Decreto 1390/2007'], 'ministerios': []}
-[INFO|nlp|L370] 2024-10-13 11:21:56: Char length of doc 1: 3429
-[INFO|nlp|L358] 2024-10-13 11:21:56: Doc 2 content before preprocessing: # BOLETÍN OFICIAL DEL ESTADO
-
-Núm. 92 Lunes 15 de abril de 2024 Sec. I. Pág. 41276
-
-# Artículo 2. Dependencia de la Oficina Consular honoraria en El Calafate.
-
-La Oficina Consular honoraria en El Cala
-[INFO|nlp|L480] 2024-10-13 11:21:56: Inside get_del_patrones method ... 
-[INFO|nlp|L485] 2024-10-13 11:21:56: Text len Before preprocess len(text)=2246
-[INFO|nlp|L552] 2024-10-13 11:21:56: Text len after preprocess len(text)=2074
-[INFO|nlp|L555] 2024-10-13 11:21:56: Page content len after preprocess len(doc.page_content)=2074
-[INFO|nlp|L362] 2024-10-13 11:21:56: Doc 2 content after removing patterns: # 
-
-. 92 Lunes   I.  41276
-
-# Artículo 2. Dependencia de la Oficina Consular honoraria en El Calafate.
-
-La Oficina Consular honoraria en El Calafate, con categoría de Viceconsulado Honorario, depender
-[INFO|nlp|L369] 2024-10-13 11:21:56: Update metadata of doc 2: {'file_path': 'C:\\Users\\Jorge\\Desktop\\Boe ChatBot\\backend\\data\\boe\\uploads\\BOE-A-2024-7293.pdf', 'file_name': 'BOE-A-2024-7293.pdf', 'file_type': 'application/pdf', 'file_size': 202785, 'creation_date': '2024-10-13', 'last_modified_date': '2024-10-13', 'fecha_publicacion_boe': 'data-boe-uploads', 'orden': [], 'real_decreto': [], 'ministerios': ['El Ministro de Asuntos Exteriores, Unión Europea y Cooperación, J']}
-[INFO|nlp|L370] 2024-10-13 11:21:56: Char length of doc 2: 2074
-[INFO|nlp|L372] 2024-10-13 11:21:56: Number of docs after invoke BoeProcessor: 2
-[INFO|pipeline|L292] 2024-10-13 11:21:56: Number of processed_docs: 2
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 0 LEN -> 2
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 1 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 2 LEN -> 6
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 3 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 4 LEN -> 8
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 5 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 6 LEN -> 12
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 7 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 8 LEN -> 21
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 9 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 10 LEN -> 63
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 11 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 12 LEN -> 283
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 13 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 14 LEN -> 803
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 15 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 16 LEN -> 629
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 17 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 18 LEN -> 608
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 19 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 20 LEN -> 15
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 21 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 22 LEN -> 610
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 23 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 24 LEN -> 108
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 25 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:21:56: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:21:56: CHUNK 26 LEN -> 235
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 0 // tokens : 8 // text len : 11
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 1 // tokens : 12 // text len : 20
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 2 // tokens : 12 // text len : 21
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 3 // tokens : 20 // text len : 34
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 4 // tokens : 19 // text len : 32
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 5 // tokens : 28 // text len : 53
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 6 // tokens : 24 // text len : 47
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 7 // tokens : 46 // text len : 110
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 8 // tokens : 43 // text len : 102
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 9 // tokens : 123 // text len : 385
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 10 // tokens : 115 // text len : 373
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 11 // tokens : 327 // text len : 1176
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 12 // tokens : 318 // text len : 1155
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 13 // tokens : 482 // text len : 1784
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 14 // tokens : 460 // text len : 1721
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 15 // tokens : 619 // text len : 2329
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 16 // tokens : 539 // text len : 2046
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 17 // tokens : 544 // text len : 2061
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 18 // tokens : 331 // text len : 1258
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 19 // tokens : 494 // text len : 1868
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 20 // tokens : 330 // text len : 1239
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 21 // tokens : 362 // text len : 1347
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 22 // tokens : 203 // text len : 739
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 23 // tokens : 264 // text len : 974
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 24 // tokens : 259 // text len : 958
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 25 // tokens : 259 // text len : 957
-[INFO|splitters|L114] 2024-10-13 11:21:56: Combined sentence : index : 26 // tokens : 95 // text len : 346
-[INFO|splitters|L229] 2024-10-13 11:22:03: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013112203_dc9166ea-bb5e-4efb-a902-05e769a56d95_similarity_plot.png
-[INFO|splitters|L246] 2024-10-13 11:22:04: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013112204_dc9166ea-bb5e-4efb-a902-05e769a56d95_similarity_hist.png
-[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 0 LEN -> 2
-[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 1 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 2 LEN -> 22
-[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 3 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 4 LEN -> 74
-[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 5 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 6 LEN -> 146
-[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 7 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 8 LEN -> 81
-[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
-[INFO|splitters|L76] 2024-10-13 11:22:04: CHUNK 9 LEN -> 0
-[INFO|splitters|L75] 2024-10-13 11:22:04: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 8 LEN -> 12
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 9 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 10 LEN -> 14
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 11 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 12 LEN -> 41
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 13 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 14 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 15 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 16 LEN -> 136
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 17 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 18 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 19 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 20 LEN -> 226
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 21 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 22 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 23 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 24 LEN -> 207
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 25 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 26 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 27 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 28 LEN -> 153
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 29 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 30 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 31 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 32 LEN -> 126
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 33 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 34 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 35 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 36 LEN -> 190
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 37 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 38 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 39 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 40 LEN -> 252
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 41 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 42 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 43 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 44 LEN -> 202
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 45 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 46 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 47 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 48 LEN -> 226
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 49 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 50 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 51 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 52 LEN -> 181
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 53 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 54 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 55 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 56 LEN -> 141
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 57 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 58 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 59 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 60 LEN -> 139
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 61 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 62 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 63 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 64 LEN -> 152
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 65 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 66 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 67 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 68 LEN -> 160
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 69 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 70 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 71 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 72 LEN -> 490
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 73 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 74 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 75 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:19: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:19: CHUNK 76 LEN -> 152
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 0 // tokens : 17 // text len : 32
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 1 // tokens : 25 // text len : 58
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 2 // tokens : 26 // text len : 59
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 3 // tokens : 51 // text len : 152
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 4 // tokens : 50 // text len : 150
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 5 // tokens : 57 // text len : 162
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 6 // tokens : 44 // text len : 135
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 7 // tokens : 53 // text len : 149
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 8 // tokens : 45 // text len : 124
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 9 // tokens : 54 // text len : 165
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 10 // tokens : 29 // text len : 73
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 11 // tokens : 35 // text len : 82
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 12 // tokens : 28 // text len : 70
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 13 // tokens : 60 // text len : 206
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 14 // tokens : 51 // text len : 192
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 15 // tokens : 57 // text len : 201
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 16 // tokens : 48 // text len : 160
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 17 // tokens : 107 // text len : 386
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 18 // tokens : 101 // text len : 377
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 19 // tokens : 107 // text len : 386
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 20 // tokens : 75 // text len : 250
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 21 // tokens : 124 // text len : 457
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 22 // tokens : 118 // text len : 448
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 23 // tokens : 124 // text len : 457
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 24 // tokens : 65 // text len : 231
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 25 // tokens : 105 // text len : 384
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 26 // tokens : 99 // text len : 375
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 27 // tokens : 105 // text len : 384
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 28 // tokens : 56 // text len : 177
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 29 // tokens : 88 // text len : 303
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 30 // tokens : 82 // text len : 294
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 31 // tokens : 88 // text len : 303
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 32 // tokens : 48 // text len : 150
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 33 // tokens : 90 // text len : 340
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 34 // tokens : 84 // text len : 331
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 35 // tokens : 90 // text len : 340
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 36 // tokens : 58 // text len : 214
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 37 // tokens : 122 // text len : 466
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 38 // tokens : 116 // text len : 457
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 39 // tokens : 122 // text len : 466
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 40 // tokens : 80 // text len : 276
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 41 // tokens : 135 // text len : 478
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 42 // tokens : 129 // text len : 469
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 43 // tokens : 135 // text len : 478
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 44 // tokens : 71 // text len : 226
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 45 // tokens : 130 // text len : 452
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 46 // tokens : 124 // text len : 443
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 47 // tokens : 130 // text len : 453
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 48 // tokens : 75 // text len : 251
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 49 // tokens : 121 // text len : 432
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 50 // tokens : 115 // text len : 423
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 51 // tokens : 121 // text len : 433
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 52 // tokens : 62 // text len : 207
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 53 // tokens : 98 // text len : 348
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 54 // tokens : 92 // text len : 338
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 55 // tokens : 98 // text len : 348
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 56 // tokens : 52 // text len : 167
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 57 // tokens : 91 // text len : 306
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 58 // tokens : 85 // text len : 296
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 59 // tokens : 91 // text len : 306
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 60 // tokens : 55 // text len : 165
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 61 // tokens : 96 // text len : 317
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 62 // tokens : 90 // text len : 307
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 63 // tokens : 96 // text len : 317
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 64 // tokens : 57 // text len : 178
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 65 // tokens : 99 // text len : 338
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 66 // tokens : 93 // text len : 328
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 67 // tokens : 99 // text len : 338
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 68 // tokens : 58 // text len : 186
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 69 // tokens : 172 // text len : 676
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 70 // tokens : 166 // text len : 666
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 71 // tokens : 172 // text len : 676
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 72 // tokens : 130 // text len : 516
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 73 // tokens : 168 // text len : 668
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 74 // tokens : 161 // text len : 657
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 75 // tokens : 161 // text len : 656
+[INFO|splitters|L114] 2024-10-13 18:08:19: Combined sentence : index : 76 // tokens : 46 // text len : 165
+[INFO|splitters|L229] 2024-10-13 18:08:20: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180820_9faeb991-9ce1-4801-9323-c5e34a709159_similarity_plot.png
+[INFO|splitters|L246] 2024-10-13 18:08:21: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180821_9faeb991-9ce1-4801-9323-c5e34a709159_similarity_hist.png
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 0 LEN -> 2
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 1 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 2 LEN -> 27
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 3 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 4 LEN -> 38
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 5 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 6 LEN -> 280
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 7 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 8 LEN -> 42
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 9 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 10 LEN -> 276
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 11 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 12 LEN -> 44
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 13 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 14 LEN -> 192
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 15 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 16 LEN -> 45
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 17 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 18 LEN -> 256
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 19 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 20 LEN -> 46
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 21 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 22 LEN -> 248
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 23 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 24 LEN -> 67
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 25 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 26 LEN -> 74
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 27 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 28 LEN -> 56
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 29 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 30 LEN -> 113
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 31 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 32 LEN -> 34
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 33 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 34 LEN -> 128
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 35 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 36 LEN -> 39
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 37 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 38 LEN -> 94
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 39 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 40 LEN -> 53
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 41 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 42 LEN -> 189
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 43 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 44 LEN -> 50
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 45 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 46 LEN -> 111
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 47 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 48 LEN -> 49
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 49 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 50 LEN -> 461
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 51 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 52 LEN -> 36
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 53 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 54 LEN -> 118
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 55 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 56 LEN -> 50
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 57 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 58 LEN -> 167
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 59 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 60 LEN -> 14
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 61 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 62 LEN -> 18
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 63 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 64 LEN -> 8
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 65 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 66 LEN -> 195
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 67 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 68 LEN -> 8
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 69 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 70 LEN -> 139
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 71 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 72 LEN -> 8
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 73 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:21: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:21: CHUNK 74 LEN -> 147
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 0 // tokens : 17 // text len : 32
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 1 // tokens : 31 // text len : 71
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 2 // tokens : 32 // text len : 72
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 3 // tokens : 108 // text len : 353
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 4 // tokens : 107 // text len : 351
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 5 // tokens : 118 // text len : 393
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 6 // tokens : 105 // text len : 366
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 7 // tokens : 169 // text len : 642
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 8 // tokens : 155 // text len : 604
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 9 // tokens : 169 // text len : 648
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 10 // tokens : 93 // text len : 368
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 11 // tokens : 145 // text len : 560
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 12 // tokens : 134 // text len : 518
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 13 // tokens : 148 // text len : 563
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 14 // tokens : 84 // text len : 287
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 15 // tokens : 151 // text len : 543
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 16 // tokens : 137 // text len : 499
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 17 // tokens : 151 // text len : 545
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 18 // tokens : 99 // text len : 353
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 19 // tokens : 162 // text len : 601
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 20 // tokens : 148 // text len : 556
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 21 // tokens : 169 // text len : 623
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 22 // tokens : 102 // text len : 367
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 23 // tokens : 119 // text len : 441
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 24 // tokens : 105 // text len : 395
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 25 // tokens : 123 // text len : 451
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 26 // tokens : 60 // text len : 203
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 27 // tokens : 88 // text len : 316
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 28 // tokens : 67 // text len : 249
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 29 // tokens : 81 // text len : 283
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 30 // tokens : 64 // text len : 209
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 31 // tokens : 103 // text len : 337
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 32 // tokens : 85 // text len : 281
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 33 // tokens : 95 // text len : 320
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 34 // tokens : 67 // text len : 207
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 35 // tokens : 88 // text len : 301
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 36 // tokens : 74 // text len : 267
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 37 // tokens : 91 // text len : 320
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 38 // tokens : 52 // text len : 192
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 39 // tokens : 102 // text len : 381
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 40 // tokens : 92 // text len : 342
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 41 // tokens : 107 // text len : 392
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 42 // tokens : 86 // text len : 298
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 43 // tokens : 113 // text len : 409
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 44 // tokens : 96 // text len : 356
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 45 // tokens : 109 // text len : 405
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 46 // tokens : 59 // text len : 216
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 47 // tokens : 161 // text len : 677
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 48 // tokens : 145 // text len : 627
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 49 // tokens : 158 // text len : 663
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 50 // tokens : 131 // text len : 552
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 51 // tokens : 158 // text len : 670
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 52 // tokens : 145 // text len : 621
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 53 // tokens : 165 // text len : 671
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 54 // tokens : 63 // text len : 210
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 55 // tokens : 104 // text len : 377
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 56 // tokens : 91 // text len : 341
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 57 // tokens : 100 // text len : 355
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 58 // tokens : 73 // text len : 237
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 59 // tokens : 79 // text len : 255
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 60 // tokens : 60 // text len : 205
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 61 // tokens : 66 // text len : 213
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 62 // tokens : 24 // text len : 46
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 63 // tokens : 74 // text len : 241
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 64 // tokens : 65 // text len : 227
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 65 // tokens : 70 // text len : 235
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 66 // tokens : 64 // text len : 217
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 67 // tokens : 101 // text len : 356
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 68 // tokens : 96 // text len : 348
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 69 // tokens : 101 // text len : 356
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 70 // tokens : 51 // text len : 161
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 71 // tokens : 89 // text len : 308
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 72 // tokens : 83 // text len : 299
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 73 // tokens : 83 // text len : 298
+[INFO|splitters|L114] 2024-10-13 18:08:21: Combined sentence : index : 74 // tokens : 45 // text len : 158
+[INFO|splitters|L229] 2024-10-13 18:08:22: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180822_75be11af-f0b4-43eb-ae4f-0ba791b0ea36_similarity_plot.png
+[INFO|splitters|L246] 2024-10-13 18:08:23: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180823_75be11af-f0b4-43eb-ae4f-0ba791b0ea36_similarity_hist.png
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 0 LEN -> 2
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 1 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 2 LEN -> 27
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 3 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 4 LEN -> 25
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 5 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 6 LEN -> 220
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 7 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 8 LEN -> 41
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 9 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 10 LEN -> 118
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 11 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 12 LEN -> 29
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 13 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 14 LEN -> 228
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 15 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 16 LEN -> 81
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 17 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 18 LEN -> 165
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 19 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 20 LEN -> 89
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 21 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 22 LEN -> 134
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 23 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 24 LEN -> 84
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 25 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 26 LEN -> 184
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 27 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 28 LEN -> 56
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 29 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 30 LEN -> 138
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 31 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 32 LEN -> 57
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 33 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 34 LEN -> 174
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 35 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 36 LEN -> 33
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 37 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 38 LEN -> 230
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 39 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 40 LEN -> 38
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 41 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 42 LEN -> 226
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 43 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 44 LEN -> 39
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 45 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 46 LEN -> 138
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 47 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 48 LEN -> 61
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 49 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 50 LEN -> 398
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 51 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 52 LEN -> 39
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 53 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 54 LEN -> 243
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 55 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 56 LEN -> 50
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 57 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 58 LEN -> 111
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 59 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 60 LEN -> 52
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 61 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 62 LEN -> 169
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 63 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 64 LEN -> 49
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 65 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 66 LEN -> 202
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 67 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 68 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 69 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:23: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:23: CHUNK 70 LEN -> 15
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 0 // tokens : 17 // text len : 32
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 1 // tokens : 27 // text len : 58
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 2 // tokens : 28 // text len : 59
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 3 // tokens : 77 // text len : 280
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 4 // tokens : 76 // text len : 278
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 5 // tokens : 93 // text len : 319
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 6 // tokens : 80 // text len : 292
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 7 // tokens : 108 // text len : 410
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 8 // tokens : 98 // text len : 385
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 9 // tokens : 109 // text len : 414
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 10 // tokens : 60 // text len : 194
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 11 // tokens : 119 // text len : 422
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 12 // tokens : 102 // text len : 381
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 13 // tokens : 127 // text len : 462
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 14 // tokens : 99 // text len : 344
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 15 // tokens : 143 // text len : 509
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 16 // tokens : 132 // text len : 480
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 17 // tokens : 156 // text len : 569
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 18 // tokens : 97 // text len : 341
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 19 // tokens : 130 // text len : 475
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 20 // tokens : 105 // text len : 394
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 21 // tokens : 131 // text len : 478
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 22 // tokens : 86 // text len : 313
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 23 // tokens : 134 // text len : 497
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 24 // tokens : 110 // text len : 408
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 25 // tokens : 128 // text len : 464
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 26 // tokens : 95 // text len : 330
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 27 // tokens : 132 // text len : 468
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 28 // tokens : 107 // text len : 384
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 29 // tokens : 125 // text len : 441
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 30 // tokens : 77 // text len : 257
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 31 // tokens : 120 // text len : 431
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 32 // tokens : 102 // text len : 375
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 33 // tokens : 114 // text len : 408
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 34 // tokens : 77 // text len : 270
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 35 // tokens : 133 // text len : 500
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 36 // tokens : 115 // text len : 443
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 37 // tokens : 129 // text len : 481
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 38 // tokens : 85 // text len : 307
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 39 // tokens : 137 // text len : 533
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 40 // tokens : 125 // text len : 500
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 41 // tokens : 140 // text len : 539
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 42 // tokens : 84 // text len : 309
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 43 // tokens : 127 // text len : 447
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 44 // tokens : 114 // text len : 409
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 45 // tokens : 135 // text len : 470
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 46 // tokens : 83 // text len : 244
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 47 // tokens : 184 // text len : 642
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 48 // tokens : 169 // text len : 603
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 49 // tokens : 182 // text len : 642
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 50 // tokens : 139 // text len : 504
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 51 // tokens : 197 // text len : 747
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 52 // tokens : 176 // text len : 686
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 53 // tokens : 191 // text len : 736
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 54 // tokens : 90 // text len : 338
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 55 // tokens : 120 // text len : 449
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 56 // tokens : 107 // text len : 410
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 57 // tokens : 123 // text len : 462
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 58 // tokens : 65 // text len : 219
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 59 // tokens : 110 // text len : 388
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 60 // tokens : 95 // text len : 338
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 61 // tokens : 111 // text len : 387
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 62 // tokens : 81 // text len : 276
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 63 // tokens : 132 // text len : 478
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 64 // tokens : 116 // text len : 426
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 65 // tokens : 117 // text len : 426
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 66 // tokens : 70 // text len : 257
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 67 // tokens : 75 // text len : 272
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 68 // tokens : 58 // text len : 222
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 69 // tokens : 58 // text len : 221
+[INFO|splitters|L114] 2024-10-13 18:08:23: Combined sentence : index : 70 // tokens : 7 // text len : 18
+[INFO|splitters|L229] 2024-10-13 18:08:24: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180824_80bd4ef9-ec52-43e2-861d-ffe20e0cfb21_similarity_plot.png
+[INFO|splitters|L246] 2024-10-13 18:08:25: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180825_80bd4ef9-ec52-43e2-861d-ffe20e0cfb21_similarity_hist.png
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 0 LEN -> 2
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 1 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 2 LEN -> 27
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 3 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 4 LEN -> 318
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 5 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 6 LEN -> 253
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 7 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 8 LEN -> 335
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 9 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 10 LEN -> 14
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 11 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 12 LEN -> 28
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 13 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 14 LEN -> 143
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 15 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 16 LEN -> 210
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 17 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 18 LEN -> 375
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 19 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 20 LEN -> 211
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 21 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 22 LEN -> 283
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 23 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 24 LEN -> 324
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 25 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 26 LEN -> 147
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 27 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 28 LEN -> 402
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 29 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 30 LEN -> 296
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 31 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 32 LEN -> 284
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 33 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 34 LEN -> 246
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 35 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:25: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:25: CHUNK 36 LEN -> 15
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 0 // tokens : 17 // text len : 32
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 1 // tokens : 103 // text len : 351
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 2 // tokens : 104 // text len : 352
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 3 // tokens : 168 // text len : 606
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 4 // tokens : 167 // text len : 604
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 5 // tokens : 254 // text len : 939
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 6 // tokens : 241 // text len : 912
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 7 // tokens : 250 // text len : 926
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 8 // tokens : 164 // text len : 608
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 9 // tokens : 171 // text len : 636
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 10 // tokens : 107 // text len : 383
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 11 // tokens : 142 // text len : 526
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 12 // tokens : 55 // text len : 191
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 13 // tokens : 114 // text len : 401
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 14 // tokens : 105 // text len : 387
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 15 // tokens : 211 // text len : 762
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 16 // tokens : 204 // text len : 734
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 17 // tokens : 266 // text len : 945
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 18 // tokens : 231 // text len : 802
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 19 // tokens : 308 // text len : 1085
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 20 // tokens : 249 // text len : 875
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 21 // tokens : 334 // text len : 1199
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 22 // tokens : 228 // text len : 824
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 23 // tokens : 272 // text len : 971
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 24 // tokens : 210 // text len : 760
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 25 // tokens : 316 // text len : 1162
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 26 // tokens : 239 // text len : 879
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 27 // tokens : 319 // text len : 1175
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 28 // tokens : 234 // text len : 851
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 29 // tokens : 310 // text len : 1135
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 30 // tokens : 266 // text len : 988
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 31 // tokens : 332 // text len : 1234
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 32 // tokens : 226 // text len : 832
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 33 // tokens : 231 // text len : 847
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 34 // tokens : 150 // text len : 550
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 35 // tokens : 150 // text len : 549
+[INFO|splitters|L114] 2024-10-13 18:08:25: Combined sentence : index : 36 // tokens : 73 // text len : 264
+[INFO|splitters|L229] 2024-10-13 18:08:26: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180826_bb41be38-cec9-462e-b1c0-242d31672407_similarity_plot.png
+[INFO|splitters|L246] 2024-10-13 18:08:26: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180826_bb41be38-cec9-462e-b1c0-242d31672407_similarity_hist.png
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 0 LEN -> 2
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 1 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 2 LEN -> 27
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 3 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 4 LEN -> 33
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 5 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 6 LEN -> 86
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 7 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 8 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 9 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 10 LEN -> 134
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 11 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 12 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 13 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 14 LEN -> 404
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 15 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 16 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 17 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 18 LEN -> 475
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 19 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 20 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 21 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 22 LEN -> 299
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 23 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 24 LEN -> 9
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 25 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 26 LEN -> 307
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 27 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 28 LEN -> 12
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 29 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 30 LEN -> 39
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 31 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 32 LEN -> 14
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 33 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 34 LEN -> 42
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 35 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 36 LEN -> 8
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 37 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 38 LEN -> 104
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 39 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 40 LEN -> 8
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 41 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 42 LEN -> 125
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 43 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 44 LEN -> 8
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 45 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 46 LEN -> 180
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 47 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 48 LEN -> 8
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 49 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 50 LEN -> 212
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 51 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 52 LEN -> 8
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 53 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 54 LEN -> 218
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 55 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 56 LEN -> 8
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 57 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 58 LEN -> 273
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 59 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 60 LEN -> 8
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 61 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 62 LEN -> 440
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 63 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 64 LEN -> 8
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 65 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:26: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:26: CHUNK 66 LEN -> 147
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 0 // tokens : 17 // text len : 32
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 1 // tokens : 27 // text len : 66
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 2 // tokens : 28 // text len : 67
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 3 // tokens : 51 // text len : 154
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 4 // tokens : 50 // text len : 152
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 5 // tokens : 55 // text len : 161
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 6 // tokens : 42 // text len : 134
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 7 // tokens : 74 // text len : 268
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 8 // tokens : 64 // text len : 235
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 9 // tokens : 69 // text len : 244
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 10 // tokens : 46 // text len : 158
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 11 // tokens : 147 // text len : 562
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 12 // tokens : 142 // text len : 553
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 13 // tokens : 147 // text len : 562
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 14 // tokens : 115 // text len : 428
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 15 // tokens : 233 // text len : 903
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 16 // tokens : 228 // text len : 894
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 17 // tokens : 233 // text len : 903
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 18 // tokens : 132 // text len : 499
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 19 // tokens : 202 // text len : 798
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 20 // tokens : 197 // text len : 789
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 21 // tokens : 202 // text len : 798
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 22 // tokens : 84 // text len : 323
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 23 // tokens : 155 // text len : 630
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 24 // tokens : 150 // text len : 621
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 25 // tokens : 157 // text len : 633
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 26 // tokens : 87 // text len : 334
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 27 // tokens : 98 // text len : 373
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 28 // tokens : 93 // text len : 364
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 29 // tokens : 102 // text len : 378
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 30 // tokens : 31 // text len : 71
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 31 // tokens : 41 // text len : 113
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 32 // tokens : 34 // text len : 101
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 33 // tokens : 40 // text len : 109
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 34 // tokens : 28 // text len : 70
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 35 // tokens : 55 // text len : 174
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 36 // tokens : 46 // text len : 160
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 37 // tokens : 51 // text len : 168
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 38 // tokens : 41 // text len : 126
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 39 // tokens : 67 // text len : 251
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 40 // tokens : 62 // text len : 243
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 41 // tokens : 67 // text len : 251
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 42 // tokens : 40 // text len : 147
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 43 // tokens : 82 // text len : 327
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 44 // tokens : 77 // text len : 319
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 45 // tokens : 82 // text len : 327
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 46 // tokens : 56 // text len : 202
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 47 // tokens : 109 // text len : 414
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 48 // tokens : 104 // text len : 406
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 49 // tokens : 109 // text len : 414
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 50 // tokens : 67 // text len : 234
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 51 // tokens : 118 // text len : 452
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 52 // tokens : 113 // text len : 444
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 53 // tokens : 118 // text len : 452
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 54 // tokens : 65 // text len : 240
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 55 // tokens : 134 // text len : 513
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 56 // tokens : 129 // text len : 505
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 57 // tokens : 134 // text len : 513
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 58 // tokens : 83 // text len : 295
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 59 // tokens : 190 // text len : 735
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 60 // tokens : 185 // text len : 727
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 61 // tokens : 190 // text len : 735
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 62 // tokens : 121 // text len : 462
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 63 // tokens : 157 // text len : 609
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 64 // tokens : 151 // text len : 600
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 65 // tokens : 151 // text len : 599
+[INFO|splitters|L114] 2024-10-13 18:08:26: Combined sentence : index : 66 // tokens : 43 // text len : 158
+[INFO|splitters|L229] 2024-10-13 18:08:27: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180827_880835cf-40d6-42ca-a420-6045950bb5d6_similarity_plot.png
+[INFO|splitters|L246] 2024-10-13 18:08:27: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180827_880835cf-40d6-42ca-a420-6045950bb5d6_similarity_hist.png
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 0 LEN -> 2
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 1 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 2 LEN -> 6
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 3 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 4 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 5 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 6 LEN -> 15
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 7 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 8 LEN -> 161
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 9 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 10 LEN -> 225
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 11 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 12 LEN -> 200
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 13 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 14 LEN -> 375
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 15 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 16 LEN -> 300
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 17 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 18 LEN -> 232
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 19 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 20 LEN -> 326
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 21 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 22 LEN -> 117
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 23 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 24 LEN -> 286
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 25 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 26 LEN -> 375
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 27 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 28 LEN -> 334
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 29 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 30 LEN -> 530
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 31 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 32 LEN -> 292
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 33 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:27: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:27: CHUNK 34 LEN -> 252
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 0 // tokens : 8 // text len : 11
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 1 // tokens : 12 // text len : 22
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 2 // tokens : 12 // text len : 23
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 3 // tokens : 21 // text len : 39
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 4 // tokens : 20 // text len : 37
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 5 // tokens : 70 // text len : 198
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 6 // tokens : 66 // text len : 192
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 7 // tokens : 128 // text len : 417
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 8 // tokens : 125 // text len : 407
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 9 // tokens : 177 // text len : 607
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 10 // tokens : 168 // text len : 592
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 11 // tokens : 261 // text len : 967
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 12 // tokens : 211 // text len : 806
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 13 // tokens : 285 // text len : 1106
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 14 // tokens : 223 // text len : 881
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 15 // tokens : 284 // text len : 1113
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 16 // tokens : 232 // text len : 913
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 17 // tokens : 328 // text len : 1239
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 18 // tokens : 235 // text len : 864
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 19 // tokens : 275 // text len : 981
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 20 // tokens : 201 // text len : 681
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 21 // tokens : 279 // text len : 967
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 22 // tokens : 218 // text len : 735
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 23 // tokens : 324 // text len : 1110
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 24 // tokens : 228 // text len : 784
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 25 // tokens : 325 // text len : 1118
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 26 // tokens : 285 // text len : 1001
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 27 // tokens : 418 // text len : 1531
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 28 // tokens : 340 // text len : 1245
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 29 // tokens : 414 // text len : 1537
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 30 // tokens : 308 // text len : 1162
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 31 // tokens : 379 // text len : 1414
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 32 // tokens : 281 // text len : 1079
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 33 // tokens : 281 // text len : 1078
+[INFO|splitters|L114] 2024-10-13 18:08:27: Combined sentence : index : 34 // tokens : 147 // text len : 547
+[INFO|splitters|L229] 2024-10-13 18:08:28: Saving similarity plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180828_2723a910-a3c8-4254-aa1d-306008485799_similarity_plot.png
+[INFO|splitters|L246] 2024-10-13 18:08:28: Saving similarity histogram plot to -> C:\Users\Jorge\Desktop\Boe ChatBot\backend\data\figures\splitter\20241013180828_2723a910-a3c8-4254-aa1d-306008485799_similarity_hist.png
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 0 LEN -> 2
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 1 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 2 LEN -> 27
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 3 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 4 LEN -> 100
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 5 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 6 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 7 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 8 LEN -> 343
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 9 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 10 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 11 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 12 LEN -> 271
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 13 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 14 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 15 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 16 LEN -> 387
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 17 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 18 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 19 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 20 LEN -> 284
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 21 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 22 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 23 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 24 LEN -> 217
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 25 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 26 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 27 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 28 LEN -> 233
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 29 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 30 LEN -> 14
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 31 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 32 LEN -> 20
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 33 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 34 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 35 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 36 LEN -> 222
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 37 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 38 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 39 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 40 LEN -> 268
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 41 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 42 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 43 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 44 LEN -> 290
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 45 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 46 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 47 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 48 LEN -> 190
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 49 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 50 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 51 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 52 LEN -> 373
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 53 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 54 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 55 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 56 LEN -> 222
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 57 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 58 LEN -> 10
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 59 LEN -> 0
+[INFO|splitters|L75] 2024-10-13 18:08:29: Level of split pattern used 0
+[INFO|splitters|L76] 2024-10-13 18:08:29: CHUNK 60 LEN -> 235
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 0 // tokens : 17 // text len : 32
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 1 // tokens : 42 // text len : 133
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 2 // tokens : 43 // text len : 134
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 3 // tokens : 49 // text len : 145
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 4 // tokens : 48 // text len : 143
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 5 // tokens : 143 // text len : 486
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 6 // tokens : 130 // text len : 459
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 7 // tokens : 136 // text len : 469
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 8 // tokens : 111 // text len : 369
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 9 // tokens : 178 // text len : 640
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 10 // tokens : 172 // text len : 630
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 11 // tokens : 178 // text len : 640
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 12 // tokens : 83 // text len : 297
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 13 // tokens : 187 // text len : 684
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 14 // tokens : 181 // text len : 674
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 15 // tokens : 187 // text len : 684
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 16 // tokens : 120 // text len : 413
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 17 // tokens : 188 // text len : 697
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 18 // tokens : 182 // text len : 687
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 19 // tokens : 188 // text len : 697
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 20 // tokens : 84 // text len : 310
+[INFO|splitters|L114] 2024-10-13 18:08:29: Combined sentence : index : 21 // tokens : 139 // text len : 527

@@ -99,24 +99,28 @@ Crea una carpeta en tu máquina local donde clonar los repositorios del frontend
 
    ```env
     OPENAI_API_KEY=
-    LANGSMITH= 
+    LANGSMITH=
     LLAMA_CLOUD_API_KEY=
     LLAMA_CLOUD_API_KEY_RAPTOR=
     LANGCHAIN_API_KEY=
-    PINECONE_API_KEY= 
+    PINECONE_API_KEY=
     PINECONE_INDEX_NAME=boe
     PINECONE_INDEX_NAMESPACE=boe_namespace_1
     APP_MODE=graph
     EMBEDDING_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
     EMBEDDING_MODEL_GPT4=all‑MiniLM‑L6‑v2.gguf2.f16.gguf
+    LOCAL_LLM=llama3
     BOE_WEB_URL=https://boe.es
     HUG_API_KEY=
+    HG_REPO_DATASET_ID=koke143/boedata
+    HG_REPO_RAGAS_TESTSET_ID=koke143/ragas_testset
     GROQ_API_KEY=
     NVIDIA_API_KEY=
     RAPTOR_CHUNKS_FILE_NAME=RAPTOR-CHUNKS
     RAPTOR_CHUNKS_FILE_EXTENSION=csv
     MAX_FILES=2
     FRONT_END_URL=
+    FRONT_END_PRO_URL=
    ```
 
 7. Pega la URL de tu cliente de React en la variable `FRONT_END_URL` 📎.
